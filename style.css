@@ -1,8 +1,12 @@
 :root {
-    --primary-color: #0F172A; /* Deep Navy Blue */
-    --accent-color: #3B82F6; /* Bright Blue for accents */
-    --text-color: #334155; /* Slate 700 */
-    --light-text: #64748B; /* Slate 500 */
+    --primary-color: #0F172A;
+    /* Deep Navy Blue */
+    --accent-color: #3B82F6;
+    /* Bright Blue for accents */
+    --text-color: #334155;
+    /* Slate 700 */
+    --light-text: #64748B;
+    /* Slate 500 */
     --white: #F8FAFC;
     --bg-color: #FFFFFF;
     --bg-light: #F1F5F9;
@@ -29,7 +33,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     color: var(--primary-color);
     margin-bottom: 20px;
@@ -58,7 +67,9 @@ img {
     padding: 0 20px;
 }
 
-.text-center { text-align: center; }
+.text-center {
+    text-align: center;
+}
 
 /* Buttons */
 .btn {
@@ -109,7 +120,7 @@ img {
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
 }
 
@@ -194,18 +205,21 @@ img {
 }
 
 .hero-title {
-    font-size: 3.5rem; /* Larger font for desktop */
+    font-size: 3.5rem;
+    /* Larger font for desktop */
     line-height: 1.2;
     margin-bottom: 20px;
     color: var(--white);
     letter-spacing: -1px;
-    font-weight: 800; /* Extra bold */
+    font-weight: 800;
+    /* Extra bold */
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     margin-bottom: 40px;
-    color: #CBD5E1; /* Lighter slate */
+    color: #CBD5E1;
+    /* Lighter slate */
     font-weight: 300;
 }
 
@@ -244,7 +258,8 @@ img {
     border: 1px solid #E2E8F0;
     padding: 40px;
     border-radius: var(--border-radius);
-    text-align: left; /* Formal left-align */
+    text-align: left;
+    /* Formal left-align */
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -287,7 +302,8 @@ img {
 }
 
 .service-list li::before {
-    content: "•"; /* Simple bullet */
+    content: "•";
+    /* Simple bullet */
     position: absolute;
     left: 0;
     color: var(--accent-color);
@@ -360,64 +376,7 @@ img {
     color: #94A3B8;
 }
 
-/* Contact Section */
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 50px;
-    background-color: var(--white);
-    padding: 50px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    border: 1px solid #E2E8F0;
-}
 
-.contact-info .info-item {
-    margin-bottom: 30px;
-}
-
-.info-item i {
-    font-size: 24px;
-    color: var(--accent-color);
-    margin-bottom: 15px;
-}
-
-.info-item h4 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-}
-
-.info-item p {
-    color: var(--light-text);
-    font-size: 0.95rem;
-}
-
-.contact-form .form-group {
-    margin-bottom: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #E2E8F0; /* Subtle border */
-    border-radius: 4px;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.btn-block {
-    width: 100%;
-    text-align: center;
-}
 
 /* Footer */
 .footer {
@@ -469,8 +428,13 @@ img {
     animation: fadeInUp 0.8s forwards;
 }
 
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
 
 @keyframes fadeInUp {
     to {
@@ -517,7 +481,7 @@ img {
     .header-container {
         padding: 0 20px;
     }
-    
+
     .nav {
         display: none;
         position: absolute;
@@ -526,38 +490,37 @@ img {
         width: 100%;
         background-color: var(--white);
         padding: 20px;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     }
-    
+
     .nav.active {
         display: block;
     }
-    
+
     .nav-list {
         flex-direction: column;
         gap: 15px;
         text-align: center;
     }
-    
+
     .mobile-menu-toggle {
         display: block;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
-    .about-content,
-    .contact-wrapper {
+
+    .about-content {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
-    
+
     .footer-links a,
     .social-links a {
         margin: 0 10px;

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사주팔자 보기 - 만세력</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">LalaCatSoft</a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link active">만세력</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">☰</div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-small">
+            <div class="container text-center">
+                <h1 class="page-title">사주팔자 보기</h1>
+                <p class="page-subtitle">정확한 천문 계산을 통한 만세력</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="saju-container">
+                    <div class="input-section card">
+                        <h2>생년월일시 입력</h2>
+                        <form id="sajuForm">
+                            <div class="form-group">
+                                <label for="year">생년 (Year)</label>
+                                <input type="number" id="year" name="year" placeholder="1990" required min="1900"
+                                    max="2050">
+                            </div>
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="month">월 (Month)</label>
+                                    <input type="number" id="month" name="month" placeholder="5" required min="1"
+                                        max="12">
+                                </div>
+                                <div class="form-group">
+                                    <label for="day">일 (Day)</label>
+                                    <input type="number" id="day" name="day" placeholder="15" required min="1" max="31">
+                                </div>
+                            </div>
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="hour">시 (Hour, 0-23)</label>
+                                    <input type="number" id="hour" name="hour" placeholder="14" required min="0"
+                                        max="23">
+                                </div>
+                                <div class="form-group">
+                                    <label for="minute">분 (Minute)</label>
+                                    <input type="number" id="minute" name="minute" placeholder="30" required min="0"
+                                        max="59">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>성별 (Gender)</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="m" checked> 남성
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="f"> 여성
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="longitude">출생지 경도 (Longitude)</label>
+                                <input type="number" id="longitude" name="longitude" placeholder="예: 126.97 (서울)"
+                                    step="0.01" value="127.00">
+                                <small class="help-text">서울 127.0, 부산 129.0, 도쿄 139.7 등</small>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary full-width">사주팔자 보기</button>
+                        </form>
+                    </div>
+
+                    <div id="resultSection" class="result-section card hidden">
+                        <h2>사주팔자 결과</h2>
+                        <div class="pillars-grid">
+                            <div class="pillar-card">
+                                <div class="pillar-title">시주 (Time)</div>
+                                <div class="pillar-hanja" id="hourPillarHanja">-</div>
+                                <div class="pillar-hangul" id="hourPillarHangul">-</div>
+                            </div>
+                            <div class="pillar-card">
+                                <div class="pillar-title">일주 (Day)</div>
+                                <div class="pillar-hanja" id="dayPillarHanja">-</div>
+                                <div class="pillar-hangul" id="dayPillarHangul">-</div>
+                            </div>
+                            <div class="pillar-card">
+                                <div class="pillar-title">월주 (Month)</div>
+                                <div class="pillar-hanja" id="monthPillarHanja">-</div>
+                                <div class="pillar-hangul" id="monthPillarHangul">-</div>
+                            </div>
+                            <div class="pillar-card">
+                                <div class="pillar-title">년주 (Year)</div>
+                                <div class="pillar-hanja" id="yearPillarHanja">-</div>
+                                <div class="pillar-hangul" id="yearPillarHangul">-</div>
+                            </div>
+                        </div>
+
+                        <div class="details margin-top-30">
+                            <h3>상세 정보</h3>
+                            <ul class="detail-list">
+                                <li><strong>양력:</strong> <span id="solarDate">-</span></li>
+                                <li><strong>음력:</strong> <span id="lunarDate">-</span></li>
+                                <li><strong>시간 보정:</strong> <span id="timeCorrection">-</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container footer-bottom">
+                &copy; 2026 LalaCatSoft. All rights reserved.
+            </div>
+        </footer>
+    </main>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
