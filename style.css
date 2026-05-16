@@ -700,6 +700,28 @@ img {
 }
 
 /* Pricing Section */
+.pricing-storage-notice {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 10px 20px;
+    background-color: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+}
+
+.pricing-storage-notice i {
+    color: var(--accent-color);
+}
+
+.pricing-storage-notice strong {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
