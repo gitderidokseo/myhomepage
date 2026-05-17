@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>드라이브로그 개인정보처리방침 · LalaCatSoft</title>
+    <meta
+      name="description"
+      content="LalaCatSoft가 제공하는 법인차량 운행기록 자동화 앱 '드라이브로그(DriveLog)'의 개인정보처리방침입니다."
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --bg-2: #0e1530;
+        --surface: #131a36;
+        --border: #1f2a52;
+        --text: #e6ecff;
+        --muted: #9aa6c9;
+        --cyan: #3ee0ff;
+        --cyan-2: #7af0ff;
+        --accent-grad: linear-gradient(135deg, #3ee0ff 0%, #7af0ff 100%);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        background:
+          radial-gradient(
+            circle at 20% 10%,
+            rgba(62, 224, 255, 0.08),
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 30%,
+            rgba(122, 240, 255, 0.06),
+            transparent 50%
+          ),
+          var(--bg);
+        min-height: 100vh;
+      }
+      header.site {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(18px);
+        background: rgba(11, 16, 32, 0.7);
+        border-bottom: 1px solid var(--border);
+      }
+      header.site .wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .brand .logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: var(--accent-grad);
+        display: grid;
+        place-items: center;
+        color: #06122a;
+        font-weight: 800;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+      }
+      header.site nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 13px;
+        margin-left: 18px;
+        transition: color 0.2s;
+      }
+      header.site nav a:hover {
+        color: var(--cyan);
+      }
+      main {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 56px 24px 80px;
+      }
+      .eyebrow {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--cyan);
+        padding: 6px 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(62, 224, 255, 0.06);
+      }
+      h1 {
+        font-size: clamp(28px, 4vw, 40px);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin: 18px 0 12px;
+        font-weight: 700;
+      }
+      h1 .grad {
+        background: var(--accent-grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .meta {
+        color: var(--muted);
+        font-size: 14px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .lead {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 16px;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 22px 26px;
+        margin: 18px 0;
+      }
+      h2 {
+        font-size: 20px;
+        margin: 44px 0 12px;
+        padding-top: 8px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--text);
+      }
+      h2 .num {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: var(--cyan);
+        margin-right: 10px;
+      }
+      h3 {
+        font-size: 16px;
+        margin: 24px 0 8px;
+        color: var(--text);
+        font-weight: 600;
+      }
+      p,
+      li {
+        color: #c8d0eb;
+        font-size: 15px;
+      }
+      strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+      ul,
+      ol {
+        padding-left: 22px;
+      }
+      ul li,
+      ol li {
+        margin: 6px 0;
+      }
+      a {
+        color: var(--cyan);
+        text-decoration: none;
+        border-bottom: 1px dotted rgba(62, 224, 255, 0.4);
+      }
+      a:hover {
+        color: var(--cyan-2);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0 8px;
+        font-size: 14px;
+        overflow: hidden;
+        border-radius: 12px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      th {
+        background: rgba(62, 224, 255, 0.06);
+        color: var(--cyan);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .callout {
+        border-left: 3px solid var(--cyan);
+        background: rgba(62, 224, 255, 0.05);
+        padding: 14px 18px;
+        border-radius: 0 12px 12px 0;
+        margin: 16px 0;
+        color: #d6deff;
+        font-size: 14px;
+      }
+      .toc {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 18px 22px;
+        margin: 28px 0 8px;
+      }
+      .toc h4 {
+        margin: 0 0 10px;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--cyan);
+        font-family: "JetBrains Mono", monospace;
+      }
+      .toc ol {
+        margin: 0;
+        padding-left: 18px;
+        columns: 2;
+        column-gap: 24px;
+      }
+      .toc ol li {
+        break-inside: avoid;
+        margin: 4px 0;
+        font-size: 14px;
+      }
+      .toc a {
+        color: #c8d0eb;
+        border-bottom: none;
+      }
+      .toc a:hover {
+        color: var(--cyan);
+      }
+      footer.site {
+        border-top: 1px solid var(--border);
+        margin-top: 60px;
+        padding: 28px 24px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      @media (max-width: 600px) {
+        .toc ol {
+          columns: 1;
+        }
+        header.site nav a:not(:last-child) {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href="/">
+          <span class="logo">L</span>
+          <span>LalaCatSoft</span>
+        </a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/#product">드라이브로그</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <span class="eyebrow">Privacy Policy · DriveLog</span>
+      <h1>
+        드라이브로그 <span class="grad">개인정보처리방침</span>
+      </h1>
+      <p class="meta">
+        시행일: 2026년 5월 17일 · 최종 개정일: 2026년 5월 17일
+      </p>
+
+      <p class="lead">
+        주식회사 LalaCatSoft(이하 "회사")는
+        <strong>드라이브로그(DriveLog)</strong> 모바일 애플리케이션(이하 "앱")의
+        이용자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」 및 관련 법령을
+        준수합니다. 본 방침은 회사가 제공하는 앱과 부속 서비스(관리자용 앱
+        포함)에 적용됩니다.
+      </p>
+
+      <nav class="toc" aria-label="목차">
+        <h4>목차</h4>
+        <ol>
+          <li><a href="#s1">수집 항목 및 방법</a></li>
+          <li><a href="#s2">이용 목적</a></li>
+          <li><a href="#s3">앱 권한 안내</a></li>
+          <li><a href="#s4">Google API 사용</a></li>
+          <li><a href="#s5">보관 기간 및 파기</a></li>
+          <li><a href="#s6">제3자 제공</a></li>
+          <li><a href="#s7">처리위탁</a></li>
+          <li><a href="#s8">국외 이전</a></li>
+          <li><a href="#s9">이용자 권리</a></li>
+          <li><a href="#s10">아동 개인정보</a></li>
+          <li><a href="#s11">안전성 확보 조치</a></li>
+          <li><a href="#s12">개인정보 보호책임자</a></li>
+          <li><a href="#s13">방침 변경</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="s1"><span class="num">01</span>수집하는 개인정보 항목 및 방법</h2>
+      <p>회사는 서비스 제공을 위해 아래와 같이 최소한의 개인정보를 수집합니다.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>항목</th>
+            <th>수집 방법</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>계정 정보</td>
+            <td>이메일 주소, 표시 이름, Firebase UID, FCM 토큰</td>
+            <td>최초 가입 시 이용자 입력 / Google 로그인</td>
+          </tr>
+          <tr>
+            <td>운전자 정보</td>
+            <td>이름, 부서, 직급, 회사 코드(법인 모드)</td>
+            <td>이용자 직접 입력</td>
+          </tr>
+          <tr>
+            <td>차량 정보</td>
+            <td>차량 번호, 차종, 누적 주행거리</td>
+            <td>이용자 직접 입력</td>
+          </tr>
+          <tr>
+            <td>운행 기록</td>
+            <td>
+              출발/도착 시각, 이동 거리, GPS 경로 좌표, 운행 목적(업무/출퇴근/기타),
+              메모
+            </td>
+            <td>앱이 GPS 센서로 자동 수집</td>
+          </tr>
+          <tr>
+            <td>기기 정보</td>
+            <td>OS 버전, 앱 버전, 기기 식별자(설치 단위)</td>
+            <td>앱 실행 시 자동 수집</td>
+          </tr>
+          <tr>
+            <td>결제 정보</td>
+            <td>구독 상태, 청구 식별자</td>
+            <td>Google Play 결제 시스템을 통해 수신 (카드번호 등은 수집하지 않음)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="s2"><span class="num">02</span>개인정보의 이용 목적</h2>
+      <ul>
+        <li>법인차량 운행기록의 자동 측정·저장·관리</li>
+        <li>국세청 양식 운행기록부(xlsx) 생성 및 공유</li>
+        <li>법인 모드: 관리자 승인, 차량·운전자 동기화, 푸시 알림(FCM)</li>
+        <li>이용자 본인의 Google Drive로의 운행기록 업로드(이용자 명시적 동의 시)</li>
+        <li>고객 문의 응대 및 서비스 품질 개선</li>
+        <li>법령 또는 약관 위반 행위 대응</li>
+      </ul>
+
+      <h2 id="s3"><span class="num">03</span>앱 권한 안내</h2>
+      <p>
+        앱은 다음 권한을 사용하며, 이용자는 운영체제 설정에서 권한을 언제든
+        허용/거부할 수 있습니다. 일부 권한 거부 시 핵심 기능(자동 거리 측정 등)이
+        제한될 수 있습니다.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>권한</th>
+            <th>사용 목적</th>
+            <th>필수 여부</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>위치 (정확한 위치 · 백그라운드 포함)</td>
+            <td>
+              GPS 기반 운행 거리 자동 측정. 화면이 꺼진 상태에서도 안정적인 측정을
+              위해 백그라운드 위치 권한이 필요합니다.
+            </td>
+            <td>필수 (운행 측정 시)</td>
+          </tr>
+          <tr>
+            <td>알림</td>
+            <td>운행 중 포그라운드 서비스 상태 표시, 관리자 승인 등 FCM 푸시</td>
+            <td>필수</td>
+          </tr>
+          <tr>
+            <td>인터넷 / 네트워크 상태</td>
+            <td>데이터 동기화, 푸시 수신, 클라우드 업로드</td>
+            <td>필수</td>
+          </tr>
+          <tr>
+            <td>배터리 최적화 예외</td>
+            <td>장시간 운행 시 시스템에 의한 앱 종료 방지</td>
+            <td>선택 (권장)</td>
+          </tr>
+          <tr>
+            <td>저장소 / 파일 공유</td>
+            <td>생성된 운행기록부 xlsx 파일 공유</td>
+            <td>선택</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <strong>백그라운드 위치 수집 고지.</strong> 드라이브로그는 운행기록부
+        작성을 위해 앱이 백그라운드에 있을 때에도 위치 정보를 수집합니다. 위치
+        정보는 운행 측정이 활성화된 동안에만 사용되며, 광고·프로파일링 등
+        부수적인 목적에는 절대 사용되지 않습니다.
+      </div>
+
+      <h2 id="s4">
+        <span class="num">04</span>Google API 사용 및 Drive 연동
+      </h2>
+      <p>
+        드라이브로그는 이용자의 명시적 동의를 받은 경우에 한해
+        <strong>Google Drive API</strong>를 사용합니다.
+      </p>
+      <ul>
+        <li>
+          <strong>사용 범위(Scope):</strong> <code>drive.file</code> — 앱이
+          이용자 본인의 Drive에 직접 생성한 파일에만 접근합니다. 이용자의 다른
+          파일은 읽거나 수정할 수 없습니다.
+        </li>
+        <li>
+          <strong>저장 위치:</strong> 운행기록 xlsx 파일은
+          <strong>이용자 본인의 Google Drive</strong>에만 저장되며, 회사 서버를
+          경유하지 않습니다.
+        </li>
+        <li>
+          <strong>토큰 관리:</strong> OAuth 액세스 토큰/리프레시 토큰은 이용자
+          기기 내부의 보안 저장소에만 보관되며, 회사 서버로 전송·저장되지
+          않습니다.
+        </li>
+        <li>
+          <strong>연동 해제:</strong> 이용자는 언제든
+          <a
+            href="https://myaccount.google.com/permissions"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Google 계정 권한 설정</a
+          >에서 본 앱의 Drive 접근 권한을 철회할 수 있습니다.
+        </li>
+      </ul>
+      <div class="callout">
+        드라이브로그의 Google 사용자 데이터 사용은
+        <a
+          href="https://developers.google.com/terms/api-services-user-data-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Google API Services User Data Policy</a
+        >(Limited Use 요구사항 포함)를 준수합니다. 회사는 Google 사용자
+        데이터를 광고 목적으로 사용하거나, 사람이 직접 읽거나, 제3자에게 판매하지
+        않습니다.
+      </div>
+
+      <h2 id="s5"><span class="num">05</span>개인정보의 보관 기간 및 파기</h2>
+      <ul>
+        <li>
+          <strong>운행 기록·차량·운전자 정보:</strong> 이용자가 직접 삭제하거나
+          회원 탈퇴 시까지 보관. 세무 증빙 활용을 고려해 이용자가 직접 보관 기간을
+          관리할 수 있습니다.
+        </li>
+        <li>
+          <strong>계정 정보:</strong> 회원 탈퇴 시 지체 없이 파기. 단,
+          관계법령에 따라 일정 기간 보관이 필요한 정보(전자상거래법 등)는 해당
+          기간 동안 분리 보관됩니다.
+        </li>
+        <li>
+          <strong>로그·접속 기록:</strong> 통신비밀보호법에 따라 3개월간 보관 후
+          파기.
+        </li>
+      </ul>
+      <p>
+        파기 방법: 전자적 파일은 복구 불가능한 방식으로 영구 삭제하며,
+        출력물은 분쇄·소각합니다.
+      </p>
+
+      <h2 id="s6"><span class="num">06</span>개인정보의 제3자 제공</h2>
+      <p>
+        회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만,
+        다음의 경우는 예외로 합니다.
+      </p>
+      <ul>
+        <li>이용자가 사전에 동의한 경우</li>
+        <li>법령에 근거하거나 수사기관의 적법한 절차에 의한 요청이 있는 경우</li>
+        <li>
+          법인 모드에서 이용자가 회사 코드를 등록·승인한 경우, 해당 법인의
+          관리자에게 본인의 운전자 정보·차량·운행 기록이 공유됩니다.
+        </li>
+      </ul>
+
+      <h2 id="s7"><span class="num">07</span>처리위탁</h2>
+      <p>회사는 서비스 운영을 위해 다음과 같이 개인정보 처리를 위탁합니다.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>수탁업체</th>
+            <th>위탁 업무</th>
+            <th>보관 위치</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google LLC (Firebase)</td>
+            <td>
+              인증(Firebase Auth), 데이터베이스(Firestore), 푸시 알림(FCM),
+              크래시 리포트
+            </td>
+            <td>해외(미국 등 Google 데이터센터)</td>
+          </tr>
+          <tr>
+            <td>Google LLC (Google Play)</td>
+            <td>앱 배포 및 인앱 결제 처리</td>
+            <td>해외</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="s8"><span class="num">08</span>개인정보의 국외 이전</h2>
+      <p>
+        Firebase, Google Drive API 등의 이용을 위해 일부 개인정보가 미국 등
+        해외에 저장될 수 있습니다.
+      </p>
+      <ul>
+        <li><strong>이전 국가:</strong> 미국(주요) 외 Google 글로벌 데이터센터</li>
+        <li><strong>이전 항목:</strong> 본 방침 제1항에 명시된 항목 전반</li>
+        <li><strong>이전 방법:</strong> 네트워크를 통한 암호화(HTTPS/TLS) 전송</li>
+        <li>
+          <strong>보유 기간:</strong> 본 방침 제5항의 보유 기간과 동일
+        </li>
+      </ul>
+
+      <h2 id="s9"><span class="num">09</span>이용자의 권리와 행사 방법</h2>
+      <p>이용자는 언제든지 다음 권리를 행사할 수 있습니다.</p>
+      <ul>
+        <li>개인정보 열람·정정·삭제 요청</li>
+        <li>처리 정지 요청</li>
+        <li>동의 철회 및 회원 탈퇴</li>
+        <li>
+          앱 내 <strong>설정 → 계정</strong> 메뉴에서 직접 정보 수정 및 탈퇴 가능
+        </li>
+        <li>
+          기타 사항은 본 방침 제12항의 개인정보 보호책임자에게 이메일로 요청
+        </li>
+      </ul>
+
+      <h2 id="s10"><span class="num">10</span>아동의 개인정보</h2>
+      <p>
+        본 앱은 만 14세 미만 아동을 대상으로 하지 않으며, 의도적으로 아동의
+        개인정보를 수집하지 않습니다.
+      </p>
+
+      <h2 id="s11"><span class="num">11</span>안전성 확보 조치</h2>
+      <ul>
+        <li>전송 구간 암호화 (HTTPS/TLS)</li>
+        <li>Firestore 보안 규칙을 통한 접근 통제</li>
+        <li>OAuth 토큰의 기기 내 보안 저장소(Keystore) 보관</li>
+        <li>관리자 권한 최소화 및 접근 기록 관리</li>
+        <li>주기적인 보안 점검 및 취약점 대응</li>
+      </ul>
+
+      <h2 id="s12"><span class="num">12</span>개인정보 보호책임자 및 문의처</h2>
+      <div class="card">
+        <p style="margin: 0">
+          <strong>개인정보 보호책임자:</strong> LalaCatSoft 대표<br />
+          <strong>이메일:</strong>
+          <a href="mailto:spg489@gmail.com">spg489@gmail.com</a><br />
+          <strong>회사명:</strong> LalaCatSoft<br />
+          <strong>웹사이트:</strong>
+          <a href="https://lalacatsoft.com">https://lalacatsoft.com</a>
+        </p>
+      </div>
+      <p>
+        개인정보 침해 신고는 아래 기관에도 문의하실 수 있습니다.
+      </p>
+      <ul>
+        <li>
+          개인정보침해신고센터:
+          <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener"
+            >privacy.kisa.or.kr</a
+          >
+          / ☎ 118
+        </li>
+        <li>
+          개인정보분쟁조정위원회:
+          <a href="https://www.kopico.go.kr" target="_blank" rel="noopener"
+            >kopico.go.kr</a
+          >
+          / ☎ 1833-6972
+        </li>
+        <li>대검찰청 사이버수사과: ☎ 1301</li>
+        <li>경찰청 사이버수사국: ☎ 182</li>
+      </ul>
+
+      <h2 id="s13"><span class="num">13</span>개인정보처리방침의 변경</h2>
+      <p>
+        본 방침이 변경될 경우, 변경 사항을 시행일 최소 7일 전(중요한 변경 시
+        30일 전)에 앱 공지사항 또는 본 페이지를 통해 안내합니다.
+      </p>
+
+      <div class="callout" style="margin-top: 32px">
+        본 방침은 한국어를 정본으로 합니다. 영문 또는 기타 언어 번역본은 참고용
+        이며, 한국어 원문과의 해석 차이가 있을 경우 한국어 원문이 우선합니다.
+      </div>
+    </main>
+
+    <footer class="site">
+      © 2026 LalaCatSoft. All rights reserved.
+    </footer>
+  </body>
+</html>
