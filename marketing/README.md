@@ -7,8 +7,8 @@
 | 파일 | 내용 | 최종 업데이트 |
 |------|------|--------------|
 | [01_market.md](01_market.md) | 시장 규모 및 법적 환경 | 2026-05-19 (법적 조건 업데이트) |
-| [02_personas.md](02_personas.md) | 타겟 페르소나 | 2026-05-19 |
-| [03_competitive.md](03_competitive.md) | 경쟁사 분석 | 2026-05-19 (카택스 요금제 확인, 포지셔닝 재정의) |
+| [02_personas.md](02_personas.md) | 타겟 페르소나 | 2026-05-19 (로컬 모드 Persona D 추가, Persona C 업데이트) |
+| [03_competitive.md](03_competitive.md) | 경쟁사 분석 | 2026-05-19 (AES-256 암호화 차별점 추가, 블루투스 오류 수정) |
 | [04_channels.md](04_channels.md) | 채널 전략 및 실험 결과 | 2026-05-19 (세무사 커뮤니티 채널 추가) |
 | [05_revenue.md](05_revenue.md) | 수익 모델 시나리오 | 2026-05-19 |
 
