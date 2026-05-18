@@ -1,436 +1,459 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>드라이브로그 계정 및 데이터 삭제 안내 · LalaCatSoft</title>
-    <meta
-      name="description"
-      content="LalaCatSoft가 제공하는 법인차량 운행기록 자동화 앱 '드라이브로그(DriveLog)'의 계정·데이터 삭제 안내 페이지입니다."
-    />
-    <meta name="robots" content="index, follow" />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --bg: #0b1020;
-        --bg-2: #0e1530;
-        --surface: #131a36;
-        --border: #1f2a52;
-        --text: #e6ecff;
-        --muted: #9aa6c9;
-        --cyan: #3ee0ff;
-        --cyan-2: #7af0ff;
-        --accent-grad: linear-gradient(135deg, #3ee0ff 0%, #7af0ff 100%);
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>드라이브로그 계정 및 데이터 삭제 안내 · LalaCatSoft</title>
+  <meta name="description" content="LalaCatSoft가 제공하는 법인차량 운행기록 자동화 앱 '드라이브로그(DriveLog)'의 계정·데이터 삭제 안내 페이지입니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-2: #0e1530;
+      --surface: #131a36;
+      --border: #1f2a52;
+      --text: #e6ecff;
+      --muted: #9aa6c9;
+      --cyan: #3ee0ff;
+      --cyan-2: #7af0ff;
+      --accent-grad: linear-gradient(135deg, #3ee0ff 0%, #7af0ff 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 20% 10%,
+          rgba(62, 224, 255, 0.08),
+          transparent 50%),
+        radial-gradient(circle at 80% 30%,
+          rgba(122, 240, 255, 0.06),
+          transparent 50%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    header.site {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(11, 16, 32, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header.site .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .brand .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent-grad);
+      display: grid;
+      place-items: center;
+      color: #06122a;
+      font-weight: 800;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 14px;
+    }
+
+    header.site nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      margin-left: 18px;
+      transition: color 0.2s;
+    }
+
+    header.site nav a:hover {
+      color: var(--cyan);
+    }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(62, 224, 255, 0.06);
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 18px 0 12px;
+      font-weight: 700;
+    }
+
+    h1 .grad {
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .lead {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 26px;
+      margin: 18px 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 44px 0 12px;
+      padding-top: 8px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    h2 .num {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      color: var(--cyan);
+      margin-right: 10px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin: 24px 0 8px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    p,
+    li {
+      color: #c8d0eb;
+      font-size: 15px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    ul,
+    ol {
+      padding-left: 22px;
+    }
+
+    ul li,
+    ol li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(62, 224, 255, 0.4);
+    }
+
+    a:hover {
+      color: var(--cyan-2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 8px;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(62, 224, 255, 0.06);
+      color: var(--cyan);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .callout {
+      border-left: 3px solid var(--cyan);
+      background: rgba(62, 224, 255, 0.05);
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+      color: #d6deff;
+      font-size: 14px;
+    }
+
+    .big-answer {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--cyan);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 28px 0 12px;
+    }
+
+    .big-answer .q {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .big-answer .a {
+      margin: 10px 0 0;
+      font-size: 20px;
+      line-height: 1.5;
+      color: var(--text);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    footer.site {
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    @media (max-width: 600px) {
+      header.site nav a:not(:last-child) {
+        display: none;
       }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family:
-          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-        line-height: 1.7;
-        -webkit-font-smoothing: antialiased;
-      }
-      body {
-        background:
-          radial-gradient(
-            circle at 20% 10%,
-            rgba(62, 224, 255, 0.08),
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 80% 30%,
-            rgba(122, 240, 255, 0.06),
-            transparent 50%
-          ),
-          var(--bg);
-        min-height: 100vh;
-      }
-      header.site {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        backdrop-filter: blur(18px);
-        background: rgba(11, 16, 32, 0.7);
-        border-bottom: 1px solid var(--border);
-      }
-      header.site .wrap {
-        max-width: 880px;
-        margin: 0 auto;
-        padding: 14px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-      }
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--text);
-        text-decoration: none;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-      }
-      .brand .logo {
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-        background: var(--accent-grad);
-        display: grid;
-        place-items: center;
-        color: #06122a;
-        font-weight: 800;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 14px;
-      }
-      header.site nav a {
-        color: var(--muted);
-        text-decoration: none;
-        font-size: 13px;
-        margin-left: 18px;
-        transition: color 0.2s;
-      }
-      header.site nav a:hover {
-        color: var(--cyan);
-      }
-      main {
-        max-width: 880px;
-        margin: 0 auto;
-        padding: 56px 24px 80px;
-      }
-      .eyebrow {
-        display: inline-block;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--cyan);
-        padding: 6px 12px;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        background: rgba(62, 224, 255, 0.06);
-      }
-      h1 {
-        font-size: clamp(28px, 4vw, 40px);
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-        margin: 18px 0 12px;
-        font-weight: 700;
-      }
-      h1 .grad {
-        background: var(--accent-grad);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .meta {
-        color: var(--muted);
-        font-size: 14px;
-        font-family: "JetBrains Mono", monospace;
-      }
-      .lead {
-        margin-top: 24px;
-        color: var(--muted);
-        font-size: 16px;
-      }
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 22px 26px;
-        margin: 18px 0;
-      }
-      h2 {
-        font-size: 20px;
-        margin: 44px 0 12px;
-        padding-top: 8px;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-        color: var(--text);
-      }
-      h2 .num {
-        display: inline-block;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 13px;
-        color: var(--cyan);
-        margin-right: 10px;
-      }
-      h3 {
-        font-size: 16px;
-        margin: 24px 0 8px;
-        color: var(--text);
-        font-weight: 600;
-      }
-      p,
-      li {
-        color: #c8d0eb;
-        font-size: 15px;
-      }
-      strong {
-        color: var(--text);
-        font-weight: 600;
-      }
-      ul,
-      ol {
-        padding-left: 22px;
-      }
-      ul li,
-      ol li {
-        margin: 6px 0;
-      }
-      a {
-        color: var(--cyan);
-        text-decoration: none;
-        border-bottom: 1px dotted rgba(62, 224, 255, 0.4);
-      }
-      a:hover {
-        color: var(--cyan-2);
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 12px 0 8px;
-        font-size: 14px;
-        overflow: hidden;
-        border-radius: 12px;
-      }
-      th,
-      td {
-        text-align: left;
-        padding: 12px 14px;
-        border-bottom: 1px solid var(--border);
-        vertical-align: top;
-      }
-      th {
-        background: rgba(62, 224, 255, 0.06);
-        color: var(--cyan);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 12px;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        font-weight: 600;
-      }
-      tbody tr:last-child td {
-        border-bottom: none;
-      }
-      .callout {
-        border-left: 3px solid var(--cyan);
-        background: rgba(62, 224, 255, 0.05);
-        padding: 14px 18px;
-        border-radius: 0 12px 12px 0;
-        margin: 16px 0;
-        color: #d6deff;
-        font-size: 14px;
-      }
-      .big-answer {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-left: 3px solid var(--cyan);
-        border-radius: 16px;
-        padding: 24px 28px;
-        margin: 28px 0 12px;
-      }
-      .big-answer .q {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 12px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--cyan);
-      }
+
       .big-answer .a {
-        margin: 10px 0 0;
-        font-size: 20px;
-        line-height: 1.5;
-        color: var(--text);
-        font-weight: 600;
-        letter-spacing: -0.01em;
+        font-size: 17px;
       }
-      footer.site {
-        border-top: 1px solid var(--border);
-        margin-top: 60px;
-        padding: 28px 24px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 13px;
-        font-family: "JetBrains Mono", monospace;
-      }
-      @media (max-width: 600px) {
-        header.site nav a:not(:last-child) {
-          display: none;
-        }
-        .big-answer .a {
-          font-size: 17px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="site">
-      <div class="wrap">
-        <a class="brand" href="/">
-          <span class="logo">L</span>
-          <span>LalaCatSoft</span>
-        </a>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/#product">드라이브로그</a>
-          <a href="/drivelog/privacy.html">개인정보처리방침</a>
-        </nav>
-      </div>
-    </header>
+    }
+  </style>
+</head>
 
-    <main>
-      <span class="eyebrow">Account &amp; Data Deletion · DriveLog</span>
-      <h1>
-        드라이브로그 <span class="grad">계정 및 데이터 삭제</span> 안내
-      </h1>
-      <p class="meta">
-        시행일: 2026년 5월 17일 · 최종 개정일: 2026년 5월 17일
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <span class="logo">L</span>
+        <span>LalaCatSoft</span>
+      </a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/#product">드라이브로그</a>
+        <a href="/drivelog/privacy.html">개인정보처리방침</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="eyebrow">Account &amp; Data Deletion · DriveLog</span>
+    <h1>
+      드라이브로그 <span class="grad">계정 및 데이터 삭제</span> 안내
+    </h1>
+    <p class="meta">
+      시행일: 2026년 5월 17일 · 최종 개정일: 2026년 5월 17일
+    </p>
+
+    <div class="big-answer">
+      <div class="q">탈퇴 방법</div>
+      <p class="a">
+        귀사의 관리자분에게 탈퇴 요청하시면 됩니다.
       </p>
+    </div>
 
-      <div class="big-answer">
-        <div class="q">탈퇴 방법</div>
-        <p class="a">
-          귀사의 관리자분에게 탈퇴 요청하시면 됩니다.
-        </p>
-      </div>
-
-      <p class="lead">
-        드라이브로그(DriveLog) 운전자 앱은 <strong>고객사(법인)가 운행기록을 관리하기
+    <p class="lead">
+      드라이브로그(DriveLog) 운전자 앱은 <strong>고객사(법인)가 운행기록을 관리하기
         위해 도입하는 B2B 서비스</strong>입니다. 운전자 본인의 계정·운행기록에 대한
-        결정 권한은 소속 고객사에 있으므로, 탈퇴 및 데이터 삭제는 원칙적으로
-        <strong>소속 회사의 관리자</strong>에게 요청해 주십시오.
+      결정 권한은 소속 고객사에 있으므로, 탈퇴 및 데이터 삭제는 원칙적으로
+      <strong>소속 회사의 관리자</strong>에게 요청해 주십시오.
+    </p>
+
+    <h2 id="s1"><span class="num">01</span>회사 모드 사용자의 탈퇴 절차</h2>
+    <ol>
+      <li>
+        소속 회사의 <strong>드라이브로그 관리자</strong>에게 탈퇴(승인 해제)를
+        요청합니다. (회사 내부 인사·총무 담당자가 관리자인 경우가 많습니다.)
+      </li>
+      <li>
+        관리자가 관리자 앱에서 해당 운전자의 승인을 해제하면, 운전자 앱은 더
+        이상 운행기록을 회사로 전송하지 않습니다.
+      </li>
+      <li>
+        운전자 본인이 단말에서 <strong>앱을 삭제</strong>하면, 단말 내 모든 차량·
+        운행기록·캐시가 즉시 파기됩니다.
+      </li>
+    </ol>
+
+    <h2 id="s2"><span class="num">02</span>로컬 모드 사용자의 탈퇴 절차</h2>
+    <p>
+      회사 등록 없이 폰에만 운행기록을 저장하는 <strong>로컬 모드</strong>로
+      사용 중인 경우에는 별도의 탈퇴 절차가 없습니다.
+      앱을 삭제하시면 단말 내 모든 데이터가 즉시 파기되며, 로컬 모드에서는
+      애초에 회사 서버나 외부로 어떠한 데이터도 전송되지 않습니다.
+    </p>
+
+    <h2 id="s3"><span class="num">03</span>관리자에게 요청이 어려운 경우</h2>
+    <p>
+      퇴사·연락 두절 등으로 소속 회사 관리자에게 요청하기 어려운 사정이 있는
+      경우, 아래 이메일로 직접 요청하실 수 있습니다. 본인 확인을 거친 후
+      고객사와 협의하여 처리합니다.
+    </p>
+    <div class="card">
+      <p style="margin: 0">
+        <strong>요청처:</strong> LalaCatSoft 개인정보 보호책임자<br />
+        <strong>이메일:</strong>
+        <a href="mailto:deridokseo@gmail.com">deridokseo@gmail.com</a><br />
+        <strong>요청 시 기재 사항:</strong>
       </p>
-
-      <h2 id="s1"><span class="num">01</span>회사 모드 사용자의 탈퇴 절차</h2>
-      <ol>
-        <li>
-          소속 회사의 <strong>드라이브로그 관리자</strong>에게 탈퇴(승인 해제)를
-          요청합니다. (회사 내부 인사·총무 담당자가 관리자인 경우가 많습니다.)
-        </li>
-        <li>
-          관리자가 관리자 앱에서 해당 운전자의 승인을 해제하면, 운전자 앱은 더
-          이상 운행기록을 회사로 전송하지 않습니다.
-        </li>
-        <li>
-          운전자 본인이 단말에서 <strong>앱을 삭제</strong>하면, 단말 내 모든 차량·
-          운행기록·캐시가 즉시 파기됩니다.
-        </li>
-      </ol>
-
-      <h2 id="s2"><span class="num">02</span>로컬 모드 사용자의 탈퇴 절차</h2>
-      <p>
-        회사 등록 없이 폰에만 운행기록을 저장하는 <strong>로컬 모드</strong>로
-        사용 중인 경우에는 별도의 탈퇴 절차가 없습니다.
-        앱을 삭제하시면 단말 내 모든 데이터가 즉시 파기되며, 로컬 모드에서는
-        애초에 회사 서버나 외부로 어떠한 데이터도 전송되지 않습니다.
-      </p>
-
-      <h2 id="s3"><span class="num">03</span>관리자에게 요청이 어려운 경우</h2>
-      <p>
-        퇴사·연락 두절 등으로 소속 회사 관리자에게 요청하기 어려운 사정이 있는
-        경우, 아래 이메일로 직접 요청하실 수 있습니다. 본인 확인을 거친 후
-        고객사와 협의하여 처리합니다.
-      </p>
-      <div class="card">
-        <p style="margin: 0">
-          <strong>요청처:</strong> LalaCatSoft 개인정보 보호책임자<br />
-          <strong>이메일:</strong>
-          <a href="mailto:deridokseo@gmail.com">deridokseo@gmail.com</a><br />
-          <strong>요청 시 기재 사항:</strong>
-        </p>
-        <ul style="margin: 10px 0 0">
-          <li>이름 및 연락처</li>
-          <li>소속(또는 과거 소속) 회사명</li>
-          <li>드라이브로그 앱에 등록했던 회사 코드(아는 경우)</li>
-          <li>삭제를 원하는 데이터 범위 (전체 / 특정 기간)</li>
-        </ul>
-      </div>
-
-      <h2 id="s4"><span class="num">04</span>삭제되는 데이터와 남는 데이터</h2>
-      <p>
-        탈퇴(승인 해제 + 앱 삭제 또는 LalaCatSoft 요청 처리) 시 다음과 같이
-        처리됩니다.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>대상</th>
-            <th>처리</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>단말 내 차량·운행기록·캐시</td>
-            <td>앱 삭제 즉시 영구 파기</td>
-          </tr>
-          <tr>
-            <td>
-              LalaCatSoft Firestore 내 운영용 메타데이터<br />
-              <span style="color: var(--muted); font-size: 13px"
-                >(이름, 부서, 기기 식별자, FCM 토큰, 승인 상태 등)</span
-              >
-            </td>
-            <td>
-              승인 해제 시 비활성화, 고객사 요청 시 지체 없이 파기
-            </td>
-          </tr>
-          <tr>
-            <td>중복 전송 방지용 임시 식별자(sentRecords)</td>
-            <td>전송 후 30일 경과 시 자동 파기</td>
-          </tr>
-          <tr>
-            <td>접속·통신 로그</td>
-            <td>「통신비밀보호법」에 따라 3개월 보관 후 파기</td>
-          </tr>
-          <tr>
-            <td>
-              <strong>고객사 Google Drive 내 운행기록 본문</strong><br />
-              <span style="color: var(--muted); font-size: 13px"
-                >(암호화된 .enc 파일)</span
-              >
-            </td>
-            <td>
-              <strong>고객사가 자체 보관·관리</strong>합니다. 「법인세법」
-              제60조에 따른 5년 보존 의무 등을 고려해 고객사 정책에 따라
-              보존·파기되며, 삭제는 고객사에 직접 요청하셔야 합니다.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="callout">
-        운행기록 본문(고객사 Drive 내 파일)은 LalaCatSoft가 임의로 삭제할 수
-        없습니다. 운행기록 자체의 열람·정정·삭제는 정보 처리의 결정 주체인
-        <strong>소속 고객사</strong>에 요청해 주십시오.
-      </div>
-
-      <h2 id="s5"><span class="num">05</span>관련 문서</h2>
-      <ul>
-        <li>
-          <a href="/drivelog/privacy.html">드라이브로그 개인정보처리방침</a> —
-          전체 처리 구조와 보관 기간, 이용자 권리에 대한 상세 내용
-        </li>
+      <ul style="margin: 10px 0 0">
+        <li>이름 및 연락처</li>
+        <li>소속(또는 과거 소속) 회사명</li>
+        <li>드라이브로그 앱에 등록했던 회사 코드(아는 경우)</li>
+        <li>삭제를 원하는 데이터 범위 (전체 / 특정 기간)</li>
       </ul>
-    </main>
+    </div>
 
-    <footer class="site">
-      © 2026 LalaCatSoft. All rights reserved.
-    </footer>
-  </body>
+    <h2 id="s4"><span class="num">04</span>삭제되는 데이터와 남는 데이터</h2>
+    <p>
+      탈퇴(승인 해제 + 앱 삭제 또는 LalaCatSoft 요청 처리) 시 다음과 같이
+      처리됩니다.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>대상</th>
+          <th>처리</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>단말 내 차량·운행기록·캐시</td>
+          <td>앱 삭제 즉시 영구 파기</td>
+        </tr>
+        <tr>
+          <td>
+            LalaCatSoft Firestore 내 운영용 메타데이터<br />
+            <span style="color: var(--muted); font-size: 13px">(이름, 부서, 기기 식별자, FCM 토큰, 승인 상태 등)</span>
+          </td>
+          <td>
+            승인 해제 시 비활성화, 고객사 요청 시 지체 없이 파기
+          </td>
+        </tr>
+        <tr>
+          <td>중복 전송 방지용 임시 식별자(sentRecords)</td>
+          <td>전송 후 30일 경과 시 자동 파기</td>
+        </tr>
+        <tr>
+          <td>접속·통신 로그</td>
+          <td>「통신비밀보호법」에 따라 3개월 보관 후 파기</td>
+        </tr>
+        <tr>
+          <td>
+            <strong>고객사 Google Drive 내 운행기록 본문</strong><br />
+            <span style="color: var(--muted); font-size: 13px">(암호화된 .enc 파일)</span>
+          </td>
+          <td>
+            <strong>고객사가 자체 보관·관리</strong>합니다. 「법인세법」
+            제60조에 따른 5년 보존 의무 등을 고려해 고객사 정책에 따라
+            보존·파기되며, 삭제는 고객사에 직접 요청하셔야 합니다.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      운행기록 본문(고객사 Drive 내 파일)은 LalaCatSoft가 임의로 삭제할 수
+      없습니다. 운행기록 자체의 열람·정정·삭제는 정보 처리의 결정 주체인
+      <strong>소속 고객사</strong>에 요청해 주십시오.
+    </div>
+
+    <h2 id="s5"><span class="num">05</span>관련 문서</h2>
+    <ul>
+      <li>
+        <a href="/drivelog/privacy.html">드라이브로그 개인정보처리방침</a> —
+        전체 처리 구조와 보관 기간, 이용자 권리에 대한 상세 내용
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site">
+    © 2026 LalaCatSoft. All rights reserved.
+  </footer>
+</body>
+
 </html>

@@ -1,815 +1,833 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>드라이브로그 개인정보처리방침 · LalaCatSoft</title>
-    <meta
-      name="description"
-      content="LalaCatSoft가 제공하는 법인차량 운행기록 자동화 앱 '드라이브로그(DriveLog)'의 개인정보처리방침입니다."
-    />
-    <meta name="robots" content="index, follow" />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --bg: #0b1020;
-        --bg-2: #0e1530;
-        --surface: #131a36;
-        --border: #1f2a52;
-        --text: #e6ecff;
-        --muted: #9aa6c9;
-        --cyan: #3ee0ff;
-        --cyan-2: #7af0ff;
-        --accent-grad: linear-gradient(135deg, #3ee0ff 0%, #7af0ff 100%);
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family:
-          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-        line-height: 1.7;
-        -webkit-font-smoothing: antialiased;
-      }
-      body {
-        background:
-          radial-gradient(
-            circle at 20% 10%,
-            rgba(62, 224, 255, 0.08),
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 80% 30%,
-            rgba(122, 240, 255, 0.06),
-            transparent 50%
-          ),
-          var(--bg);
-        min-height: 100vh;
-      }
-      header.site {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        backdrop-filter: blur(18px);
-        background: rgba(11, 16, 32, 0.7);
-        border-bottom: 1px solid var(--border);
-      }
-      header.site .wrap {
-        max-width: 880px;
-        margin: 0 auto;
-        padding: 14px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-      }
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--text);
-        text-decoration: none;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-      }
-      .brand .logo {
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-        background: var(--accent-grad);
-        display: grid;
-        place-items: center;
-        color: #06122a;
-        font-weight: 800;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 14px;
-      }
-      header.site nav a {
-        color: var(--muted);
-        text-decoration: none;
-        font-size: 13px;
-        margin-left: 18px;
-        transition: color 0.2s;
-      }
-      header.site nav a:hover {
-        color: var(--cyan);
-      }
-      main {
-        max-width: 880px;
-        margin: 0 auto;
-        padding: 56px 24px 80px;
-      }
-      .eyebrow {
-        display: inline-block;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--cyan);
-        padding: 6px 12px;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        background: rgba(62, 224, 255, 0.06);
-      }
-      h1 {
-        font-size: clamp(28px, 4vw, 40px);
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-        margin: 18px 0 12px;
-        font-weight: 700;
-      }
-      h1 .grad {
-        background: var(--accent-grad);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .meta {
-        color: var(--muted);
-        font-size: 14px;
-        font-family: "JetBrains Mono", monospace;
-      }
-      .lead {
-        margin-top: 24px;
-        color: var(--muted);
-        font-size: 16px;
-      }
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 22px 26px;
-        margin: 18px 0;
-      }
-      h2 {
-        font-size: 20px;
-        margin: 44px 0 12px;
-        padding-top: 8px;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-        color: var(--text);
-      }
-      h2 .num {
-        display: inline-block;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 13px;
-        color: var(--cyan);
-        margin-right: 10px;
-      }
-      h3 {
-        font-size: 16px;
-        margin: 24px 0 8px;
-        color: var(--text);
-        font-weight: 600;
-      }
-      p,
-      li {
-        color: #c8d0eb;
-        font-size: 15px;
-      }
-      strong {
-        color: var(--text);
-        font-weight: 600;
-      }
-      ul,
-      ol {
-        padding-left: 22px;
-      }
-      ul li,
-      ol li {
-        margin: 6px 0;
-      }
-      a {
-        color: var(--cyan);
-        text-decoration: none;
-        border-bottom: 1px dotted rgba(62, 224, 255, 0.4);
-      }
-      a:hover {
-        color: var(--cyan-2);
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 12px 0 8px;
-        font-size: 14px;
-        overflow: hidden;
-        border-radius: 12px;
-      }
-      th,
-      td {
-        text-align: left;
-        padding: 12px 14px;
-        border-bottom: 1px solid var(--border);
-        vertical-align: top;
-      }
-      th {
-        background: rgba(62, 224, 255, 0.06);
-        color: var(--cyan);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 12px;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        font-weight: 600;
-      }
-      tbody tr:last-child td {
-        border-bottom: none;
-      }
-      .callout {
-        border-left: 3px solid var(--cyan);
-        background: rgba(62, 224, 255, 0.05);
-        padding: 14px 18px;
-        border-radius: 0 12px 12px 0;
-        margin: 16px 0;
-        color: #d6deff;
-        font-size: 14px;
-      }
-      .toc {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 18px 22px;
-        margin: 28px 0 8px;
-      }
-      .toc h4 {
-        margin: 0 0 10px;
-        font-size: 12px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--cyan);
-        font-family: "JetBrains Mono", monospace;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>드라이브로그 개인정보처리방침 · LalaCatSoft</title>
+  <meta name="description" content="LalaCatSoft가 제공하는 법인차량 운행기록 자동화 앱 '드라이브로그(DriveLog)'의 개인정보처리방침입니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-2: #0e1530;
+      --surface: #131a36;
+      --border: #1f2a52;
+      --text: #e6ecff;
+      --muted: #9aa6c9;
+      --cyan: #3ee0ff;
+      --cyan-2: #7af0ff;
+      --accent-grad: linear-gradient(135deg, #3ee0ff 0%, #7af0ff 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 20% 10%,
+          rgba(62, 224, 255, 0.08),
+          transparent 50%),
+        radial-gradient(circle at 80% 30%,
+          rgba(122, 240, 255, 0.06),
+          transparent 50%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    header.site {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(11, 16, 32, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header.site .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .brand .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent-grad);
+      display: grid;
+      place-items: center;
+      color: #06122a;
+      font-weight: 800;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 14px;
+    }
+
+    header.site nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      margin-left: 18px;
+      transition: color 0.2s;
+    }
+
+    header.site nav a:hover {
+      color: var(--cyan);
+    }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(62, 224, 255, 0.06);
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 18px 0 12px;
+      font-weight: 700;
+    }
+
+    h1 .grad {
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .lead {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 26px;
+      margin: 18px 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 44px 0 12px;
+      padding-top: 8px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    h2 .num {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      color: var(--cyan);
+      margin-right: 10px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin: 24px 0 8px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    p,
+    li {
+      color: #c8d0eb;
+      font-size: 15px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    ul,
+    ol {
+      padding-left: 22px;
+    }
+
+    ul li,
+    ol li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(62, 224, 255, 0.4);
+    }
+
+    a:hover {
+      color: var(--cyan-2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 8px;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(62, 224, 255, 0.06);
+      color: var(--cyan);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .callout {
+      border-left: 3px solid var(--cyan);
+      background: rgba(62, 224, 255, 0.05);
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+      color: #d6deff;
+      font-size: 14px;
+    }
+
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 28px 0 8px;
+    }
+
+    .toc h4 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 18px;
+      columns: 2;
+      column-gap: 24px;
+    }
+
+    .toc ol li {
+      break-inside: avoid;
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .toc a {
+      color: #c8d0eb;
+      border-bottom: none;
+    }
+
+    .toc a:hover {
+      color: var(--cyan);
+    }
+
+    footer.site {
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    @media (max-width: 600px) {
       .toc ol {
-        margin: 0;
-        padding-left: 18px;
-        columns: 2;
-        column-gap: 24px;
+        columns: 1;
       }
-      .toc ol li {
-        break-inside: avoid;
-        margin: 4px 0;
-        font-size: 14px;
-      }
-      .toc a {
-        color: #c8d0eb;
-        border-bottom: none;
-      }
-      .toc a:hover {
-        color: var(--cyan);
-      }
-      footer.site {
-        border-top: 1px solid var(--border);
-        margin-top: 60px;
-        padding: 28px 24px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 13px;
-        font-family: "JetBrains Mono", monospace;
-      }
-      @media (max-width: 600px) {
-        .toc ol {
-          columns: 1;
-        }
-        header.site nav a:not(:last-child) {
-          display: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="site">
-      <div class="wrap">
-        <a class="brand" href="/">
-          <span class="logo">L</span>
-          <span>LalaCatSoft</span>
-        </a>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/#product">드라이브로그</a>
-        </nav>
-      </div>
-    </header>
 
-    <main>
-      <span class="eyebrow">Privacy Policy · DriveLog</span>
-      <h1>
-        드라이브로그 <span class="grad">개인정보처리방침</span>
-      </h1>
-      <p class="meta">
-        시행일: 2026년 5월 17일 · 최종 개정일: 2026년 5월 17일
-      </p>
+      header.site nav a:not(:last-child) {
+        display: none;
+      }
+    }
+  </style>
+</head>
 
-      <p class="lead">
-        주식회사 LalaCatSoft(이하 "회사")는
-        <strong>드라이브로그(DriveLog)</strong> 운전자용 모바일 애플리케이션(이하
-        "운전자 앱")과 부속 서비스(관리자 앱, 클라우드 백엔드)의 개인정보 처리
-        구조를 안내합니다. 본 방침은 「개인정보 보호법」 및 관련 법령을
-        준수합니다.
-      </p>
-
-      <div class="callout">
-        <strong>요약 — 운전자 앱의 처리 구조.</strong> 드라이브로그는 법인이
-        업무용 차량 운행기록을 관리하기 위한 <strong>B2B 서비스</strong>입니다.
-        운전자가 입력·생성하는 운행 정보의 <strong>개인정보처리자(컨트롤러)는
-        해당 운전자가 소속된 고객사(법인)</strong>이며, LalaCatSoft는 고객사로부터
-        위탁받아 데이터를 전달·보관 기술만 제공하는 <strong>수탁자(프로세서)</strong>의
-        지위에 있습니다. 운전자 앱은 수집한 정보를 회사 서버에 별도 보관하지 않고,
-        암호화하여 <strong>고객사 소유의 Google Drive</strong>로 전달합니다.
-      </div>
-
-      <nav class="toc" aria-label="목차">
-        <h4>목차</h4>
-        <ol>
-          <li><a href="#s1">서비스 구조 및 역할</a></li>
-          <li><a href="#s2">처리 항목 및 수집 방법</a></li>
-          <li><a href="#s3">처리 목적</a></li>
-          <li><a href="#s4">앱 권한 안내</a></li>
-          <li><a href="#s5">위치(GPS) 처리 원칙</a></li>
-          <li><a href="#s6">데이터 흐름 및 저장 위치</a></li>
-          <li><a href="#s7">로컬 모드</a></li>
-          <li><a href="#s8">보관 기간 및 파기</a></li>
-          <li><a href="#s9">제3자 제공</a></li>
-          <li><a href="#s10">처리위탁 및 국외 이전</a></li>
-          <li><a href="#s11">관리자 앱의 Google API 사용</a></li>
-          <li><a href="#s12">이용자 권리</a></li>
-          <li><a href="#s13">아동 개인정보</a></li>
-          <li><a href="#s14">안전성 확보 조치</a></li>
-          <li><a href="#s15">개인정보 보호책임자</a></li>
-          <li><a href="#s16">방침 변경</a></li>
-        </ol>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <span class="logo">L</span>
+        <span>LalaCatSoft</span>
+      </a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/#product">드라이브로그</a>
       </nav>
+    </div>
+  </header>
 
-      <h2 id="s1"><span class="num">01</span>서비스 구조 및 역할</h2>
-      <p>
-        드라이브로그는 운전자 앱, 관리자 앱, 그리고 두 앱을 연결하는 클라우드
-        백엔드(Firebase)로 구성됩니다. 운행기록 데이터에 대해 각 주체의 역할은
-        다음과 같습니다.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>주체</th>
-            <th>역할</th>
-            <th>법적 지위</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>고객사 (운전자가 소속된 법인)</td>
-            <td>운행기록 수집·이용·보관의 결정 주체. 자체 Google Drive에 운행기록 보관.</td>
-            <td><strong>개인정보처리자</strong></td>
-          </tr>
-          <tr>
-            <td>LalaCatSoft</td>
-            <td>운전자 앱·관리자 앱·전달용 백엔드 기술 제공. 운행기록 본문은 보관하지 않음.</td>
-            <td><strong>수탁자</strong></td>
-          </tr>
-          <tr>
-            <td>운전자 (이용자)</td>
-            <td>고용계약·업무지시에 따라 운전자 앱을 통해 운행기록을 입력·생성.</td>
-            <td>정보주체</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        따라서 본 방침의 일부 권리(예: 운행기록 자체에 대한 열람·정정·삭제·처리
-        정지)는 <strong>운전자가 소속된 고객사</strong>를 통해 행사하는 것이
-        원칙이며, LalaCatSoft는 고객사의 지시에 따라 처리합니다.
-      </p>
+  <main>
+    <span class="eyebrow">Privacy Policy · DriveLog</span>
+    <h1>
+      드라이브로그 <span class="grad">개인정보처리방침</span>
+    </h1>
+    <p class="meta">
+      시행일: 2026년 5월 17일 · 최종 개정일: 2026년 5월 17일
+    </p>
 
-      <h2 id="s2"><span class="num">02</span>처리 항목 및 수집 방법</h2>
-      <h3>2-1. 운전자 앱이 처리·전송하는 항목</h3>
-      <p>
-        운전자 앱은 다음 항목을 단말기에 저장하고, 운행 종료 시 고객사 전달을
-        목적으로 회사 백엔드로 전송합니다.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>구분</th>
-            <th>항목</th>
-            <th>입력·생성 주체</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>등록 정보</td>
-            <td>회사 코드, 운전자 이름, 부서(선택)</td>
-            <td>운전자 직접 입력</td>
-          </tr>
-          <tr>
-            <td>기기 정보</td>
-            <td>기기 식별자(설치 단위), FCM 토큰, OS·앱 버전</td>
-            <td>앱 자동 생성</td>
-          </tr>
-          <tr>
-            <td>차량 정보</td>
-            <td>차량 번호, 차종, 계기판(odometer) 수치</td>
-            <td>운전자 직접 입력</td>
-          </tr>
-          <tr>
-            <td>운행 기록</td>
-            <td>
-              일자/요일, 출발·도착 시각, 운행 거리(km), 출발 전·후 계기판 수치,
-              운행 목적(업무/출퇴근/기타), 메모
-            </td>
-            <td>앱이 GPS로 거리만 계산하여 생성, 운전자가 목적·메모 입력</td>
-          </tr>
-        </tbody>
-      </table>
+    <p class="lead">
+      주식회사 LalaCatSoft(이하 "회사")는
+      <strong>드라이브로그(DriveLog)</strong> 운전자용 모바일 애플리케이션(이하
+      "운전자 앱")과 부속 서비스(관리자 앱, 클라우드 백엔드)의 개인정보 처리
+      구조를 안내합니다. 본 방침은 「개인정보 보호법」 및 관련 법령을
+      준수합니다.
+    </p>
 
-      <h3>2-2. 운전자 앱이 처리하지 않는 항목</h3>
-      <p>
-        오해가 없도록, <strong>운전자 앱이 수집하지 않거나 전송하지 않는</strong>
-        항목을 명시합니다.
-      </p>
-      <ul>
-        <li>
-          <strong>이메일·비밀번호·계정 인증 정보</strong> — 운전자 앱은 회사 코드와
-          기기 식별자만으로 동작하며, 별도의 회원가입이나 이메일 로그인이
-          없습니다.
-        </li>
-        <li>
-          <strong>GPS 위치 좌표</strong> — GPS는 운행 거리(km)를 계산하기 위한
-          용도로만 사용되며, 좌표(위도·경도) 자체는 회사 서버나 고객사로
-          전송되지 않습니다(자세한 내용은 5항).
-        </li>
-        <li>
-          <strong>결제·청구 정보</strong> — 본 서비스는 B2B 모델로, 운전자 본인에게
-          비용을 청구하지 않습니다. 인앱 결제 기능을 사용하지 않습니다.
-        </li>
-        <li>
-          <strong>주소록·통화내역·문자 등 단말 내 다른 개인정보</strong>.
-        </li>
-      </ul>
+    <div class="callout">
+      <strong>요약 — 운전자 앱의 처리 구조.</strong> 드라이브로그는 법인이
+      업무용 차량 운행기록을 관리하기 위한 <strong>B2B 서비스</strong>입니다.
+      운전자가 입력·생성하는 운행 정보의 <strong>개인정보처리자(컨트롤러)는
+        해당 운전자가 소속된 고객사(법인)</strong>이며, LalaCatSoft는 고객사로부터
+      위탁받아 데이터를 전달·보관 기술만 제공하는 <strong>수탁자(프로세서)</strong>의
+      지위에 있습니다. 운전자 앱은 수집한 정보를 회사 서버에 별도 보관하지 않고,
+      암호화하여 <strong>고객사 소유의 Google Drive</strong>로 전달합니다.
+    </div>
 
-      <h2 id="s3"><span class="num">03</span>처리 목적</h2>
-      <ul>
-        <li>법인차량 운행기록의 자동 측정·저장·관리</li>
-        <li>국세청 양식 운행기록부(소득세법 시행규칙 별지 65호) 작성 지원</li>
-        <li>고객사 관리자 앱에서의 운전자 승인·차량 관리·운행 동기화</li>
-        <li>관리자 승인 등 푸시 알림(FCM) 전송</li>
-        <li>고객 문의 응대 및 서비스 품질 개선</li>
-        <li>법령 또는 약관 위반 행위 대응</li>
-      </ul>
-      <p>
-        운전자 정보의 처리 근거는 「개인정보 보호법」 제15조 제1항 제4호(계약의
-        이행)에 해당하며, 운행기록 작성은 「소득세법 시행규칙」 별지 제65호의
-        법적 의무를 충족하기 위함입니다.
-      </p>
-
-      <h2 id="s4"><span class="num">04</span>앱 권한 안내</h2>
-      <p>
-        앱은 다음 권한을 사용하며, 이용자는 운영체제 설정에서 권한을 언제든
-        허용/거부할 수 있습니다. 일부 권한 거부 시 핵심 기능(자동 거리 측정 등)이
-        제한될 수 있습니다.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>권한</th>
-            <th>사용 목적</th>
-            <th>필수 여부</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>위치 (정확한 위치 · 백그라운드 포함)</td>
-            <td>
-              GPS 기반 운행 거리 자동 측정. 화면이 꺼진 상태에서도 안정적인 측정을
-              위해 백그라운드 위치 권한이 필요합니다.
-            </td>
-            <td>필수 (운행 측정 시)</td>
-          </tr>
-          <tr>
-            <td>알림</td>
-            <td>운행 중 포그라운드 서비스 상태 표시, 관리자 승인 등 FCM 푸시</td>
-            <td>필수</td>
-          </tr>
-          <tr>
-            <td>인터넷 / 네트워크 상태</td>
-            <td>운행기록 전송, 푸시 수신, 미전송 건 재시도</td>
-            <td>필수</td>
-          </tr>
-          <tr>
-            <td>블루투스 (스캔/연결)</td>
-            <td>등록된 차량과의 자동 연결 감지를 통한 운행 자동 시작</td>
-            <td>선택</td>
-          </tr>
-          <tr>
-            <td>배터리 최적화 예외</td>
-            <td>장시간 운행 시 시스템에 의한 앱 종료 방지</td>
-            <td>선택 (권장)</td>
-          </tr>
-          <tr>
-            <td>저장소 / 파일 공유</td>
-            <td>생성된 운행기록부 xlsx 파일 공유</td>
-            <td>선택</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2 id="s5"><span class="num">05</span>위치(GPS) 처리 원칙</h2>
-      <p>
-        드라이브로그의 위치 정보 처리에는 다음 원칙이 적용됩니다.
-      </p>
-      <ul>
-        <li>
-          <strong>거리 계산 전용.</strong> GPS 좌표는 운행 거리(km)를 누적
-          계산하기 위한 즉시(in-memory) 연산에만 사용됩니다.
-        </li>
-        <li>
-          <strong>좌표 비전송.</strong> 위·경도 좌표 자체는 LalaCatSoft 서버나
-          고객사 Drive로 <strong>전송되지 않습니다</strong>. 서버에는 거리(km),
-          시각, 차량·운전자 식별 정보만 전달됩니다.
-        </li>
-        <li>
-          <strong>로컬 임시 저장.</strong> 디버깅 및 화면 표시 보조를 위해 운행
-          시작·종료 시점의 좌표가 단말 내부 데이터베이스에 저장될 수 있으나,
-          이는 단말 외부로 나가지 않습니다.
-        </li>
-        <li>
-          <strong>광고·프로파일링 절대 금지.</strong> 위치 정보는 광고, 사용자
-          프로파일링 등 부수 목적에 사용되지 않습니다.
-        </li>
-        <li>
-          <strong>백그라운드 수집 고지.</strong> 운행기록부 작성을 위해 앱이
-          백그라운드에 있을 때에도 위치 정보를 수집할 수 있으며, 이는 운행 측정이
-          활성화된 시간 동안에만 적용됩니다.
-        </li>
-      </ul>
-
-      <h2 id="s6"><span class="num">06</span>데이터 흐름 및 저장 위치</h2>
+    <nav class="toc" aria-label="목차">
+      <h4>목차</h4>
       <ol>
-        <li>
-          <strong>운전자 앱 → LalaCatSoft 백엔드(Firebase Functions):</strong>
-          운행 종료 시 운행기록이 HTTPS/TLS로 전송됩니다.
-        </li>
-        <li>
-          <strong>백엔드에서 즉시 암호화:</strong> 운행기록 본문은
-          <strong>AES-256-GCM</strong>으로 암호화됩니다.
-        </li>
-        <li>
-          <strong>고객사 Google Drive로 업로드:</strong> 암호화된 파일(`.enc`)은
-          고객사 관리자의 OAuth 권한을 사용해 <strong>고객사가 소유한 Google
-          Drive 폴더</strong>에 업로드됩니다.
-        </li>
-        <li>
-          <strong>백엔드의 원본 미보관:</strong> 운행기록 원문은 LalaCatSoft
-          서버에 보관하지 않습니다. 중복 전송 방지(멱등성) 목적으로 기기
-          식별자·전송 시각만 30일간 보관 후 자동 삭제됩니다.
-        </li>
-        <li>
-          <strong>운영용 메타데이터:</strong> 운전자의 식별 정보(기기 식별자,
-          이름, 부서, 회사 코드, FCM 토큰, 승인 상태)는 관리자 앱이 운전자를
-          승인·관리하는 데 필요하므로 LalaCatSoft의 Firestore에 보관됩니다. 이
-          정보는 고객사 관리자만 조회·관리할 수 있습니다.
-        </li>
+        <li><a href="#s1">서비스 구조 및 역할</a></li>
+        <li><a href="#s2">처리 항목 및 수집 방법</a></li>
+        <li><a href="#s3">처리 목적</a></li>
+        <li><a href="#s4">앱 권한 안내</a></li>
+        <li><a href="#s5">위치(GPS) 처리 원칙</a></li>
+        <li><a href="#s6">데이터 흐름 및 저장 위치</a></li>
+        <li><a href="#s7">로컬 모드</a></li>
+        <li><a href="#s8">보관 기간 및 파기</a></li>
+        <li><a href="#s9">제3자 제공</a></li>
+        <li><a href="#s10">처리위탁 및 국외 이전</a></li>
+        <li><a href="#s11">관리자 앱의 Google API 사용</a></li>
+        <li><a href="#s12">이용자 권리</a></li>
+        <li><a href="#s13">아동 개인정보</a></li>
+        <li><a href="#s14">안전성 확보 조치</a></li>
+        <li><a href="#s15">개인정보 보호책임자</a></li>
+        <li><a href="#s16">방침 변경</a></li>
       </ol>
+    </nav>
 
-      <h2 id="s7"><span class="num">07</span>로컬 모드</h2>
-      <p>
-        운전자 앱은 회사 코드 없이 사용 가능한 <strong>로컬 모드</strong>를
-        제공합니다. 로컬 모드에서는 다음과 같이 동작합니다.
+    <h2 id="s1"><span class="num">01</span>서비스 구조 및 역할</h2>
+    <p>
+      드라이브로그는 운전자 앱, 관리자 앱, 그리고 두 앱을 연결하는 클라우드
+      백엔드(Firebase)로 구성됩니다. 운행기록 데이터에 대해 각 주체의 역할은
+      다음과 같습니다.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>주체</th>
+          <th>역할</th>
+          <th>법적 지위</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>고객사 (운전자가 소속된 법인)</td>
+          <td>운행기록 수집·이용·보관의 결정 주체. 자체 Google Drive에 운행기록 보관.</td>
+          <td><strong>개인정보처리자</strong></td>
+        </tr>
+        <tr>
+          <td>LalaCatSoft</td>
+          <td>운전자 앱·관리자 앱·전달용 백엔드 기술 제공. 운행기록 본문은 보관하지 않음.</td>
+          <td><strong>수탁자</strong></td>
+        </tr>
+        <tr>
+          <td>운전자 (이용자)</td>
+          <td>고용계약·업무지시에 따라 운전자 앱을 통해 운행기록을 입력·생성.</td>
+          <td>정보주체</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      따라서 본 방침의 일부 권리(예: 운행기록 자체에 대한 열람·정정·삭제·처리
+      정지)는 <strong>운전자가 소속된 고객사</strong>를 통해 행사하는 것이
+      원칙이며, LalaCatSoft는 고객사의 지시에 따라 처리합니다.
+    </p>
+
+    <h2 id="s2"><span class="num">02</span>처리 항목 및 수집 방법</h2>
+    <h3>2-1. 운전자 앱이 처리·전송하는 항목</h3>
+    <p>
+      운전자 앱은 다음 항목을 단말기에 저장하고, 운행 종료 시 고객사 전달을
+      목적으로 회사 백엔드로 전송합니다.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>항목</th>
+          <th>입력·생성 주체</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>등록 정보</td>
+          <td>회사 코드, 운전자 이름, 부서(선택)</td>
+          <td>운전자 직접 입력</td>
+        </tr>
+        <tr>
+          <td>기기 정보</td>
+          <td>기기 식별자(설치 단위), FCM 토큰, OS·앱 버전</td>
+          <td>앱 자동 생성</td>
+        </tr>
+        <tr>
+          <td>차량 정보</td>
+          <td>차량 번호, 차종, 계기판(odometer) 수치</td>
+          <td>운전자 직접 입력</td>
+        </tr>
+        <tr>
+          <td>운행 기록</td>
+          <td>
+            일자/요일, 출발·도착 시각, 운행 거리(km), 출발 전·후 계기판 수치,
+            운행 목적(업무/출퇴근/기타), 메모
+          </td>
+          <td>앱이 GPS로 거리만 계산하여 생성, 운전자가 목적·메모 입력</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2-2. 운전자 앱이 처리하지 않는 항목</h3>
+    <p>
+      오해가 없도록, <strong>운전자 앱이 수집하지 않거나 전송하지 않는</strong>
+      항목을 명시합니다.
+    </p>
+    <ul>
+      <li>
+        <strong>이메일·비밀번호·계정 인증 정보</strong> — 운전자 앱은 회사 코드와
+        기기 식별자만으로 동작하며, 별도의 회원가입이나 이메일 로그인이
+        없습니다.
+      </li>
+      <li>
+        <strong>GPS 위치 좌표</strong> — GPS는 운행 거리(km)를 계산하기 위한
+        용도로만 사용되며, 좌표(위도·경도) 자체는 회사 서버나 고객사로
+        전송되지 않습니다(자세한 내용은 5항).
+      </li>
+      <li>
+        <strong>결제·청구 정보</strong> — 본 서비스는 B2B 모델로, 운전자 본인에게
+        비용을 청구하지 않습니다. 인앱 결제 기능을 사용하지 않습니다.
+      </li>
+      <li>
+        <strong>주소록·통화내역·문자 등 단말 내 다른 개인정보</strong>.
+      </li>
+    </ul>
+
+    <h2 id="s3"><span class="num">03</span>처리 목적</h2>
+    <ul>
+      <li>법인차량 운행기록의 자동 측정·저장·관리</li>
+      <li>국세청 양식 운행기록부(소득세법 시행규칙 별지 65호) 작성 지원</li>
+      <li>고객사 관리자 앱에서의 운전자 승인·차량 관리·운행 동기화</li>
+      <li>관리자 승인 등 푸시 알림(FCM) 전송</li>
+      <li>고객 문의 응대 및 서비스 품질 개선</li>
+      <li>법령 또는 약관 위반 행위 대응</li>
+    </ul>
+    <p>
+      운전자 정보의 처리 근거는 「개인정보 보호법」 제15조 제1항 제4호(계약의
+      이행)에 해당하며, 운행기록 작성은 「소득세법 시행규칙」 별지 제65호의
+      법적 의무를 충족하기 위함입니다.
+    </p>
+
+    <h2 id="s4"><span class="num">04</span>앱 권한 안내</h2>
+    <p>
+      앱은 다음 권한을 사용하며, 이용자는 운영체제 설정에서 권한을 언제든
+      허용/거부할 수 있습니다. 일부 권한 거부 시 핵심 기능(자동 거리 측정 등)이
+      제한될 수 있습니다.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>권한</th>
+          <th>사용 목적</th>
+          <th>필수 여부</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>위치 (정확한 위치 · 백그라운드 포함)</td>
+          <td>
+            GPS 기반 운행 거리 자동 측정. 화면이 꺼진 상태에서도 안정적인 측정을
+            위해 백그라운드 위치 권한이 필요합니다.
+          </td>
+          <td>필수 (운행 측정 시)</td>
+        </tr>
+        <tr>
+          <td>알림</td>
+          <td>운행 중 포그라운드 서비스 상태 표시, 관리자 승인 등 FCM 푸시</td>
+          <td>필수</td>
+        </tr>
+        <tr>
+          <td>인터넷 / 네트워크 상태</td>
+          <td>운행기록 전송, 푸시 수신, 미전송 건 재시도</td>
+          <td>필수</td>
+        </tr>
+        <tr>
+          <td>블루투스 (스캔/연결)</td>
+          <td>등록된 차량과의 자동 연결 감지를 통한 운행 자동 시작</td>
+          <td>선택</td>
+        </tr>
+        <tr>
+          <td>배터리 최적화 예외</td>
+          <td>장시간 운행 시 시스템에 의한 앱 종료 방지</td>
+          <td>선택 (권장)</td>
+        </tr>
+        <tr>
+          <td>저장소 / 파일 공유</td>
+          <td>생성된 운행기록부 xlsx 파일 공유</td>
+          <td>선택</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="s5"><span class="num">05</span>위치(GPS) 처리 원칙</h2>
+    <p>
+      드라이브로그의 위치 정보 처리에는 다음 원칙이 적용됩니다.
+    </p>
+    <ul>
+      <li>
+        <strong>거리 계산 전용.</strong> GPS 좌표는 운행 거리(km)를 누적
+        계산하기 위한 즉시(in-memory) 연산에만 사용됩니다.
+      </li>
+      <li>
+        <strong>좌표 비전송.</strong> 위·경도 좌표 자체는 LalaCatSoft 서버나
+        고객사 Drive로 <strong>전송되지 않습니다</strong>. 서버에는 거리(km),
+        시각, 차량·운전자 식별 정보만 전달됩니다.
+      </li>
+      <li>
+        <strong>로컬 임시 저장.</strong> 디버깅 및 화면 표시 보조를 위해 운행
+        시작·종료 시점의 좌표가 단말 내부 데이터베이스에 저장될 수 있으나,
+        이는 단말 외부로 나가지 않습니다.
+      </li>
+      <li>
+        <strong>광고·프로파일링 절대 금지.</strong> 위치 정보는 광고, 사용자
+        프로파일링 등 부수 목적에 사용되지 않습니다.
+      </li>
+      <li>
+        <strong>백그라운드 수집 고지.</strong> 운행기록부 작성을 위해 앱이
+        백그라운드에 있을 때에도 위치 정보를 수집할 수 있으며, 이는 운행 측정이
+        활성화된 시간 동안에만 적용됩니다.
+      </li>
+    </ul>
+
+    <h2 id="s6"><span class="num">06</span>데이터 흐름 및 저장 위치</h2>
+    <ol>
+      <li>
+        <strong>운전자 앱 → LalaCatSoft 백엔드(Firebase Functions):</strong>
+        운행 종료 시 운행기록이 HTTPS/TLS로 전송됩니다.
+      </li>
+      <li>
+        <strong>백엔드에서 즉시 암호화:</strong> 운행기록 본문은
+        <strong>AES-256-GCM</strong>으로 암호화됩니다.
+      </li>
+      <li>
+        <strong>고객사 Google Drive로 업로드:</strong> 암호화된 파일(`.enc`)은
+        고객사 관리자의 OAuth 권한을 사용해 <strong>고객사가 소유한 Google
+          Drive 폴더</strong>에 업로드됩니다.
+      </li>
+      <li>
+        <strong>백엔드의 원본 미보관:</strong> 운행기록 원문은 LalaCatSoft
+        서버에 보관하지 않습니다. 중복 전송 방지(멱등성) 목적으로 기기
+        식별자·전송 시각만 30일간 보관 후 자동 삭제됩니다.
+      </li>
+      <li>
+        <strong>운영용 메타데이터:</strong> 운전자의 식별 정보(기기 식별자,
+        이름, 부서, 회사 코드, FCM 토큰, 승인 상태)는 관리자 앱이 운전자를
+        승인·관리하는 데 필요하므로 LalaCatSoft의 Firestore에 보관됩니다. 이
+        정보는 고객사 관리자만 조회·관리할 수 있습니다.
+      </li>
+    </ol>
+
+    <h2 id="s7"><span class="num">07</span>로컬 모드</h2>
+    <p>
+      운전자 앱은 회사 코드 없이 사용 가능한 <strong>로컬 모드</strong>를
+      제공합니다. 로컬 모드에서는 다음과 같이 동작합니다.
+    </p>
+    <ul>
+      <li>차량·운행 기록 등 모든 데이터가 <strong>단말 내부에만 저장</strong>됩니다.</li>
+      <li>LalaCatSoft 서버 또는 고객사로 어떠한 데이터도 전송되지 않습니다.</li>
+      <li>관리자 승인, 회사 동기화 등의 기능은 제공되지 않습니다.</li>
+    </ul>
+    <p>
+      로컬 모드에서 회사 코드 모드로 전환하는 경우, 단말에 저장된 운행기록은
+      본인의 명시적 동의(전환 확인 다이얼로그)를 거쳐 회사 코드 모드의
+      데이터 흐름(제6항)을 따라 처리됩니다.
+    </p>
+
+    <h2 id="s8"><span class="num">08</span>보관 기간 및 파기</h2>
+    <ul>
+      <li>
+        <strong>운행 기록 본문(고객사 Drive 내 `.enc` 파일):</strong> 고객사가
+        자체적으로 관리합니다. 「법인세법」 제60조에 따른 5년 보관 의무 등을
+        고려해 고객사 정책에 따라 보존·파기됩니다.
+      </li>
+      <li>
+        <strong>단말 내 데이터(차량·운행기록·캐시):</strong> 운전자가 앱을
+        삭제하면 즉시 파기됩니다. 앱 내 기록 삭제 기능을 통해 개별 항목을
+        삭제할 수도 있습니다.
+      </li>
+      <li>
+        <strong>LalaCatSoft Firestore 내 운영용 메타데이터:</strong> 운전자
+        승인 해제 또는 회사 탈퇴 시 비활성화되며, 고객사 요청 시 지체 없이
+        파기합니다.
+      </li>
+      <li>
+        <strong>중복 방지용 임시 식별자(sentRecords):</strong> 전송 후 30일이
+        경과하면 자동 파기됩니다.
+      </li>
+      <li>
+        <strong>로그·접속 기록:</strong> 통신비밀보호법에 따라 3개월간 보관 후
+        파기.
+      </li>
+    </ul>
+    <p>
+      파기 방법: 전자적 파일은 복구 불가능한 방식으로 영구 삭제하며,
+      출력물은 분쇄·소각합니다.
+    </p>
+
+    <h2 id="s9"><span class="num">09</span>제3자 제공</h2>
+    <p>
+      회사는 운전자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만
+      다음의 경우는 예외로 합니다.
+    </p>
+    <ul>
+      <li>
+        <strong>고객사(법인)로의 전달:</strong> 운전자가 회사 코드를 등록·승인
+        받으면, 본 방침 제2항의 정보가 해당 고객사 관리자에게 전달·공유됩니다.
+        이는 본 서비스의 핵심 기능이며 운전자가 회사 코드를 입력함으로써 그
+        사실을 인지하는 것을 전제로 합니다.
+      </li>
+      <li>법령에 근거하거나 수사기관의 적법한 절차에 의한 요청이 있는 경우.</li>
+      <li>이용자가 사전에 명시적으로 동의한 경우.</li>
+    </ul>
+
+    <h2 id="s10"><span class="num">10</span>처리위탁 및 국외 이전</h2>
+    <p>
+      회사는 서비스 운영을 위해 다음과 같이 개인정보 처리를 위탁합니다.
+      위탁된 정보는 HTTPS/TLS로 암호화 전송되며, 본 방침 제8항의 기간 동안
+      보관됩니다.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>수탁업체</th>
+          <th>위탁 업무</th>
+          <th>보관 위치</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google LLC (Firebase)</td>
+          <td>
+            백엔드 함수 실행(Cloud Functions), 운영 메타데이터 저장소(Firestore),
+            푸시 알림(FCM), 크래시 리포트
+          </td>
+          <td>해외(미국 등 Google 데이터센터)</td>
+        </tr>
+        <tr>
+          <td>Google LLC (Drive)</td>
+          <td>
+            고객사 소유 Drive에 암호화된 운행기록 업로드(고객사 관리자의 OAuth
+            위임 권한 사용)
+          </td>
+          <td>해외(미국 등 Google 데이터센터)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="s11">
+      <span class="num">11</span>관리자 앱의 Google API 사용
+    </h2>
+    <p>
+      고객사 관리자가 사용하는 별도의 <strong>관리자 앱</strong>은 운행기록을
+      고객사 본인 소유의 Google Drive에 보관하기 위해 다음 Google API를
+      사용합니다. 운전자 앱은 본 항목의 Google API를 사용하지 않습니다.
+    </p>
+    <ul>
+      <li>
+        <strong>사용 API:</strong> Google Drive API.
+      </li>
+      <li>
+        <strong>사용 범위(Scope):</strong> 운영에 필요한 최소 범위로 제한하며,
+        해당 앱이 직접 생성한 폴더/파일에 한해 접근합니다.
+      </li>
+      <li>
+        <strong>OAuth 토큰:</strong> 관리자가 부여한 OAuth refresh token은
+        <strong>AES-256-GCM</strong>으로 암호화하여 회사 백엔드에 보관하며,
+        운행기록 업로드 시 사용자(관리자) 권한으로 고객사 Drive에 접근하는
+        용도로만 사용됩니다.
+      </li>
+      <li>
+        <strong>연동 해제:</strong> 관리자는 언제든
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google 계정 권한
+          설정</a>에서 본 서비스의 Drive 접근 권한을 철회할 수 있습니다.
+      </li>
+    </ul>
+    <div class="callout">
+      드라이브로그의 Google 사용자 데이터 사용은
+      <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank"
+        rel="noopener noreferrer">Google API Services User Data Policy</a>(Limited Use 요구사항 포함)를 준수합니다. 회사는 Google 사용자
+      데이터를 광고 목적으로 사용하거나, 사람이 직접 읽거나, 제3자에게 판매하지
+      않습니다.
+    </div>
+
+    <h2 id="s12"><span class="num">12</span>이용자의 권리와 행사 방법</h2>
+    <p>운전자는 언제든지 다음 권리를 행사할 수 있습니다.</p>
+    <ul>
+      <li>
+        <strong>본인 운행기록에 대한 열람·정정·삭제 요청:</strong> 운전자가
+        소속된 고객사 관리자에게 요청하는 것이 원칙입니다. 고객사가 정보
+        처리의 결정 주체이기 때문입니다.
+      </li>
+      <li>
+        <strong>회사 코드 등록 철회:</strong> 운전자 앱 내
+        <strong>설정 → 등록 정보</strong>에서 등록을 해제하거나, 앱을 삭제하면
+        단말 내 데이터가 즉시 삭제됩니다.
+      </li>
+      <li>
+        <strong>로컬 모드 전환:</strong> 회사 동기화를 중단하고 단말 내 저장만
+        사용할 수 있습니다.
+      </li>
+      <li>
+        <strong>LalaCatSoft 내 운영용 메타데이터의 삭제:</strong> 본 방침
+        제15항의 개인정보 보호책임자에게 이메일로 요청. 다만 고객사가 정보
+        유지를 요청하는 경우 고객사와 합의 후 처리됩니다.
+      </li>
+    </ul>
+
+    <h2 id="s13"><span class="num">13</span>아동의 개인정보</h2>
+    <p>
+      본 앱은 법인 업무용 서비스로, 만 14세 미만 아동을 대상으로 하지 않으며,
+      의도적으로 아동의 개인정보를 수집하지 않습니다.
+    </p>
+
+    <h2 id="s14"><span class="num">14</span>안전성 확보 조치</h2>
+    <ul>
+      <li>전송 구간 암호화 (HTTPS/TLS)</li>
+      <li>운행기록의 AES-256-GCM 종단 암호화 후 고객사 Drive 보관</li>
+      <li>고객사 OAuth refresh token의 회사별 키 분리 암호화 보관</li>
+      <li>Firestore 보안 규칙 및 백엔드 토큰 인증을 통한 접근 통제</li>
+      <li>관리자 권한 최소화 및 접근 기록 관리</li>
+      <li>주기적인 보안 점검 및 취약점 대응</li>
+    </ul>
+
+    <h2 id="s15"><span class="num">15</span>개인정보 보호책임자 및 문의처</h2>
+    <div class="card">
+      <p style="margin: 0">
+        <strong>개인정보 보호책임자:</strong> LalaCatSoft 대표<br />
+        <strong>이메일:</strong>
+        <a href="mailto:deridokseo@gmail.com">deridokseo@gmail.com</a><br />
+        <strong>회사명:</strong> LalaCatSoft<br />
+        <strong>웹사이트:</strong>
+        <a href="https://lalacatsoft.com">https://lalacatsoft.com</a>
       </p>
-      <ul>
-        <li>차량·운행 기록 등 모든 데이터가 <strong>단말 내부에만 저장</strong>됩니다.</li>
-        <li>LalaCatSoft 서버 또는 고객사로 어떠한 데이터도 전송되지 않습니다.</li>
-        <li>관리자 승인, 회사 동기화 등의 기능은 제공되지 않습니다.</li>
-      </ul>
-      <p>
-        로컬 모드에서 회사 코드 모드로 전환하는 경우, 단말에 저장된 운행기록은
-        본인의 명시적 동의(전환 확인 다이얼로그)를 거쳐 회사 코드 모드의
-        데이터 흐름(제6항)을 따라 처리됩니다.
-      </p>
+    </div>
+    <p>
+      운행기록 본문에 대한 열람·정정·삭제 등 컨트롤러 권한 행사는 운전자가
+      소속된 <strong>고객사</strong>를 통해 요청하시기 바랍니다. 개인정보
+      침해 신고는 아래 기관에도 문의하실 수 있습니다.
+    </p>
+    <ul>
+      <li>
+        개인정보침해신고센터:
+        <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a>
+        / ☎ 118
+      </li>
+      <li>
+        개인정보분쟁조정위원회:
+        <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">kopico.go.kr</a>
+        / ☎ 1833-6972
+      </li>
+      <li>대검찰청 사이버수사과: ☎ 1301</li>
+      <li>경찰청 사이버수사국: ☎ 182</li>
+    </ul>
 
-      <h2 id="s8"><span class="num">08</span>보관 기간 및 파기</h2>
-      <ul>
-        <li>
-          <strong>운행 기록 본문(고객사 Drive 내 `.enc` 파일):</strong> 고객사가
-          자체적으로 관리합니다. 「법인세법」 제60조에 따른 5년 보관 의무 등을
-          고려해 고객사 정책에 따라 보존·파기됩니다.
-        </li>
-        <li>
-          <strong>단말 내 데이터(차량·운행기록·캐시):</strong> 운전자가 앱을
-          삭제하면 즉시 파기됩니다. 앱 내 기록 삭제 기능을 통해 개별 항목을
-          삭제할 수도 있습니다.
-        </li>
-        <li>
-          <strong>LalaCatSoft Firestore 내 운영용 메타데이터:</strong> 운전자
-          승인 해제 또는 회사 탈퇴 시 비활성화되며, 고객사 요청 시 지체 없이
-          파기합니다.
-        </li>
-        <li>
-          <strong>중복 방지용 임시 식별자(sentRecords):</strong> 전송 후 30일이
-          경과하면 자동 파기됩니다.
-        </li>
-        <li>
-          <strong>로그·접속 기록:</strong> 통신비밀보호법에 따라 3개월간 보관 후
-          파기.
-        </li>
-      </ul>
-      <p>
-        파기 방법: 전자적 파일은 복구 불가능한 방식으로 영구 삭제하며,
-        출력물은 분쇄·소각합니다.
-      </p>
+    <h2 id="s16"><span class="num">16</span>개인정보처리방침의 변경</h2>
+    <p>
+      본 방침이 변경될 경우, 변경 사항을 시행일 최소 7일 전(중요한 변경 시
+      30일 전)에 앱 공지사항 또는 본 페이지를 통해 안내합니다.
+    </p>
 
-      <h2 id="s9"><span class="num">09</span>제3자 제공</h2>
-      <p>
-        회사는 운전자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만
-        다음의 경우는 예외로 합니다.
-      </p>
-      <ul>
-        <li>
-          <strong>고객사(법인)로의 전달:</strong> 운전자가 회사 코드를 등록·승인
-          받으면, 본 방침 제2항의 정보가 해당 고객사 관리자에게 전달·공유됩니다.
-          이는 본 서비스의 핵심 기능이며 운전자가 회사 코드를 입력함으로써 그
-          사실을 인지하는 것을 전제로 합니다.
-        </li>
-        <li>법령에 근거하거나 수사기관의 적법한 절차에 의한 요청이 있는 경우.</li>
-        <li>이용자가 사전에 명시적으로 동의한 경우.</li>
-      </ul>
+    <div class="callout" style="margin-top: 32px">
+      본 방침은 한국어를 정본으로 합니다. 영문 또는 기타 언어 번역본은 참고용
+      이며, 한국어 원문과의 해석 차이가 있을 경우 한국어 원문이 우선합니다.
+    </div>
+  </main>
 
-      <h2 id="s10"><span class="num">10</span>처리위탁 및 국외 이전</h2>
-      <p>
-        회사는 서비스 운영을 위해 다음과 같이 개인정보 처리를 위탁합니다.
-        위탁된 정보는 HTTPS/TLS로 암호화 전송되며, 본 방침 제8항의 기간 동안
-        보관됩니다.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>수탁업체</th>
-            <th>위탁 업무</th>
-            <th>보관 위치</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Google LLC (Firebase)</td>
-            <td>
-              백엔드 함수 실행(Cloud Functions), 운영 메타데이터 저장소(Firestore),
-              푸시 알림(FCM), 크래시 리포트
-            </td>
-            <td>해외(미국 등 Google 데이터센터)</td>
-          </tr>
-          <tr>
-            <td>Google LLC (Drive)</td>
-            <td>
-              고객사 소유 Drive에 암호화된 운행기록 업로드(고객사 관리자의 OAuth
-              위임 권한 사용)
-            </td>
-            <td>해외(미국 등 Google 데이터센터)</td>
-          </tr>
-        </tbody>
-      </table>
+  <footer class="site">
+    © 2026 LalaCatSoft. All rights reserved.
+  </footer>
+</body>
 
-      <h2 id="s11">
-        <span class="num">11</span>관리자 앱의 Google API 사용
-      </h2>
-      <p>
-        고객사 관리자가 사용하는 별도의 <strong>관리자 앱</strong>은 운행기록을
-        고객사 본인 소유의 Google Drive에 보관하기 위해 다음 Google API를
-        사용합니다. 운전자 앱은 본 항목의 Google API를 사용하지 않습니다.
-      </p>
-      <ul>
-        <li>
-          <strong>사용 API:</strong> Google Drive API.
-        </li>
-        <li>
-          <strong>사용 범위(Scope):</strong> 운영에 필요한 최소 범위로 제한하며,
-          해당 앱이 직접 생성한 폴더/파일에 한해 접근합니다.
-        </li>
-        <li>
-          <strong>OAuth 토큰:</strong> 관리자가 부여한 OAuth refresh token은
-          <strong>AES-256-GCM</strong>으로 암호화하여 회사 백엔드에 보관하며,
-          운행기록 업로드 시 사용자(관리자) 권한으로 고객사 Drive에 접근하는
-          용도로만 사용됩니다.
-        </li>
-        <li>
-          <strong>연동 해제:</strong> 관리자는 언제든
-          <a
-            href="https://myaccount.google.com/permissions"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Google 계정 권한 설정</a
-          >에서 본 서비스의 Drive 접근 권한을 철회할 수 있습니다.
-        </li>
-      </ul>
-      <div class="callout">
-        드라이브로그의 Google 사용자 데이터 사용은
-        <a
-          href="https://developers.google.com/terms/api-services-user-data-policy"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Google API Services User Data Policy</a
-        >(Limited Use 요구사항 포함)를 준수합니다. 회사는 Google 사용자
-        데이터를 광고 목적으로 사용하거나, 사람이 직접 읽거나, 제3자에게 판매하지
-        않습니다.
-      </div>
-
-      <h2 id="s12"><span class="num">12</span>이용자의 권리와 행사 방법</h2>
-      <p>운전자는 언제든지 다음 권리를 행사할 수 있습니다.</p>
-      <ul>
-        <li>
-          <strong>본인 운행기록에 대한 열람·정정·삭제 요청:</strong> 운전자가
-          소속된 고객사 관리자에게 요청하는 것이 원칙입니다. 고객사가 정보
-          처리의 결정 주체이기 때문입니다.
-        </li>
-        <li>
-          <strong>회사 코드 등록 철회:</strong> 운전자 앱 내
-          <strong>설정 → 등록 정보</strong>에서 등록을 해제하거나, 앱을 삭제하면
-          단말 내 데이터가 즉시 삭제됩니다.
-        </li>
-        <li>
-          <strong>로컬 모드 전환:</strong> 회사 동기화를 중단하고 단말 내 저장만
-          사용할 수 있습니다.
-        </li>
-        <li>
-          <strong>LalaCatSoft 내 운영용 메타데이터의 삭제:</strong> 본 방침
-          제15항의 개인정보 보호책임자에게 이메일로 요청. 다만 고객사가 정보
-          유지를 요청하는 경우 고객사와 합의 후 처리됩니다.
-        </li>
-      </ul>
-
-      <h2 id="s13"><span class="num">13</span>아동의 개인정보</h2>
-      <p>
-        본 앱은 법인 업무용 서비스로, 만 14세 미만 아동을 대상으로 하지 않으며,
-        의도적으로 아동의 개인정보를 수집하지 않습니다.
-      </p>
-
-      <h2 id="s14"><span class="num">14</span>안전성 확보 조치</h2>
-      <ul>
-        <li>전송 구간 암호화 (HTTPS/TLS)</li>
-        <li>운행기록의 AES-256-GCM 종단 암호화 후 고객사 Drive 보관</li>
-        <li>고객사 OAuth refresh token의 회사별 키 분리 암호화 보관</li>
-        <li>Firestore 보안 규칙 및 백엔드 토큰 인증을 통한 접근 통제</li>
-        <li>관리자 권한 최소화 및 접근 기록 관리</li>
-        <li>주기적인 보안 점검 및 취약점 대응</li>
-      </ul>
-
-      <h2 id="s15"><span class="num">15</span>개인정보 보호책임자 및 문의처</h2>
-      <div class="card">
-        <p style="margin: 0">
-          <strong>개인정보 보호책임자:</strong> LalaCatSoft 대표<br />
-          <strong>이메일:</strong>
-          <a href="mailto:deridokseo@gmail.com">deridokseo@gmail.com</a><br />
-          <strong>회사명:</strong> LalaCatSoft<br />
-          <strong>웹사이트:</strong>
-          <a href="https://lalacatsoft.com">https://lalacatsoft.com</a>
-        </p>
-      </div>
-      <p>
-        운행기록 본문에 대한 열람·정정·삭제 등 컨트롤러 권한 행사는 운전자가
-        소속된 <strong>고객사</strong>를 통해 요청하시기 바랍니다. 개인정보
-        침해 신고는 아래 기관에도 문의하실 수 있습니다.
-      </p>
-      <ul>
-        <li>
-          개인정보침해신고센터:
-          <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener"
-            >privacy.kisa.or.kr</a
-          >
-          / ☎ 118
-        </li>
-        <li>
-          개인정보분쟁조정위원회:
-          <a href="https://www.kopico.go.kr" target="_blank" rel="noopener"
-            >kopico.go.kr</a
-          >
-          / ☎ 1833-6972
-        </li>
-        <li>대검찰청 사이버수사과: ☎ 1301</li>
-        <li>경찰청 사이버수사국: ☎ 182</li>
-      </ul>
-
-      <h2 id="s16"><span class="num">16</span>개인정보처리방침의 변경</h2>
-      <p>
-        본 방침이 변경될 경우, 변경 사항을 시행일 최소 7일 전(중요한 변경 시
-        30일 전)에 앱 공지사항 또는 본 페이지를 통해 안내합니다.
-      </p>
-
-      <div class="callout" style="margin-top: 32px">
-        본 방침은 한국어를 정본으로 합니다. 영문 또는 기타 언어 번역본은 참고용
-        이며, 한국어 원문과의 해석 차이가 있을 경우 한국어 원문이 우선합니다.
-      </div>
-    </main>
-
-    <footer class="site">
-      © 2026 LalaCatSoft. All rights reserved.
-    </footer>
-  </body>
 </html>
