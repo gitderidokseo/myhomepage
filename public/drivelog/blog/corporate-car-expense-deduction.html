@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>법인차 비용처리 완벽 가이드 — 운행기록부 없으면 비용 인정 안 됩니다 | 드라이브로그</title>
+  <meta name="description" content="법인 업무용 승용차 비용을 100% 처리하려면 운행기록부가 필수입니다. 감가상각비, 유류비, 보험료 등 인정 조건과 한도를 정리했습니다." />
+  <meta property="og:title" content="법인차 비용처리 완벽 가이드 — 운행기록부 없으면 비용 인정 안 됩니다" />
+  <meta property="og:description" content="법인차 관련 비용을 전액 경비 처리하기 위한 조건과 운행기록부 작성 방법을 알아보세요." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/corporate-car-expense-deduction.html" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #38bdf8; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; }
+    tr:last-child td { border-bottom: none; }
+    .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .comp-card { border-radius: 12px; padding: 20px; }
+    .comp-card.bad { background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.2); }
+    .comp-card.good { background: rgba(34,197,94,0.07); border: 1px solid rgba(34,197,94,0.2); }
+    .comp-card .comp-label { font-size: 0.78rem; font-weight: 700; margin-bottom: 10px; }
+    .comp-card.bad .comp-label { color: #f87171; }
+    .comp-card.good .comp-label { color: #4ade80; }
+    .comp-card p { color: #94a3b8; font-size: 0.88rem; margin-bottom: 6px; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+    @media (max-width: 540px) { .comparison { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>법인차 비용처리 완벽 가이드
+  </div>
+
+  <span class="tag">절세 가이드</span>
+  <h1>법인차 비용처리 완벽 가이드<br>— 운행기록부 없으면 비용 인정 안 됩니다</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    법인 차량을 운영하면서 유류비, 보험료, 수리비, 감가상각비를 모두 비용 처리하고 싶은 건 당연한 일입니다. 그런데 아무것도 준비하지 않으면 <strong>연간 1,500만원까지만</strong> 비용으로 인정받습니다. 나머지는 고스란히 법인세 과세 대상이 됩니다.
+  </p>
+  <p>
+    운행기록부 하나로 수백만 원의 세금 차이가 납니다. 이 글에서는 법인차 비용처리의 조건과 운행기록부가 왜 필수인지 정리합니다.
+  </p>
+
+  <h2>법인차 비용처리, 어디까지 되나요?</h2>
+  <p>
+    업무용 승용차와 관련된 다음 비용들을 법인 비용(손금)으로 처리할 수 있습니다:
+  </p>
+  <ul>
+    <li><strong>감가상각비</strong> — 취득가액을 내용연수(5년)로 나눠 매년 비용 처리</li>
+    <li><strong>임차료</strong> — 리스료, 렌터카 비용</li>
+    <li><strong>유류비</strong> — 주유비, 전기차 충전비</li>
+    <li><strong>자동차세</strong></li>
+    <li><strong>자동차 보험료</strong></li>
+    <li><strong>수리 및 유지비</strong> — 타이어 교체, 오일 교환 등</li>
+    <li><strong>통행료 및 주차비</strong></li>
+  </ul>
+
+  <div class="highlight-box">
+    <div class="label">연간 한도</div>
+    <p style="margin:0;color:#e2e8f0;">위 비용의 합계가 <strong>연간 1,500만원을 초과</strong>하면, 초과분은 운행기록부가 있어야만 비용으로 인정받을 수 있습니다. 운행기록부가 없으면 1,500만원까지만 처리됩니다.</p>
+  </div>
+
+  <h2>운행기록부 있을 때 vs 없을 때</h2>
+
+  <div class="comparison">
+    <div class="comp-card bad">
+      <div class="comp-label">✗ 운행기록부 없음</div>
+      <p>연간 차량 비용 한도: <strong style="color:#f87171;">1,500만원</strong></p>
+      <p>초과분: 전액 손금 불인정</p>
+      <p>업무사용비율: 증명 불가</p>
+    </div>
+    <div class="comp-card good">
+      <div class="comp-label">✓ 운행기록부 있음</div>
+      <p>연간 차량 비용 한도: <strong style="color:#4ade80;">업무사용비율 × 실제 비용</strong></p>
+      <p>업무 비율 80%면 → 비용의 80% 인정</p>
+      <p>한도 없이 전액 처리 가능</p>
+    </div>
+  </div>
+
+  <h3>실제 금액으로 비교해볼게요</h3>
+  <p>
+    5,000만원짜리 법인 승용차(연간 감가상각비 1,000만원) + 유류비·보험료 등 500만원, 합계 1,500만원인 경우:
+  </p>
+  <table>
+    <tr><th>조건</th><th>인정 비용</th><th>법인세 추가 부담 (20%)</th></tr>
+    <tr><td>운행기록부 없음</td><td>1,500만원</td><td>기준</td></tr>
+    <tr><td>운행기록부 있음 (업무비율 100%)</td><td>1,500만원</td><td>동일 (한도 내)</td></tr>
+  </table>
+  <p>
+    이 경우는 1,500만원 이하라 차이가 없습니다. 하지만 고가 차량이라면 다릅니다:
+  </p>
+  <table>
+    <tr><th>조건</th><th>연간 비용</th><th>인정 비용</th><th>추가 법인세 (20%)</th></tr>
+    <tr><td>운행기록부 없음</td><td>4,000만원</td><td>1,500만원</td><td>약 500만원 추가</td></tr>
+    <tr><td>운행기록부 있음 (업무비율 90%)</td><td>4,000만원</td><td>3,600만원</td><td>—</td></tr>
+  </table>
+  <p>
+    운행기록부 하나로 <strong>연간 500만원 이상의 세금 차이</strong>가 납니다. 차량이 여러 대라면 그 배수가 됩니다.
+  </p>
+
+  <h2>감가상각비 한도 — 고가 차량 주의</h2>
+  <p>
+    운행기록부가 있어도, <strong>감가상각비는 연간 800만원이 한도</strong>입니다. 취득가액이 높은 차량(4,000만원 이상)이라면 감가상각비 한도 초과분은 다음 연도로 이월되어 처리됩니다.
+  </p>
+  <table>
+    <tr><th>취득가액</th><th>연간 감가상각비 (5년 정액법)</th><th>인정 한도</th><th>이월액</th></tr>
+    <tr><td>3,000만원</td><td>600만원</td><td>600만원</td><td>0</td></tr>
+    <tr><td>5,000만원</td><td>1,000만원</td><td>800만원</td><td>200만원</td></tr>
+    <tr><td>1억원</td><td>2,000만원</td><td>800만원</td><td>1,200만원</td></tr>
+  </table>
+  <p>
+    이월된 감가상각비는 이후 연도에 분산 처리되므로 완전히 날리는 금액은 아니지만, 비용 처리 시점이 늦어집니다.
+  </p>
+
+  <h2>업무전용 자동차보험, 꼭 가입해야 하나요?</h2>
+  <p>
+    법인은 필수 가입 의무가 없지만, <strong>개인사업자(복식부기의무자)는 2024년부터 필수</strong>입니다. 법인도 업무전용 자동차보험에 가입하면 비용 처리 시 더 명확한 증빙이 됩니다.
+  </p>
+  <p>
+    업무전용 자동차보험이란 차량을 업무 목적으로만 사용한다는 것을 명시한 보험으로, 기존 개인 보험 대비 보험료가 소폭 낮은 경우도 있습니다.
+  </p>
+
+  <h2>운행기록부 작성, 어떻게 해야 하나요?</h2>
+  <p>
+    국세청 별지 제65호 서식에 따라 <strong>매 운행마다</strong> 다음 내용을 기록합니다:
+  </p>
+  <ul>
+    <li>사용일자 및 요일</li>
+    <li>사용자 부서 및 성명</li>
+    <li>주행 전 계기판 거리 (km)</li>
+    <li>주행 후 계기판 거리 (km)</li>
+    <li>주행거리 (km)</li>
+    <li>출퇴근용 / 일반업무용 거리 구분</li>
+    <li>비고 (방문처 등)</li>
+  </ul>
+  <p>
+    연간 총주행거리 대비 업무용 주행거리 비율을 계산해 <strong>업무사용비율</strong>을 산출합니다. 이 비율이 높을수록 더 많은 비용을 처리할 수 있습니다.
+  </p>
+
+  <div class="warn-box">
+    <div class="label">⚠ 사후 작성은 안 됩니다</div>
+    <p>운행기록부는 사후에 몰아서 작성하거나 추정해서 작성하면 세무조사 시 인정받지 못합니다. <strong>매 운행마다 실시간으로 기록</strong>해야 증빙 효력이 있습니다.</p>
+  </div>
+
+  <h2>수기 기록의 현실적 문제</h2>
+  <p>
+    수기로 매 운행마다 계기판 확인, 시각 기록, 목적 분류를 하는 것은 번거롭고 누락이 많습니다. 특히 여러 운전자가 한 차량을 공용할 경우 취합이 더 복잡해집니다.
+  </p>
+  <p>
+    모바일 앱을 사용하면 운행 시작·종료 버튼만으로 모든 항목이 자동 기록되고, 국세청 양식 엑셀 파일까지 자동 생성됩니다.
+  </p>
+
+  <hr class="divider" />
+
+  <div class="cta-box">
+    <h3>드라이브로그로 법인차 비용처리를 완전히 자동화하세요</h3>
+    <p>버튼 하나로 운행 기록부터 국세청 양식 엑셀 생성까지. 법인·개인사업자 모두 사용 가능하며, 회원가입 없이 무료로 바로 시작할 수 있습니다.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy.html">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>
