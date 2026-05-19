@@ -820,11 +820,6 @@ function About() {
             업무용 모바일 앱을 개발·서비스하는 기업입니다. 법인차량 운행기록
             자동화처럼 현장의 반복 업무를 줄이는 데 집중합니다.
           </p>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            Flutter 기반의 안정적인 크로스플랫폼 개발, Firebase 실시간 동기화,
-            GPS·포그라운드 서비스 등 모바일 OS 깊숙한 영역까지 다루는 기술력으로
-            "그냥 잘 작동하는" 도구를 만듭니다.
-          </p>
 
           <div className="mt-10 grid grid-cols-3 gap-6">
             {[
