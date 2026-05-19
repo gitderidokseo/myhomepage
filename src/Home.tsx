@@ -65,6 +65,7 @@ const nav = [
   { id: "guide", label: "사용 가이드" },
   { id: "pricing", label: "요금제" },
   { id: "about", label: "About" },
+  { id: "blog", label: "운행기록부 가이드", href: "/drivelog/blog/" },
 ];
 
 export default function Home() {
@@ -132,7 +133,7 @@ function Header({
           {nav.map((n) => (
             <a
               key={n.id}
-              href={`#${n.id}`}
+              href={"href" in n ? n.href : `#${n.id}`}
               className="text-sm text-muted-foreground hover:text-cyan transition-colors"
             >
               {n.label}
@@ -162,7 +163,7 @@ function Header({
             {nav.map((n) => (
               <a
                 key={n.id}
-                href={`#${n.id}`}
+                href={"href" in n ? n.href : `#${n.id}`}
                 onClick={() => setOpen(false)}
                 className="py-2 text-sm text-muted-foreground hover:text-cyan"
               >
@@ -926,7 +927,10 @@ function Footer() {
             </p>
           </div>
           <div className="flex md:justify-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-cyan transition-colors">
+            <a href="/drivelog/blog/" className="hover:text-cyan transition-colors">
+              운행기록부 가이드
+            </a>
+            <a href="/drivelog/privacy.html" className="hover:text-cyan transition-colors">
               Privacy Policy
             </a>
             <a href="#" className="hover:text-cyan transition-colors">
