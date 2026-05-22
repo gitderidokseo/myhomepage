@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>운행기록부 양식 다운로드 + 작성 예시 (국세청 별지 65호) | 드라이브로그</title>
+  <meta name="description" content="국세청 별지 제65호 운행기록부 양식 다운로드와 항목별 작성 예시. 차종, 등록번호, 사용일자, 주행 전·후 계기판, 업무용 사용거리까지 빈 칸 없이 채우는 법을 정리했습니다." />
+  <meta property="og:title" content="운행기록부 양식 다운로드 + 작성 예시 (국세청 별지 65호)" />
+  <meta property="og:description" content="국세청 운행기록부 양식과 항목별 작성 예시를 한눈에. 빈 칸 없이 채우는 실전 가이드." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/driving-log-template-guide.html" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #38bdf8; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 48px; padding: 24px; background: #141821; border: 1px solid #1e293b; border-radius: 12px; }
+    .related h3 { color: #cbd5e1; font-size: 0.95rem; margin: 0 0 12px; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { margin-bottom: 6px; font-size: 0.9rem; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; border: none; padding: 0; margin-top: 0; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    .download-box { background: #141821; border: 1px solid #334155; border-radius: 12px; padding: 20px 24px; margin: 24px 0; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .download-box .info { flex: 1; min-width: 200px; }
+    .download-box .info-title { color: #f1f5f9; font-weight: 700; margin-bottom: 4px; }
+    .download-box .info-desc { color: #64748b; font-size: 0.85rem; }
+    .download-box .dl-link { background: #1e293b; color: #38bdf8; padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; border: 1px solid #334155; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>운행기록부 양식·작성법
+  </div>
+
+  <span class="tag">양식·작성법</span>
+  <h1>운행기록부 양식 다운로드<br>+ 작성 예시 (국세청 별지 65호)</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    운행기록부를 처음 쓰려는 분들이 가장 먼저 막히는 지점은 의외로 단순합니다. <strong>"양식이 도대체 어떻게 생겼고, 각 칸에 뭘 적어야 하느냐"</strong>. 이 글은 국세청이 정한 별지 제65호 운행기록부 서식을 항목별로 풀어 설명하고, 실제 작성 예시까지 함께 정리한 실전 가이드입니다.
+  </p>
+
+  <h2>국세청 공식 양식 어디서 받나?</h2>
+  <p>
+    운행기록부의 공식 서식은 <strong>「소득세법 시행규칙」 별지 제65호</strong>에 규정되어 있습니다. 다음 두 경로에서 무료로 받을 수 있습니다:
+  </p>
+  <ul>
+    <li><strong>국가법령정보센터</strong> — "업무용 승용차 운행기록 방법에 관한 고시" 검색 후 별지 서식 다운로드</li>
+    <li><strong>국세청 홈택스</strong> — 알림/소식 → 고시·공고·행정예고 → "업무용승용차 운행기록" 검색</li>
+  </ul>
+  <p>
+    PDF·HWP·엑셀 형식이 모두 제공됩니다. 회사 양식과 형식이 달라도 <strong>필수 기재 항목</strong>이 모두 들어가 있으면 효력은 동일합니다.
+  </p>
+
+  <div class="download-box">
+    <div class="info">
+      <div class="info-title">관련 법령</div>
+      <div class="info-desc">소득세법 시행규칙 별지 제65호 · 법인세법 시행령 제50조의2</div>
+    </div>
+    <a class="dl-link" href="https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000177548" target="_blank" rel="noopener">고시 보기 →</a>
+  </div>
+
+  <h2>운행기록부 필수 기재 항목</h2>
+  <p>
+    별지 제65호 양식은 크게 <strong>① 기본 정보 ② 운행별 기록 ③ 집계</strong> 세 부분으로 구성됩니다.
+  </p>
+
+  <h3>① 기본 정보 (양식 상단)</h3>
+  <table>
+    <tr><th>항목</th><th>기재 예시</th></tr>
+    <tr><td>사업연도</td><td>2026.01.01 ~ 2026.12.31</td></tr>
+    <tr><td>법인명 (또는 상호)</td><td>(주)라라캣소프트</td></tr>
+    <tr><td>사업자등록번호</td><td>123-45-67890</td></tr>
+    <tr><td>차종</td><td>현대 그랜저</td></tr>
+    <tr><td>자동차 등록번호</td><td>12가 3456</td></tr>
+  </table>
+
+  <h3>② 운행별 기록 (매 운행마다)</h3>
+  <p>
+    실제 운행이 발생할 때마다 한 줄씩 기록합니다. 누락이 가장 많이 발생하는 부분입니다.
+  </p>
+  <table>
+    <tr><th>항목</th><th>기재 예시</th></tr>
+    <tr><td>사용 일자</td><td>2026-05-23 (토)</td></tr>
+    <tr><td>사용자 (부서/성명)</td><td>영업팀 / 김라라</td></tr>
+    <tr><td>주행 전 계기판 거리 (km)</td><td>15,420</td></tr>
+    <tr><td>주행 후 계기판 거리 (km)</td><td>15,468</td></tr>
+    <tr><td>주행거리 (km)</td><td>48</td></tr>
+    <tr><td>업무용 사용거리 — 출퇴근용</td><td>0</td></tr>
+    <tr><td>업무용 사용거리 — 일반 업무용</td><td>48</td></tr>
+    <tr><td>비고 (목적·거래처 등)</td><td>(주)○○ 미팅, 강남 ↔ 분당</td></tr>
+  </table>
+
+  <h3>③ 집계 (과세기간 합계)</h3>
+  <p>
+    과세기간 종료 후 다음 값을 계산해 양식 하단에 기재합니다:
+  </p>
+  <ul>
+    <li>총 주행거리 (km)</li>
+    <li>업무용 사용거리 (km) = 출퇴근용 + 일반 업무용</li>
+    <li><strong>업무사용비율 (%)</strong> = 업무용 사용거리 ÷ 총 주행거리 × 100</li>
+  </ul>
+
+  <div class="highlight-box">
+    <div class="label">계산 예시</div>
+    <p style="margin:0; color:#e2e8f0;">연간 총 주행거리 20,000km, 업무용 사용거리 18,000km → 업무사용비율 <strong>90%</strong>. 연간 차량 비용이 3,000만원이라면 2,700만원이 손금 인정.</p>
+  </div>
+
+  <h2>출퇴근은 업무용에 포함되나요?</h2>
+  <p>
+    네. <strong>거주지에서 사업장까지의 출퇴근 거리도 업무용 사용거리</strong>로 인정됩니다. 다만 양식상 "출퇴근용"과 "일반 업무용"으로 칸이 분리되어 있어, 따로 합산해 기재해야 합니다.
+  </p>
+  <p>
+    반대로 <strong>주말 가족 외출·개인 용무·휴가 이동</strong> 등은 업무용에서 제외해야 하며, 비고란에 사적 사용으로 명시하지 않더라도 주행 자체는 기록에 남겨야 합니다 (총 주행거리에는 포함).
+  </p>
+
+  <h2>작성 시 자주 하는 실수</h2>
+  <ul>
+    <li><strong>계기판 km 누락</strong> — "주행거리"만 적고 전·후 계기판 km를 비워두는 경우. 양식 요건 위반</li>
+    <li><strong>주말 운행 누락</strong> — 사적 사용이라 안 적는 것이 아니라, 총 주행거리에 포함시키고 업무용에서만 제외해야 함</li>
+    <li><strong>비고 칸 공란</strong> — 세무조사 시 업무 관련성을 입증할 핵심 자료. 거래처명·목적 반드시 기재</li>
+    <li><strong>일괄 사후 작성</strong> — 한 달치를 몰아서 작성하면 신뢰성이 낮아 세무조사 시 인정받지 못할 수 있음</li>
+    <li><strong>차량별 분리 미준수</strong> — 한 양식에 여러 차량을 섞어 적는 경우. 차량별로 별도 양식</li>
+  </ul>
+
+  <div class="warn-box">
+    <div class="label">⚠ 세무조사 포인트</div>
+    <p>국세청은 카드·하이패스 사용 내역과 운행기록부를 대조합니다. 주유·통행료 기록은 있는데 운행기록부에는 운행 흔적이 없거나 그 반대인 경우, <strong>전체 운행기록부의 신뢰성</strong>이 부정될 수 있습니다.</p>
+  </div>
+
+  <h2>수기 vs 엑셀 vs 앱 — 어떤 게 맞나?</h2>
+  <table>
+    <tr><th>방식</th><th>장점</th><th>단점</th></tr>
+    <tr><td>수기 (종이)</td><td>비용 0</td><td>누락·분실 위험 최대, 합계 수기 계산 오류</td></tr>
+    <tr><td>엑셀</td><td>합계 자동, 백업 가능</td><td>매번 직접 입력. 거리·시간 수기 측정 필요</td></tr>
+    <tr><td>앱 (GPS 자동)</td><td>거리·시간 자동, 누락 거의 없음</td><td>월 사용료 발생</td></tr>
+  </table>
+  <p>
+    차량이 1대 + 운행 빈도가 낮다면 엑셀로도 충분합니다. 그러나 차량이 여러 대거나, 운전자가 여러 명이거나, 운행이 잦다면 <strong>앱 자동 기록이 사실상 유일한 현실적 해법</strong>입니다.
+  </p>
+
+  <hr class="divider" />
+
+  <div class="related">
+    <h3>함께 읽으면 좋은 글</h3>
+    <ul>
+      <li><a href="no-odometer-log-penalty.html">운행기록부 안 쓰면 어떻게 되나요? — 손금 불인정 + 가산세</a></li>
+      <li><a href="commute-business-use-ratio.html">출퇴근도 업무용? 업무사용비율 100% 만드는 법</a></li>
+      <li><a href="corporate-car-expense-deduction.html">법인차 비용처리 완벽 가이드</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>양식 다운로드는 끝났는데, 매번 칸 채우기가 막막하다면</h3>
+    <p>드라이브로그는 운행 시작/종료 버튼만 누르면 국세청 별지 65호 양식 그대로 자동 작성됩니다. 출퇴근·일반 업무용 자동 분류, 차량별·기간별 엑셀 출력까지 한 번에.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy.html">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>법인차 세무조사 적발 사례 모음 — 운행기록부 부실 시 무슨 일이 벌어지나 | 드라이브로그</title>
+  <meta name="description" content="국세청 법인차 사적 사용 적발 실제 사례. 운행기록부 미작성·허위 기재 시 손금 불인정, 대표이사 상여처분, 종합소득세 추가 부과, 가산세까지의 풀 체인을 정리했습니다." />
+  <meta property="og:title" content="법인차 세무조사 적발 사례 모음" />
+  <meta property="og:description" content="운행기록부 부실 시 손금 불인정 → 상여처분 → 종합소득세 추가 부과 → 가산세까지." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/tax-audit-cases.html" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #38bdf8; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    .case-box { background: #141821; border: 1px solid #1e293b; border-radius: 12px; padding: 24px 28px; margin: 28px 0; }
+    .case-box .case-label { font-size: 0.78rem; font-weight: 700; color: #f87171; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .case-box .case-title { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 48px; padding: 24px; background: #141821; border: 1px solid #1e293b; border-radius: 12px; }
+    .related h3 { color: #cbd5e1; font-size: 0.95rem; margin: 0 0 12px; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { margin-bottom: 6px; font-size: 0.9rem; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; border: none; padding: 0; margin-top: 0; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>세무조사 적발 사례
+  </div>
+
+  <span class="tag">세무 가이드</span>
+  <h1>법인차 세무조사 적발 사례 모음<br>— 운행기록부 부실 시 무슨 일이 벌어지나</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    "어차피 세무조사 나오면 그때 챙기지." 운행기록부 작성을 미루는 대표·경리 담당자들이 흔히 하는 말입니다. 그러나 막상 세무조사가 시작되면, <strong>몇 년치 손금 불인정 + 대표이사 개인 종합소득세 추가 부과 + 가산세</strong>까지 한꺼번에 쏟아져 옵니다. 이 글은 국세청·세무업계가 공개한 실제 적발 사례와 처분 결과를 정리한 것입니다.
+  </p>
+
+  <h2>적발 → 처분의 풀 체인</h2>
+  <p>
+    운행기록부 부실로 적발되면 법인세 추징에서 끝나지 않습니다. 다음 4단계가 차례로 이어집니다:
+  </p>
+  <ol>
+    <li><strong>차량 관련 비용 손금 불산입</strong> → 법인세 추징</li>
+    <li><strong>부인된 비용을 대표이사 상여처분</strong> → 대표이사 종합소득세 추가 부과</li>
+    <li><strong>과소신고 가산세 10~40%</strong></li>
+    <li><strong>납부지연 가산세</strong> (연 약 8%) — 신고 시점부터 일할 계산</li>
+  </ol>
+
+  <div class="warn-box">
+    <div class="label">⚠ 누적 효과</div>
+    <p>세무조사는 통상 <strong>최근 5년치를 일괄 소급</strong>합니다. 매년 추징세액이 작더라도 5배로 불어나며, 가산세까지 더해지면 원금의 1.5~2배까지 늘어나는 경우가 흔합니다.</p>
+  </div>
+
+  <h2>실제 적발 사례</h2>
+
+  <div class="case-box">
+    <div class="case-label">사례 #1 · 고급 수입차 + 가족 사용</div>
+    <div class="case-title">A법인 — 운행기록부 미작성, 대표이사 배우자·자녀 주말 사용</div>
+    <p style="margin-bottom: 12px;"><strong>적발 경위:</strong> A법인은 1억원대 고급 수입차를 법인 명의로 구매하고 차량 유지비 전액을 법인 비용으로 처리. 운행기록부는 작성하지 않음. 세무조사 과정에서 차량 GPS·하이패스 기록을 대조한 결과, 주말·휴일 운행이 대부분 주거지 인근·여행지로 확인.</p>
+    <p style="margin-bottom: 12px;"><strong>처분:</strong></p>
+    <ul style="margin-bottom: 0;">
+      <li>차량 유지비·감가상각비 전액 손금 불인정</li>
+      <li>부인된 금액 전액 대표이사 상여처분 → 종합소득세 추가 부과</li>
+      <li>과소신고 가산세 부과</li>
+    </ul>
+  </div>
+
+  <div class="case-box">
+    <div class="case-label">사례 #2 · 운행기록부 허위 기재</div>
+    <div class="case-title">B기업 — 운행기록부는 제출했으나 실제 일정과 불일치</div>
+    <p style="margin-bottom: 12px;"><strong>적발 경위:</strong> B기업은 운행기록부를 작성·제출했으나, 국세청이 ETC(하이패스) 통행 내역·법인카드 주유 시각과 대조한 결과 운행 날짜·시간·경로가 상당수 불일치. 일부 운행은 사실상 존재하지 않거나, 같은 시각 다른 지역에서 카드 사용 기록이 남아 있음.</p>
+    <p style="margin-bottom: 12px;"><strong>처분:</strong></p>
+    <ul style="margin-bottom: 0;">
+      <li>운행기록부 전체의 신뢰성 부정 → 운행기록부 미제출과 동일하게 처리</li>
+      <li>업무사용비율 인정 불가 → 1,500만원 한도만 적용</li>
+      <li>허위 기재로 인한 부정과소신고 가산세(40%) 적용 가능성</li>
+    </ul>
+  </div>
+
+  <div class="case-box">
+    <div class="case-label">사례 #3 · 업무 전용 보험 미가입</div>
+    <div class="case-title">C법인 — 운행기록부는 있으나 일반 자동차보험만 가입</div>
+    <p style="margin-bottom: 12px;"><strong>적발 경위:</strong> C법인은 운행기록부를 성실하게 작성했지만, 자동차보험을 임직원 한정 업무 전용이 아닌 가족 한정 종합보험으로 가입. 2016년 이후 법인 차량은 업무 전용 자동차보험 가입이 비용 인정의 전제 요건.</p>
+    <p style="margin-bottom: 12px;"><strong>처분:</strong></p>
+    <ul style="margin-bottom: 0;">
+      <li>운행기록부 작성에도 불구하고 차량 관련 비용 <strong>전액 손금 불인정</strong></li>
+      <li>대표이사 상여처분 + 종합소득세 추가 부과</li>
+    </ul>
+  </div>
+
+  <div class="case-box">
+    <div class="case-label">사례 #4 · 연두색 번호판 미부착</div>
+    <div class="case-title">D법인 — 8천만원 이상 신규 등록 차량, 일반 번호판 유지</div>
+    <p style="margin-bottom: 12px;"><strong>적발 경위:</strong> 2024년 이후 신규 등록한 1억원대 법인 승용차에 일반 번호판을 부착한 채 운행. 운행기록부·업무 전용 보험은 모두 충족하나 연두색 번호판 의무 미이행.</p>
+    <p style="margin-bottom: 12px;"><strong>처분:</strong></p>
+    <ul style="margin-bottom: 0;">
+      <li>업무 전용 보험·운행기록부 충족에도 불구하고 손금 인정 거부</li>
+      <li>차량 관련 비용 전체 부인 → 법인세 + 대표이사 상여처분</li>
+    </ul>
+  </div>
+
+  <h2>국세청이 운행기록부를 검증하는 방법</h2>
+  <p>
+    "기록만 채워놓으면 통과될까?" 안 됩니다. 국세청은 다음 외부 데이터를 운행기록부와 자동으로 대조합니다:
+  </p>
+  <ul>
+    <li><strong>하이패스(ETC) 통행 내역</strong> — 운행 일자·시각·경로 일치 여부</li>
+    <li><strong>법인카드 주유·세차 내역</strong> — 주유 시각·위치와 운행 일자 정합성</li>
+    <li><strong>네비게이션·차량 OBD 데이터</strong> — 누적 주행거리 일치 여부</li>
+    <li><strong>차량 정비 이력</strong> — 정비 시 기록된 주행거리와 운행기록부 거리 정합성</li>
+    <li><strong>대표이사·임원 SNS·일정</strong> — 휴가 기간 운행 기록 여부 등 보조 자료</li>
+  </ul>
+
+  <h2>추징세액 시뮬레이션 — 사례 #1 기준</h2>
+  <p>
+    1억원 차량을 법인 명의 구매, 연간 차량 비용 3,500만원(감가상각 2,000만원 + 유류·보험·정비 1,500만원). 5년치 일괄 소급 가정.
+  </p>
+  <table>
+    <tr><th>항목</th><th>금액</th></tr>
+    <tr><td>연간 손금 불인정액 (1,500만원 한도 초과분)</td><td>2,000만원</td></tr>
+    <tr><td>연간 추가 법인세 (세율 20% 가정)</td><td>400만원</td></tr>
+    <tr><td>대표이사 상여처분 종합소득세 (세율 38% 가정)</td><td>760만원</td></tr>
+    <tr><td>과소신고 가산세 (40% 적용 시)</td><td>464만원</td></tr>
+    <tr><td>연간 합계</td><td>약 1,624만원</td></tr>
+    <tr><td><strong>5년 누적 + 납부지연 가산세</strong></td><td><strong>약 9,000만원 ~ 1억원</strong></td></tr>
+  </table>
+  <p>
+    차량 한 대 때문에 1억원 가까운 세금을 한 번에 추징당하는 사례가 실제로 나옵니다. 차량이 여러 대라면 그대로 배수가 됩니다.
+  </p>
+
+  <h2>예방 체크리스트</h2>
+  <ul>
+    <li>업무 전용 자동차보험 가입 (임직원 한정)</li>
+    <li>8천만원 이상 차량은 연두색 번호판 부착</li>
+    <li>운행기록부 매 운행 단위로 작성, 주말·휴일 운행도 누락하지 않음</li>
+    <li>비고란에 거래처·목적 명시 (단순 "업무" 표기는 부실 판정 위험)</li>
+    <li>법인카드 주유·하이패스 기록과 운행기록부 정합성 정기 확인</li>
+    <li>일괄 사후 작성 금지 (적발 가능성 가장 높음)</li>
+  </ul>
+
+  <hr class="divider" />
+
+  <div class="related">
+    <h3>함께 읽으면 좋은 글</h3>
+    <ul>
+      <li><a href="no-odometer-log-penalty.html">운행기록부 안 쓰면 어떻게 되나요? — 기본편</a></li>
+      <li><a href="driving-log-template-guide.html">운행기록부 양식 + 작성 예시 (국세청 별지 65호)</a></li>
+      <li><a href="green-plate-corporate-car.html">연두색 번호판 법인차 — 8천만원 기준</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>세무조사에 대비하는 가장 확실한 방법 — 자동 기록</h3>
+    <p>드라이브로그는 GPS 기반으로 운행 시각·거리·경로를 자동 기록합니다. 하이패스·법인카드와 일치하는 신뢰성 있는 운행기록부가 자동으로 만들어집니다.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy.html">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>

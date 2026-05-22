@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>개인사업자 차량 비용처리 — 간편장부 vs 복식부기 완전 비교 (2026년 변경 포함) | 드라이브로그</title>
+  <meta name="description" content="개인사업자 차량 비용처리는 장부 종류에 따라 완전히 다릅니다. 간편장부 대상자는 한도·운행기록부 의무 없음, 복식부기의무자는 법인과 동일. 2026년 차량 2대 이상 업무전용보험 의무 확대까지 정리." />
+  <meta property="og:title" content="개인사업자 차량 비용처리 — 간편장부 vs 복식부기 완전 비교" />
+  <meta property="og:description" content="장부 종류에 따라 한도·운행기록부 의무가 완전히 달라집니다. 2026년 변경 사항 포함." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/sole-proprietor-bookkeeping.html" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #38bdf8; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 48px; padding: 24px; background: #141821; border: 1px solid #1e293b; border-radius: 12px; }
+    .related h3 { color: #cbd5e1; font-size: 0.95rem; margin: 0 0 12px; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { margin-bottom: 6px; font-size: 0.9rem; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; border: none; padding: 0; margin-top: 0; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>간편장부 vs 복식부기
+  </div>
+
+  <span class="tag">개인사업자</span>
+  <h1>개인사업자 차량 비용처리<br>— 간편장부 vs 복식부기 완전 비교</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    개인사업자에게 "차량 비용 얼마까지 처리할 수 있나요?"라고 물으면 답이 두 가지로 갈립니다. <strong>간편장부 대상자라면 사실상 무제한, 복식부기의무자라면 법인과 동일한 한도 규제</strong>. 이 차이를 모르고 운영하면 매년 수백만원에서 수천만원의 세금 차이가 발생합니다. 이 글에서 두 장부 종류의 차이와 2026년 변경 사항까지 정리합니다.
+  </p>
+
+  <h2>나는 간편장부인가 복식부기인가?</h2>
+  <p>
+    종합소득세 신고 시 작성해야 할 장부 종류는 <strong>직전 연도 매출액</strong>으로 결정됩니다. 기준은 업종별로 다릅니다:
+  </p>
+
+  <table>
+    <tr><th>업종</th><th>복식부기의무 기준 (직전 연도 매출)</th></tr>
+    <tr><td>도매·소매업, 부동산매매업, 농업·임업·어업</td><td>3억원 이상</td></tr>
+    <tr><td>제조업, 음식·숙박업, 건설업, 운수업</td><td>1.5억원 이상</td></tr>
+    <tr><td>서비스업, 부동산임대업, 교육서비스업, 보건업, 학원업</td><td>7,500만원 이상</td></tr>
+  </table>
+
+  <p>
+    기준 미만이면 간편장부 대상자, 기준 이상이면 복식부기의무자입니다. <strong>전문직(변호사·세무사·의사 등)은 매출 무관 무조건 복식부기의무</strong>입니다. 신규 사업자도 첫 해는 매출과 무관하게 간편장부 대상이지만, 다음 해부터는 매출에 따라 결정됩니다.
+  </p>
+
+  <h2>차량 비용처리 — 두 장부 종류 핵심 비교</h2>
+
+  <table>
+    <tr>
+      <th>항목</th>
+      <th>간편장부 대상자</th>
+      <th>복식부기의무자</th>
+    </tr>
+    <tr>
+      <td>연간 비용 한도</td>
+      <td><strong>한도 없음</strong></td>
+      <td>1대당 1,500만원</td>
+    </tr>
+    <tr>
+      <td>감가상각 한도</td>
+      <td>없음 (5년 정액 상각, 전액 인정)</td>
+      <td>800만원/년</td>
+    </tr>
+    <tr>
+      <td>운행기록부 작성 의무</td>
+      <td><strong>없음</strong></td>
+      <td>한도 초과 시 필수</td>
+    </tr>
+    <tr>
+      <td>업무 전용 자동차보험</td>
+      <td>없음</td>
+      <td>2024년부터 의무</td>
+    </tr>
+    <tr>
+      <td>업무관련성 입증</td>
+      <td>업무 사용 사실만 입증</td>
+      <td>운행기록부 + 보험으로 입증</td>
+    </tr>
+  </table>
+
+  <div class="highlight-box">
+    <div class="label">한 줄 요약</div>
+    <p style="margin:0; color:#e2e8f0;">간편장부 대상자는 차량 관련 규제가 거의 없습니다. 복식부기의무자가 되는 순간 법인과 동일한 한도·서류 의무가 시작됩니다.</p>
+  </div>
+
+  <h2>간편장부 대상자 — 사실상 무제한</h2>
+  <p>
+    간편장부 대상자는 업무용 승용차 관련 한도 규정이 적용되지 않습니다. 다음과 같은 자유가 있습니다:
+  </p>
+  <ul>
+    <li><strong>운행기록부 작성 의무 없음</strong> — 작성해도 무방하지만 법적 의무 아님</li>
+    <li><strong>1,500만원 한도 없음</strong> — 업무 관련 비용이라면 전액 경비 처리 가능</li>
+    <li><strong>800만원 감가상각 한도 없음</strong> — 5년 정액 상각으로 전액 손금화</li>
+    <li><strong>업무 전용 자동차보험 가입 의무 없음</strong></li>
+  </ul>
+  <p>
+    단, 차량을 사업에 사용했다는 <strong>업무관련성 입증 책임</strong>은 여전히 본인에게 있습니다. 100% 사적 사용이 명백한 경우 경비 인정이 거부될 수 있으나, 통상 신용카드 사용 내역·세금계산서 등으로 사업 관련성이 인정됩니다.
+  </p>
+
+  <h2>복식부기의무자 — 법인과 동일한 규제</h2>
+  <p>
+    복식부기의무자가 되는 순간 차량 비용에 대해 법인과 동일한 규제가 적용됩니다:
+  </p>
+  <ol>
+    <li><strong>연간 1,500만원 한도</strong> — 운행기록부 미작성 시</li>
+    <li><strong>감가상각 800만원/년 한도</strong> — 초과분은 이월</li>
+    <li><strong>운행기록부 작성</strong> — 한도 초과 시 업무사용비율만큼 손금 인정</li>
+    <li><strong>업무 전용 자동차보험 가입</strong> — 2024년부터 의무</li>
+  </ol>
+  <p>
+    복식부기의무자에 해당하는데 위 요건 중 하나라도 누락하면, 법인과 동일하게 손금 불인정 및 종합소득세 추가 부담이 발생합니다.
+  </p>
+
+  <h2>2026년부터 달라지는 점 — 차량 2대 이상 보유 시</h2>
+  <p>
+    2026년 종합소득세 신고분(2026년 귀속 소득)부터는 복식부기의무자가 차량을 2대 이상 보유한 경우, <strong>2번째 차량부터는 업무 전용 자동차보험 가입이 의무</strong>가 됩니다. 미가입 시 해당 차량 관련 비용은 <strong>전액(100%) 손금 불산입</strong>됩니다.
+  </p>
+
+  <div class="warn-box">
+    <div class="label">⚠ 신규 의무 확대</div>
+    <p>복식부기 사업자 + 차량 2대 이상 → 2번째 차량부터 업무 전용 보험 미가입 시 경비처리 0원. 차량을 늘릴 계획이라면 보험 가입 형태를 먼저 점검하세요.</p>
+  </div>
+
+  <h2>매출 증가로 복식부기 전환 직전이라면</h2>
+  <p>
+    간편장부에서 복식부기로 전환되는 해부터 갑자기 한도 규제가 적용됩니다. 다음 사항을 미리 준비해 두면 전환기 세무 부담을 줄일 수 있습니다:
+  </p>
+  <ul>
+    <li>차량 도입 시점 — 간편장부 시기에 도입하면 5년 정액 상각이 한도 없이 적용</li>
+    <li>업무 전용 자동차보험 — 다음 갱신 시 임직원 한정·업무 전용으로 전환</li>
+    <li>운행기록부 작성 습관 — 의무 발생 전부터 미리 시작</li>
+    <li>차량 2대 이상 보유 계획 — 2026년 의무 확대 고려</li>
+  </ul>
+
+  <h2>케이스 시뮬레이션</h2>
+  <p>
+    제조업 개인사업자, 차량 1대(취득가 5,000만원), 연간 차량 비용 2,500만원(감가상각 1,000만원 + 유류·보험·정비 1,500만원) 가정.
+  </p>
+
+  <table>
+    <tr><th>구분</th><th>간편장부</th><th>복식부기 (운행기록부 작성, 비율 90%)</th><th>복식부기 (운행기록부 미작성)</th></tr>
+    <tr><td>인정 비용</td><td>2,500만원 전액</td><td>2,500만원 × 90% = 2,250만원<br>(감가상각 800만원 한도 + 이월)</td><td>1,500만원</td></tr>
+    <tr><td>손금 불인정액</td><td>0</td><td>약 250만원</td><td>1,000만원</td></tr>
+    <tr><td>추가 종합소득세 (세율 24% 가정)</td><td>0</td><td>약 60만원</td><td>약 240만원</td></tr>
+  </table>
+
+  <p>
+    동일한 차량·동일한 비용이라도 장부 종류와 운행기록부 작성 여부에 따라 매년 <strong>수백만원의 세금 차이</strong>가 발생합니다.
+  </p>
+
+  <hr class="divider" />
+
+  <div class="related">
+    <h3>함께 읽으면 좋은 글</h3>
+    <ul>
+      <li><a href="double-entry-bookkeeper-2024.html">2024년 복식부기의무자 운행기록부 의무 총정리</a></li>
+      <li><a href="no-odometer-log-penalty.html">운행기록부 안 쓰면 어떻게 되나요?</a></li>
+      <li><a href="driving-log-template-guide.html">운행기록부 양식 + 작성 예시</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>복식부기 전환 전부터 운행기록부 습관을 들이세요</h3>
+    <p>드라이브로그는 회원가입 없이 무료로 시작할 수 있는 개인 모드를 지원합니다. 매출이 늘어 복식부기로 전환되어도 동일한 앱으로 그대로 활용 가능합니다.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy.html">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>

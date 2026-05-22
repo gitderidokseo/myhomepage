@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>출퇴근도 업무용? 운행기록부 업무사용비율 100% 만드는 법 | 드라이브로그</title>
+  <meta name="description" content="출퇴근은 업무용 사용거리에 포함됩니다. 업무사용비율을 90~100%까지 정당하게 올리는 실전 팁과, 사적 사용으로 분류되는 운행, 비율 산정 공식까지 정리했습니다." />
+  <meta property="og:title" content="출퇴근도 업무용? 운행기록부 업무사용비율 100% 만드는 법" />
+  <meta property="og:description" content="출퇴근은 업무용. 업무사용비율을 정당하게 90~100%까지 올리는 실전 가이드." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/commute-business-use-ratio.html" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #38bdf8; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 48px; padding: 24px; background: #141821; border: 1px solid #1e293b; border-radius: 12px; }
+    .related h3 { color: #cbd5e1; font-size: 0.95rem; margin: 0 0 12px; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { margin-bottom: 6px; font-size: 0.9rem; }
+    .formula-box { background: #141821; border: 1px solid #334155; border-radius: 12px; padding: 20px 24px; margin: 24px 0; font-family: "JetBrains Mono", "SF Mono", monospace; font-size: 0.95rem; color: #cbd5e1; text-align: center; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; border: none; padding: 0; margin-top: 0; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>업무사용비율 100%
+  </div>
+
+  <span class="tag">세무 가이드</span>
+  <h1>출퇴근도 업무용?<br>운행기록부 업무사용비율 100% 만드는 법</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    "출퇴근은 업무인가, 개인 사용인가?" 운행기록부를 처음 쓰는 분들이 가장 자주 묻는 질문입니다. 결론부터 말씀드리면 <strong>거주지 ↔ 사업장 출퇴근은 업무용 사용거리에 포함</strong>됩니다. 다만 양식상 별도 칸에 기재해야 하고, 사적 사용과의 경계가 분명해야 합니다. 이 글에서는 업무사용비율을 정당하게 90~100%까지 끌어올리는 실전 방법을 정리합니다.
+  </p>
+
+  <h2>업무사용비율이란?</h2>
+  <p>
+    운행기록부에 기록된 <strong>업무용 사용거리</strong>를 <strong>총 주행거리</strong>로 나눈 비율입니다. 이 비율이 곧 손금으로 인정되는 차량 비용의 비율입니다.
+  </p>
+
+  <div class="formula-box">
+    업무사용비율 (%) = 업무용 사용거리 ÷ 총 주행거리 × 100
+  </div>
+
+  <p>
+    예를 들어 연간 총 주행 20,000km 중 업무용이 18,000km라면 업무사용비율은 90%. 연간 차량 비용 3,000만원이라면 2,700만원이 손금 인정됩니다.
+  </p>
+
+  <h2>출퇴근은 업무용인가 사적인가</h2>
+  <p>
+    국세청 「업무용 승용차 운행기록 방법에 관한 고시」에 따르면 운행기록부의 "업무용 사용거리"는 다음 두 가지를 합산합니다:
+  </p>
+  <ul>
+    <li><strong>출퇴근용 거리</strong> — 거주지 ↔ 사업장 이동</li>
+    <li><strong>일반 업무용 거리</strong> — 거래처 방문, 출장, 회의, 영업 활동 등</li>
+  </ul>
+  <p>
+    즉 <strong>출퇴근도 100% 업무용 사용거리로 인정</strong>됩니다. 다만 양식상 "출퇴근용"과 "일반 업무용" 칸이 분리되어 있으므로 따로 기재해야 합니다.
+  </p>
+
+  <div class="highlight-box">
+    <div class="label">중요 포인트</div>
+    <p style="margin:0; color:#e2e8f0;">"출퇴근 = 업무용"은 법인차·복식부기 개인사업자 모두에게 동일하게 적용됩니다. 출퇴근을 사적 사용으로 분류하면 오히려 손해입니다.</p>
+  </div>
+
+  <h2>업무사용비율을 정당하게 100%에 가깝게 만드는 방법</h2>
+
+  <h3>1. 출퇴근 거리를 빠짐없이 기록한다</h3>
+  <p>
+    매일 발생하는 가장 일정한 운행이 출퇴근입니다. 거주지 ↔ 사업장 왕복이 일 60km라면 연간 약 15,000km(주 5일 × 50주 기준). 이것만 정확히 기록해도 업무용 사용거리의 70% 이상이 자동 확보됩니다.
+  </p>
+
+  <h3>2. 거래처 방문·출장은 비고란에 명확히 기재</h3>
+  <p>
+    "○○ 상사 미팅 (강남 → 분당)"처럼 거래처명 + 경로를 적습니다. 비고란이 부실하면 세무조사 시 운행기록부 전체의 신뢰성이 흔들립니다.
+  </p>
+
+  <h3>3. 점심·짧은 외근도 업무 관련이면 기록</h3>
+  <p>
+    거래처와의 점심 미팅, 은행·세무서·우체국 방문, 사무용품 구매, 사외 회의 등 짧지만 업무 관련 운행은 모두 일반 업무용에 포함됩니다.
+  </p>
+
+  <h3>4. 주말·휴일 업무 운행도 누락하지 않는다</h3>
+  <p>
+    주말 거래처 방문, 박람회·전시회 참가, 긴급 출동 등은 휴일이라도 업무용입니다. <strong>주말 운행 = 사적 사용</strong>이라는 자동 가정에 빠지지 마세요.
+  </p>
+
+  <h3>5. 사적 사용 운행은 차라리 별도 차량으로</h3>
+  <p>
+    가족 외출·휴가·개인 용무로 법인차를 사용할 일이 잦다면 업무사용비율이 떨어집니다. 사적 사용이 빈번하면 차라리 개인 차량을 별도로 두는 편이 세무상 유리합니다.
+  </p>
+
+  <h2>사적 사용으로 분류되는 운행</h2>
+  <table>
+    <tr><th>운행 유형</th><th>분류</th></tr>
+    <tr><td>거주지 ↔ 사업장 출퇴근</td><td>업무용 (출퇴근용)</td></tr>
+    <tr><td>거래처 방문, 영업, 출장</td><td>업무용 (일반 업무용)</td></tr>
+    <tr><td>은행·세무서 등 업무 관련 외출</td><td>업무용 (일반 업무용)</td></tr>
+    <tr><td>주말 거래처 미팅, 긴급 출동</td><td>업무용 (일반 업무용)</td></tr>
+    <tr><td>가족 외식·쇼핑·여행</td><td>사적 사용</td></tr>
+    <tr><td>개인 병원·미용실 방문</td><td>사적 사용</td></tr>
+    <tr><td>휴가·여가 활동</td><td>사적 사용</td></tr>
+    <tr><td>출퇴근 도중 들른 개인 볼일</td><td>경계 — 비중 크면 사적 분리 권장</td></tr>
+  </table>
+
+  <h2>업무사용비율 100%를 주장할 때 주의할 점</h2>
+  <p>
+    이론상 100%도 가능하지만, <strong>국세청은 비현실적으로 높은 비율을 의심</strong>합니다. 실제로 다음과 같은 경우 세무조사에서 의심을 사기 쉽습니다:
+  </p>
+  <ul>
+    <li>주말·휴일 운행이 단 하루도 없다 (현실적으로 매우 드뭄)</li>
+    <li>일간 주행거리가 매일 정확히 동일 (자동 생성 의심)</li>
+    <li>비고란이 모두 "업무"로 동일하게만 적혀 있음</li>
+    <li>대표이사·임원만 운전 (가족 사용 의심)</li>
+    <li>차량이 한 대인데 휴가철·연휴에도 운행이 그대로 발생</li>
+  </ul>
+
+  <div class="warn-box">
+    <div class="label">⚠ 권장 수준</div>
+    <p>현실적으로 <strong>업무사용비율 85~95%</strong>가 가장 자연스럽고 세무조사에서도 무리 없이 인정받는 수준입니다. 100%를 고집하기보다 정확한 기록이 더 안전합니다.</p>
+  </div>
+
+  <h2>비율 계산 시뮬레이션</h2>
+  <table>
+    <tr><th>구분</th><th>거리 (km)</th><th>설명</th></tr>
+    <tr><td>출퇴근용</td><td>14,400</td><td>왕복 60km × 240일</td></tr>
+    <tr><td>일반 업무용</td><td>4,200</td><td>거래처 방문·출장</td></tr>
+    <tr><td>사적 사용</td><td>1,400</td><td>주말·휴가 운행</td></tr>
+    <tr><td>총 주행거리</td><td>20,000</td><td></td></tr>
+    <tr><td><strong>업무사용비율</strong></td><td colspan="2"><strong>(14,400 + 4,200) ÷ 20,000 = 93%</strong></td></tr>
+  </table>
+  <p>
+    연간 차량 비용 3,000만원이라면 손금 인정액은 약 <strong>2,790만원</strong>. 운행기록부 미작성 시 1,500만원만 인정되는 것과 비교하면 차이가 약 1,290만원, 법인세 기준 약 258만원 절세 효과가 발생합니다.
+  </p>
+
+  <hr class="divider" />
+
+  <div class="related">
+    <h3>함께 읽으면 좋은 글</h3>
+    <ul>
+      <li><a href="driving-log-template-guide.html">운행기록부 양식 + 작성 예시 (국세청 별지 65호)</a></li>
+      <li><a href="no-odometer-log-penalty.html">운행기록부 안 쓰면 어떻게 되나요?</a></li>
+      <li><a href="tax-audit-cases.html">법인차 세무조사 적발 사례 모음</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>출퇴근·일반 업무용 자동 분류 — GPS가 알아서 처리합니다</h3>
+    <p>드라이브로그는 운행 시작 시 목적(업무/출퇴근/기타)을 선택만 하면 GPS로 거리를 자동 측정하고, 양식에 맞춰 분리 기재합니다. 업무사용비율도 자동 계산.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy.html">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>

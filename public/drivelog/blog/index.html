@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>운행기록부 가이드 — 업무용 차량·세무 완전 정복 | 드라이브로그</title>
-  <meta name="description" content="법인차 비용처리, 운행기록부 작성 의무, 세무 절세 가이드를 드라이브로그 운행기록부 가이드에서 확인하세요." />
+  <meta name="description" content="법인차 비용처리, 운행기록부 작성 의무·양식, 세무조사 적발 사례, 연두색 번호판, 리스 vs 렌트 vs 구매 비교까지. 업무용 승용차 세무 실전 가이드." />
+  <meta property="og:title" content="운행기록부 가이드 — 업무용 차량·세무 완전 정복" />
+  <meta property="og:description" content="법인차 비용처리, 운행기록부 작성법, 세무조사 사례, 연두색 번호판까지 한 곳에서." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.7; }
@@ -13,16 +17,21 @@
     .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
     .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
     .site-header .home-link { font-size: 0.85rem; color: #64748b; margin-left: auto; }
-    .container { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+    .container { max-width: 820px; margin: 0 auto; padding: 56px 24px 80px; }
     .page-title { font-size: clamp(1.6rem, 4vw, 2rem); font-weight: 800; color: #f1f5f9; margin-bottom: 8px; }
     .page-desc { color: #64748b; font-size: 0.95rem; margin-bottom: 48px; }
-    .article-list { display: flex; flex-direction: column; gap: 20px; }
-    .article-card { display: block; background: #141821; border: 1px solid #1e293b; border-radius: 14px; padding: 24px 28px; transition: border-color 0.2s; }
+    .category-section { margin-bottom: 48px; }
+    .category-title { font-size: 0.85rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; padding-left: 12px; border-left: 3px solid #38bdf8; }
+    .article-list { display: flex; flex-direction: column; gap: 16px; }
+    .article-card { display: block; background: #141821; border: 1px solid #1e293b; border-radius: 14px; padding: 22px 26px; transition: border-color 0.2s; }
     .article-card:hover { border-color: #38bdf8; text-decoration: none; }
     .article-tag { font-size: 0.73rem; padding: 2px 9px; border-radius: 99px; background: rgba(56,189,248,0.1); color: #38bdf8; border: 1px solid rgba(56,189,248,0.2); display: inline-block; margin-bottom: 12px; }
-    .article-title { font-size: 1.15rem; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; line-height: 1.4; }
-    .article-desc { font-size: 0.88rem; color: #64748b; line-height: 1.6; }
-    .article-meta { font-size: 0.78rem; color: #475569; margin-top: 14px; }
+    .article-tag.audit { background: rgba(248,113,113,0.08); color: #f87171; border-color: rgba(248,113,113,0.2); }
+    .article-tag.tool { background: rgba(34,197,94,0.08); color: #22c55e; border-color: rgba(34,197,94,0.2); }
+    .article-tag.system { background: rgba(168,85,247,0.08); color: #a855f7; border-color: rgba(168,85,247,0.2); }
+    .article-title { font-size: 1.1rem; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; line-height: 1.4; }
+    .article-desc { font-size: 0.87rem; color: #64748b; line-height: 1.6; }
+    .article-meta { font-size: 0.76rem; color: #475569; margin-top: 12px; }
     footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
   </style>
 </head>
@@ -37,27 +46,94 @@
   <h1 class="page-title">운행기록부 가이드</h1>
   <p class="page-desc">업무용 차량 운행기록, 세무 절세, 법인차 비용처리에 관한 실용 가이드</p>
 
-  <div class="article-list">
-    <a class="article-card" href="no-odometer-log-penalty.html">
-      <span class="article-tag">세무 가이드</span>
-      <div class="article-title">업무용 승용차 운행기록부 안 쓰면 어떻게 되나요?</div>
-      <div class="article-desc">운행기록부를 작성하지 않으면 1,500만원 초과 차량 비용이 전액 손금 불인정됩니다. 세무조사 시 실제로 발생하는 불이익과 계산 예시를 정리했습니다.</div>
-      <div class="article-meta">2026년 5월 · 라라캣소프트</div>
-    </a>
+  <div class="category-section">
+    <div class="category-title">세무 가이드</div>
+    <div class="article-list">
+      <a class="article-card" href="no-odometer-log-penalty.html">
+        <span class="article-tag">세무 가이드</span>
+        <div class="article-title">업무용 승용차 운행기록부 안 쓰면 어떻게 되나요?</div>
+        <div class="article-desc">운행기록부를 작성하지 않으면 1,500만원 초과 차량 비용이 전액 손금 불인정됩니다. 세무조사 시 실제로 발생하는 불이익과 계산 예시를 정리했습니다.</div>
+        <div class="article-meta">2026년 5월 · 라라캣소프트</div>
+      </a>
 
-    <a class="article-card" href="double-entry-bookkeeper-2024.html">
-      <span class="article-tag">2024년 개정</span>
-      <div class="article-title">2024년 복식부기의무자 업무용 차량 운행기록부 의무 총정리</div>
-      <div class="article-desc">2024년부터 복식부기의무자 개인사업자도 법인과 동일하게 운행기록부 작성 의무가 적용됩니다. 내가 해당하는지 기준과 준비 방법을 확인하세요.</div>
-      <div class="article-meta">2026년 5월 · 라라캣소프트</div>
-    </a>
+      <a class="article-card" href="tax-audit-cases.html">
+        <span class="article-tag audit">세무조사 사례</span>
+        <div class="article-title">법인차 세무조사 적발 사례 모음 — 운행기록부 부실 시 무슨 일이 벌어지나</div>
+        <div class="article-desc">국세청 법인차 사적 사용 적발 실제 사례. 손금 불인정 → 대표이사 상여처분 → 종합소득세 추가 부과 → 가산세까지 풀 체인을 정리했습니다.</div>
+        <div class="article-meta">2026년 5월 · 라라캣소프트</div>
+      </a>
 
-    <a class="article-card" href="corporate-car-expense-deduction.html">
-      <span class="article-tag">절세 가이드</span>
-      <div class="article-title">법인차 비용처리 완벽 가이드 — 운행기록부 없으면 비용 인정 안 됩니다</div>
-      <div class="article-desc">감가상각비, 유류비, 보험료 등 법인차 관련 비용을 최대한 처리하기 위한 조건과 한도, 실제 세금 차이 계산까지 정리했습니다.</div>
-      <div class="article-meta">2026년 5월 · 라라캣소프트</div>
-    </a>
+      <a class="article-card" href="commute-business-use-ratio.html">
+        <span class="article-tag">세무 가이드</span>
+        <div class="article-title">출퇴근도 업무용? 운행기록부 업무사용비율 100% 만드는 법</div>
+        <div class="article-desc">출퇴근은 업무용 사용거리에 포함됩니다. 업무사용비율을 90~100%까지 정당하게 올리는 실전 팁과 사적 사용으로 분류되는 운행, 비율 산정 공식까지.</div>
+        <div class="article-meta">2026년 5월 · 라라캣소프트</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-title">절세 가이드</div>
+    <div class="article-list">
+      <a class="article-card" href="corporate-car-expense-deduction.html">
+        <span class="article-tag">절세 가이드</span>
+        <div class="article-title">법인차 비용처리 완벽 가이드 — 운행기록부 없으면 비용 인정 안 됩니다</div>
+        <div class="article-desc">감가상각비, 유류비, 보험료 등 법인차 관련 비용을 최대한 처리하기 위한 조건과 한도, 실제 세금 차이 계산까지 정리했습니다.</div>
+        <div class="article-meta">2026년 5월 · 라라캣소프트</div>
+      </a>
+
+      <a class="article-card" href="lease-vs-rental-vs-purchase.html">
+        <span class="article-tag">절세 가이드</span>
+        <div class="article-title">법인차 리스 vs 렌트 vs 구매 — 운행기록부 관점 완전 비교</div>
+        <div class="article-desc">세 방식 모두 운행기록부 의무는 동일합니다. 진짜 차이는 부가세·번호판·자금 운용에 있습니다. 한 표로 비교하고 결정 가이드까지.</div>
+        <div class="article-meta">2026년 5월 · 라라캣소프트</div>
+      </a>
+
+      <a class="article-card" href="sole-proprietor-bookkeeping.html">
+        <span class="article-tag">개인사업자</span>
+        <div class="article-title">개인사업자 차량 비용처리 — 간편장부 vs 복식부기 완전 비교</div>
+        <div class="article-desc">간편장부 대상자는 한도·운행기록부 의무가 없고, 복식부기의무자는 법인과 동일합니다. 2026년 차량 2대 이상 업무전용보험 의무 확대까지.</div>
+        <div class="article-meta">2026년 5월 · 라라캣소프트</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-title">제도·번호판</div>
+    <div class="article-list">
+      <a class="article-card" href="green-plate-corporate-car.html">
+        <span class="article-tag system">제도·번호판</span>
+        <div class="article-title">연두색 번호판 법인차 완전 정리 — 8천만원 기준·운행기록부 의무까지</div>
+        <div class="article-desc">2024년부터 8천만원 이상 법인 승용차는 연두색 전용 번호판 의무. 적용 대상, 리스·렌트 포함 여부, 미부착 시 비용처리 불이익까지 정리.</div>
+        <div class="article-meta">2026년 5월 · 라라캣소프트</div>
+      </a>
+
+      <a class="article-card" href="double-entry-bookkeeper-2024.html">
+        <span class="article-tag system">2024년 개정</span>
+        <div class="article-title">2024년 복식부기의무자 업무용 차량 운행기록부 의무 총정리</div>
+        <div class="article-desc">2024년부터 복식부기의무자 개인사업자도 법인과 동일하게 운행기록부 작성 의무가 적용됩니다. 내가 해당하는지 기준과 준비 방법을 확인하세요.</div>
+        <div class="article-meta">2026년 5월 · 라라캣소프트</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="category-section">
+    <div class="category-title">양식·도구</div>
+    <div class="article-list">
+      <a class="article-card" href="driving-log-template-guide.html">
+        <span class="article-tag tool">양식·작성법</span>
+        <div class="article-title">운행기록부 양식 다운로드 + 작성 예시 (국세청 별지 65호)</div>
+        <div class="article-desc">국세청 별지 제65호 운행기록부 양식과 항목별 작성 예시. 차종·등록번호·사용일자·주행 전·후 계기판·업무용 사용거리까지 빈 칸 없이 채우는 법.</div>
+        <div class="article-meta">2026년 5월 · 라라캣소프트</div>
+      </a>
+
+      <a class="article-card" href="1500-limit-simulator.html">
+        <span class="article-tag tool">계산기·도구</span>
+        <div class="article-title">업무용 승용차 1,500만원 한도 계산 — 케이스별 시뮬레이션 + 계산기</div>
+        <div class="article-desc">연간 차량 비용 1,500만원 한도와 감가상각 800만원 한도가 실제로 어떻게 계산되는지 케이스별 시뮬레이션. 본인 차량 수치로 즉시 계산해 보세요.</div>
+        <div class="article-meta">2026년 5월 · 라라캣소프트</div>
+      </a>
+    </div>
   </div>
 </div>
 

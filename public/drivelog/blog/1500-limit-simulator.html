@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>업무용 승용차 1,500만원 한도 계산 — 케이스별 시뮬레이션 + 인터랙티브 계산기 | 드라이브로그</title>
+  <meta name="description" content="연간 차량 비용 1,500만원 한도와 감가상각 800만원 한도가 실제로 어떻게 계산되는지 케이스별 시뮬레이션. 운행기록부 작성 여부에 따른 손금 차이를 즉시 계산해 보세요." />
+  <meta property="og:title" content="업무용 승용차 1,500만원 한도 계산 — 케이스별 시뮬레이션" />
+  <meta property="og:description" content="연간 차량 비용 1,500만원·감가상각 800만원 한도 계산 케이스 + 즉시 계산기." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/1500-limit-simulator.html" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #38bdf8; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .case-box { background: #141821; border: 1px solid #1e293b; border-radius: 12px; padding: 24px 28px; margin: 28px 0; }
+    .case-box .case-label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .case-box .case-title { font-size: 1.05rem; font-weight: 700; color: #f1f5f9; margin-bottom: 12px; }
+    .related { margin-top: 48px; padding: 24px; background: #141821; border: 1px solid #1e293b; border-radius: 12px; }
+    .related h3 { color: #cbd5e1; font-size: 0.95rem; margin: 0 0 12px; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { margin-bottom: 6px; font-size: 0.9rem; }
+    .calc-box { background: linear-gradient(135deg, #141821, #1a1f2e); border: 1px solid #334155; border-radius: 16px; padding: 28px; margin: 32px 0; }
+    .calc-box h3 { color: #f1f5f9; font-size: 1.1rem; margin-bottom: 18px; border: none; padding: 0; }
+    .calc-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+    .calc-row label { color: #94a3b8; font-size: 0.9rem; flex: 1; min-width: 180px; }
+    .calc-row input { background: #0f1117; border: 1px solid #334155; color: #f1f5f9; padding: 8px 12px; border-radius: 6px; width: 130px; font-size: 0.95rem; text-align: right; font-family: "JetBrains Mono", "SF Mono", monospace; }
+    .calc-row input:focus { outline: none; border-color: #38bdf8; }
+    .calc-result { background: #0f1117; border: 1px solid #38bdf8; border-radius: 8px; padding: 18px; margin-top: 18px; }
+    .result-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.92rem; color: #cbd5e1; }
+    .result-row.total { font-size: 1.05rem; font-weight: 700; color: #38bdf8; border-top: 1px solid #334155; margin-top: 8px; padding-top: 12px; }
+    .toggle-row { margin-bottom: 14px; }
+    .toggle-row label { color: #94a3b8; font-size: 0.9rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .toggle-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: #38bdf8; cursor: pointer; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; border: none; padding: 0; margin-top: 0; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>1,500만원 한도 계산
+  </div>
+
+  <span class="tag">계산기·도구</span>
+  <h1>업무용 승용차 1,500만원 한도 계산<br>— 케이스별 시뮬레이션 + 계산기</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    "내 차량은 운행기록부 안 쓰면 얼마나 손해일까?" 머릿속으로만 계산하면 막연합니다. 이 글은 1,500만원 한도와 800만원 감가상각 한도가 <strong>실제 비용에 어떻게 적용되는지</strong> 4가지 케이스로 풀어 보여 주고, 본인 차량 수치를 직접 넣어볼 수 있는 계산기까지 함께 제공합니다.
+  </p>
+
+  <h2>먼저, 손금 한도 두 가지를 정리합니다</h2>
+  <table>
+    <tr><th>한도</th><th>대상</th><th>초과분 처리</th></tr>
+    <tr><td>1,500만원 (연간 차량 비용 한도)</td><td>운행기록부 미작성 시 적용. 작성 시 업무사용비율만큼 인정</td><td>한도 초과분 전액 손금 불인정</td></tr>
+    <tr><td>800만원 (연간 감가상각비 한도)</td><td>운행기록부 작성 여부 무관 적용</td><td>초과분 이월 → 다음 연도 손금 산입</td></tr>
+  </table>
+
+  <div class="highlight-box">
+    <div class="label">두 한도는 별개</div>
+    <p style="margin:0; color:#e2e8f0;">800만원은 감가상각비에만 적용되는 한도, 1,500만원은 차량 비용 전체(감가상각 + 유류 + 보험 + 정비 등)에 적용되는 한도입니다. 둘 다 동시에 통과해야 합니다.</p>
+  </div>
+
+  <h2>케이스 1 — 중형 세단, 운행기록부 미작성</h2>
+  <div class="case-box">
+    <div class="case-label">전제</div>
+    <div class="case-title">취득가 4,000만원, 연간 비용 2,000만원 (감가상각 800만원 + 기타 1,200만원)</div>
+    <p style="margin-bottom: 8px;"><strong>감가상각 한도 검토:</strong> 800만원 = 한도 800만원 → 전액 인정</p>
+    <p style="margin-bottom: 8px;"><strong>1,500만원 한도 검토:</strong> 2,000만원 > 1,500만원 → 1,500만원만 인정</p>
+    <p style="margin-bottom: 8px;"><strong>최종 손금 인정액:</strong> 1,500만원</p>
+    <p style="margin-bottom: 0;"><strong>손금 불인정액:</strong> 500만원 → 추가 법인세 약 100만원 (세율 20%)</p>
+  </div>
+
+  <h2>케이스 2 — 같은 차량, 운행기록부 작성 (업무사용비율 90%)</h2>
+  <div class="case-box">
+    <div class="case-label">전제</div>
+    <div class="case-title">위와 동일. 운행기록부 작성, 업무사용비율 90%</div>
+    <p style="margin-bottom: 8px;"><strong>감가상각 한도 검토:</strong> 800만원 × 90% = 720만원 → 인정</p>
+    <p style="margin-bottom: 8px;"><strong>업무사용비율 적용:</strong> 2,000만원 × 90% = 1,800만원</p>
+    <p style="margin-bottom: 8px;"><strong>최종 손금 인정액:</strong> 1,800만원</p>
+    <p style="margin-bottom: 0;"><strong>케이스 1 대비 추가 인정액:</strong> 300만원 → 법인세 약 60만원 절감</p>
+  </div>
+
+  <h2>케이스 3 — 고가 수입차, 감가상각 한도 초과</h2>
+  <div class="case-box">
+    <div class="case-label">전제</div>
+    <div class="case-title">취득가 1억원, 연간 비용 3,500만원 (감가상각 2,000만원 + 기타 1,500만원)</div>
+    <p style="margin-bottom: 8px;"><strong>감가상각 한도 검토:</strong> 2,000만원 > 한도 800만원 → 800만원만 인정, 1,200만원 이월</p>
+    <p style="margin-bottom: 8px;"><strong>운행기록부 작성, 업무사용비율 90%:</strong> (800만원 감가 + 1,500만원 기타) × 90% = 2,070만원</p>
+    <p style="margin-bottom: 8px;"><strong>최종 손금 인정액 (당기):</strong> 2,070만원</p>
+    <p style="margin-bottom: 0;"><strong>이월 감가상각:</strong> 1,200만원 (이후 5년간 분할 인정)</p>
+  </div>
+
+  <h2>케이스 4 — 운행기록부 없이, 같은 고가 수입차</h2>
+  <div class="case-box">
+    <div class="case-label">전제</div>
+    <div class="case-title">케이스 3과 동일하나 운행기록부 미작성</div>
+    <p style="margin-bottom: 8px;"><strong>1,500만원 한도 적용:</strong> 3,500만원 > 1,500만원 → 1,500만원만 인정</p>
+    <p style="margin-bottom: 8px;"><strong>최종 손금 인정액:</strong> 1,500만원</p>
+    <p style="margin-bottom: 8px;"><strong>케이스 3 대비 손해:</strong> 570만원 → 추가 법인세 약 114만원</p>
+    <p style="margin-bottom: 0;"><strong>5년 누적:</strong> 약 570만원 × 5 = 2,850만원 손금 손해 → 추가 법인세 약 570만원</p>
+  </div>
+
+  <div class="warn-box">
+    <div class="label">⚠ 8,000만원↑ 고가 차량은 케이스 4가 적용되지 않을 수 있음</div>
+    <p>연두색 번호판·업무 전용 보험까지 모두 갖추어야 함. 하나라도 빠지면 차량 비용 <strong>전액 손금 불인정</strong> 가능. <a href="green-plate-corporate-car.html" style="color:#fbbf24; text-decoration:underline;">연두색 번호판 가이드 →</a></p>
+  </div>
+
+  <h2>본인 차량 직접 계산해 보기</h2>
+  <p>
+    아래 칸에 본인 차량의 수치를 넣으면 손금 인정액과 추가 세금이 즉시 계산됩니다.
+  </p>
+
+  <div class="calc-box">
+    <h3>1,500만원 한도 계산기</h3>
+    <div class="calc-row">
+      <label for="dep">연간 감가상각비 (만원)</label>
+      <input type="number" id="dep" value="800" min="0" step="10" />
+    </div>
+    <div class="calc-row">
+      <label for="other">기타 비용 (유류·보험·정비 등, 만원)</label>
+      <input type="number" id="other" value="1200" min="0" step="10" />
+    </div>
+    <div class="calc-row">
+      <label for="ratio">업무사용비율 (%)</label>
+      <input type="number" id="ratio" value="90" min="0" max="100" step="1" />
+    </div>
+    <div class="toggle-row">
+      <label><input type="checkbox" id="hasLog" checked /> 운행기록부 작성함</label>
+    </div>
+    <div class="calc-row">
+      <label for="taxRate">법인세율 (%)</label>
+      <input type="number" id="taxRate" value="20" min="0" max="50" step="1" />
+    </div>
+
+    <div class="calc-result">
+      <div class="result-row"><span>총 차량 비용</span><span id="rTotal">2,000만원</span></div>
+      <div class="result-row"><span>감가상각 한도 적용 후 (800만원 한도)</span><span id="rAfterDep">2,000만원</span></div>
+      <div class="result-row"><span>운행기록부 적용 후 손금 인정액</span><span id="rRecognized">1,800만원</span></div>
+      <div class="result-row"><span>손금 불인정액</span><span id="rUnrecog">200만원</span></div>
+      <div class="result-row total"><span>추가 법인세 부담</span><span id="rTax">40만원</span></div>
+    </div>
+  </div>
+
+  <script>
+    function fmt(n) { return Math.round(n).toLocaleString() + '만원'; }
+    function calc() {
+      var dep = parseFloat(document.getElementById('dep').value) || 0;
+      var other = parseFloat(document.getElementById('other').value) || 0;
+      var ratio = parseFloat(document.getElementById('ratio').value) || 0;
+      var hasLog = document.getElementById('hasLog').checked;
+      var taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+
+      var total = dep + other;
+      var depCapped = Math.min(dep, 800);
+      var capped = depCapped + other;
+
+      var recognized;
+      if (hasLog) {
+        recognized = capped * (ratio / 100);
+      } else {
+        recognized = Math.min(capped, 1500);
+      }
+      var unrecog = total - recognized;
+      if (unrecog < 0) unrecog = 0;
+      var tax = unrecog * (taxRate / 100);
+
+      document.getElementById('rTotal').textContent = fmt(total);
+      document.getElementById('rAfterDep').textContent = fmt(capped) + (dep > 800 ? ' (이월 ' + fmt(dep - 800) + ')' : '');
+      document.getElementById('rRecognized').textContent = fmt(recognized);
+      document.getElementById('rUnrecog').textContent = fmt(unrecog);
+      document.getElementById('rTax').textContent = fmt(tax);
+    }
+    ['dep','other','ratio','hasLog','taxRate'].forEach(function(id){
+      document.getElementById(id).addEventListener('input', calc);
+      document.getElementById(id).addEventListener('change', calc);
+    });
+    calc();
+  </script>
+
+  <h2>계산기 결과를 어떻게 해석할까</h2>
+  <ul>
+    <li><strong>"손금 불인정액"이 매년 발생한다면</strong> — 5년 누적 시 추가 세금이 차량 1대 가격에 육박할 수 있습니다.</li>
+    <li><strong>운행기록부 체크박스를 켰다 껐다 비교해 보세요</strong> — 비율 80% 이상이면 작성이 무조건 유리합니다.</li>
+    <li><strong>감가상각 800만원 초과분은 이월</strong> — 차량을 5년 이상 보유하면 결국 모두 인정되지만, 단기 자금 흐름에는 영향이 있습니다.</li>
+  </ul>
+
+  <hr class="divider" />
+
+  <div class="related">
+    <h3>함께 읽으면 좋은 글</h3>
+    <ul>
+      <li><a href="corporate-car-expense-deduction.html">법인차 비용처리 완벽 가이드 — 감가상각·유류비·보험료</a></li>
+      <li><a href="commute-business-use-ratio.html">출퇴근도 업무용? 업무사용비율 100% 만드는 법</a></li>
+      <li><a href="no-odometer-log-penalty.html">운행기록부 안 쓰면 어떻게 되나요?</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>비율을 높이는 가장 확실한 방법 — 누락 없는 운행기록</h3>
+    <p>드라이브로그는 화면을 꺼도 GPS로 거리·시간을 자동 측정하고, 출퇴근·일반 업무용을 분리해 양식에 자동 기재합니다. 비율을 정당하게 끌어올리는 가장 쉬운 방법입니다.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy.html">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>
