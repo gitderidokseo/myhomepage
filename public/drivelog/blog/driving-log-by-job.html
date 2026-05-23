@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>운행기록부 작성 예시 — 영업·임원·현장직·배송 직무별 케이스 | 드라이브로그</title>
+  <meta name="description" content="영업사원, 임원, 현장직, 배송기사, 컨설턴트, 의료(방문진료) 등 직무별 실제 운행기록부 작성 예시와 비고란 작성법, 직무별 세무조사 포인트를 정리." />
+  <meta property="og:title" content="운행기록부 작성 예시 — 직무별 케이스" />
+  <meta property="og:description" content="영업·임원·현장직 등 직무별 운행기록 예시와 작성 포인트." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/driving-log-by-job.html" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(34,197,94,0.08); color: #22c55e; border: 1px solid rgba(34,197,94,0.22); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #22c55e; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    h4 { font-size: 0.95rem; font-weight: 700; color: #94a3b8; margin: 18px 0 8px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .toc { background: #141821; border: 1px solid #1e293b; border-radius: 12px; padding: 20px 24px; margin: 16px 0 36px; }
+    .toc-title { font-size: 0.78rem; font-weight: 700; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .toc ol { margin: 0; padding-left: 18px; color: #cbd5e1; }
+    .toc li { margin-bottom: 6px; font-size: 0.92rem; }
+    .highlight-box { background: rgba(34,197,94,0.07); border: 1px solid rgba(34,197,94,0.22); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.8rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 8px 10px; text-align: left; border-bottom: 1px solid #334155; font-size: 0.78rem; }
+    td { padding: 8px 10px; border-bottom: 1px solid #1e293b; color: #cbd5e1; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .case-card { background: #141821; border: 1px solid #1e293b; border-radius: 14px; padding: 22px 26px; margin: 24px 0; }
+    .case-card h3 { margin-top: 0; color: #f1f5f9; font-size: 1.1rem; }
+    .case-card .meta-tag { display: inline-block; font-size: 0.72rem; padding: 2px 8px; border-radius: 99px; background: rgba(34,197,94,0.1); color: #22c55e; border: 1px solid rgba(34,197,94,0.25); margin-bottom: 10px; }
+    .case-card p { color: #94a3b8; font-size: 0.92rem; margin-bottom: 12px; }
+    .case-card .pattern { font-size: 0.85rem; color: #64748b; margin-bottom: 14px; }
+    .case-card .pattern strong { color: #cbd5e1; }
+    .related { margin-top: 48px; padding: 24px; background: #141821; border: 1px solid #1e293b; border-radius: 12px; }
+    .related h3 { color: #cbd5e1; font-size: 0.95rem; margin: 0 0 12px; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { margin-bottom: 6px; font-size: 0.9rem; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; border: none; padding: 0; margin-top: 0; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>직무별 작성 예시
+  </div>
+
+  <span class="tag">작성 예시</span>
+  <h1>운행기록부 작성 예시<br>— 직무별 케이스</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    운행기록부 양식은 같지만, 직무에 따라 <strong>운행 패턴·기재 포인트·세무조사 주의사항</strong>이 모두 다릅니다. 영업사원의 다회 외근, 임원의 단순 출퇴근, 현장직의 현장 ↔ 사무실 왕복은 각각 다른 방식으로 작성해야 인정받기 좋습니다. 직무별 실제 예시와 비고란 작성법을 정리했습니다.
+  </p>
+
+  <div class="toc">
+    <div class="toc-title">목차</div>
+    <ol>
+      <li><a href="#sales">영업사원 — 거래처 다회 방문</a></li>
+      <li><a href="#executive">임원·대표 — 출퇴근 + 행사·미팅</a></li>
+      <li><a href="#field">현장직 — 현장 ↔ 사무실 왕복</a></li>
+      <li><a href="#delivery">배송·물류 — 종일 외근</a></li>
+      <li><a href="#consultant">컨설턴트·전문직 — 고객사 상주</a></li>
+      <li><a href="#medical">의료(방문진료·왕진)</a></li>
+      <li><a href="#commerce">소상공인·자영업 — 매입처·은행</a></li>
+      <li><a href="#tips">직무 무관 공통 작성 팁</a></li>
+    </ol>
+  </div>
+
+  <h2 id="sales">영업사원 — 거래처 다회 방문</h2>
+  <p>
+    가장 작성량이 많은 직무. 하루 3~7건의 외근이 발생하며, 비고란에 거래처명을 구체적으로 적는 것이 핵심입니다.
+  </p>
+
+  <div class="case-card">
+    <span class="meta-tag">2026-05-23 (수) · 영업팀 김라라</span>
+    <h3>예시 — 하루 3건 운행</h3>
+    <table>
+      <tr><th>출발 km</th><th>도착 km</th><th>주행</th><th>출퇴근</th><th>업무</th><th>비고</th></tr>
+      <tr><td>15,420</td><td>15,438</td><td>18</td><td>18</td><td>0</td><td>출근 (자택→본사)</td></tr>
+      <tr><td>15,438</td><td>15,468</td><td>30</td><td>0</td><td>30</td><td>(주)○○ 미팅, 강남</td></tr>
+      <tr><td>15,468</td><td>15,495</td><td>27</td><td>0</td><td>27</td><td>(주)△△ 견적 전달, 분당</td></tr>
+      <tr><td>15,495</td><td>15,512</td><td>17</td><td>0</td><td>17</td><td>(주)□□ 계약서 회수, 판교</td></tr>
+      <tr><td>15,512</td><td>15,532</td><td>20</td><td>20</td><td>0</td><td>퇴근 (본사→자택)</td></tr>
+    </table>
+    <div class="pattern"><strong>일간 총 주행</strong>: 112km · <strong>업무용</strong>: 74km · <strong>출퇴근</strong>: 38km · <strong>업무사용비율</strong>: 100%</div>
+  </div>
+
+  <h4>작성 포인트</h4>
+  <ul>
+    <li>거래처는 정식 사명 + 방문 목적(미팅·견적·계약·수금)을 함께 기재</li>
+    <li>같은 거래처를 하루에 여러 번 방문했다면 한 줄로 묶고 비고에 "○○사 2회 방문"</li>
+    <li>점심 식사 등 사적 동선은 기록 누락 금지 — 미팅 사이에 끼어 있으면 그 거리는 업무용에 포함 가능(통상 식사)</li>
+    <li>법인카드 사용처(주유·식사)와 운행 동선이 일치해야 함</li>
+  </ul>
+
+  <h2 id="executive">임원·대표 — 출퇴근 + 행사·미팅</h2>
+  <p>
+    운행 빈도는 낮지만 사적 사용 의심을 가장 많이 받는 직무. 주말·휴일 운행 처리가 핵심.
+  </p>
+
+  <div class="case-card">
+    <span class="meta-tag">2026-05-23 (수) · 대표이사 홍길동</span>
+    <h3>예시 — 평일 1일</h3>
+    <table>
+      <tr><th>출발 km</th><th>도착 km</th><th>주행</th><th>출퇴근</th><th>업무</th><th>비고</th></tr>
+      <tr><td>22,150</td><td>22,168</td><td>18</td><td>18</td><td>0</td><td>출근 (자택→본사)</td></tr>
+      <tr><td>22,168</td><td>22,205</td><td>37</td><td>0</td><td>37</td><td>○○상공회의소 조찬 강연 참석</td></tr>
+      <tr><td>22,205</td><td>22,230</td><td>25</td><td>0</td><td>25</td><td>본사 복귀</td></tr>
+      <tr><td>22,230</td><td>22,250</td><td>20</td><td>20</td><td>0</td><td>퇴근 (본사→자택)</td></tr>
+    </table>
+  </div>
+
+  <div class="case-card">
+    <span class="meta-tag">2026-05-25 (토)</span>
+    <h3>예시 — 주말 사적 사용</h3>
+    <table>
+      <tr><th>출발 km</th><th>도착 km</th><th>주행</th><th>출퇴근</th><th>업무</th><th>비고</th></tr>
+      <tr><td>22,290</td><td>22,415</td><td>125</td><td>0</td><td>0</td><td>사적 사용 (가족 외출)</td></tr>
+    </table>
+    <div class="pattern"><strong>주의</strong>: 주말 운행도 <strong>총 주행거리에는 반드시 포함</strong>. 업무용 칸만 0으로 기재.</div>
+  </div>
+
+  <h4>작성 포인트</h4>
+  <ul>
+    <li>주말·휴일 운행은 모두 기록 (안 적으면 카드·하이패스 기록과 충돌)</li>
+    <li>골프장·휴양지·가족 식당 인근 운행은 즉시 사적으로 분류</li>
+    <li>업무 행사(상공회의소·세미나·고객사 경조사)는 비고에 구체적 행사명 기재</li>
+    <li>대표 사적 사용 → 연말에 인정 상여 처리 또는 정기 정산 (<a href="corporate-vehicle-driving-log.html">법인차량 가이드</a> 참고)</li>
+  </ul>
+
+  <h2 id="field">현장직 — 현장 ↔ 사무실 왕복</h2>
+  <p>
+    건설·엔지니어링·설치·정비 등 현장 업무. 동일 현장을 며칠씩 왕복하는 패턴.
+  </p>
+
+  <div class="case-card">
+    <span class="meta-tag">2026-05-23 (수) · 시공팀 이○○ 현장소장</span>
+    <h3>예시 — 단일 현장 왕복</h3>
+    <table>
+      <tr><th>출발 km</th><th>도착 km</th><th>주행</th><th>출퇴근</th><th>업무</th><th>비고</th></tr>
+      <tr><td>38,420</td><td>38,478</td><td>58</td><td>0</td><td>58</td><td>○○아파트 신축 현장 (서울 강서)</td></tr>
+      <tr><td>38,478</td><td>38,485</td><td>7</td><td>0</td><td>7</td><td>철물점 자재 픽업</td></tr>
+      <tr><td>38,485</td><td>38,490</td><td>5</td><td>0</td><td>5</td><td>현장 복귀</td></tr>
+      <tr><td>38,490</td><td>38,548</td><td>58</td><td>0</td><td>58</td><td>본사 복귀 (현장→본사)</td></tr>
+    </table>
+  </div>
+
+  <h4>작성 포인트</h4>
+  <ul>
+    <li>현장명·주소를 비고에 명시 (다수 현장 동시 진행 시 어느 현장인지 구분)</li>
+    <li>자재 픽업·이동도 별도 줄로 기록 — 업무 관련성 명확</li>
+    <li>현장 인근 식사·자재 구매 영수증과 위치·시각 일치</li>
+    <li>현장에서 직접 출근하는 경우 "현장 직출근"으로 비고 기재 (자택→현장도 출퇴근으로 인정)</li>
+  </ul>
+
+  <h2 id="delivery">배송·물류 — 종일 외근</h2>
+  <p>
+    하루 10~30회의 정차가 발생하지만, 운행기록부는 <strong>출발 → 최종 복귀</strong>를 1건으로 묶어 기재합니다.
+  </p>
+
+  <div class="case-card">
+    <span class="meta-tag">2026-05-23 (수) · 배송팀 박○○</span>
+    <h3>예시 — 종일 배송</h3>
+    <table>
+      <tr><th>출발 km</th><th>도착 km</th><th>주행</th><th>출퇴근</th><th>업무</th><th>비고</th></tr>
+      <tr><td>89,420</td><td>89,438</td><td>18</td><td>18</td><td>0</td><td>출근 (자택→물류센터)</td></tr>
+      <tr><td>89,438</td><td>89,612</td><td>174</td><td>0</td><td>174</td><td>서울 동남권 배송 (강남·송파·잠실 17건)</td></tr>
+      <tr><td>89,612</td><td>89,632</td><td>20</td><td>20</td><td>0</td><td>퇴근 (물류센터→자택)</td></tr>
+    </table>
+  </div>
+
+  <h4>작성 포인트</h4>
+  <ul>
+    <li>개별 배송지를 모두 적을 필요 없음 — 권역명 + 건수로 충분</li>
+    <li>배송 명세서·라우팅 시스템 출력물을 별도 보관 (세무조사 시 보강 자료)</li>
+    <li>1톤 트럭 등은 운행기록부 의무 대상 아님(승용차만 의무) — 다만 비용처리 시 비고로 활용</li>
+  </ul>
+
+  <h2 id="consultant">컨설턴트·전문직 — 고객사 상주</h2>
+  <p>
+    고객사에 며칠~몇 주씩 상주하는 패턴. 자택→고객사 직출근이 잦음.
+  </p>
+
+  <div class="case-card">
+    <span class="meta-tag">2026-05-23 (수) · 컨설팅팀 최○○</span>
+    <h3>예시 — 고객사 직출근</h3>
+    <table>
+      <tr><th>출발 km</th><th>도착 km</th><th>주행</th><th>출퇴근</th><th>업무</th><th>비고</th></tr>
+      <tr><td>54,200</td><td>54,235</td><td>35</td><td>35</td><td>0</td><td>출근 (자택→○○고객사, 직출근)</td></tr>
+      <tr><td>54,235</td><td>54,255</td><td>20</td><td>0</td><td>20</td><td>고객사 인근 워크숍 장소 이동</td></tr>
+      <tr><td>54,255</td><td>54,275</td><td>20</td><td>0</td><td>20</td><td>고객사 복귀</td></tr>
+      <tr><td>54,275</td><td>54,310</td><td>35</td><td>35</td><td>0</td><td>퇴근 (고객사→자택)</td></tr>
+    </table>
+  </div>
+
+  <h4>작성 포인트</h4>
+  <ul>
+    <li>고객사 직출근은 "자택→고객사"가 출퇴근으로 인정됨 (자택→사무실과 동일)</li>
+    <li>장기 상주 프로젝트는 PMO 계약서·인보이스로 업무 관련성 증빙</li>
+    <li>고객사 인근에 사적으로 거주지를 임대한 경우 — 사적 사용 의심 대상이므로 사전에 세무사와 협의</li>
+  </ul>
+
+  <h2 id="medical">의료(방문진료·왕진)</h2>
+  <p>
+    환자 자택·요양시설을 방문하는 방문진료의·재활치료사 등.
+  </p>
+
+  <div class="case-card">
+    <span class="meta-tag">2026-05-23 (수) · ○○방문진료의원 박원장</span>
+    <h3>예시 — 환자 방문</h3>
+    <table>
+      <tr><th>출발 km</th><th>도착 km</th><th>주행</th><th>출퇴근</th><th>업무</th><th>비고</th></tr>
+      <tr><td>12,100</td><td>12,108</td><td>8</td><td>8</td><td>0</td><td>출근 (자택→의원)</td></tr>
+      <tr><td>12,108</td><td>12,132</td><td>24</td><td>0</td><td>24</td><td>환자 A 방문진료 (강서)</td></tr>
+      <tr><td>12,132</td><td>12,148</td><td>16</td><td>0</td><td>16</td><td>환자 B 방문진료 (양천)</td></tr>
+      <tr><td>12,148</td><td>12,170</td><td>22</td><td>0</td><td>22</td><td>의원 복귀</td></tr>
+    </table>
+  </div>
+
+  <h4>작성 포인트</h4>
+  <ul>
+    <li>개인정보 보호 차원에서 환자명은 이니셜 또는 차트번호 기재</li>
+    <li>방문진료 청구 내역(보험 청구)과 위치·시각 일치</li>
+    <li>요양시설은 시설명 명시(예: "○○요양원 정기 방문")</li>
+  </ul>
+
+  <h2 id="commerce">소상공인·자영업 — 매입처·은행</h2>
+  <p>
+    음식점·소매·서비스업 사장이 직접 운영하는 차량. 운행은 적지만 매입처·은행·세무서 등 방문이 정기적.
+  </p>
+
+  <div class="case-card">
+    <span class="meta-tag">2026-05-23 (수) · ○○식당 정대표</span>
+    <h3>예시 — 자영업 일과</h3>
+    <table>
+      <tr><th>출발 km</th><th>도착 km</th><th>주행</th><th>출퇴근</th><th>업무</th><th>비고</th></tr>
+      <tr><td>45,100</td><td>45,108</td><td>8</td><td>8</td><td>0</td><td>출근 (자택→매장)</td></tr>
+      <tr><td>45,108</td><td>45,125</td><td>17</td><td>0</td><td>17</td><td>가락시장 식자재 매입</td></tr>
+      <tr><td>45,125</td><td>45,140</td><td>15</td><td>0</td><td>15</td><td>매장 복귀</td></tr>
+      <tr><td>45,140</td><td>45,148</td><td>8</td><td>0</td><td>8</td><td>○○은행 방문 (입금)</td></tr>
+      <tr><td>45,148</td><td>45,156</td><td>8</td><td>8</td><td>0</td><td>퇴근 (매장→자택)</td></tr>
+    </table>
+  </div>
+
+  <h4>작성 포인트</h4>
+  <ul>
+    <li>간편장부 대상자는 운행기록부 의무 없음 (1,500만원 한도도 적용 없음)</li>
+    <li>복식부기의무자는 작성 의무 — 본인 해당 여부는 <a href="double-entry-bookkeeper-2024.html">복식부기의무자 의무 총정리</a> 참고</li>
+    <li>매입처·금융기관 방문은 영수증·이체 내역으로 증빙 가능</li>
+  </ul>
+
+  <h2 id="tips">직무 무관 공통 작성 팁</h2>
+
+  <div class="highlight-box">
+    <div class="label">모든 직무에 공통</div>
+    <p style="margin:0; color:#e2e8f0;">"비고란이 비어 있으면 그 운행은 사적 사용으로 의심받는다"가 기본 원칙. 매 운행 비고에 <strong>목적 + 장소 + (해당 시) 거래처명</strong>을 한 줄로.</p>
+  </div>
+
+  <h3>업무사용비율 100% 만드는 흔한 패턴</h3>
+  <ul>
+    <li>출퇴근만 사용 + 주말 운행 0 → 100%</li>
+    <li>출퇴근 + 평일 외근 + 주말 사용은 별도 차량 → 100%</li>
+    <li>장기 출장 차량 (현장 상주) → 100%</li>
+  </ul>
+  <p>
+    자세한 비율 산정과 사적 사용 분류는 <a href="commute-business-use-ratio.html">업무사용비율 100% 만드는 법</a>에서.
+  </p>
+
+  <h3>세무조사 시 직무별 주요 점검 포인트</h3>
+  <table>
+    <tr><th>직무</th><th>국세청 주요 의심 패턴</th></tr>
+    <tr><td>대표·임원</td><td>주말·휴양지 운행, 가족 명의 카드 사용 동선</td></tr>
+    <tr><td>영업</td><td>거래처명 누락, 동일 거래처 과다 반복</td></tr>
+    <tr><td>현장직</td><td>현장 직출근 비율 과다, 현장 외 사적 우회</td></tr>
+    <tr><td>컨설턴트</td><td>고객사 인근 사적 거주지, 비업무 시간 운행</td></tr>
+    <tr><td>의료</td><td>방문 청구 건수 대비 운행 건수 불일치</td></tr>
+  </table>
+
+  <hr class="divider" />
+
+  <div class="related">
+    <h3>함께 읽으면 좋은 글</h3>
+    <ul>
+      <li><a href="how-to-write-driving-log.html">운행기록부 작성 방법 — 5분 만에 끝내는 절차</a></li>
+      <li><a href="driving-log-template-guide.html">운행기록부 양식 다운로드 + 작성 예시 (별지 65호)</a></li>
+      <li><a href="commute-business-use-ratio.html">출퇴근·업무사용비율 100% 만드는 법</a></li>
+      <li><a href="corporate-vehicle-driving-log.html">법인차량 운행기록부 완전 가이드</a></li>
+      <li><a href="tax-audit-cases.html">법인차 세무조사 적발 사례 모음</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>직무·운전자별 패턴이 다른 회사에 최적</h3>
+    <p>드라이브로그는 운전자별·차량별로 운행을 자동 분리하고, 비고 템플릿을 직무별로 미리 설정해 둘 수 있습니다. 영업·임원·현장직 모두 한 시스템에서.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy.html">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>

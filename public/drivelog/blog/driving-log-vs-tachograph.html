@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>운행기록부 vs 운행기록계(DTG) vs 운행기록장치 — 무엇이 다른가 | 드라이브로그</title>
+  <meta name="description" content="운행기록부·운행기록계·디지털운행기록계(DTG)·운행기록장치는 모두 다른 제도입니다. 사업용 vs 업무용, 세무 서식 vs 의무 장착 장치를 한 표로 정리." />
+  <meta property="og:title" content="운행기록부 vs 운행기록계(DTG) vs 운행기록장치 — 무엇이 다른가" />
+  <meta property="og:description" content="법인차 세무용 운행기록부와 사업용 차량 의무 장치 DTG, 제대로 구분하세요." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/driving-log-vs-tachograph.html" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(168,85,247,0.12); color: #a855f7; border: 1px solid rgba(168,85,247,0.25); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #a855f7; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: rgba(168,85,247,0.07); border: 1px solid rgba(168,85,247,0.2); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #a855f7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    .answer-box { background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.22); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .answer-box .label { font-size: 0.78rem; font-weight: 700; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .answer-box p { color: #e2e8f0; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .compare-table th:first-child { width: 22%; }
+    .related { margin-top: 48px; padding: 24px; background: #141821; border: 1px solid #1e293b; border-radius: 12px; }
+    .related h3 { color: #cbd5e1; font-size: 0.95rem; margin: 0 0 12px; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { margin-bottom: 6px; font-size: 0.9rem; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; border: none; padding: 0; margin-top: 0; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>운행기록부 vs 운행기록계
+  </div>
+
+  <span class="tag">개념 구분</span>
+  <h1>운행기록부 vs 운행기록계(DTG)<br>vs 운행기록장치 — 무엇이 다른가</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    "운행기록부 써야 한다"는 말을 듣고 검색을 시작하면 곧 막힙니다. <strong>운행기록부, 운행기록계, 디지털운행기록계, 운행기록장치, DTG, 운행기록분석시스템</strong>... 이름은 다 비슷한데 다루는 사이트가 전부 다른 얘기를 합니다. 이 글은 이 용어들을 한 번에 정리하고, 내가 무엇을 해야 하는지 알려주는 결정판 가이드입니다.
+  </p>
+
+  <div class="highlight-box">
+    <div class="label">한 줄 결론</div>
+    <p style="margin:0; color:#e2e8f0;"><strong>운행기록부</strong>는 법인차·업무용 승용차의 <strong>세무용 서식</strong>(종이/엑셀/앱). <strong>운행기록계(DTG)</strong>는 버스·화물차·택시에 의무 부착되는 <strong>물리 장치</strong>. 두 제도는 근거 법령·대상·목적이 모두 다릅니다.</p>
+  </div>
+
+  <h2>핵심 비교표</h2>
+
+  <table class="compare-table">
+    <tr>
+      <th>구분</th>
+      <th>운행기록부</th>
+      <th>운행기록계 / DTG / 운행기록장치</th>
+    </tr>
+    <tr>
+      <td>성격</td>
+      <td>세무 서식 (종이·엑셀·앱)</td>
+      <td>물리 장치 (차량 부착 하드웨어)</td>
+    </tr>
+    <tr>
+      <td>근거 법령</td>
+      <td>법인세법·소득세법<br>(별지 65호 양식)</td>
+      <td>교통안전법 제55조<br>여객·화물자동차운수사업법</td>
+    </tr>
+    <tr>
+      <td>대상 차량</td>
+      <td><strong>업무용 승용차</strong><br>(법인 보유·임차, 복식부기의무자)</td>
+      <td><strong>사업용 차량</strong><br>(버스·전세버스·화물차·택시·렌터카 등)</td>
+    </tr>
+    <tr>
+      <td>주관 부처</td>
+      <td>국세청</td>
+      <td>국토교통부 / 한국교통안전공단(KOTSA)</td>
+    </tr>
+    <tr>
+      <td>목적</td>
+      <td>차량 비용의 손금 인정<br>(업무사용비율 증빙)</td>
+      <td>교통사고 예방·졸음운전 방지<br>안전운행 관리</td>
+    </tr>
+    <tr>
+      <td>기록 내용</td>
+      <td>운행일·계기판 km·업무용 거리·목적</td>
+      <td>속도·거리·시간·RPM·브레이크·GPS 위치</td>
+    </tr>
+    <tr>
+      <td>제출처</td>
+      <td>세무조사 시 국세청 제출</td>
+      <td>KOTSA 운행기록분석시스템(eTAS) 정기 제출</td>
+    </tr>
+    <tr>
+      <td>미이행 시</td>
+      <td>차량 비용 손금 불인정 (연 1,500만원 초과분)</td>
+      <td>과태료 (사업자 50~100만원, 운수회사 더 큼)</td>
+    </tr>
+  </table>
+
+  <h2>운행기록부란?</h2>
+  <p>
+    <strong>법인 또는 복식부기의무자가 보유·임차한 업무용 승용차의 운행 내역을 기록하는 세무 서식</strong>입니다. 정식 명칭은 "업무용 승용차 운행기록부"이며, 「소득세법 시행규칙 별지 제65호」 양식으로 규정되어 있습니다.
+  </p>
+  <p>
+    작성 목적은 단 하나, <strong>차량 관련 비용을 손금(필요경비)으로 인정받기 위해서</strong>입니다. 운행기록부 없이는 연간 1,500만원을 초과하는 차량 비용이 손금 불인정되어 법인세·소득세 부담이 크게 늘어납니다.
+  </p>
+  <p>
+    형식은 종이·엑셀·앱 어느 것이든 가능하지만, 별지 65호의 <strong>필수 항목</strong>(차종·등록번호·사용일·계기판 km·업무용 사용거리 등)이 모두 들어가야 합니다. 자세한 내용은 <a href="business-vehicle-driving-log.html">업무용 승용차 운행기록부 완전 가이드</a>에서.
+  </p>
+
+  <h2>운행기록계 / 디지털운행기록계 / DTG란?</h2>
+  <p>
+    셋은 모두 같은 장치를 가리키는 다른 이름입니다.
+  </p>
+  <ul>
+    <li><strong>운행기록계</strong> — 일반 명칭</li>
+    <li><strong>디지털운행기록계</strong> — 아날로그 시절 종이 기록계와 구분하기 위한 명칭</li>
+    <li><strong>DTG</strong> (Digital Tacho Graph) — 영문 약자</li>
+    <li><strong>운행기록장치</strong> — 「교통안전법」 법령상 공식 용어</li>
+  </ul>
+  <p>
+    이 장치는 차량의 속도·거리·시간·RPM·브레이크·가속도·GPS 위치 등을 <strong>1초 또는 10초 단위로 자동 기록</strong>하는 차량용 블랙박스 형태의 하드웨어입니다. 사업용 차량에 의무 부착되며, 기록된 데이터는 한국교통안전공단(KOTSA)이 운영하는 <strong>운행기록분석시스템(eTAS)</strong>에 정기적으로 제출해야 합니다.
+  </p>
+
+  <div class="warn-box">
+    <div class="label">⚠ 의무 대상 차량</div>
+    <p>여객운수사업용 차량(시내·시외·전세·고속버스, 택시, 일반택시), 화물운수사업용 차량(특수여객·일반화물·개별화물 등), 어린이 통학버스 등이 DTG 의무 부착 대상입니다. <strong>일반 법인의 업무용 승용차는 의무 대상이 아닙니다.</strong></p>
+  </div>
+
+  <h2>그럼 내 차에는 무엇이 필요한가?</h2>
+
+  <table>
+    <tr><th>차량 유형</th><th>필요한 것</th></tr>
+    <tr><td>법인 보유 승용차 (영업·임원용)</td><td>운행기록부 (세무용)</td></tr>
+    <tr><td>복식부기의무자 개인사업자 승용차</td><td>운행기록부 (세무용)</td></tr>
+    <tr><td>일반 화물차 (자가용)</td><td>의무 없음 (단 비용처리 시 운행기록부 권장)</td></tr>
+    <tr><td>택시·전세버스·시내버스</td><td>DTG 장치 부착 + eTAS 제출</td></tr>
+    <tr><td>일반화물·특수화물 운수사업용</td><td>DTG 장치 부착 + eTAS 제출</td></tr>
+    <tr><td>택시·렌터카 사업자 사무용 승용차</td><td>운행기록부 (세무용)</td></tr>
+    <tr><td>어린이 통학버스</td><td>DTG 장치 부착 + eTAS 제출</td></tr>
+  </table>
+
+  <p>
+    핵심은 차량의 <strong>용도</strong>입니다. 사람이나 화물을 돈 받고 운송하는 <strong>사업용 차량</strong>이면 DTG. 회사가 업무에 사용하는 <strong>승용차</strong>면 운행기록부.
+  </p>
+
+  <h2>둘 다 해당하는 경우도 있나?</h2>
+  <p>
+    있습니다. 예를 들어 <strong>택시 운수회사가 사무용으로 사용하는 임원 승용차</strong>는 영업용 택시(DTG 의무)와는 별개로 그 임원 승용차에 대해 운행기록부를 작성해야 합니다. 마찬가지로 <strong>화물운수회사의 사무용 차량</strong>도 영업 화물차(DTG)와 사무용 승용차(운행기록부)를 각각 관리합니다.
+  </p>
+  <p>
+    두 제도는 <strong>완전히 별개의 트랙</strong>이라 한쪽을 한다고 다른 쪽을 면제받을 수 없습니다. DTG 데이터가 있어도 그것은 안전 목적이지 세무용 운행기록부를 대체하지 않습니다.
+  </p>
+
+  <h2>자주 묻는 질문</h2>
+
+  <h3>Q. 우리 회사 차에 블랙박스가 있는데, 그게 DTG인가요?</h3>
+  <div class="answer-box">
+    <div class="label">A.</div>
+    <p>일반 영상 블랙박스는 DTG가 아닙니다. DTG는 속도·RPM·거리·GPS 등 운행 데이터를 표준 포맷으로 기록하는 <strong>인증된 장치</strong>이며, KOTSA에 데이터 제출이 전제됩니다. 의무 대상 차량(사업용)이 아니라면 블랙박스를 단다고 DTG 의무가 생기지는 않습니다.</p>
+  </div>
+
+  <h3>Q. DTG를 달면 세무용 운행기록부는 면제되나요?</h3>
+  <div class="answer-box">
+    <div class="label">A.</div>
+    <p>아니요. DTG는 교통안전법 목적, 운행기록부는 법인세법·소득세법 목적이라 <strong>서로 대체할 수 없습니다.</strong> 다만 DTG 데이터를 가공해 별지 65호 양식으로 정리하는 것은 가능합니다. 결국 두 가지 산출물 모두를 만들어야 합니다.</p>
+  </div>
+
+  <h3>Q. "디지털 운행기록부 앱"이라고 검색하면 나오는 건 뭔가요?</h3>
+  <div class="answer-box">
+    <div class="label">A.</div>
+    <p>일반적으로 두 가지 중 하나를 가리킵니다. ① 사업용 차량 운전자가 DTG 데이터를 확인·관리하는 앱, ② 법인차·업무용 승용차의 운행기록부를 스마트폰으로 자동 작성해 주는 앱(드라이브로그 같은). 본인이 사업용 차량을 운전하는지 업무용 승용차를 운전하는지에 따라 필요한 앱이 다릅니다.</p>
+  </div>
+
+  <h3>Q. "운행기록분석시스템"은 또 뭔가요?</h3>
+  <div class="answer-box">
+    <div class="label">A.</div>
+    <p>한국교통안전공단(KOTSA)이 운영하는 정부 시스템(eTAS)으로, DTG로 수집한 운행 데이터를 분석해 위험 운전·과속·졸음운전을 모니터링합니다. <strong>법인차 운행기록부와는 완전히 다른 시스템</strong>입니다. 자세한 비교는 <a href="etas-vs-driving-log.html">eTAS vs 업무용 승용차 운행기록부</a> 참고.</p>
+  </div>
+
+  <h3>Q. 자가용 승용차도 DTG 의무가 있나요?</h3>
+  <div class="answer-box">
+    <div class="label">A.</div>
+    <p>아니요. 자가용·법인 업무용 승용차는 DTG 의무 대상이 아닙니다. 세무 목적의 운행기록부 의무만 적용됩니다(법인 또는 복식부기의무자인 경우).</p>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="related">
+    <h3>함께 읽으면 좋은 글</h3>
+    <ul>
+      <li><a href="business-vehicle-driving-log.html">업무용 승용차 운행기록부 완전 가이드</a></li>
+      <li><a href="etas-vs-driving-log.html">운행기록분석시스템(eTAS) vs 업무용 승용차 운행기록부</a></li>
+      <li><a href="driving-log-template-guide.html">운행기록부 양식 다운로드 + 작성 예시 (별지 65호)</a></li>
+      <li><a href="no-odometer-log-penalty.html">운행기록부 안 쓰면 어떻게 되나요?</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>업무용 승용차라면, 운행기록부가 답입니다</h3>
+    <p>드라이브로그는 법인·복식부기의무자의 업무용 승용차를 위한 운행기록부 자동 작성 앱입니다. 별지 65호 양식 그대로, 운행 버튼 한 번이면 끝.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy.html">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>
