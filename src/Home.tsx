@@ -87,6 +87,7 @@ export default function Home() {
         <Hero />
         <Product />
         <Guide />
+        <Templates />
         <Pricing />
         <About />
       </main>
@@ -644,6 +645,101 @@ function Guide() {
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Templates() {
+  return (
+    <section
+      id="templates"
+      className="py-32 relative"
+      style={{
+        background:
+          "linear-gradient(180deg, transparent, oklch(0.14 0.03 250 / 0.3), transparent)",
+      }}
+    >
+      <div className="container-wide">
+        <SectionHeader
+          eyebrow="Resources"
+          title="운행기록부 템플릿"
+          desc="국세청 양식으로 미리 만들어진 엑셀 템플릿을 다운로드하세요. 드라이브로그 앱 없이도 수동 기록에 사용할 수 있습니다."
+        />
+
+        <div className="mt-20 grid md:grid-cols-2 gap-12 items-center">
+          <div className="reveal space-y-6">
+            <div className="space-y-3">
+              <h3 className="text-2xl font-display font-bold">
+                즉시 사용 가능한 양식
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                국세청에서 지정한 공식 운행기록부 양식으로 미리 만들어진
+                템플릿입니다. 차량정보, 운전자 정보를 입력하고 운행 기록을
+                추가하면 언제든지 세무 신고에 제출할 수 있습니다.
+              </p>
+            </div>
+
+            <ul className="space-y-3">
+              {[
+                "국세청 공식 양식 준수",
+                "월별/일별 구분 자동 계산",
+                "업무용·출퇴근 분류 지원",
+                "라라캣소프트 공식 템플릿",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-3 text-foreground">
+                  <CheckCircle2 className="w-5 h-5 text-cyan flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="pt-4">
+              <a
+                href="/drivelog/templates/%EC%97%85%EB%AC%B4%EC%9A%A9%EC%8A%B9%EC%9A%A9%EC%B0%A8-%EC%9A%B4%ED%96%89%EA%B8%B0%EB%A1%9D%EB%B6%80-%EC%96%91%EC%8B%9D(%EB%9D%BC%EB%9D%BC%EC%BA%A3%EC%86%8C%ED%94%84%ED%8A%B8).xlsx"
+                download
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan text-background font-semibold hover:bg-cyan/90 transition-colors"
+              >
+                <Download className="w-5 h-5" />
+                템플릿 다운로드
+              </a>
+            </div>
+          </div>
+
+          <div className="reveal">
+            <div
+              className="rounded-2xl glass p-8 border border-cyan/20"
+              style={{ boxShadow: "var(--shadow-card)" }}
+            >
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 text-sm">
+                  <FileSpreadsheet className="w-5 h-5 text-cyan flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    <strong className="text-foreground">Excel (.xlsx)</strong> 형식
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <Download className="w-5 h-5 text-cyan flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    즉시 다운로드 가능
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <ShieldCheck className="w-5 h-5 text-cyan flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    국세청 양식 <strong className="text-foreground">100% 준수</strong>
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <Lightbulb className="w-5 h-5 text-cyan flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    모든 기기에서 사용 가능
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
