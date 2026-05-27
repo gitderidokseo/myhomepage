@@ -1026,7 +1026,7 @@ function Footer() {
             <a href="/drivelog/blog/" className="hover:text-cyan transition-colors">
               운행기록부 가이드
             </a>
-            <a href="/drivelog/privacy.html" className="hover:text-cyan transition-colors">
+            <a href="/drivelog/privacy" className="hover:text-cyan transition-colors">
               Privacy Policy
             </a>
             <a href="#" className="hover:text-cyan transition-colors">
