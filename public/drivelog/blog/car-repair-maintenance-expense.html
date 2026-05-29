@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>차량 수리비·정비비·소모품 경비처리 — 수익적 지출 vs 자본적 지출 | 드라이브로그</title>
+  <meta name="description" content="엔진오일·타이어·정기점검 같은 정비비는 당기 비용, 엔진 교체·성능 개선 같은 큰 지출은 자본적 지출로 감가상각합니다. 차량 수리비의 비용·자산 구분과 부가세 공제, 사고 수리비까지 정리." />
+  <meta property="og:title" content="차량 수리비·정비비·소모품 경비처리 — 수익적 vs 자본적 지출" />
+  <meta property="og:description" content="정비·소모품은 당기 비용, 성능 개선 큰 지출은 자본적 지출. 부가세 공제와 사고 수리비까지." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/car-repair-maintenance-expense" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "차량 수리비·정비비·소모품 경비처리 — 수익적 지출 vs 자본적 지출 | 드라이브로그",
+    "description": "엔진오일·타이어·정기점검 같은 정비비는 당기 비용, 엔진 교체·성능 개선 같은 큰 지출은 자본적 지출로 감가상각합니다. 차량 수리비의 비용·자산 구분과 부가세 공제, 사고 수리비까지 정리.",
+    "url": "https://lalacatsoft.com/drivelog/blog/car-repair-maintenance-expense",
+    "datePublished": "2026-05-29",
+    "dateModified": "2026-05-29",
+    "inLanguage": "ko-KR",
+    "author": { "@type": "Organization", "name": "LalaCatSoft", "url": "https://lalacatsoft.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LalaCatSoft",
+      "url": "https://lalacatsoft.com/"
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lalacatsoft.com/drivelog/blog/car-repair-maintenance-expense" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #38bdf8; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 48px; padding: 24px; background: #141821; border: 1px solid #1e293b; border-radius: 12px; }
+    .related h3 { color: #cbd5e1; font-size: 0.95rem; margin: 0 0 12px; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { margin-bottom: 6px; font-size: 0.9rem; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; border: none; padding: 0; margin-top: 0; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>수리비·정비비 경비처리
+  </div>
+
+  <span class="tag">차량 경비</span>
+  <h1>차량 수리비·정비비·소모품 경비처리<br>— 수익적 지출 vs 자본적 지출</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    엔진오일 갈고, 타이어 바꾸고, 정기점검 받고… 차량 정비비는 잔손이 많이 가는 경비입니다. 대부분은 그해 비용으로 바로 처리되지만, <strong>금액이 크고 차량의 가치나 수명을 늘리는 지출은 "자본적 지출"로 보아 감가상각</strong> 대상이 됩니다. 이 둘을 구분하는 것이 차량 수리비 처리의 핵심입니다.
+  </p>
+
+  <h2>핵심 — 수익적 지출과 자본적 지출</h2>
+  <table>
+    <tr><th>구분</th><th>수익적 지출 (당기 비용)</th><th>자본적 지출 (감가상각)</th></tr>
+    <tr><td>성격</td><td>원상 회복·정상 유지</td><td>가치 증가·수명 연장</td></tr>
+    <tr><td>예시</td><td>엔진오일·타이어·브레이크 패드·정기점검·소모품 교체</td><td>엔진·변속기 등 주요부품 교체로 성능이 현저히 향상되는 지출</td></tr>
+    <tr><td>처리</td><td>그해 전액 비용(수선비)</td><td>취득원가에 가산 → 감가상각</td></tr>
+  </table>
+
+  <div class="highlight-box">
+    <div class="label">한 줄 요약</div>
+    <p style="margin:0; color:#e2e8f0;">일상적인 정비·소모품 교체는 <strong>그해 비용(수선비)</strong>으로, 차량의 수명·성능을 크게 늘리는 큰 지출은 <strong>자본적 지출로 감가상각</strong>합니다. 대부분의 정비는 당기 비용입니다.</p>
+  </div>
+
+  <h2>당기 비용으로 처리되는 정비·소모품</h2>
+  <ul>
+    <li>엔진오일·미션오일·냉각수·브레이크액 교환</li>
+    <li>타이어·와이퍼·배터리·브레이크 패드·필터 교체</li>
+    <li>정기점검·법정검사·진단 비용</li>
+    <li>일반 고장 수리, 소모품성 부품 교체</li>
+  </ul>
+  <p>
+    이들은 차량을 정상 상태로 유지하기 위한 지출이므로 <strong>수선비(또는 차량유지비)</strong> 계정으로 그해 전액 비용 처리됩니다.
+  </p>
+
+  <h2>자본적 지출로 보는 큰 지출</h2>
+  <p>
+    엔진·변속기 등 핵심 부품을 통째로 교체해 차량의 사용연수가 의미 있게 늘거나 성능이 현저히 향상되는 경우에는 단순 수선이 아니라 <strong>자본적 지출</strong>로 보아 취득원가에 가산하고 감가상각합니다. 금액이 크고 효익이 여러 해에 걸친다면 이 가능성을 검토해야 합니다.
+  </p>
+
+  <h2>부가가치세 — 정비비도 차종이 좌우</h2>
+  <p>
+    수리비·정비비의 부가세 매입세액 역시 <strong>비영업용 8인승 이하 승용차는 불공제</strong>입니다. 경차·9인승 이상·화물차·밴·영업용 차량이라면 세금계산서를 받아 공제할 수 있습니다. 자세한 차종 기준은 <a href="passenger-car-vat-deduction">업무용 승용차 부가세 공제</a>를 참고하세요.
+  </p>
+
+  <h2>사고 수리비 — 보험 처리분은 비용 아님</h2>
+  <p>
+    교통사고 수리비를 <strong>보험금으로 충당</strong>한 부분은 본인이 부담한 비용이 아니므로 경비 처리 대상이 아닙니다. 본인이 자기부담금(면책금)으로 낸 금액만 비용으로 인정됩니다. 보험금 수령액과 수리비를 상계해 순부담액 기준으로 처리한다고 이해하면 됩니다.
+  </p>
+
+  <div class="warn-box">
+    <div class="label">⚠ 한도와 묶인다</div>
+    <p>수선비·정비비도 업무용 승용차 관련비용에 포함됩니다. 법인·복식부기의무자는 자동차세·유류비·보험료 등과 합쳐 연 1,500만원 한도를 받으므로, 운행기록부 없이는 큰 수리비가 한도 밖으로 밀릴 수 있습니다. 간편장부 대상자는 한도가 없습니다.</p>
+  </div>
+
+  <h2>증빙</h2>
+  <ol>
+    <li>정비소·카센터에서 <strong>세금계산서 또는 사업용 카드매출전표</strong> 수취</li>
+    <li>부품·소모품 구입은 <strong>지출증빙용 현금영수증</strong>(사업자번호)</li>
+    <li>큰 정비는 견적서·작업내역서를 함께 보관(자본적/수익적 판단 근거)</li>
+  </ol>
+
+  <hr class="divider" />
+
+  <div class="related">
+    <h3>함께 읽으면 좋은 글</h3>
+    <ul>
+      <li><a href="fuel-expense-deduction">차량 유류비 경비처리 완전 가이드</a></li>
+      <li><a href="parking-carwash-expense">주차비·세차비 경비처리</a></li>
+      <li><a href="corporate-car-expense-deduction">법인차 비용처리 완벽 가이드</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>정비비가 큰 차량일수록 운행기록부가 한도를 지킵니다</h3>
+    <p>드라이브로그는 운행을 자동 기록해 업무사용비율을 계산하고 국세청 양식으로 내보냅니다. 무료로 시작하세요.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>

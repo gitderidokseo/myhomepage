@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>차량 유류비 경비처리 완전 가이드 — 소득세·부가세, 증빙, 한도까지 | 드라이브로그</title>
+  <meta name="description" content="법인·개인사업자 차량 유류비 경비처리는 소득세(비용 인정)와 부가세(매입세액 공제)를 나눠 봐야 합니다. 비영업용 승용차는 부가세 불공제, 경차·화물차는 공제. 증빙·한도·세무조사 주의점까지 정리." />
+  <meta property="og:title" content="차량 유류비 경비처리 완전 가이드 — 소득세·부가세, 증빙, 한도" />
+  <meta property="og:description" content="유류비는 소득세 비용 인정과 부가세 매입세액 공제를 나눠 봐야 합니다. 차종·증빙·한도까지." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/fuel-expense-deduction" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "차량 유류비 경비처리 완전 가이드 — 소득세·부가세, 증빙, 한도까지 | 드라이브로그",
+    "description": "법인·개인사업자 차량 유류비 경비처리는 소득세(비용 인정)와 부가세(매입세액 공제)를 나눠 봐야 합니다. 비영업용 승용차는 부가세 불공제, 경차·화물차는 공제. 증빙·한도·세무조사 주의점까지 정리.",
+    "url": "https://lalacatsoft.com/drivelog/blog/fuel-expense-deduction",
+    "datePublished": "2026-05-29",
+    "dateModified": "2026-05-29",
+    "inLanguage": "ko-KR",
+    "author": { "@type": "Organization", "name": "LalaCatSoft", "url": "https://lalacatsoft.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LalaCatSoft",
+      "url": "https://lalacatsoft.com/"
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lalacatsoft.com/drivelog/blog/fuel-expense-deduction" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #38bdf8; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 48px; padding: 24px; background: #141821; border: 1px solid #1e293b; border-radius: 12px; }
+    .related h3 { color: #cbd5e1; font-size: 0.95rem; margin: 0 0 12px; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { margin-bottom: 6px; font-size: 0.9rem; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; border: none; padding: 0; margin-top: 0; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>유류비 경비처리
+  </div>
+
+  <span class="tag">차량 경비</span>
+  <h1>차량 유류비 경비처리 완전 가이드<br>— 소득세·부가세, 증빙, 한도</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    유류비는 사업자가 가장 자주 쓰고, 가장 자주 헷갈리는 차량 경비입니다. 핵심은 <strong>"소득세·법인세"와 "부가가치세"를 따로 봐야 한다</strong>는 것입니다. 같은 주유 영수증 한 장이라도 비용으로 인정받는 규칙과 매입세액 공제를 받는 규칙이 완전히 다릅니다. 이 둘을 섞어 이해하면 "분명히 사업용 차인데 왜 부가세 환급이 안 되지?" 같은 혼란이 생깁니다.
+  </p>
+
+  <h2>유류비는 두 세금으로 나눠서 본다</h2>
+  <table>
+    <tr><th>구분</th><th>소득세 · 법인세 (비용 인정)</th><th>부가가치세 (매입세액 공제)</th></tr>
+    <tr><td>판단 기준</td><td>업무 관련성</td><td>차종 + 영업용 여부</td></tr>
+    <tr><td>비영업용 승용차(8인승↓)</td><td>업무용이면 비용 인정</td><td><strong>불공제</strong></td></tr>
+    <tr><td>경차·9인승↑·화물차·밴</td><td>업무용이면 비용 인정</td><td><strong>공제 가능</strong></td></tr>
+    <tr><td>핵심 서류</td><td>운행기록부(법인·복식부기)</td><td>세금계산서·사업용 카드·지출증빙 현금영수증</td></tr>
+  </table>
+
+  <div class="highlight-box">
+    <div class="label">한 줄 요약</div>
+    <p style="margin:0; color:#e2e8f0;">일반 승용차 유류비는 <strong>소득세·법인세에서는 비용으로 인정</strong>되지만, <strong>부가세 매입세액은 공제되지 않습니다.</strong> 부가세까지 돌려받으려면 차종 자체가 경차·9인승 이상·화물차여야 합니다.</p>
+  </div>
+
+  <h2>① 소득세·법인세 — 유류비는 "업무용 승용차 관련비용"</h2>
+  <p>
+    유류비는 감가상각비·보험료·수선비·자동차세·통행료 등과 함께 <strong>업무용 승용차 관련비용</strong>에 포함됩니다. 따라서 한도 규제도 이 비용 묶음 전체에 함께 적용됩니다.
+  </p>
+  <h3>법인 · 복식부기의무자</h3>
+  <ul>
+    <li>업무용 승용차 관련비용 합계가 <strong>연 1,500만원을 넘으면 운행기록부를 작성</strong>해야 초과분이 인정됩니다.</li>
+    <li>운행기록부를 쓰면 <strong>업무사용비율만큼</strong> 손금 인정 (유류비 포함 전체 비용 × 비율).</li>
+    <li>운행기록부 미작성 시 1,500만원까지만 인정 → 유류비를 아무리 많이 써도 다른 비용과 합쳐 1,500만원에서 잘립니다.</li>
+  </ul>
+  <h3>간편장부 대상자</h3>
+  <ul>
+    <li>1,500만원 한도·운행기록부 의무가 <strong>적용되지 않습니다.</strong> 업무 관련 유류비라면 전액 비용 처리 가능합니다.</li>
+    <li>단, 업무용으로 썼다는 사실(사업장 동선·거래처 방문 등)은 입증할 수 있어야 합니다.</li>
+  </ul>
+
+  <h2>② 부가가치세 — 차종이 모든 것을 결정한다</h2>
+  <p>
+    부가세에서는 업무 관련성보다 <strong>"어떤 차인가"</strong>가 먼저입니다. 부가가치세법상 <strong>비영업용 소형승용차(개별소비세 과세대상, 통상 8인승 이하)</strong>의 구입·유지·유류비 관련 매입세액은 공제되지 않습니다.
+  </p>
+  <table>
+    <tr><th>차량</th><th>유류비 부가세 공제</th></tr>
+    <tr><td>일반 승용차 (8인승 이하)</td><td>불공제</td></tr>
+    <tr><td>1,000cc 이하 경차 (모닝·스파크·레이 등)</td><td><strong>공제 가능</strong></td></tr>
+    <tr><td>9인승 이상 승합·승용차 (카니발 9인승 등)</td><td><strong>공제 가능</strong></td></tr>
+    <tr><td>화물차·밴 (포터·봉고·스타렉스 화물형 등)</td><td><strong>공제 가능</strong></td></tr>
+    <tr><td>영업용 (운수업·자동차매매·운전학원 등)</td><td><strong>공제 가능</strong></td></tr>
+  </table>
+  <p>
+    즉, 부가세 환급까지 노린다면 차량을 살 때부터 차종을 고려해야 합니다. 자세한 차종별 기준은 <a href="passenger-car-vat-deduction">업무용 승용차 부가세 공제</a>와 <a href="truck-compact-vat-refund">화물차·경차 부가세 환급</a> 글에서 정리했습니다.
+  </p>
+
+  <h2>증빙 — 이렇게 받아야 인정된다</h2>
+  <p>
+    비용으로 인정받으려면 적격증빙이 있어야 합니다. 가장 깔끔한 순서는 다음과 같습니다.
+  </p>
+  <ol>
+    <li><strong>사업용 신용·체크카드</strong>로 결제 — 카드사 매입자료로 자동 집계, 부가세 공제도 카드매출전표로 가능(공제 대상 차종 한정)</li>
+    <li><strong>지출증빙용 현금영수증</strong> — 주유 시 사업자등록번호로 발급</li>
+    <li><strong>세금계산서</strong> — 주유소에 사업자 정보 제시 후 발급(공제 대상 차종에서 부가세 공제 시 유리)</li>
+  </ol>
+  <p>
+    개인 명의 카드·현금 영수증(소득공제용)만으로는 사업 경비 입증이 약해질 수 있습니다. <strong>사업용 카드를 한 장 지정</strong>해 차량 관련 결제를 몰아두면 집계와 소명이 한결 수월해집니다.
+  </p>
+
+  <div class="warn-box">
+    <div class="label">⚠ 세무조사 시 유류비 점검 포인트</div>
+    <p>차량 대수 대비 과다한 주유량, 주말·심야 거주지 인근 주유 집중, 출장 기록과 맞지 않는 원거리 주유는 사적 사용으로 의심받습니다. 운행기록부와 주유 패턴이 일치할 때 가장 안전합니다.</p>
+  </div>
+
+  <h2>케이스 — 같은 유류비, 다른 결과</h2>
+  <p>
+    연간 유류비 600만원 + 기타 차량비용(감가상각·보험·수선) 1,200만원 = 차량 관련비용 합계 1,800만원, 업무사용비율 90% 가정.
+  </p>
+  <table>
+    <tr><th>구분</th><th>간편장부</th><th>복식부기 (운행기록부 작성)</th><th>복식부기 (운행기록부 미작성)</th></tr>
+    <tr><td>인정 비용</td><td>1,800만원 전액</td><td>1,800만원 × 90% = 1,620만원</td><td>1,500만원</td></tr>
+    <tr><td>유류비 처리</td><td>600만원 전액</td><td>비율만큼 인정</td><td>한도 안에서만</td></tr>
+    <tr><td>불인정액</td><td>0</td><td>180만원</td><td>300만원</td></tr>
+  </table>
+  <p>
+    유류비만 따로 떼서 한도가 있는 게 아니라, <strong>차량 관련비용 전체가 한 묶음으로 한도를 받는다</strong>는 점이 핵심입니다. 그래서 유류비가 많은 사업자일수록 운행기록부의 가치가 커집니다.
+  </p>
+
+  <hr class="divider" />
+
+  <div class="related">
+    <h3>함께 읽으면 좋은 글</h3>
+    <ul>
+      <li><a href="corporate-car-expense-deduction">법인차 비용처리 완벽 가이드</a></li>
+      <li><a href="passenger-car-vat-deduction">업무용 승용차는 왜 부가세 공제가 안 되나</a></li>
+      <li><a href="car-tax-acquisition-expense">자동차세·취득세 경비처리</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>유류비가 많다면 운행기록부로 한도를 넘기세요</h3>
+    <p>드라이브로그는 운행을 자동으로 기록해 업무사용비율을 계산하고, 국세청 양식으로 내보냅니다. 회원가입 없이 무료로 시작할 수 있습니다.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>

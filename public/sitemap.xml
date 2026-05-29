@@ -10,7 +10,7 @@
 
   <url>
     <loc>https://lalacatsoft.com/drivelog/blog/</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -137,6 +137,62 @@
   <url>
     <loc>https://lalacatsoft.com/drivelog/blog/driving-log-by-job</loc>
     <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lalacatsoft.com/drivelog/blog/fuel-expense-deduction</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lalacatsoft.com/drivelog/blog/toll-hipass-expense</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lalacatsoft.com/drivelog/blog/parking-carwash-expense</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lalacatsoft.com/drivelog/blog/car-tax-acquisition-expense</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lalacatsoft.com/drivelog/blog/car-repair-maintenance-expense</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lalacatsoft.com/drivelog/blog/lease-accounting</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lalacatsoft.com/drivelog/blog/passenger-car-vat-deduction</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://lalacatsoft.com/drivelog/blog/truck-compact-vat-refund</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>자동차 리스료 회계처리 — 운용리스 vs 금융리스, 감가상각비상당액·800만원 한도 | 드라이브로그</title>
+  <meta name="description" content="리스 차량은 감가상각이 없어 리스료 중 일정액을 '감가상각비상당액'으로 보고 연 800만원 한도를 적용합니다. 운용리스·금융리스 처리 차이, 수선유지비 7% 간주, 한도초과 이월, 만기 인수까지 정리." />
+  <meta property="og:title" content="자동차 리스료 회계처리 — 운용 vs 금융리스, 감가상각비상당액·800만원 한도" />
+  <meta property="og:description" content="리스료 중 감가상각비상당액에 연 800만원 한도. 운용·금융리스 차이와 한도초과 이월을 정리." />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/blog/lease-accounting" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "자동차 리스료 회계처리 — 운용리스 vs 금융리스, 감가상각비상당액·800만원 한도 | 드라이브로그",
+    "description": "리스 차량은 감가상각이 없어 리스료 중 일정액을 '감가상각비상당액'으로 보고 연 800만원 한도를 적용합니다. 운용리스·금융리스 처리 차이, 수선유지비 7% 간주, 한도초과 이월, 만기 인수까지 정리.",
+    "url": "https://lalacatsoft.com/drivelog/blog/lease-accounting",
+    "datePublished": "2026-05-29",
+    "dateModified": "2026-05-29",
+    "inLanguage": "ko-KR",
+    "author": { "@type": "Organization", "name": "LalaCatSoft", "url": "https://lalacatsoft.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LalaCatSoft",
+      "url": "https://lalacatsoft.com/"
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lalacatsoft.com/drivelog/blog/lease-accounting" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.8; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .site-header { border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .site-header .logo { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+    .site-header .back { font-size: 0.85rem; color: #64748b; margin-left: auto; }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .breadcrumb span { margin: 0 6px; }
+    .tag { display: inline-block; font-size: 0.75rem; padding: 3px 10px; border-radius: 99px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); margin-bottom: 16px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.3; color: #f1f5f9; margin-bottom: 16px; }
+    .meta { font-size: 0.82rem; color: #64748b; margin-bottom: 40px; }
+    h2 { font-size: 1.3rem; font-weight: 700; color: #f1f5f9; margin: 48px 0 16px; padding-left: 14px; border-left: 3px solid #38bdf8; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; margin: 28px 0 10px; }
+    p { margin-bottom: 18px; color: #94a3b8; }
+    strong { color: #e2e8f0; }
+    ul, ol { padding-left: 20px; margin-bottom: 18px; color: #94a3b8; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.2); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-box .label { font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.25); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+    .warn-box .label { font-size: 0.78rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .warn-box p { color: #e2e8f0; margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.88rem; }
+    th { background: #1e293b; color: #94a3b8; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid #334155; }
+    td { padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 48px; padding: 24px; background: #141821; border: 1px solid #1e293b; border-radius: 12px; }
+    .related h3 { color: #cbd5e1; font-size: 0.95rem; margin: 0 0 12px; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { margin-bottom: 6px; font-size: 0.9rem; }
+    .cta-box { margin-top: 60px; background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,211,238,0.08)); border: 1px solid rgba(56,189,248,0.3); border-radius: 16px; padding: 32px; text-align: center; }
+    .cta-box h3 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 10px; border: none; padding: 0; margin-top: 0; }
+    .cta-box p { color: #94a3b8; margin-bottom: 20px; font-size: 0.93rem; }
+    .cta-btn { display: inline-block; background: linear-gradient(90deg, #0ea5e9, #22d3ee); color: #fff; font-weight: 700; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; }
+    .cta-btn:hover { text-decoration: none; opacity: 0.9; }
+    .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; text-align: center; font-size: 0.8rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LalaCatSoft · 드라이브로그</div>
+  <a href="/drivelog/blog/" class="back">← 블로그 목록</a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">홈</a><span>›</span><a href="/drivelog/blog/">블로그</a><span>›</span>리스료 회계처리
+  </div>
+
+  <span class="tag">차량 경비</span>
+  <h1>자동차 리스료 회계처리<br>— 운용 vs 금융리스, 감가상각비상당액</h1>
+  <div class="meta">2026년 5월 · 라라캣소프트</div>
+
+  <p>
+    "리스는 리스료를 다 비용으로 넣으면 되는 거 아니에요?"라고 생각하기 쉽지만, 업무용 승용차 리스에는 한 가지 함정이 있습니다. 차를 직접 사면 감가상각비에 <strong>연 800만원 한도</strong>가 걸리는데, 리스는 감가상각이 없으니 빠져나갈 것 같지만 세법은 <strong>리스료 중 일부를 "감가상각비상당액"으로 간주해 똑같이 800만원 한도</strong>를 적용합니다. 이 글에서 리스료 회계처리의 핵심을 정리합니다.
+  </p>
+
+  <p>
+    구입·리스·렌트 중 무엇을 고를지에 대한 의사결정 비교는 <a href="lease-vs-rental-vs-purchase">리스 vs 렌트 vs 구매 완전 비교</a>에서 다뤘습니다. 이 글은 <strong>리스를 택한 뒤의 회계·세무 처리</strong>에 집중합니다.
+  </p>
+
+  <h2>운용리스 vs 금융리스 — 장부에 어떻게 잡히나</h2>
+  <table>
+    <tr><th>구분</th><th>운용리스</th><th>금융리스</th></tr>
+    <tr><td>성격</td><td>빌려 쓰는 임차 개념</td><td>사실상 할부 구입 개념</td></tr>
+    <tr><td>차량 자산 계상</td><td>자산으로 안 잡음</td><td>자산·부채로 계상</td></tr>
+    <tr><td>비용 처리</td><td>리스료를 임차료로 비용</td><td>감가상각비 + 이자비용</td></tr>
+    <tr><td>업무용 한도 적용</td><td>리스료 중 감가상각비상당액 800만원</td><td>감가상각비 800만원 + 이자</td></tr>
+  </table>
+  <p>
+    대부분의 자동차 운용리스 상품은 <strong>운용리스</strong>로 처리됩니다. 어느 쪽이든 세법상 업무용 승용차 한도(1,500만원 + 감가상각 800만원)는 동일하게 적용된다는 점이 중요합니다.
+  </p>
+
+  <h2>감가상각비상당액 — 리스료에서 무엇을 빼나</h2>
+  <p>
+    운용리스에서 800만원 한도가 걸리는 대상은 리스료 전체가 아니라 <strong>감가상각비상당액</strong>입니다. 계산은 다음과 같습니다.
+  </p>
+  <div class="highlight-box">
+    <div class="label">감가상각비상당액 계산</div>
+    <p style="margin:0; color:#e2e8f0;">감가상각비상당액 = <strong>리스료 − 보험료 − 자동차세 − 수선유지비</strong><br>수선유지비를 따로 구분하기 어려우면 <strong>(리스료 − 보험료 − 자동차세) × 7%</strong>를 수선유지비로 간주합니다.</p>
+  </div>
+  <p>
+    이렇게 산출한 감가상각비상당액에 <strong>연 800만원 한도</strong>를 적용합니다. 한도를 넘는 금액은 그해 손금에서 빠지고 다음 사업연도로 <strong>이월</strong>되어, 이후 연 800만원 범위에서 순차 손금산입됩니다.
+  </p>
+
+  <h2>업무용 승용차 한도 전체 구조</h2>
+  <ul>
+    <li><strong>1차 — 관련비용 1,500만원 한도</strong>: 리스료(임차료 전액) + 유류비 + 통행료 등 합계. 운행기록부 미작성 시 1,500만원까지만, 작성 시 업무사용비율만큼 인정.</li>
+    <li><strong>2차 — 감가상각비상당액 800만원 한도</strong>: 위에서 계산한 감가상각비상당액에 별도 적용, 초과분 이월.</li>
+  </ul>
+  <p>
+    즉 리스라고 해서 한도를 피하는 게 아니라, "감가상각비상당액"이라는 이름으로 동일한 800만원 한도를 받습니다. 본인 리스료로 시뮬레이션하려면 <a href="1500-limit-simulator">1,500만원 한도 계산기</a>를 활용하세요.
+  </p>
+
+  <h2>간편장부 대상자라면?</h2>
+  <p>
+    개인사업자 중 <strong>간편장부 대상자</strong>는 1,500만원·800만원 한도가 적용되지 않습니다. 업무 관련 리스료라면 한도 없이 비용 처리할 수 있습니다(업무 사용 입증은 필요). 자세한 기준은 <a href="sole-proprietor-bookkeeping">간편장부 vs 복식부기</a>에서 확인하세요.
+  </p>
+
+  <h2>리스 만기 인수 시 — 자산으로 전환</h2>
+  <p>
+    운용리스 기간이 끝나고 차량을 <strong>인수(구입)</strong>하면, 그때부터는 자기 자산이 되어 인수가액을 취득원가로 감가상각합니다. 리스 기간 중 한도 초과로 이월된 감가상각비상당액이 있다면, 인수 후에도 연 800만원 한도 내에서 계속 손금산입됩니다.
+  </p>
+
+  <div class="warn-box">
+    <div class="label">⚠ 부가세는 리스도 동일</div>
+    <p>리스 이용료에 포함된 부가세 역시 비영업용 8인승 이하 승용차는 매입세액 불공제입니다. 차종이 경차·9인승 이상·화물차일 때만 공제 가능합니다. <a href="passenger-car-vat-deduction">차종별 기준</a>을 확인하세요.</p>
+  </div>
+
+  <h2>케이스 — 월 리스료 120만원 승용차</h2>
+  <p>
+    연 리스료 1,440만원, 이 중 보험료·자동차세 약 140만원 가정. 감가상각비상당액 = (1,440 − 140) × (1 − 7%) ≈ <strong>약 1,209만원</strong>.
+  </p>
+  <table>
+    <tr><th>구분</th><th>금액</th><th>처리</th></tr>
+    <tr><td>리스료 총액</td><td>1,440만원</td><td>관련비용(1,500만원 한도)에 포함</td></tr>
+    <tr><td>감가상각비상당액</td><td>약 1,209만원</td><td>800만원 한도 → 약 409만원 이월</td></tr>
+  </table>
+  <p>
+    운행기록부를 작성하면 업무사용비율만큼 인정되고, 미작성 시 1,500만원 한도 안에서만 처리됩니다.
+  </p>
+
+  <hr class="divider" />
+
+  <div class="related">
+    <h3>함께 읽으면 좋은 글</h3>
+    <ul>
+      <li><a href="lease-vs-rental-vs-purchase">법인차 리스 vs 렌트 vs 구매 완전 비교</a></li>
+      <li><a href="corporate-car-expense-deduction">법인차 비용처리 완벽 가이드</a></li>
+      <li><a href="1500-limit-simulator">1,500만원 한도 계산 시뮬레이터</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>리스도 운행기록부로 한도 초과분을 인정받으세요</h3>
+    <p>드라이브로그는 운행을 자동 기록해 업무사용비율을 계산하고 국세청 양식으로 내보냅니다. 무료로 시작하세요.</p>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.lalacatsoft.drvrecorder" target="_blank" rel="noopener">Google Play에서 무료 설치</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 LalaCatSoft · <a href="/drivelog/privacy">개인정보처리방침</a> · <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a>
+</footer>
+
+</body>
+</html>
