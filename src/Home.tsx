@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Crosshair,
   FileSpreadsheet,
@@ -14,12 +14,20 @@ import {
   Menu,
   X,
   ArrowRight,
-  Facebook,
-  Twitter,
-  Linkedin,
   CheckCircle2,
   Sparkles,
+  Mail,
+  Building2,
+  LayoutDashboard,
+  Users,
+  Cloud,
+  Smartphone,
+  MessageCircle,
 } from "lucide-react";
+
+const PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.drivelog2.drivelog&hl=ko";
+const CONTACT_EMAIL = "support@lalacatsoft.com";
 
 function useReveal() {
   useEffect(() => {
@@ -40,32 +48,13 @@ function useReveal() {
   }, []);
 }
 
-function useCounter(target: number, start: boolean) {
-  const [v, setV] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    let raf = 0;
-    const t0 = performance.now();
-    const dur = 1400;
-    const tick = (t: number) => {
-      const p = Math.min(1, (t - t0) / dur);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setV(Math.floor(eased * target));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [target, start]);
-  return v;
-}
-
 const nav = [
-  { id: "home", label: "Home" },
   { id: "product", label: "드라이브로그" },
-  { id: "guide", label: "사용 가이드" },
   { id: "pricing", label: "요금제" },
-  { id: "about", label: "About" },
+  { id: "partners", label: "세무사 파트너" },
+  { id: "guide", label: "사용 가이드" },
   { id: "blog", label: "운행기록부 가이드", href: "/drivelog/blog/" },
+  { id: "contact", label: "도입 문의" },
 ];
 
 export default function Home() {
@@ -86,9 +75,12 @@ export default function Home() {
       <main>
         <Hero />
         <Product />
+        <AdminApp />
+        <Pricing />
+        <Partners />
+        <Contact />
         <Guide />
         <Templates />
-        <Pricing />
         <About />
       </main>
       <Footer />
@@ -143,10 +135,10 @@ function Header({
         </nav>
 
         <a
-          href="#product"
+          href="#contact"
           className="hidden md:inline-flex btn-primary !py-2 !px-4 text-xs"
         >
-          시작하기 <ArrowRight className="w-4 h-4" />
+          도입 문의 <ArrowRight className="w-4 h-4" />
         </a>
 
         <button
@@ -201,28 +193,34 @@ function Hero() {
 
       <div className="container-wide grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
         <div>
-          <span className="eyebrow mb-6">LalaCatSoft · Mobile Solutions</span>
+          <span className="eyebrow mb-6">법인 업무용 차량 운행기록부 자동화</span>
           <h1 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] mt-6">
-            법인차량 운행기록,
+            운행기록부 없으면
             <br />
-            이제 <span className="gradient-text">자동으로</span>
-            <br />
-            기록하세요
+            <span className="gradient-text">세금</span>이 늘어납니다
           </h1>
           <p className="mt-8 text-lg text-muted-foreground max-w-xl leading-relaxed">
-            GPS 기반 자동 거리 측정부터 세무용 운행기록부 엑셀 출력까지,
-            LalaCatSoft의{" "}
-            <strong className="text-foreground">드라이브로그</strong>가 한 번에
-            해결합니다.
+            운행기록부를 작성하지 않으면 업무용 승용차 경비는{" "}
+            <strong className="text-foreground">연 1,500만원까지만</strong>{" "}
+            인정됩니다. 드라이브로그로 GPS 주행을 자동 기록하고, 국세청 양식
+            운행기록부를 한 번에 출력해 차량 경비를 빠짐없이 비용 처리하세요.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#product" className="btn-primary">
-              드라이브로그 알아보기 <ArrowRight className="w-4 h-4" />
+            <a href="#contact" className="btn-primary">
+              도입 문의하기 <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="#guide" className="btn-ghost">
-              사용 방법 보기
+            <a
+              href={PLAY_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-ghost"
+            >
+              <Download className="w-4 h-4" /> Google Play 다운로드
             </a>
           </div>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Android 지원 · iOS 앱 준비 중 · 개인/운전자 단독 사용은 무료
+          </p>
 
           <div className="mt-14 grid grid-cols-3 gap-6 max-w-md">
             {[
@@ -416,7 +414,7 @@ function Product() {
       desc: "회사 코드 등록을 통한 법인 단체 관리 모드와, 코드 없이 단독 사용 가능한 개인 모드를 모두 지원합니다.",
       list: [
         "법인 모드: 회사 코드 등록 → 관리자 승인 → 데이터 동기화",
-        "개인 모드: 코드 없이 차량·운행 단독 관리",
+        "개인 모드: 코드 없이 차량·운행 단독 관리 (무료)",
         "Firebase 기반 실시간 동기화(법인 모드)",
         "FCM 푸시로 등록 승인 알림 수신",
       ],
@@ -478,64 +476,353 @@ function Product() {
   );
 }
 
-function Guide() {
-  const steps = [
+function AdminApp() {
+  const features = [
     {
-      icon: Download,
-      title: "앱 설치 및 실행",
-      desc: "Android 기기에 드라이브로그 앱을 설치하고 실행합니다. 최초 실행 시 위치(GPS), 알림 권한을 허용해 주세요. 백그라운드 위치 권한도 함께 허용해야 화면이 꺼진 상태에서도 정확한 거리 측정이 가능합니다.",
-      list: [
-        "위치 권한: 항상 허용 선택",
-        "알림 권한 허용 (운행 중 상태 표시)",
-        "배터리 최적화 예외 설정 권장",
-      ],
+      icon: Cloud,
+      title: "회사 저장소 자동 동기화",
+      desc: "운전자 운행이 종료되면 회사가 지정한 저장소로 기록이 즉시 전송됩니다. 네트워크가 끊겨도 누락 없이 자동 재전송됩니다.",
     },
     {
-      icon: IdCard,
-      title: "운전자 등록 (법인 / 개인 모드 선택)",
-      desc: "회사에서 발급받은 회사 코드를 사용해 법인 모드로 가입하거나, 코드 없이 개인 모드로 바로 시작할 수 있습니다.",
-      list: [
-        "법인 모드: 회사 코드 · 이름 · 부서 입력 → 관리자 승인 후 사용 가능",
-        "개인 모드: 회사 코드 없이 차량·운행 단독 관리",
-        "법인 모드 승인 완료 시 FCM 푸시 알림 수신",
-      ],
+      icon: LayoutDashboard,
+      title: "관리자 대시보드",
+      desc: "차량별·운전자별 운행 현황을 한 화면에서 확인하고, 과세기간 단위 운행기록부를 원클릭으로 생성합니다.",
     },
     {
-      icon: Car,
-      title: "차량 등록",
-      desc: "운행할 차량의 정보를 등록합니다. 한 계정에 여러 대를 등록할 수 있으며, 운행 시 차량을 선택해 기록을 시작합니다.",
-      list: [
-        "차량번호 (예: 12가 3456)",
-        "차량 모델명",
-        "현재 누적 주행거리(km) — 이후 차계부 보정에 사용",
-      ],
-    },
-    {
-      icon: PlayCircle,
-      title: "운행 시작 / 종료",
-      desc: "차량을 선택하고 운행 시작 버튼을 누르면 GPS 기반 거리 측정이 자동으로 시작됩니다. 운행 목적(업무 / 출퇴근 / 기타)과 메모를 입력한 뒤, 도착하면 운행 종료를 누르세요.",
-      list: [
-        "운행 시작 전 운행 목적 선택 (업무 / 출퇴근 / 기타)",
-        "화면이 꺼져도 백그라운드에서 안정적으로 거리 측정",
-        "운행 종료 시 자동으로 도착 시각·이동 거리 저장",
-        "필요 시 차계부(주행거리계) 보정 가능",
-      ],
-    },
-    {
-      icon: FileOutput,
-      title: "운행기록부 엑셀 출력",
-      desc: "리포트 화면에서 과세기간(시작 연·월 ~ 종료 연·월)을 설정하고, 엑셀 생성 버튼을 누르면 국세청 양식의 운행기록부가 자동 생성됩니다. 생성된 파일은 이메일·메신저 등으로 즉시 공유 가능합니다.",
-      list: [
-        "월 단위로 자유롭게 과세기간 지정",
-        "운전자·차량 정보 자동 반영",
-        "xlsx 파일 즉시 공유 (이메일, 메신저, 클라우드)",
-      ],
+      icon: Users,
+      title: "운전자 무제한 등록",
+      desc: "회사 코드 한 개로 여러 운전자를 등록·승인하고, 차량을 공유해도 운행 기록이 운전자별로 분리 취합됩니다.",
     },
   ];
 
   return (
     <section
-      id="guide"
+      id="admin"
+      className="py-32 relative"
+      style={{
+        background:
+          "linear-gradient(180deg, transparent, oklch(0.14 0.03 250 / 0.4), transparent)",
+      }}
+    >
+      <div className="container-wide">
+        <SectionHeader
+          eyebrow="For Companies · 관리자 앱"
+          title="흩어진 운행기록을 회사가 한 번에 관리"
+          desc="운전자 앱이 기록한 데이터를 관리자 앱으로 자동 취합합니다. 경리·총무 담당자가 직원들의 운행기록부를 일일이 모을 필요가 없습니다."
+        />
+
+        <div className="mt-16 grid md:grid-cols-3 gap-6">
+          {features.map((f, i) => (
+            <div
+              key={f.title}
+              className="card-surface p-8 reveal"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <div
+                className="w-12 h-12 rounded-xl grid place-items-center border border-border"
+                style={{
+                  background:
+                    "linear-gradient(135deg, oklch(0.72 0.18 230 / 0.2), oklch(0.82 0.16 205 / 0.15))",
+                }}
+              >
+                <f.icon className="w-6 h-6 text-cyan" />
+              </div>
+              <h3 className="font-display text-lg font-bold mt-5">{f.title}</h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                {f.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-sm text-muted-foreground">
+            <Building2 className="w-4 h-4 text-cyan" />
+            관리자 앱 상세 화면은 곧 공개됩니다
+          </span>
+          <a href="#contact" className="btn-primary !py-2 !px-5 text-sm">
+            관리자 연동 도입 문의 <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Pricing() {
+  const plans = [
+    {
+      badge: "기본",
+      name: "스타터",
+      target: "10대 미만",
+      price: "4,500",
+      features: [
+        "GPS 자동 운행 기록",
+        "세무용 운행기록부 엑셀 출력",
+        "회사 저장소 자동 동기화",
+        "운행기록 저장 무제한",
+      ],
+    },
+    {
+      badge: "10대 이상",
+      name: "비즈니스",
+      target: "10대 이상 운영 차량",
+      price: "4,000",
+      featured: true,
+      features: [
+        "스타터의 모든 기능",
+        "대수 증가에 따른 자동 할인 적용",
+        "법인 관리자 대시보드",
+        "운행기록 저장 무제한",
+      ],
+    },
+    {
+      badge: "최대 할인",
+      name: "엔터프라이즈",
+      target: "연납 또는 30대 이상",
+      price: "3,500",
+      features: [
+        "비즈니스의 모든 기능",
+        "연납 시 모든 대수 동일 할인",
+        "30대 이상 대규모 운영 최적화",
+        "운행기록 저장 무제한",
+      ],
+    },
+  ];
+
+  return (
+    <section id="pricing" className="py-32">
+      <div className="container-wide">
+        <SectionHeader
+          eyebrow="Pricing"
+          title="요금제"
+          desc="운전자 단독 사용은 무료입니다. 회사가 운행기록을 한곳에 모아 관리하는 관리자 연동 기능부터 유료로 제공됩니다."
+        />
+
+        {/* 무료 플랜 */}
+        <div className="mt-16 reveal">
+          <div className="card-surface p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-8">
+            <div className="md:flex-1">
+              <div className="flex items-center gap-3">
+                <Smartphone className="w-6 h-6 text-cyan" />
+                <h3 className="font-display text-2xl font-bold">
+                  개인 / 운전자 단독
+                </h3>
+                <span className="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full text-cyan border border-border">
+                  무료
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xl">
+                회원가입 없이 바로 시작. 운행 기록을{" "}
+                <strong className="text-foreground">휴대폰에만 저장</strong>하고,
+                국세청 양식 운행기록부를 직접 엑셀로 추출할 수 있습니다.
+                개인사업자·1인 사업자에게 적합합니다.
+              </p>
+              <ul className="mt-5 grid sm:grid-cols-2 gap-2.5 text-sm">
+                {[
+                  "GPS 자동 운행 기록",
+                  "국세청 양식 엑셀 추출",
+                  "다중 차량 관리",
+                  "회원가입 불필요",
+                ].map((f) => (
+                  <li
+                    key={f}
+                    className="flex gap-2 items-start text-muted-foreground"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-cyan shrink-0 mt-0.5" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="md:text-right">
+              <div className="font-mono font-bold text-5xl gradient-text">0</div>
+              <div className="text-sm text-muted-foreground mt-1">원</div>
+              <a
+                href={PLAY_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-ghost mt-5 inline-flex"
+              >
+                <Download className="w-4 h-4" /> 무료로 시작하기
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* 관리자 연동 유료 플랜 */}
+        <div className="mt-16 text-center reveal">
+          <h3 className="font-display text-2xl font-bold">
+            관리자 연동 (법인)
+          </h3>
+          <p className="mt-3 text-sm text-muted-foreground">
+            운행기록을 회사 저장소로 모아 관리자가 일괄 관리하는 유료 플랜입니다.
+          </p>
+        </div>
+
+        <div className="mt-8 flex justify-center reveal">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-sm">
+            <Database className="w-4 h-4 text-cyan" />
+            운행 데이터가{" "}
+            <strong className="text-foreground">우리 회사에 저장</strong>됩니다.
+          </div>
+        </div>
+
+        <div className="mt-12 grid md:grid-cols-3 gap-6">
+          {plans.map((p, i) => (
+            <div
+              key={p.name}
+              className={`card-surface p-8 reveal relative flex flex-col ${
+                p.featured ? "md:-translate-y-4" : ""
+              }`}
+              style={{
+                transitionDelay: `${i * 100}ms`,
+                ...(p.featured
+                  ? {
+                      border: "1px solid transparent",
+                      backgroundImage:
+                        "linear-gradient(oklch(0.20 0.035 252), oklch(0.18 0.035 252)), var(--gradient-accent)",
+                      backgroundOrigin: "border-box",
+                      backgroundClip: "padding-box, border-box",
+                      boxShadow: "var(--shadow-glow)",
+                    }
+                  : {}),
+              }}
+            >
+              <div className="flex items-center justify-between">
+                <span
+                  className={`text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full ${
+                    p.featured
+                      ? "text-primary-foreground"
+                      : "text-cyan border border-border"
+                  }`}
+                  style={
+                    p.featured ? { background: "var(--gradient-accent)" } : {}
+                  }
+                >
+                  {p.badge}
+                </span>
+                {p.featured && <Sparkles className="w-4 h-4 text-cyan" />}
+              </div>
+              <h3 className="font-display text-2xl font-bold mt-6">{p.name}</h3>
+              <p className="text-sm text-muted-foreground mt-1">{p.target}</p>
+
+              <div className="mt-8 flex items-baseline gap-2">
+                <span className="font-mono font-bold text-5xl gradient-text">
+                  {p.price}
+                </span>
+                <span className="text-sm text-muted-foreground">
+                  원 / 월 · 대
+                </span>
+              </div>
+
+              <div className="hairline my-8" />
+
+              <ul className="space-y-3 text-sm">
+                {p.features.map((f) => (
+                  <li key={f} className="flex gap-2 items-start">
+                    <CheckCircle2 className="w-4 h-4 text-cyan shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="#contact"
+                className={`mt-8 inline-flex justify-center ${
+                  p.featured ? "btn-primary" : "btn-ghost"
+                }`}
+              >
+                도입 문의 <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-12 text-center text-sm text-muted-foreground reveal">
+          * 표시 금액은 차량 1대 기준 월 요금이며, VAT 별도입니다. 정확한 견적과
+          도입 절차는{" "}
+          <a href="#contact" className="text-cyan hover:underline">
+            도입 문의
+          </a>
+          를 통해 안내드립니다.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function Partners() {
+  const points = [
+    {
+      icon: Users,
+      title: "고객사 운행기록부 일괄 관리",
+      desc: "추천하신 고객사의 운행기록부를 관리자 화면에서 한 번에 확인·취합할 수 있어, 차량 비용 처리 업무가 크게 줄어듭니다.",
+    },
+    {
+      icon: Sparkles,
+      title: "파트너 수익 셰어 프로그램",
+      desc: "소개해 주신 고객사의 구독 매출 일부를 파트너 수익으로 정산해 드립니다. 구체적인 조건은 제휴 문의 시 별도로 안내드립니다.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "세무사 전용 계정 제공",
+      desc: "여러 고객사를 한 계정에서 관리할 수 있는 세무사 전용 계정을 제공합니다. (준비 중 — 우선 안내 신청 가능)",
+    },
+  ];
+
+  return (
+    <section id="partners" className="py-32">
+      <div className="container-wide">
+        <SectionHeader
+          eyebrow="For Tax Accountants · 세무사 파트너십"
+          title="고객에게 추천하고, 함께 성장하세요"
+          desc="업무용 승용차 운행기록부는 세무사님이 매년 가장 많이 챙기는 항목 중 하나입니다. 드라이브로그를 고객사에 추천하시면 운행기록부 관리가 자동화되고, 파트너 혜택도 받으실 수 있습니다."
+        />
+
+        <div className="mt-16 grid md:grid-cols-3 gap-6">
+          {points.map((p, i) => (
+            <div
+              key={p.title}
+              className="card-surface p-8 reveal"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <div
+                className="w-12 h-12 rounded-xl grid place-items-center border border-border"
+                style={{
+                  background:
+                    "linear-gradient(135deg, oklch(0.72 0.18 230 / 0.2), oklch(0.82 0.16 205 / 0.15))",
+                }}
+              >
+                <p.icon className="w-6 h-6 text-cyan" />
+              </div>
+              <h3 className="font-display text-lg font-bold mt-5">{p.title}</h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                {p.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center reveal">
+          <a
+            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+              "[세무사 제휴 문의] 드라이브로그 파트너십",
+            )}`}
+            className="btn-primary inline-flex"
+          >
+            <Mail className="w-4 h-4" /> 세무사 제휴 문의하기
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section
+      id="contact"
       className="py-32 relative"
       style={{
         background:
@@ -544,68 +831,134 @@ function Guide() {
     >
       <div className="container-wide">
         <SectionHeader
+          eyebrow="Contact · 도입 문의"
+          title="도입을 검토 중이신가요?"
+          desc="차량 대수·운영 방식에 맞는 요금과 도입 절차를 안내해 드립니다. 아래 채널로 편하게 문의해 주세요. 영업일 기준 1일 이내 회신드립니다."
+        />
+
+        <div className="mt-16 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <a
+            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+              "[드라이브로그 도입 문의]",
+            )}`}
+            className="card-surface p-8 reveal flex flex-col items-start hover:border-cyan transition-colors"
+          >
+            <div
+              className="w-12 h-12 rounded-xl grid place-items-center border border-border"
+              style={{
+                background:
+                  "linear-gradient(135deg, oklch(0.72 0.18 230 / 0.2), oklch(0.82 0.16 205 / 0.15))",
+              }}
+            >
+              <Mail className="w-6 h-6 text-cyan" />
+            </div>
+            <h3 className="font-display text-lg font-bold mt-5">이메일 문의</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              도입 상담·견적·제휴 문의
+            </p>
+            <span className="mt-4 font-mono text-cyan">{CONTACT_EMAIL}</span>
+          </a>
+
+          <a
+            href={PLAY_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="card-surface p-8 reveal flex flex-col items-start hover:border-cyan transition-colors"
+          >
+            <div
+              className="w-12 h-12 rounded-xl grid place-items-center border border-border"
+              style={{
+                background:
+                  "linear-gradient(135deg, oklch(0.72 0.18 230 / 0.2), oklch(0.82 0.16 205 / 0.15))",
+              }}
+            >
+              <Download className="w-6 h-6 text-cyan" />
+            </div>
+            <h3 className="font-display text-lg font-bold mt-5">
+              먼저 무료로 사용해보기
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Google Play에서 운전자 앱 설치 · iOS 준비 중
+            </p>
+            <span className="mt-4 inline-flex items-center gap-1 text-cyan">
+              Google Play <ArrowRight className="w-4 h-4" />
+            </span>
+          </a>
+        </div>
+
+        <div className="mt-8 text-center reveal">
+          <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
+            <MessageCircle className="w-4 h-4 text-cyan" />
+            카카오톡 상담 채널은 준비 중입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Guide() {
+  const steps = [
+    {
+      icon: Download,
+      title: "앱 설치 및 권한 허용",
+      desc: "드라이브로그 앱 설치 후 위치(항상 허용)·알림 권한을 허용합니다. 배터리 최적화 예외를 설정하면 화면을 꺼도 정확히 측정됩니다.",
+    },
+    {
+      icon: IdCard,
+      title: "운전자 등록",
+      desc: "회사 코드로 법인 모드 가입(관리자 승인) 또는 코드 없이 개인 모드로 바로 시작합니다.",
+    },
+    {
+      icon: Car,
+      title: "차량 등록",
+      desc: "차량번호·모델명·현재 누적 주행거리를 등록합니다. 한 계정에 여러 대 등록 가능합니다.",
+    },
+    {
+      icon: PlayCircle,
+      title: "운행 시작 / 종료",
+      desc: "목적(업무/출퇴근/기타)을 고르고 시작을 누르면 GPS 측정이 자동 진행, 종료 시 도착 시각·거리가 저장됩니다.",
+    },
+    {
+      icon: FileOutput,
+      title: "운행기록부 엑셀 출력",
+      desc: "리포트에서 과세기간을 설정하고 생성을 누르면 국세청 양식 운행기록부가 만들어져 즉시 공유됩니다.",
+    },
+  ];
+
+  return (
+    <section id="guide" className="py-32 relative">
+      <div className="container-wide">
+        <SectionHeader
           eyebrow="Guide · 5 Steps"
           title="사용 가이드"
           desc="설치부터 운행기록부 출력까지, 5단계로 끝나는 드라이브로그 사용 방법입니다."
         />
 
-        <div className="mt-20 relative">
-          <div
-            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px hidden md:block"
-            style={{
-              background:
-                "linear-gradient(180deg, transparent, var(--cyan), transparent)",
-            }}
-          />
-
-          <div className="space-y-10">
-            {steps.map((s, i) => (
-              <div
-                key={s.title}
-                className={`reveal md:grid md:grid-cols-2 md:gap-12 items-center ${
-                  i % 2 ? "md:[&>div:first-child]:order-2" : ""
-                }`}
-              >
-                <div
-                  className={`${
-                    i % 2 ? "md:text-left md:pl-12" : "md:text-right md:pr-12"
-                  }`}
-                >
-                  <div
-                    className={`inline-flex items-center gap-3 ${
-                      i % 2 ? "" : "md:flex-row-reverse"
-                    }`}
-                  >
-                    <div className="step-num">
-                      {String(i + 1).padStart(2, "0")}
-                    </div>
-                    <div className="w-12 h-12 rounded-xl grid place-items-center border border-border bg-surface">
-                      <s.icon className="w-5 h-5 text-cyan" />
-                    </div>
-                  </div>
-                  <h3 className="font-display text-2xl font-bold mt-4">
-                    {s.title}
-                  </h3>
-                  <p className="mt-3 text-muted-foreground leading-relaxed">
-                    {s.desc}
-                  </p>
-                </div>
-                <div className="card-surface p-6 mt-6 md:mt-0">
-                  <ul className="space-y-3 text-sm">
-                    {s.list.map((l) => (
-                      <li key={l} className="flex gap-2 items-start">
-                        <CheckCircle2 className="w-4 h-4 text-cyan shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">{l}</span>
-                      </li>
-                    ))}
-                  </ul>
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {steps.map((s, i) => (
+            <div
+              key={s.title}
+              className="card-surface p-6 reveal"
+              style={{ transitionDelay: `${i * 60}ms` }}
+            >
+              <div className="flex items-center gap-3">
+                <div className="step-num">{String(i + 1).padStart(2, "0")}</div>
+                <div className="w-10 h-10 rounded-xl grid place-items-center border border-border bg-surface">
+                  <s.icon className="w-5 h-5 text-cyan" />
                 </div>
               </div>
-            ))}
-          </div>
+              <h3 className="font-display text-base font-bold mt-4">
+                {s.title}
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                {s.desc}
+              </p>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-20 card-surface p-8 reveal">
+        <div className="mt-12 card-surface p-8 reveal">
           <div className="flex items-center gap-3">
             <div
               className="w-10 h-10 rounded-lg grid place-items-center"
@@ -746,156 +1099,16 @@ function Templates() {
   );
 }
 
-function Pricing() {
-  const plans = [
-    {
-      badge: "기본",
-      name: "스타터",
-      target: "10대 미만",
-      price: "4,500",
-      features: [
-        "GPS 자동 운행 기록",
-        "세무용 운행기록부 엑셀 출력",
-        "법인 / 개인 모드 지원",
-        "운행기록 저장 무제한",
-      ],
-    },
-    {
-      badge: "10대 이상",
-      name: "비즈니스",
-      target: "10대 이상 운영 차량",
-      price: "4,000",
-      featured: true,
-      features: [
-        "스타터의 모든 기능",
-        "대수 증가에 따른 자동 할인 적용",
-        "법인 관리자 대시보드",
-        "운행기록 저장 무제한",
-      ],
-    },
-    {
-      badge: "최대 할인",
-      name: "엔터프라이즈",
-      target: "연납 또는 30대 이상",
-      price: "3,500",
-      features: [
-        "비즈니스의 모든 기능",
-        "연납 시 모든 대수 동일 할인",
-        "30대 이상 대규모 운영 최적화",
-        "운행기록 저장 무제한",
-      ],
-    },
-  ];
-
-  return (
-    <section id="pricing" className="py-32">
-      <div className="container-wide">
-        <SectionHeader
-          eyebrow="Pricing · 월 구독"
-          title="요금제"
-          desc="차량 대수에 따라 합리적으로 적용되는 월 구독 요금제입니다. 모든 요금제는 운행기록 저장 기간 무제한으로 제공됩니다."
-        />
-
-        <div className="mt-8 flex justify-center reveal">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-sm">
-            <Database className="w-4 h-4 text-cyan" />
-            운행 데이터가{" "}
-            <strong className="text-foreground">우리 회사에 저장</strong>됩니다.
-          </div>
-        </div>
-
-        <div className="mt-16 grid md:grid-cols-3 gap-6">
-          {plans.map((p, i) => (
-            <div
-              key={p.name}
-              className={`card-surface p-8 reveal relative ${
-                p.featured ? "md:-translate-y-4" : ""
-              }`}
-              style={{
-                transitionDelay: `${i * 100}ms`,
-                ...(p.featured
-                  ? {
-                      border: "1px solid transparent",
-                      backgroundImage:
-                        "linear-gradient(oklch(0.20 0.035 252), oklch(0.18 0.035 252)), var(--gradient-accent)",
-                      backgroundOrigin: "border-box",
-                      backgroundClip: "padding-box, border-box",
-                      boxShadow: "var(--shadow-glow)",
-                    }
-                  : {}),
-              }}
-            >
-              <div className="flex items-center justify-between">
-                <span
-                  className={`text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full ${
-                    p.featured
-                      ? "text-primary-foreground"
-                      : "text-cyan border border-border"
-                  }`}
-                  style={
-                    p.featured ? { background: "var(--gradient-accent)" } : {}
-                  }
-                >
-                  {p.badge}
-                </span>
-                {p.featured && <Sparkles className="w-4 h-4 text-cyan" />}
-              </div>
-              <h3 className="font-display text-2xl font-bold mt-6">{p.name}</h3>
-              <p className="text-sm text-muted-foreground mt-1">{p.target}</p>
-
-              <div className="mt-8 flex items-baseline gap-2">
-                <span className="font-mono font-bold text-5xl gradient-text">
-                  {p.price}
-                </span>
-                <span className="text-sm text-muted-foreground">
-                  원 / 월 · 대
-                </span>
-              </div>
-
-              <div className="hairline my-8" />
-
-              <ul className="space-y-3 text-sm">
-                {p.features.map((f) => (
-                  <li key={f} className="flex gap-2 items-start">
-                    <CheckCircle2 className="w-4 h-4 text-cyan shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-12 text-center text-sm text-muted-foreground reveal">
-          * 표시 금액은 차량 1대 기준 월 요금이며, VAT 별도입니다. 도입 문의는
-          별도 채널로 안내드립니다.
-        </p>
-      </div>
-    </section>
-  );
-}
-
 function About() {
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    if (!aboutRef.current) return;
-    const io = new IntersectionObserver(
-      ([e]) => e.isIntersecting && setInView(true),
-      { threshold: 0.4 },
-    );
-    io.observe(aboutRef.current);
-    return () => io.disconnect();
-  }, []);
-
-  const v1 = useCounter(99, inView);
-  const v2 = useCounter(24, inView);
-  const v3 = useCounter(100, inView);
+  const facts = [
+    { v: "별지 제65호", k: "국세청 서식 준수" },
+    { v: "5년", k: "보관 요건 충족" },
+    { v: "GPS", k: "자동 거리 측정" },
+  ];
 
   return (
     <section
       id="about"
-      ref={aboutRef}
       className="py-32 relative"
       style={{
         background:
@@ -919,13 +1132,9 @@ function About() {
           </p>
 
           <div className="mt-10 grid grid-cols-3 gap-6">
-            {[
-              { v: `${v1}.9%`, k: "Uptime" },
-              { v: `${v2}/7`, k: "자동 측정" },
-              { v: `${v3}%`, k: "국세청 양식" },
-            ].map((s) => (
+            {facts.map((s) => (
               <div key={s.k}>
-                <div className="font-mono font-bold text-3xl gradient-text">
+                <div className="font-mono font-bold text-2xl gradient-text">
                   {s.v}
                 </div>
                 <div className="text-xs text-muted-foreground uppercase tracking-widest mt-2">
@@ -1021,29 +1230,55 @@ function Footer() {
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               현장의 불편을 코드로 해결하는 모바일 솔루션 회사.
             </p>
+            <a
+              href={PLAY_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex items-center gap-2 text-sm text-cyan hover:underline"
+            >
+              <Download className="w-4 h-4" /> Google Play에서 다운로드
+            </a>
           </div>
-          <div className="flex md:justify-center gap-6 text-sm text-muted-foreground">
-            <a href="/drivelog/blog/" className="hover:text-cyan transition-colors">
+
+          <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+            <span className="text-foreground font-medium">바로가기</span>
+            <a href="#pricing" className="hover:text-cyan transition-colors">
+              요금제
+            </a>
+            <a href="#partners" className="hover:text-cyan transition-colors">
+              세무사 파트너
+            </a>
+            <a
+              href="/drivelog/blog/"
+              className="hover:text-cyan transition-colors"
+            >
               운행기록부 가이드
             </a>
-            <a href="/drivelog/privacy" className="hover:text-cyan transition-colors">
-              Privacy Policy
+            <a
+              href="/drivelog/privacy"
+              className="hover:text-cyan transition-colors"
+            >
+              개인정보처리방침
             </a>
-            <a href="#" className="hover:text-cyan transition-colors">
-              Terms of Service
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="hover:text-cyan transition-colors"
+            >
+              {CONTACT_EMAIL}
             </a>
           </div>
-          <div className="flex md:justify-end gap-3">
-            {[Facebook, Twitter, Linkedin].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="w-10 h-10 rounded-full border border-border grid place-items-center hover:border-cyan hover:text-cyan transition-colors"
-                aria-label="social"
-              >
-                <Icon className="w-4 h-4" />
-              </a>
-            ))}
+
+          <div className="text-xs text-muted-foreground leading-relaxed md:text-right">
+            <span className="text-foreground font-medium block mb-2">
+              사업자 정보
+            </span>
+            <p>상호: 라라캣소프트 (LalaCatSoft)</p>
+            <p>사업자등록번호: 552-26-01970</p>
+            <p>통신판매업 신고: 제 2026-고양일산서-0191 호</p>
+            <p>
+              경기도 고양시 일산서구 하이파크2로59번길 7,
+              <br className="hidden md:block" /> 302동 1703호 (덕이동)
+            </p>
           </div>
         </div>
         <div className="hairline mt-12" />
