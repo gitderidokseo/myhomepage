@@ -105,6 +105,12 @@
     "내 차량은 운행기록부 안 쓰면 얼마나 손해일까?" 머릿속으로만 계산하면 막연합니다. 이 글은 1,500만원 한도와 800만원 감가상각 한도가 <strong>실제 비용에 어떻게 적용되는지</strong> 4가지 케이스로 풀어 보여 주고, 본인 차량 수치를 직접 넣어볼 수 있는 계산기까지 함께 제공합니다.
   </p>
 
+  <div class="highlight-box">
+    <div class="label">핵심 구조 — "초과분 × 세율 = 추가 세금"</div>
+    <p style="margin-bottom:10px; color:#e2e8f0;">운행기록부 없이 1,600만원의 차량 비용이 발생했다면, 초과분 100만원이 <strong>비용으로 인정되지 않습니다(손금불산입)</strong>. 이 100만원은 과세소득에 포함되어 본인의 세율만큼 세금이 나옵니다.</p>
+    <p style="margin-bottom:0; color:#94a3b8;">예) 법인세율 9% → 추가 세금 9만원 / 소득세율 35% → 추가 세금 35만원 (+ 지방소득세 10% 별도)</p>
+  </div>
+
   <h2>먼저, 손금 한도 두 가지를 정리합니다</h2>
   <table>
     <tr><th>한도</th><th>대상</th><th>초과분 처리</th></tr>
@@ -162,6 +168,34 @@
     <p>연두색 번호판·업무 전용 보험까지 모두 갖추어야 함. 하나라도 빠지면 차량 비용 <strong>전액 손금 불인정</strong> 가능. <a href="green-plate-corporate-car" style="color:#fbbf24; text-decoration:underline;">연두색 번호판 가이드 →</a></p>
   </div>
 
+  <h2>케이스 5 — 개인사업자, 운행기록부 미작성</h2>
+  <p>법인이 아닌 <strong>개인사업자</strong>도 업무용 승용차 한도 규정이 동일하게 적용됩니다. 다만 세율이 법인세가 아닌 <strong>종합소득세율(6~45%)</strong>이기 때문에 소득이 높을수록 손해가 더 큽니다.</p>
+
+  <div class="case-box">
+    <div class="case-label">전제</div>
+    <div class="case-title">개인사업자, 종합소득 약 6,000만원 (세율 24% 구간), 연간 차량 비용 1,600만원, 운행기록부 없음</div>
+    <p style="margin-bottom: 8px;"><strong>손금(필요경비) 인정액:</strong> 1,500만원 (한도 적용)</p>
+    <p style="margin-bottom: 8px;"><strong>손금 불인정액:</strong> 100만원 → 과세소득 100만원 증가</p>
+    <p style="margin-bottom: 8px;"><strong>추가 소득세:</strong> 100만원 × 24% = <strong>24만원</strong></p>
+    <p style="margin-bottom: 0;"><strong>추가 지방소득세:</strong> 24만원 × 10% = 2.4만원 → <strong>합계 약 26만원</strong></p>
+  </div>
+
+  <table>
+    <tr><th>종합소득 구간</th><th>소득세율</th><th>100만원 초과 시 추가 세금 (지방세 포함)</th></tr>
+    <tr><td>1,200만원 이하</td><td>6%</td><td>약 6.6만원</td></tr>
+    <tr><td>1,200만원 ~ 4,600만원</td><td>15%</td><td>약 16.5만원</td></tr>
+    <tr><td>4,600만원 ~ 8,800만원</td><td>24%</td><td>약 26.4만원</td></tr>
+    <tr><td>8,800만원 ~ 1.5억</td><td>35%</td><td>약 38.5만원</td></tr>
+    <tr><td>1.5억 ~ 3억</td><td>38%</td><td>약 41.8만원</td></tr>
+    <tr><td>3억 ~ 5억</td><td>40%</td><td>약 44만원</td></tr>
+    <tr><td>5억 초과</td><td>42%</td><td>약 46.2만원</td></tr>
+  </table>
+
+  <div class="highlight-box">
+    <div class="label">법인세율과 비교</div>
+    <p style="margin-bottom:0; color:#e2e8f0;">법인세율은 과세표준 2억 이하 <strong>9%</strong>, 2억~200억 <strong>19%</strong>입니다. 고소득 개인사업자(35% 이상)는 법인 전환을 고려할 이유 중 하나가 바로 이 차이입니다.</p>
+  </div>
+
   <h2>본인 차량 직접 계산해 보기</h2>
   <p>
     아래 칸에 본인 차량의 수치를 넣으면 손금 인정액과 추가 세금이 즉시 계산됩니다.
@@ -184,9 +218,20 @@
     <div class="toggle-row">
       <label><input type="checkbox" id="hasLog" checked /> 운행기록부 작성함</label>
     </div>
+    <div class="toggle-row" style="margin-bottom:18px;">
+      <span style="color:#94a3b8; font-size:0.9rem; margin-right:16px;">사업자 유형</span>
+      <label style="margin-right:16px;"><input type="radio" name="bizType" value="corp" checked style="accent-color:#38bdf8; cursor:pointer;" /> 법인</label>
+      <label><input type="radio" name="bizType" value="sole" style="accent-color:#38bdf8; cursor:pointer;" /> 개인사업자</label>
+    </div>
     <div class="calc-row">
-      <label for="taxRate">법인세율 (%)</label>
-      <input type="number" id="taxRate" value="20" min="0" max="50" step="1" />
+      <label for="taxRate" id="taxRateLabel">법인세율 (%)</label>
+      <input type="number" id="taxRate" value="19" min="0" max="50" step="1" />
+    </div>
+    <div id="taxRateHint" style="font-size:0.8rem; color:#64748b; margin-bottom:14px; display:none;">
+      소득세율: 6% (1,200만↓) · 15% (4,600만↓) · 24% (8,800만↓) · 35% (1.5억↓) · 38% (3억↓) · 40% (5억↓) · 42% (5억↑)
+    </div>
+    <div class="toggle-row">
+      <label><input type="checkbox" id="inclLocal" /> 지방소득세 포함 (× 1.1)</label>
     </div>
 
     <div class="calc-result">
@@ -194,18 +239,29 @@
       <div class="result-row"><span>감가상각 한도 적용 후 (800만원 한도)</span><span id="rAfterDep">2,000만원</span></div>
       <div class="result-row"><span>운행기록부 적용 후 손금 인정액</span><span id="rRecognized">1,800만원</span></div>
       <div class="result-row"><span>손금 불인정액</span><span id="rUnrecog">200만원</span></div>
-      <div class="result-row total"><span>추가 법인세 부담</span><span id="rTax">40만원</span></div>
+      <div class="result-row total"><span id="rTaxLabel">추가 세금 부담</span><span id="rTax">40만원</span></div>
     </div>
   </div>
 
   <script>
     function fmt(n) { return Math.round(n).toLocaleString() + '만원'; }
+    function getBizType() {
+      return document.querySelector('input[name="bizType"]:checked').value;
+    }
+    function updateLabels() {
+      var isSole = getBizType() === 'sole';
+      document.getElementById('taxRateLabel').textContent = isSole ? '소득세율 (%)' : '법인세율 (%)';
+      document.getElementById('taxRateHint').style.display = isSole ? 'block' : 'none';
+      document.getElementById('taxRate').value = isSole ? '24' : '19';
+      document.getElementById('rTaxLabel').textContent = isSole ? '추가 소득세 부담' : '추가 법인세 부담';
+    }
     function calc() {
       var dep = parseFloat(document.getElementById('dep').value) || 0;
       var other = parseFloat(document.getElementById('other').value) || 0;
       var ratio = parseFloat(document.getElementById('ratio').value) || 0;
       var hasLog = document.getElementById('hasLog').checked;
       var taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+      var inclLocal = document.getElementById('inclLocal').checked;
 
       var total = dep + other;
       var depCapped = Math.min(dep, 800);
@@ -220,6 +276,7 @@
       var unrecog = total - recognized;
       if (unrecog < 0) unrecog = 0;
       var tax = unrecog * (taxRate / 100);
+      if (inclLocal) tax = tax * 1.1;
 
       document.getElementById('rTotal').textContent = fmt(total);
       document.getElementById('rAfterDep').textContent = fmt(capped) + (dep > 800 ? ' (이월 ' + fmt(dep - 800) + ')' : '');
@@ -227,9 +284,12 @@
       document.getElementById('rUnrecog').textContent = fmt(unrecog);
       document.getElementById('rTax').textContent = fmt(tax);
     }
-    ['dep','other','ratio','hasLog','taxRate'].forEach(function(id){
+    ['dep','other','ratio','hasLog','taxRate','inclLocal'].forEach(function(id){
       document.getElementById(id).addEventListener('input', calc);
       document.getElementById(id).addEventListener('change', calc);
+    });
+    document.querySelectorAll('input[name="bizType"]').forEach(function(el){
+      el.addEventListener('change', function(){ updateLabels(); calc(); });
     });
     calc();
   </script>
@@ -239,6 +299,8 @@
     <li><strong>"손금 불인정액"이 매년 발생한다면</strong> — 5년 누적 시 추가 세금이 차량 1대 가격에 육박할 수 있습니다.</li>
     <li><strong>운행기록부 체크박스를 켰다 껐다 비교해 보세요</strong> — 비율 80% 이상이면 작성이 무조건 유리합니다.</li>
     <li><strong>감가상각 800만원 초과분은 이월</strong> — 차량을 5년 이상 보유하면 결국 모두 인정되지만, 단기 자금 흐름에는 영향이 있습니다.</li>
+    <li><strong>개인사업자는 세율이 높을수록 손해가 급격히 커집니다</strong> — 소득세율 35% 구간이라면 100만원 초과분 하나에 38.5만원(지방세 포함)이 나갑니다. 법인(세율 9%)과 비교하면 4배 이상 차이입니다.</li>
+    <li><strong>지방소득세(10%)를 잊지 마세요</strong> — 법인세·소득세 모두 10%가 추가됩니다. 계산기의 "지방소득세 포함" 체크박스로 확인하세요.</li>
   </ul>
 
   <hr class="divider" />
