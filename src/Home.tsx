@@ -1276,8 +1276,8 @@ function Footer() {
             <p>사업자등록번호: 552-26-01970</p>
             <p>통신판매업 신고: 제 2026-고양일산서-0191 호</p>
             <p>
-              경기도 고양시 일산서구 하이파크2로59번길 7,
-              <br className="hidden md:block" /> 302동 1703호 (덕이동)
+              서울시 마포구 독막로 28길 10,
+              <br className="hidden md:block" /> 109동 상가 b101-585호
             </p>
           </div>
         </div>
