@@ -555,7 +555,7 @@ function Pricing() {
       badge: "기본",
       name: "스타터",
       target: "10대 미만",
-      price: "2,500",
+      price: "3,300",
       features: [
         "GPS 자동 운행 기록",
         "세무용 운행기록부 엑셀 출력",
@@ -567,7 +567,7 @@ function Pricing() {
       badge: "10대 이상",
       name: "비즈니스",
       target: "10대 이상 운영 차량",
-      price: "2,000",
+      price: "3,000",
       featured: true,
       features: [
         "스타터의 모든 기능",
@@ -580,7 +580,7 @@ function Pricing() {
       badge: "최대 할인",
       name: "엔터프라이즈",
       target: "연납 또는 30대 이상",
-      price: "1,500",
+      price: "2,500",
       features: [
         "비즈니스의 모든 기능",
         "연납 시 모든 대수 동일 할인",
