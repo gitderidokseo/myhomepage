@@ -536,14 +536,24 @@ function AdminApp() {
         </div>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-sm text-muted-foreground">
-            <Building2 className="w-4 h-4 text-cyan" />
-            관리자 앱 상세 화면은 곧 공개됩니다
-          </span>
-          <a href="#contact" className="btn-primary !py-2 !px-5 text-sm">
+          <a
+            href="/drivelog/downloads/DriveLogAdmin_Setup.exe"
+            download
+            className="btn-primary !py-2 !px-5 text-sm"
+          >
+            <Download className="w-4 h-4" /> 관리자 프로그램 다운로드 (Windows)
+          </a>
+          <a href="#contact" className="btn-ghost !py-2 !px-5 text-sm">
             관리자 연동 도입 문의 <ArrowRight className="w-4 h-4" />
           </a>
         </div>
+        <p className="mt-4 text-center text-xs text-muted-foreground reveal">
+          <span className="inline-flex items-center gap-1.5">
+            <Building2 className="w-3.5 h-3.5 text-cyan" />
+            Windows 10 이상 · 설치 후 회사 코드로 로그인하면 운전자 운행기록이
+            자동으로 취합됩니다.
+          </span>
+        </p>
       </div>
     </section>
   );
@@ -598,6 +608,52 @@ function Pricing() {
           title="요금제"
           desc="운전자 단독 사용은 무료입니다. 회사가 운행기록을 한곳에 모아 관리하는 관리자 연동 기능부터 유료로 제공됩니다."
         />
+
+        {/* 오픈 기념 이벤트 — 선착순 100대 1년 무료 */}
+        <div className="mt-12 reveal">
+          <div
+            className="mx-auto max-w-3xl rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left"
+            style={{
+              border: "1px solid transparent",
+              backgroundImage:
+                "linear-gradient(oklch(0.20 0.035 252), oklch(0.18 0.035 252)), var(--gradient-accent)",
+              backgroundOrigin: "border-box",
+              backgroundClip: "padding-box, border-box",
+              boxShadow: "var(--shadow-glow)",
+            }}
+          >
+            <div
+              className="w-12 h-12 rounded-xl grid place-items-center shrink-0"
+              style={{ background: "var(--gradient-accent)" }}
+            >
+              <Sparkles className="w-6 h-6 text-primary-foreground" />
+            </div>
+            <div className="flex-1">
+              <div className="flex items-center justify-center sm:justify-start gap-2">
+                <span className="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full text-primary-foreground"
+                  style={{ background: "var(--gradient-accent)" }}
+                >
+                  오픈 기념 이벤트
+                </span>
+              </div>
+              <h3 className="font-display text-xl md:text-2xl font-bold mt-3">
+                선착순 100대 · 1년간 무료
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                관리자 연동(법인) 플랜을 지금 도입하시면{" "}
+                <strong className="text-foreground">선착순 100대</strong>에 한해{" "}
+                <strong className="text-foreground">1년간 무료</strong>로
+                이용하실 수 있습니다. 조기 마감될 수 있으니 서둘러 신청하세요.
+              </p>
+            </div>
+            <a
+              href="#contact"
+              className="btn-primary !py-2 !px-5 text-sm shrink-0"
+            >
+              지금 신청 <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
 
         {/* 무료 플랜 */}
         <div className="mt-16 reveal">
