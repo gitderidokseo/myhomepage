@@ -892,29 +892,7 @@ function Contact() {
           desc="차량 대수·운영 방식에 맞는 요금과 도입 절차를 안내해 드립니다. 아래 채널로 편하게 문의해 주세요. 영업일 기준 1일 이내 회신드립니다."
         />
 
-        <div className="mt-16 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          <a
-            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-              "[드라이브로그 도입 문의]",
-            )}`}
-            className="card-surface p-8 reveal flex flex-col items-start hover:border-cyan transition-colors"
-          >
-            <div
-              className="w-12 h-12 rounded-xl grid place-items-center border border-border"
-              style={{
-                background:
-                  "linear-gradient(135deg, oklch(0.72 0.18 230 / 0.2), oklch(0.82 0.16 205 / 0.15))",
-              }}
-            >
-              <Mail className="w-6 h-6 text-cyan" />
-            </div>
-            <h3 className="font-display text-lg font-bold mt-5">이메일 문의</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              도입 상담·견적·제휴 문의
-            </p>
-            <span className="mt-4 font-mono text-cyan">{CONTACT_EMAIL}</span>
-          </a>
-
+        <div className="mt-16 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <a
             href={PLAY_URL}
             target="_blank"
@@ -939,6 +917,53 @@ function Contact() {
             <span className="mt-4 inline-flex items-center gap-1 text-cyan">
               Google Play <ArrowRight className="w-4 h-4" />
             </span>
+          </a>
+
+          <a
+            href="/drivelog/downloads/DriveLogAdmin_Setup.exe"
+            download
+            className="card-surface p-8 reveal flex flex-col items-start hover:border-cyan transition-colors"
+          >
+            <div
+              className="w-12 h-12 rounded-xl grid place-items-center border border-border"
+              style={{
+                background:
+                  "linear-gradient(135deg, oklch(0.72 0.18 230 / 0.2), oklch(0.82 0.16 205 / 0.15))",
+              }}
+            >
+              <LayoutDashboard className="w-6 h-6 text-cyan" />
+            </div>
+            <h3 className="font-display text-lg font-bold mt-5">
+              관리자 윈도우 프로그램
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              운행기록을 한곳에 취합·관리하는 Windows 관리자 앱
+            </p>
+            <span className="mt-4 inline-flex items-center gap-1 text-cyan">
+              셋업 파일 다운로드 <Download className="w-4 h-4" />
+            </span>
+          </a>
+
+          <a
+            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+              "[드라이브로그 도입 문의]",
+            )}`}
+            className="card-surface p-8 reveal flex flex-col items-start hover:border-cyan transition-colors"
+          >
+            <div
+              className="w-12 h-12 rounded-xl grid place-items-center border border-border"
+              style={{
+                background:
+                  "linear-gradient(135deg, oklch(0.72 0.18 230 / 0.2), oklch(0.82 0.16 205 / 0.15))",
+              }}
+            >
+              <Mail className="w-6 h-6 text-cyan" />
+            </div>
+            <h3 className="font-display text-lg font-bold mt-5">이메일 문의</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              추가 문의 하실 분
+            </p>
+            <span className="mt-4 font-mono text-cyan">{CONTACT_EMAIL}</span>
           </a>
         </div>
 
