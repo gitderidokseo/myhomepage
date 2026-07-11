@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>출생코드 개인정보처리방침 · LalaCatSoft</title>
+  <meta name="description" content="LalaCatSoft가 제공하는 AI 사주팔자 분석 앱 '출생코드'의 개인정보처리방침입니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lalacatsoft.com/birthcode/privacy" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-2: #0e1530;
+      --surface: #131a36;
+      --border: #1f2a52;
+      --text: #e6ecff;
+      --muted: #9aa6c9;
+      --cyan: #3ee0ff;
+      --cyan-2: #7af0ff;
+      --accent-grad: linear-gradient(135deg, #3ee0ff 0%, #7af0ff 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 20% 10%,
+          rgba(62, 224, 255, 0.08),
+          transparent 50%),
+        radial-gradient(circle at 80% 30%,
+          rgba(122, 240, 255, 0.06),
+          transparent 50%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    header.site {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(11, 16, 32, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header.site .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .brand .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent-grad);
+      display: grid;
+      place-items: center;
+      color: #06122a;
+      font-weight: 800;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 14px;
+    }
+
+    header.site nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      margin-left: 18px;
+      transition: color 0.2s;
+    }
+
+    header.site nav a:hover {
+      color: var(--cyan);
+    }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(62, 224, 255, 0.06);
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 18px 0 12px;
+      font-weight: 700;
+    }
+
+    h1 .grad {
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .lead {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 26px;
+      margin: 18px 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 44px 0 12px;
+      padding-top: 8px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    h2 .num {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      color: var(--cyan);
+      margin-right: 10px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin: 24px 0 8px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    p,
+    li {
+      color: #c8d0eb;
+      font-size: 15px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    ul,
+    ol {
+      padding-left: 22px;
+    }
+
+    ul li,
+    ol li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(62, 224, 255, 0.4);
+    }
+
+    a:hover {
+      color: var(--cyan-2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 8px;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(62, 224, 255, 0.06);
+      color: var(--cyan);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .callout {
+      border-left: 3px solid var(--cyan);
+      background: rgba(62, 224, 255, 0.05);
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+      color: #d6deff;
+      font-size: 14px;
+    }
+
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 28px 0 8px;
+    }
+
+    .toc h4 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 18px;
+      columns: 2;
+      column-gap: 24px;
+    }
+
+    .toc ol li {
+      break-inside: avoid;
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .toc a {
+      color: #c8d0eb;
+      border-bottom: none;
+    }
+
+    .toc a:hover {
+      color: var(--cyan);
+    }
+
+    footer.site {
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    @media (max-width: 600px) {
+      .toc ol {
+        columns: 1;
+      }
+
+      header.site nav a:not(:last-child) {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <span class="logo">L</span>
+        <span>LalaCatSoft</span>
+      </a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/birthcode/">출생코드</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="eyebrow">Privacy Policy · 출생코드</span>
+    <h1>
+      출생코드 <span class="grad">개인정보처리방침</span>
+    </h1>
+    <p class="meta">
+      시행일: 2026년 7월 11일 · 최종 개정일: 2026년 7월 11일
+    </p>
+
+    <p class="lead">
+      LalaCatSoft(이하 "회사")는 <strong>출생코드(AI 사주 팔자)</strong> 앱(이하
+      "본 서비스")을 운영하며, 「개인정보 보호법」 등 관련 법령을 준수하여
+      이용자의 개인정보를 처리합니다. 본 방침은 본 서비스가 어떤 정보를,
+      어떤 목적으로, 어떻게 처리하는지 안내합니다.
+    </p>
+
+    <nav class="toc" aria-label="목차">
+      <h4>목차</h4>
+      <ol>
+        <li><a href="#s1">처리하는 개인정보 항목</a></li>
+        <li><a href="#s2">처리 목적</a></li>
+        <li><a href="#s3">보유 및 이용 기간</a></li>
+        <li><a href="#s4">제3자 제공 및 처리위탁</a></li>
+        <li><a href="#s5">이용자의 권리</a></li>
+        <li><a href="#s6">아동의 개인정보</a></li>
+        <li><a href="#s7">안전성 확보 조치</a></li>
+        <li><a href="#s8">개인정보 보호책임자</a></li>
+        <li><a href="#s9">방침의 변경</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="s1"><span class="num">01</span>처리하는 개인정보 항목</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>수집 방법</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>생년월일시</td>
+          <td>이용자 직접 입력</td>
+          <td>사주팔자 계산 및 AI 분석에 사용되며, 분석 처리를 위해 AI 모델
+            제공업체로 전송됩니다.</td>
+        </tr>
+        <tr>
+          <td>앱 내 익명 식별자 (Firebase 익명 인증 UID)</td>
+          <td>앱 자동 생성</td>
+          <td>실명, 이메일 등 개인 식별 정보와 연결되지 않는 임의 식별자입니다.
+            별도의 회원가입 절차는 없습니다.</td>
+        </tr>
+        <tr>
+          <td>인앱 구매 내역 (구매 토큰, 구매 상품, 구매 시각)</td>
+          <td>Google Play / Apple App Store 결제 시스템</td>
+          <td>결제 검증 및 동일 구매 건의 중복 사용 방지 목적으로 저장됩니다.</td>
+        </tr>
+        <tr>
+          <td>기기 및 앱 사용 데이터</td>
+          <td>Firebase Analytics 자동 수집</td>
+          <td>서비스 품질 개선 및 이용 통계 분석 목적입니다.</td>
+        </tr>
+        <tr>
+          <td>앱 무결성 검증 토큰</td>
+          <td>Google Play Integrity / Apple App Attest</td>
+          <td>부정 사용·변조된 앱으로부터의 요청을 차단하기 위한 것으로, 개인을
+            식별하지 않습니다.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="s2"><span class="num">02</span>처리 목적</h2>
+    <ul>
+      <li>정통 만세력 기반 사주팔자 계산 및 AI 상세 풀이 제공</li>
+      <li>인앱 구매의 결제 검증 및 중복 사용(재사용) 방지</li>
+      <li>서비스 이용 통계 분석 및 품질 개선</li>
+      <li>부정 이용 방지 및 앱 무결성 검증</li>
+      <li>이용자 문의 응대</li>
+    </ul>
+
+    <div class="callout">
+      본 서비스의 사주 분석 결과는 전통 명리학과 AI를 활용한 <strong>참고용
+        정보</strong>이며, 의학적·법률적·재정적 조언을 대체하지 않습니다.
+    </div>
+
+    <h2 id="s3"><span class="num">03</span>보유 및 이용 기간</h2>
+    <ul>
+      <li>
+        <strong>구매 토큰 및 관련 기록:</strong> 「전자상거래 등에서의 소비자
+        보호에 관한 법률」에 따라 대금결제 및 재화 공급에 관한 기록을
+        <strong>5년간</strong> 보관 후 파기합니다.
+      </li>
+      <li>
+        <strong>생년월일시(입력값):</strong> 해당 구매 건에 대한 분석 제공 및
+        재사용 방지 목적 범위 내에서 위 구매 기록과 함께 보관됩니다.
+      </li>
+      <li>
+        <strong>Firebase Analytics 사용 데이터:</strong> Google Analytics for
+        Firebase의 기본 보관 정책(최대 14개월)에 따릅니다.
+      </li>
+    </ul>
+
+    <h2 id="s4"><span class="num">04</span>제3자 제공 및 처리위탁</h2>
+    <p>
+      본 서비스는 아래와 같이 서비스 운영에 필요한 범위 내에서 개인정보 처리를
+      위탁하거나 정보를 전송합니다. 회사는 원칙적으로 목적 외 제3자 제공을
+      하지 않습니다.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>수탁업체 / 제공받는 자</th>
+          <th>목적</th>
+          <th>전송 항목</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Anthropic PBC (Claude)</td>
+          <td>AI 사주 분석 결과 생성</td>
+          <td>생년월일시, 언어 설정</td>
+        </tr>
+        <tr>
+          <td>OpenAI</td>
+          <td>AI 사주 분석 결과 생성</td>
+          <td>생년월일시, 언어 설정</td>
+        </tr>
+        <tr>
+          <td>Google LLC (Gemini)</td>
+          <td>AI 사주 분석 결과 생성</td>
+          <td>생년월일시, 언어 설정</td>
+        </tr>
+        <tr>
+          <td>Google LLC (Firebase: Auth · Firestore · Functions · Analytics ·
+            App Check)</td>
+          <td>인증, 데이터 저장, 백엔드 실행, 이용 통계, 앱 무결성 검증</td>
+          <td>익명 UID, 구매 토큰, 사용 데이터</td>
+        </tr>
+        <tr>
+          <td>Google Play / Apple App Store</td>
+          <td>인앱 결제 처리 및 검증</td>
+          <td>구매 토큰, 상품 ID</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      위 처리위탁 및 정보 전송은 서비스 제공에 필수적인 범위로 한정되며,
+      해외 서버(미국 등)로 전송될 수 있습니다.
+    </p>
+
+    <h2 id="s5"><span class="num">05</span>이용자의 권리</h2>
+    <ul>
+      <li>이용자는 언제든지 본인의 개인정보 처리 현황에 대해 문의할 수 있습니다.</li>
+      <li>앱을 삭제하면 기기 내 저장된 정보(조회 이력 등)는 즉시 삭제됩니다.</li>
+      <li>
+        서버에 보관된 정보(구매 기록 등)의 열람·삭제를 원하는 경우 아래
+        문의처로 요청할 수 있으며, 법령상 보관 의무가 있는 정보는 해당 기간
+        동안 보관됩니다.
+      </li>
+    </ul>
+
+    <h2 id="s6"><span class="num">06</span>아동의 개인정보</h2>
+    <p>
+      본 서비스는 만 14세 미만 아동을 대상으로 하지 않으며, 이를 의도적으로
+      수집하지 않습니다.
+    </p>
+
+    <h2 id="s7"><span class="num">07</span>안전성 확보 조치</h2>
+    <ul>
+      <li>전송 구간 암호화 (HTTPS/TLS)</li>
+      <li>회원가입 없는 익명 인증 구조로 개인 식별 위험 최소화</li>
+      <li>구매 토큰 재사용 여부를 서버에서 검증하여 부정 결제 방지</li>
+      <li>Firestore 보안 규칙 및 서버 측 인증 토큰 검증을 통한 접근 통제</li>
+    </ul>
+
+    <h2 id="s8"><span class="num">08</span>개인정보 보호책임자 및 문의처</h2>
+    <div class="card">
+      <p style="margin: 0">
+        <strong>개인정보 보호책임자:</strong> LalaCatSoft 대표<br />
+        <strong>이메일:</strong>
+        <a href="mailto:support@lalacatsoft.com">support@lalacatsoft.com</a><br />
+        <strong>회사명:</strong> LalaCatSoft<br />
+        <strong>웹사이트:</strong>
+        <a href="https://lalacatsoft.com">https://lalacatsoft.com</a>
+      </p>
+    </div>
+    <p>개인정보 침해 신고는 아래 기관에도 문의하실 수 있습니다.</p>
+    <ul>
+      <li>
+        개인정보침해신고센터:
+        <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a>
+        / ☎ 118
+      </li>
+      <li>
+        개인정보분쟁조정위원회:
+        <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">kopico.go.kr</a>
+        / ☎ 1833-6972
+      </li>
+    </ul>
+
+    <h2 id="s9"><span class="num">09</span>개인정보처리방침의 변경</h2>
+    <p>
+      본 방침이 변경될 경우, 변경 사항을 시행일 최소 7일 전(중요한 변경 시
+      30일 전)에 앱 공지사항 또는 본 페이지를 통해 안내합니다.
+    </p>
+  </main>
+
+  <footer class="site">
+    © 2026 LalaCatSoft. All rights reserved.
+  </footer>
+</body>
+
+</html>
