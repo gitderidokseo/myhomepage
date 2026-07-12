@@ -25,8 +25,6 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-const PLAY_URL =
-  "https://play.google.com/store/apps/details?id=com.drivelog2.drivelog&hl=ko";
 const CONTACT_EMAIL = "support@lalacatsoft.com";
 
 function useReveal() {
@@ -49,7 +47,7 @@ function useReveal() {
 }
 
 const nav = [
-  { id: "product", label: "드라이브로그" },
+  { id: "product", label: "오토로그" },
   { id: "pricing", label: "요금제" },
   { id: "partners", label: "세무사 파트너" },
   { id: "guide", label: "사용 가이드" },
@@ -202,24 +200,19 @@ function Hero() {
           <p className="mt-8 text-lg text-muted-foreground max-w-xl leading-relaxed">
             운행기록부를 작성하지 않으면 업무용 승용차 경비는{" "}
             <strong className="text-foreground">연 1,500만원까지만</strong>{" "}
-            인정됩니다. 드라이브로그로 GPS 주행을 자동 기록하고, 국세청 양식
+            인정됩니다. 오토로그로 GPS 주행을 자동 기록하고, 국세청 양식
             운행기록부를 한 번에 출력해 차량 경비를 빠짐없이 비용 처리하세요.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="#contact" className="btn-primary">
               도입 문의하기 <ArrowRight className="w-4 h-4" />
             </a>
-            <a
-              href={PLAY_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-ghost"
-            >
-              <Download className="w-4 h-4" /> Google Play 다운로드
-            </a>
+            <span className="btn-ghost opacity-60 pointer-events-none">
+              <Download className="w-4 h-4" /> Google Play 준비 중
+            </span>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Android 지원 · iOS 앱 준비 중 · 개인/운전자 단독 사용은 무료
+            Google Play 출시 준비 중 · 개인/운전자 단독 사용은 무료
           </p>
 
           <div className="mt-14 grid grid-cols-3 gap-6 max-w-md">
@@ -425,8 +418,8 @@ function Product() {
     <section id="product" className="py-32 relative">
       <div className="container-wide">
         <SectionHeader
-          eyebrow="Product · 드라이브로그"
-          title="드라이브로그"
+          eyebrow="Product · 오토로그"
+          title="오토로그"
           desc="법인 업무용 차량의 운행기록을 자동으로 측정·저장·관리하는 모바일 앱입니다. 운전자는 시작·종료 버튼만, 나머지는 앱이 알아서 처리합니다."
         />
 
@@ -694,14 +687,9 @@ function Pricing() {
             <div className="md:text-right">
               <div className="font-mono font-bold text-5xl gradient-text">0</div>
               <div className="text-sm text-muted-foreground mt-1">원</div>
-              <a
-                href={PLAY_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-ghost mt-5 inline-flex"
-              >
-                <Download className="w-4 h-4" /> 무료로 시작하기
-              </a>
+              <span className="btn-ghost mt-5 inline-flex opacity-60 pointer-events-none">
+                <Download className="w-4 h-4" /> Google Play 준비 중
+              </span>
             </div>
           </div>
         </div>
@@ -833,7 +821,7 @@ function Partners() {
         <SectionHeader
           eyebrow="For Tax Accountants · 세무사 파트너십"
           title="고객에게 추천하고, 함께 성장하세요"
-          desc="업무용 승용차 운행기록부는 세무사님이 매년 가장 많이 챙기는 항목 중 하나입니다. 드라이브로그를 고객사에 추천하시면 운행기록부 관리가 자동화되고, 파트너 혜택도 받으실 수 있습니다."
+          desc="업무용 승용차 운행기록부는 세무사님이 매년 가장 많이 챙기는 항목 중 하나입니다. 오토로그를 고객사에 추천하시면 운행기록부 관리가 자동화되고, 파트너 혜택도 받으실 수 있습니다."
         />
 
         <div className="mt-16 grid md:grid-cols-3 gap-6">
@@ -863,7 +851,7 @@ function Partners() {
         <div className="mt-10 text-center reveal">
           <a
             href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-              "[세무사 제휴 문의] 드라이브로그 파트너십",
+              "[세무사 제휴 문의] 오토로그 파트너십",
             )}`}
             className="btn-primary inline-flex"
           >
@@ -893,12 +881,7 @@ function Contact() {
         />
 
         <div className="mt-16 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <a
-            href={PLAY_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="card-surface p-8 reveal flex flex-col items-start hover:border-cyan transition-colors"
-          >
+          <div className="card-surface p-8 reveal flex flex-col items-start opacity-70">
             <div
               className="w-12 h-12 rounded-xl grid place-items-center border border-border"
               style={{
@@ -909,15 +892,15 @@ function Contact() {
               <Download className="w-6 h-6 text-cyan" />
             </div>
             <h3 className="font-display text-lg font-bold mt-5">
-              먼저 무료로 사용해보기
+              운전자 앱 출시 준비 중
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Google Play에서 운전자 앱 설치 · iOS 준비 중
+              Google Play · iOS 출시 준비 중
             </p>
-            <span className="mt-4 inline-flex items-center gap-1 text-cyan">
-              Google Play <ArrowRight className="w-4 h-4" />
+            <span className="mt-4 inline-flex items-center gap-1 text-muted-foreground">
+              Google Play 준비 중
             </span>
-          </a>
+          </div>
 
           <a
             href="/drivelog/downloads/DriveLogAdmin_Setup.exe"
@@ -946,7 +929,7 @@ function Contact() {
 
           <a
             href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-              "[드라이브로그 도입 문의]",
+              "[오토로그 도입 문의]",
             )}`}
             className="card-surface p-8 reveal flex flex-col items-start hover:border-cyan transition-colors"
           >
@@ -983,7 +966,7 @@ function Guide() {
     {
       icon: Download,
       title: "앱 설치 및 권한 허용",
-      desc: "드라이브로그 앱 설치 후 위치(항상 허용)·알림 권한을 허용합니다. 배터리 최적화 예외를 설정하면 화면을 꺼도 정확히 측정됩니다.",
+      desc: "오토로그 앱 설치 후 위치(항상 허용)·알림 권한을 허용합니다. 배터리 최적화 예외를 설정하면 화면을 꺼도 정확히 측정됩니다.",
     },
     {
       icon: IdCard,
@@ -1013,7 +996,7 @@ function Guide() {
         <SectionHeader
           eyebrow="Guide · 5 Steps"
           title="사용 가이드"
-          desc="설치부터 운행기록부 출력까지, 5단계로 끝나는 드라이브로그 사용 방법입니다."
+          desc="설치부터 운행기록부 출력까지, 5단계로 끝나는 오토로그 사용 방법입니다."
         />
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -1099,7 +1082,7 @@ function Templates() {
         <SectionHeader
           eyebrow="Resources"
           title="운행기록부 템플릿"
-          desc="국세청 양식으로 미리 만들어진 엑셀 템플릿을 다운로드하세요. 드라이브로그 앱 없이도 수동 기록에 사용할 수 있습니다."
+          desc="국세청 양식으로 미리 만들어진 엑셀 템플릿을 다운로드하세요. 오토로그 앱 없이도 수동 기록에 사용할 수 있습니다."
         />
 
         <div className="mt-20 grid md:grid-cols-2 gap-12 items-center">
@@ -1207,7 +1190,7 @@ function About() {
           </h3>
           <p className="mt-5 text-muted-foreground leading-relaxed">
             LalaCatSoft는{" "}
-            <strong className="text-foreground">드라이브로그</strong>를 비롯한
+            <strong className="text-foreground">오토로그</strong>를 비롯한
             업무용 모바일 앱을 개발·서비스하는 기업입니다. 법인차량 운행기록
             자동화처럼 현장의 반복 업무를 줄이는 데 집중합니다.
           </p>
@@ -1311,14 +1294,9 @@ function Footer() {
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               현장의 불편을 코드로 해결하는 모바일 솔루션 회사.
             </p>
-            <a
-              href={PLAY_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-sm text-cyan hover:underline"
-            >
-              <Download className="w-4 h-4" /> Google Play에서 다운로드
-            </a>
+            <span className="mt-5 inline-flex items-center gap-2 text-sm text-muted-foreground">
+              <Download className="w-4 h-4" /> Google Play 준비 중
+            </span>
           </div>
 
           <div className="flex flex-col gap-3 text-sm text-muted-foreground">
