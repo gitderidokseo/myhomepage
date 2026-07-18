@@ -27,6 +27,8 @@ import {
 
 const PLAY_URL =
   "https://play.google.com/store/apps/details?id=com.drivelog2.drivelog&hl=ko";
+const APP_STORE_URL =
+  "https://apps.apple.com/app/%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%A1%9C%EA%B7%B8/id6777998742";
 const CONTACT_EMAIL = "support@lalacatsoft.com";
 
 function useReveal() {
@@ -217,9 +219,17 @@ function Hero() {
             >
               <Download className="w-4 h-4" /> Google Play 다운로드
             </a>
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-ghost"
+            >
+              <Download className="w-4 h-4" /> App Store 다운로드
+            </a>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Android 지원 · iOS 앱 준비 중 · 개인/운전자 단독 사용은 무료
+            Android · iOS 모두 지원 · 개인/운전자 단독 사용은 무료
           </p>
 
           <div className="mt-14 grid grid-cols-3 gap-6 max-w-md">
@@ -245,6 +255,13 @@ function Hero() {
 }
 
 function HeroVisual() {
+  const rows = [
+    { date: "1.5.(월)", note: "출근", km: 35 },
+    { date: "1.7.(수)", note: "강남 본사 → 분당 지사", km: 45 },
+    { date: "1.13.(화)", note: "판교 고객사 방문", km: 50 },
+    { date: "1.20.(화)", note: "세무사 사무실 방문", km: 45 },
+  ];
+
   return (
     <div className="relative aspect-[4/5] max-w-md mx-auto w-full">
       <div
@@ -259,95 +276,71 @@ function HeroVisual() {
           }}
         >
           <div className="flex items-center justify-between text-[10px] font-mono text-muted-foreground">
-            <span>09:41</span>
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1.5 truncate">
+              <FileSpreadsheet className="w-3.5 h-3.5 text-cyan shrink-0" />
+              운행기록부_2026_상반기.xlsx
+            </span>
+            <span className="flex items-center gap-1 text-cyan shrink-0">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan pulse-ring" />
-              REC
+              생성 완료
             </span>
           </div>
 
           <div className="mt-6">
             <div className="text-xs text-muted-foreground font-mono uppercase tracking-widest">
-              Live Distance
+              업무사용비율 (⑫/⑪)
             </div>
             <div className="mt-2 font-mono font-bold text-5xl gradient-text">
-              42.8
-              <span className="text-xl text-muted-foreground ml-1">km</span>
+              91.9
+              <span className="text-xl text-muted-foreground ml-1">%</span>
             </div>
             <div className="mt-1 text-xs text-muted-foreground">
-              서울 강남 → 분당 사무소
+              국세청 양식 · 2026.1.1. ~ 2026.6.30.
             </div>
           </div>
 
-          <div
-            className="flex-1 mt-6 relative rounded-2xl overflow-hidden border border-border"
-            style={{
-              background:
-                "radial-gradient(circle at 30% 30%, oklch(0.28 0.06 230 / 0.5), oklch(0.16 0.03 250))",
-            }}
-          >
-            <svg viewBox="0 0 300 300" className="w-full h-full">
-              <defs>
-                <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="oklch(0.72 0.18 230)" />
-                  <stop offset="100%" stopColor="oklch(0.82 0.16 205)" />
-                </linearGradient>
-              </defs>
-              {Array.from({ length: 6 }).map((_, i) => (
-                <g key={i}>
-                  <line
-                    x1={i * 50}
-                    y1={0}
-                    x2={i * 50}
-                    y2={300}
-                    stroke="oklch(0.30 0.04 254 / 0.3)"
-                  />
-                  <line
-                    x1={0}
-                    y1={i * 50}
-                    x2={300}
-                    y2={i * 50}
-                    stroke="oklch(0.30 0.04 254 / 0.3)"
-                  />
-                </g>
+          <div className="flex-1 mt-6 rounded-2xl border border-border overflow-hidden bg-surface/60 flex flex-col">
+            <div className="grid grid-cols-[3.2rem_1fr_3rem] gap-2 px-3 py-2 text-[10px] font-mono uppercase tracking-wider text-muted-foreground border-b border-border">
+              <span>날짜</span>
+              <span>비고</span>
+              <span className="text-right">거리</span>
+            </div>
+            <div className="flex-1 divide-y divide-border/60">
+              {rows.map((r) => (
+                <div
+                  key={r.date}
+                  className="grid grid-cols-[3.2rem_1fr_3rem] gap-2 px-3 py-2.5 text-xs items-center"
+                >
+                  <span className="font-mono text-muted-foreground">
+                    {r.date}
+                  </span>
+                  <span className="truncate">{r.note}</span>
+                  <span className="text-right font-mono text-cyan">
+                    {r.km}km
+                  </span>
+                </div>
               ))}
-              <path
-                d="M30 250 Q 80 200, 120 180 T 200 100 T 270 40"
-                fill="none"
-                stroke="url(#rg)"
-                strokeWidth="3"
-                strokeLinecap="round"
-              />
-              <circle cx="30" cy="250" r="6" fill="oklch(0.82 0.16 205)" />
-              <circle cx="270" cy="40" r="6" fill="oklch(0.72 0.18 230)">
-                <animate
-                  attributeName="r"
-                  values="6;10;6"
-                  dur="2s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-            </svg>
+            </div>
           </div>
 
           <div className="mt-4 grid grid-cols-2 gap-2">
             <div className="rounded-xl p-3 border border-border bg-surface">
               <div className="text-[10px] text-muted-foreground font-mono uppercase">
-                목적
+                총주행거리
               </div>
-              <div className="text-sm font-medium mt-1">업무</div>
+              <div className="text-sm font-medium mt-1 font-mono">495km</div>
             </div>
             <div className="rounded-xl p-3 border border-border bg-surface">
               <div className="text-[10px] text-muted-foreground font-mono uppercase">
-                시간
+                업무사용거리
               </div>
-              <div className="text-sm font-medium mt-1 font-mono">00:48:12</div>
+              <div className="text-sm font-medium mt-1 font-mono">455km</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute -left-6 top-1/3 glass rounded-xl px-3 py-2 flex items-center gap-2 animate-float shadow-lg">
+      <div className="absolute -left-6 -top-5 glass rounded-xl px-3 py-2 flex items-center gap-2 animate-float shadow-lg">
         <Crosshair className="w-4 h-4 text-cyan" />
         <span className="text-xs">GPS Locked</span>
       </div>
@@ -355,8 +348,8 @@ function HeroVisual() {
         className="absolute -right-4 bottom-16 glass rounded-xl px-3 py-2 flex items-center gap-2 animate-float shadow-lg"
         style={{ animationDelay: "1s" }}
       >
-        <FileSpreadsheet className="w-4 h-4 text-cyan" />
-        <span className="text-xs">XLSX Ready</span>
+        <ShieldCheck className="w-4 h-4 text-cyan" />
+        <span className="text-xs">별지 제65호 서식</span>
       </div>
     </div>
   );
@@ -694,14 +687,24 @@ function Pricing() {
             <div className="md:text-right">
               <div className="font-mono font-bold text-5xl gradient-text">0</div>
               <div className="text-sm text-muted-foreground mt-1">원</div>
-              <a
-                href={PLAY_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-ghost mt-5 inline-flex"
-              >
-                <Download className="w-4 h-4" /> 무료로 시작하기
-              </a>
+              <div className="mt-5 flex flex-wrap justify-end gap-3">
+                <a
+                  href={PLAY_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ghost inline-flex"
+                >
+                  <Download className="w-4 h-4" /> Google Play
+                </a>
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ghost inline-flex"
+                >
+                  <Download className="w-4 h-4" /> App Store
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -893,12 +896,7 @@ function Contact() {
         />
 
         <div className="mt-16 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <a
-            href={PLAY_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="card-surface p-8 reveal flex flex-col items-start hover:border-cyan transition-colors"
-          >
+          <div className="card-surface p-8 reveal flex flex-col items-start">
             <div
               className="w-12 h-12 rounded-xl grid place-items-center border border-border"
               style={{
@@ -912,12 +910,27 @@ function Contact() {
               먼저 무료로 사용해보기
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Google Play에서 운전자 앱 설치 · iOS 준비 중
+              Android · iOS 모두에서 운전자 앱 설치 가능
             </p>
-            <span className="mt-4 inline-flex items-center gap-1 text-cyan">
-              Google Play <ArrowRight className="w-4 h-4" />
-            </span>
-          </a>
+            <div className="mt-4 flex flex-col gap-2">
+              <a
+                href={PLAY_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-cyan hover:underline"
+              >
+                Google Play <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-cyan hover:underline"
+              >
+                App Store <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
 
           <a
             href="/drivelog/downloads/DriveLogAdmin_Setup.exe"
@@ -1311,14 +1324,24 @@ function Footer() {
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               현장의 불편을 코드로 해결하는 모바일 솔루션 회사.
             </p>
-            <a
-              href={PLAY_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-sm text-cyan hover:underline"
-            >
-              <Download className="w-4 h-4" /> Google Play에서 다운로드
-            </a>
+            <div className="mt-5 flex flex-col gap-2">
+              <a
+                href={PLAY_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-cyan hover:underline"
+              >
+                <Download className="w-4 h-4" /> Google Play에서 다운로드
+              </a>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-cyan hover:underline"
+              >
+                <Download className="w-4 h-4" /> App Store에서 다운로드
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3 text-sm text-muted-foreground">
