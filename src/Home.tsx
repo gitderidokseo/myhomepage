@@ -53,7 +53,7 @@ function useReveal() {
 const nav = [
   { id: "product", label: "드라이브로그" },
   { id: "pricing", label: "요금제" },
-  { id: "partners", label: "세무사 파트너" },
+  { id: "partners", label: "세무사님께" },
   { id: "guide", label: "사용 가이드" },
   { id: "blog", label: "운행기록부 가이드", href: "/drivelog/blog/" },
   { id: "contact", label: "도입 문의" },
@@ -814,19 +814,19 @@ function Pricing() {
 function Partners() {
   const points = [
     {
-      icon: Users,
-      title: "고객사 운행기록부 일괄 관리",
-      desc: "추천하신 고객사의 운행기록부를 관리자 화면에서 한 번에 확인·취합할 수 있어, 차량 비용 처리 업무가 크게 줄어듭니다.",
-    },
-    {
-      icon: Sparkles,
-      title: "파트너 수익 셰어 프로그램",
-      desc: "소개해 주신 고객사의 구독 매출 일부를 파트너 수익으로 정산해 드립니다. 구체적인 조건은 제휴 문의 시 별도로 안내드립니다.",
+      icon: FileSpreadsheet,
+      title: "국세청 양식 그대로, 깔끔한 자료",
+      desc: "고객사가 GPS로 자동 기록하고 앱에서 바로 출력하므로, 양식이 안 맞거나 빠진 자료를 주고받는 수고가 줄어듭니다.",
     },
     {
       icon: ShieldCheck,
-      title: "세무사 전용 계정 제공",
-      desc: "여러 고객사를 한 계정에서 관리할 수 있는 세무사 전용 계정을 제공합니다. (준비 중 — 우선 안내 신청 가능)",
+      title: "운행기록부 미작성 리스크 예방",
+      desc: "고객이 평소에 자동으로 기록을 남기게 되어, 신고철에 급하게 소급 작성을 요청받는 상황을 줄일 수 있습니다.",
+    },
+    {
+      icon: Smartphone,
+      title: "부담 없이 먼저 권해보세요",
+      desc: "개인/운전자 단독 사용은 무료입니다. 고객사에 가볍게 소개해보시고, 필요하면 법인 도입까지 안내해 드립니다.",
     },
   ];
 
@@ -834,9 +834,9 @@ function Partners() {
     <section id="partners" className="py-32">
       <div className="container-wide">
         <SectionHeader
-          eyebrow="For Tax Accountants · 세무사 파트너십"
-          title="고객에게 추천하고, 함께 성장하세요"
-          desc="업무용 승용차 운행기록부는 세무사님이 매년 가장 많이 챙기는 항목 중 하나입니다. 드라이브로그를 고객사에 추천하시면 운행기록부 관리가 자동화되고, 파트너 혜택도 받으실 수 있습니다."
+          eyebrow="For Tax Accountants · 세무사님께"
+          title="고객사의 운행기록부, 더 깔끔하게 받아보세요"
+          desc="업무용 승용차 운행기록부는 세무사님이 매년 가장 많이 챙기는 항목 중 하나입니다. 고객사에 드라이브로그를 알려주시면, GPS로 자동 기록된 국세청 양식 운행기록부를 받아보실 수 있어 자료를 주고받는 시간을 줄일 수 있습니다."
         />
 
         <div className="mt-16 grid md:grid-cols-3 gap-6">
@@ -866,11 +866,11 @@ function Partners() {
         <div className="mt-10 text-center reveal">
           <a
             href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-              "[세무사 제휴 문의] 드라이브로그 파트너십",
+              "[세무사님 문의] 드라이브로그",
             )}`}
             className="btn-primary inline-flex"
           >
-            <Mail className="w-4 h-4" /> 세무사 제휴 문의하기
+            <Mail className="w-4 h-4" /> 세무사님, 문의하기
           </a>
         </div>
       </div>
@@ -1350,7 +1350,7 @@ function Footer() {
               요금제
             </a>
             <a href="#partners" className="hover:text-cyan transition-colors">
-              세무사 파트너
+              세무사님께
             </a>
             <a
               href="/drivelog/blog/"
