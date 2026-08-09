@@ -553,12 +553,16 @@ function AdminApp() {
 }
 
 function Pricing() {
+  const [yearly, setYearly] = useState(false);
+
   const plans = [
     {
       badge: "기본",
       name: "스타터",
       target: "10대 미만",
-      price: "3,300",
+      monthly: "3,300",
+      yearlyMonthly: "2,750",
+      yearlyTotal: "33,000",
       features: [
         "GPS 자동 운행 기록",
         "세무용 운행기록부 엑셀 출력",
@@ -570,24 +574,14 @@ function Pricing() {
       badge: "10대 이상",
       name: "비즈니스",
       target: "10대 이상 운영 차량",
-      price: "3,000",
+      monthly: "3,000",
+      yearlyMonthly: "2,500",
+      yearlyTotal: "30,000",
       featured: true,
       features: [
         "스타터의 모든 기능",
         "대수 증가에 따른 자동 할인 적용",
         "법인 관리자 대시보드",
-        "운행기록 저장 무제한",
-      ],
-    },
-    {
-      badge: "최대 할인",
-      name: "엔터프라이즈",
-      target: "연납 또는 30대 이상",
-      price: "2,500",
-      features: [
-        "비즈니스의 모든 기능",
-        "연납 시 모든 대수 동일 할인",
-        "30대 이상 대규모 운영 최적화",
         "운행기록 저장 무제한",
       ],
     },
@@ -727,7 +721,33 @@ function Pricing() {
           </div>
         </div>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-6">
+        {/* 월납 / 연납 토글 */}
+        <div className="mt-10 flex justify-center reveal">
+          <div className="inline-flex items-center rounded-full border border-border bg-surface p-1 text-sm">
+            <button
+              type="button"
+              onClick={() => setYearly(false)}
+              className={`px-5 py-2 rounded-full font-medium transition-colors ${
+                !yearly ? "text-primary-foreground" : "text-muted-foreground"
+              }`}
+              style={!yearly ? { background: "var(--gradient-accent)" } : {}}
+            >
+              월납
+            </button>
+            <button
+              type="button"
+              onClick={() => setYearly(true)}
+              className={`px-5 py-2 rounded-full font-medium transition-colors ${
+                yearly ? "text-primary-foreground" : "text-muted-foreground"
+              }`}
+              style={yearly ? { background: "var(--gradient-accent)" } : {}}
+            >
+              연납 · 2개월 무료
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {plans.map((p, i) => (
             <div
               key={p.name}
@@ -768,12 +788,17 @@ function Pricing() {
 
               <div className="mt-8 flex items-baseline gap-2">
                 <span className="font-mono font-bold text-5xl gradient-text">
-                  {p.price}
+                  {yearly ? p.yearlyMonthly : p.monthly}
                 </span>
                 <span className="text-sm text-muted-foreground">
                   원 / 월 · 대
                 </span>
               </div>
+              <p className="mt-2 text-xs text-muted-foreground">
+                {yearly
+                  ? `연 ${p.yearlyTotal}원/대 일괄 결제 · 10개월분 요금으로 12개월 이용`
+                  : "월 단위 결제 · 약정 없음"}
+              </p>
 
               <div className="hairline my-8" />
 
@@ -799,8 +824,9 @@ function Pricing() {
         </div>
 
         <p className="mt-12 text-center text-sm text-muted-foreground reveal">
-          * 표시 금액은 차량 1대 기준 월 요금이며, VAT 별도입니다. 정확한 견적과
-          도입 절차는{" "}
+          * 표시 금액은 차량 1대 기준 월 요금이며, VAT 별도입니다. 연납은
+          10개월분 요금으로 12개월을 이용하는 방식입니다. 30대 이상 대규모
+          도입은 별도 견적을 안내드리며, 정확한 견적과 도입 절차는{" "}
           <a href="#contact" className="text-cyan hover:underline">
             도입 문의
           </a>
