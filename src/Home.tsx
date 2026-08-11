@@ -596,7 +596,7 @@ function Pricing() {
           desc="운전자 단독 사용은 무료입니다. 회사가 운행기록을 한곳에 모아 관리하는 관리자 연동 기능부터 유료로 제공됩니다."
         />
 
-        {/* 오픈 기념 이벤트 — 선착순 100대 1년 무료 */}
+        {/* 오픈 기념 이벤트 — 선착순 30대 1년 무료 */}
         <div className="mt-12 reveal">
           <div
             className="mx-auto max-w-3xl rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left"
@@ -624,11 +624,11 @@ function Pricing() {
                 </span>
               </div>
               <h3 className="font-display text-xl md:text-2xl font-bold mt-3">
-                선착순 100대 · 1년간 무료
+                선착순 30대 · 1년간 무료
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 관리자 연동(법인) 플랜을 지금 도입하시면{" "}
-                <strong className="text-foreground">선착순 100대</strong>에 한해{" "}
+                <strong className="text-foreground">선착순 30대</strong>에 한해{" "}
                 <strong className="text-foreground">1년간 무료</strong>로
                 이용하실 수 있습니다. 조기 마감될 수 있으니 서둘러 신청하세요.
               </p>
@@ -823,8 +823,49 @@ function Pricing() {
           ))}
         </div>
 
+        {/* 부가 옵션 — 차량제조사 연동 */}
+        <div className="mt-8 max-w-4xl mx-auto reveal">
+          <div className="card-surface p-8 flex flex-col md:flex-row md:items-center gap-6">
+            <div
+              className="w-12 h-12 rounded-xl grid place-items-center shrink-0 border border-border"
+            >
+              <Car className="w-6 h-6 text-cyan" />
+            </div>
+            <div className="flex-1">
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="font-display text-xl font-bold">
+                  차량제조사 연동 (테슬라)
+                </h3>
+                <span className="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full text-cyan border border-border">
+                  부가 옵션
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xl">
+                차량 제조사 계정을 연동하면 차량이 기록한{" "}
+                <strong className="text-foreground">실제 주행거리(계기판 누적거리)</strong>
+                로 운행기록을 보정합니다. 스타터·비즈니스 어느 플랜에서든 추가할
+                수 있습니다.
+              </p>
+            </div>
+            <div className="md:text-right shrink-0">
+              <div className="flex items-baseline gap-2 md:justify-end">
+                <span className="font-mono font-bold text-3xl gradient-text">
+                  + {yearly ? "1,833" : "2,200"}
+                </span>
+                <span className="text-sm text-muted-foreground">원 / 월 · 대</span>
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">
+                {yearly
+                  ? "연 22,000원/대 일괄 결제 · 10개월분 요금으로 12개월 이용"
+                  : "기본 요금에 추가 · 월 단위 결제"}
+              </p>
+            </div>
+          </div>
+        </div>
+
         <p className="mt-12 text-center text-sm text-muted-foreground reveal">
-          * 표시 금액은 차량 1대 기준 월 요금이며, VAT 별도입니다. 연납은
+          * 표시 금액은 차량 1대 기준 월 요금이며, VAT 별도입니다. 차량제조사
+          연동(테슬라)을 이용하시면 차량 1대당 월 2,200원이 추가됩니다. 연납은
           10개월분 요금으로 12개월을 이용하는 방식입니다. 30대 이상 대규모
           도입은 별도 견적을 안내드리며, 정확한 견적과 도입 절차는{" "}
           <a href="#contact" className="text-cyan hover:underline">
