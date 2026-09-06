@@ -55,6 +55,7 @@ const nav = [
   { id: "pricing", label: "요금제" },
   { id: "partners", label: "세무사님께" },
   { id: "guide", label: "사용 가이드" },
+  { id: "help", label: "앱 사용방법", href: "/drivelog/help" },
   { id: "blog", label: "운행기록부 가이드", href: "/drivelog/blog/" },
   { id: "contact", label: "도입 문의" },
 ];
@@ -1159,6 +1160,19 @@ function Guide() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-8 pt-6 border-t border-border flex flex-wrap items-center gap-4">
+            <p className="text-sm text-muted-foreground flex-1 min-w-[240px]">
+              화면 사진을 보며 그대로 따라 하는 <strong className="text-foreground">앱 사용설명서</strong>도
+              준비해 두었습니다. 권한 설정, 자동기록 연동, 엑셀 출력까지 전부 담았습니다.
+            </p>
+            <a
+              href="/drivelog/help"
+              className="btn-primary whitespace-nowrap"
+            >
+              사용방법 자세히 보기
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -1418,6 +1432,12 @@ function Footer() {
             </a>
             <a href="#partners" className="hover:text-cyan transition-colors">
               세무사님께
+            </a>
+            <a
+              href="/drivelog/help"
+              className="hover:text-cyan transition-colors"
+            >
+              앱 사용방법
             </a>
             <a
               href="/drivelog/blog/"
