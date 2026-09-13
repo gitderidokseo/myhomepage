@@ -123,14 +123,35 @@
     <p style="margin:0; color:#e2e8f0;">800만원은 감가상각비에만 적용되는 한도, 1,500만원은 차량 비용 전체(감가상각 + 유류 + 보험 + 정비 등)에 적용되는 한도입니다. 둘 다 동시에 통과해야 합니다.</p>
   </div>
 
+  <div class="highlight-box">
+    <div class="label">계산에는 순서가 있습니다</div>
+    <p style="margin:0 0 8px; color:#e2e8f0;">두 한도를 따로 계산해서 더하면 숫자가 틀립니다. 법인세법 시행령 제50조의2는 이 순서예요.</p>
+    <p style="margin:0; color:#cbd5e1; font-size:0.9rem;">
+      ① 업무사용금액 = 차량 비용 전체 × 업무사용비율<br />
+      ② 감가상각비 상당액 = 감가상각비 × 업무사용비율 <strong style="color:#38bdf8;">(비율을 먼저 곱합니다)</strong><br />
+      ③ ②가 800만원을 넘으면 초과분만 이월<br />
+      ④ 당기 손금 = ① − ③
+    </p>
+  </div>
+
+  <div class="warn-box">
+    <div class="label">⚠ 2027년부터 감가상각 한도가 갈립니다</div>
+    <p>2026년 8월 3일 세제개편안에 업무용승용차 감가상각비 한도 조정이 담겼습니다.
+    <strong>전기차·수소차는 연 1,000만원으로 상향, 내연기관차는 연 700만원으로 하향</strong>되며,
+    2027년 1월 1일 이후 새로 취득·임차하는 차부터 적용됩니다.
+    다만 아직 개편안 단계이고 국회 통과 시 확정됩니다. 이 페이지의 계산기는 현행 800만원 기준이에요.
+    <strong>1,500만원 한도는 이번 개편안에서 바뀌지 않았습니다.</strong></p>
+  </div>
+
   <h2>케이스 1 — 중형 세단, 운행기록부 미작성</h2>
   <div class="case-box">
     <div class="case-label">전제</div>
     <div class="case-title">취득가 4,000만원, 연간 비용 2,000만원 (감가상각 800만원 + 기타 1,200만원)</div>
-    <p style="margin-bottom: 8px;"><strong>감가상각 한도 검토:</strong> 800만원 = 한도 800만원 → 전액 인정</p>
-    <p style="margin-bottom: 8px;"><strong>1,500만원 한도 검토:</strong> 2,000만원 > 1,500만원 → 1,500만원만 인정</p>
+    <p style="margin-bottom: 8px;"><strong>업무사용비율:</strong> 1,500만원 ÷ 2,000만원 = 75% (운행기록부가 없으면 이렇게 잡힙니다)</p>
+    <p style="margin-bottom: 8px;"><strong>업무사용금액:</strong> 2,000만원 × 75% = 1,500만원</p>
+    <p style="margin-bottom: 8px;"><strong>감가상각비 상당액:</strong> 800만원 × 75% = 600만원 → 한도 800만원 이내라 통과</p>
     <p style="margin-bottom: 8px;"><strong>최종 손금 인정액:</strong> 1,500만원</p>
-    <p style="margin-bottom: 0;"><strong>손금 불인정액:</strong> 500만원 → 추가 법인세 약 100만원 (세율 20%)</p>
+    <p style="margin-bottom: 0;"><strong>손금 불인정액:</strong> 500만원 → 추가 법인세 약 45만원(세율 9%) / 약 95만원(세율 19%)</p>
   </div>
 
   <h2>케이스 2 — 같은 차량, 운행기록부 작성 (업무사용비율 90%)</h2>
@@ -140,27 +161,30 @@
     <p style="margin-bottom: 8px;"><strong>감가상각 한도 검토:</strong> 800만원 × 90% = 720만원 → 인정</p>
     <p style="margin-bottom: 8px;"><strong>업무사용비율 적용:</strong> 2,000만원 × 90% = 1,800만원</p>
     <p style="margin-bottom: 8px;"><strong>최종 손금 인정액:</strong> 1,800만원</p>
-    <p style="margin-bottom: 0;"><strong>케이스 1 대비 추가 인정액:</strong> 300만원 → 법인세 약 60만원 절감</p>
+    <p style="margin-bottom: 0;"><strong>케이스 1 대비 추가 인정액:</strong> 300만원 → 법인세 약 27만원(9%) / 약 57만원(19%) 절감</p>
   </div>
 
   <h2>케이스 3 — 고가 수입차, 감가상각 한도 초과</h2>
   <div class="case-box">
     <div class="case-label">전제</div>
     <div class="case-title">취득가 1억원, 연간 비용 3,500만원 (감가상각 2,000만원 + 기타 1,500만원)</div>
-    <p style="margin-bottom: 8px;"><strong>감가상각 한도 검토:</strong> 2,000만원 > 한도 800만원 → 800만원만 인정, 1,200만원 이월</p>
-    <p style="margin-bottom: 8px;"><strong>운행기록부 작성, 업무사용비율 90%:</strong> (800만원 감가 + 1,500만원 기타) × 90% = 2,070만원</p>
-    <p style="margin-bottom: 8px;"><strong>최종 손금 인정액 (당기):</strong> 2,070만원</p>
-    <p style="margin-bottom: 0;"><strong>이월 감가상각:</strong> 1,200만원 (이후 5년간 분할 인정)</p>
+    <p style="margin-bottom: 8px;"><strong>① 업무사용금액:</strong> 3,500만원 × 90% = 3,150만원</p>
+    <p style="margin-bottom: 8px;"><strong>② 감가상각비 상당액:</strong> 2,000만원 × 90% = 1,800만원 (비율을 먼저 곱합니다)</p>
+    <p style="margin-bottom: 8px;"><strong>③ 800만원 초과분:</strong> 1,000만원 → 이월</p>
+    <p style="margin-bottom: 8px;"><strong>최종 손금 인정액 (당기):</strong> 3,150만원 − 1,000만원 = 2,150만원</p>
+    <p style="margin-bottom: 0;"><strong>이월 감가상각:</strong> 1,000만원 (기한 제한 없이 한도 여유분만큼 순차 인정, 처분 후 잔액은 10년 균등)</p>
   </div>
 
   <h2>케이스 4 — 운행기록부 없이, 같은 고가 수입차</h2>
   <div class="case-box">
     <div class="case-label">전제</div>
     <div class="case-title">케이스 3과 동일하나 운행기록부 미작성</div>
-    <p style="margin-bottom: 8px;"><strong>1,500만원 한도 적용:</strong> 3,500만원 > 1,500만원 → 1,500만원만 인정</p>
-    <p style="margin-bottom: 8px;"><strong>최종 손금 인정액:</strong> 1,500만원</p>
-    <p style="margin-bottom: 8px;"><strong>케이스 3 대비 손해:</strong> 570만원 → 추가 법인세 약 114만원</p>
-    <p style="margin-bottom: 0;"><strong>5년 누적:</strong> 약 570만원 × 5 = 2,850만원 손금 손해 → 추가 법인세 약 570만원</p>
+    <p style="margin-bottom: 8px;"><strong>① 업무사용비율:</strong> 1,500만원 ÷ 3,500만원 = 42.86%</p>
+    <p style="margin-bottom: 8px;"><strong>② 업무사용금액:</strong> 3,500만원 × 42.86% = 1,500만원</p>
+    <p style="margin-bottom: 8px;"><strong>③ 감가상각비 상당액:</strong> 2,000만원 × 42.86% = 약 857만원 → 800만원 초과분 약 57만원 이월</p>
+    <p style="margin-bottom: 8px;"><strong>최종 손금 인정액:</strong> 1,500만원 − 57만원 = 약 1,443만원</p>
+    <p style="margin-bottom: 8px;"><strong>케이스 3 대비 손해:</strong> 707만원 → 추가 법인세 약 64만원(9%) / 약 134만원(19%)</p>
+    <p style="margin-bottom: 0;"><strong>5년 누적:</strong> 707만원 × 5 = 3,535만원 손금 손해 → 추가 법인세 약 318만원(9%) / 약 672만원(19%)</p>
   </div>
 
   <div class="warn-box">
@@ -182,13 +206,14 @@
 
   <table>
     <tr><th>종합소득 구간</th><th>소득세율</th><th>100만원 초과 시 추가 세금 (지방세 포함)</th></tr>
-    <tr><td>1,200만원 이하</td><td>6%</td><td>약 6.6만원</td></tr>
-    <tr><td>1,200만원 ~ 4,600만원</td><td>15%</td><td>약 16.5만원</td></tr>
-    <tr><td>4,600만원 ~ 8,800만원</td><td>24%</td><td>약 26.4만원</td></tr>
+    <tr><td>1,400만원 이하</td><td>6%</td><td>약 6.6만원</td></tr>
+    <tr><td>1,400만원 ~ 5,000만원</td><td>15%</td><td>약 16.5만원</td></tr>
+    <tr><td>5,000만원 ~ 8,800만원</td><td>24%</td><td>약 26.4만원</td></tr>
     <tr><td>8,800만원 ~ 1.5억</td><td>35%</td><td>약 38.5만원</td></tr>
     <tr><td>1.5억 ~ 3억</td><td>38%</td><td>약 41.8만원</td></tr>
     <tr><td>3억 ~ 5억</td><td>40%</td><td>약 44만원</td></tr>
-    <tr><td>5억 초과</td><td>42%</td><td>약 46.2만원</td></tr>
+    <tr><td>5억 ~ 10억</td><td>42%</td><td>약 46.2만원</td></tr>
+    <tr><td>10억 초과</td><td>45%</td><td>약 49.5만원</td></tr>
   </table>
 
   <div class="highlight-box">
@@ -228,7 +253,7 @@
       <input type="number" id="taxRate" value="19" min="0" max="50" step="1" />
     </div>
     <div id="taxRateHint" style="font-size:0.8rem; color:#64748b; margin-bottom:14px; display:none;">
-      소득세율: 6% (1,200만↓) · 15% (4,600만↓) · 24% (8,800만↓) · 35% (1.5억↓) · 38% (3억↓) · 40% (5억↓) · 42% (5억↑)
+      소득세율: 6% (1,400만↓) · 15% (5,000만↓) · 24% (8,800만↓) · 35% (1.5억↓) · 38% (3억↓) · 40% (5억↓) · 42% (10억↓) · 45% (10억↑)
     </div>
     <div class="toggle-row">
       <label><input type="checkbox" id="inclLocal" /> 지방소득세 포함 (× 1.1)</label>
@@ -236,9 +261,9 @@
 
     <div class="calc-result">
       <div class="result-row"><span>총 차량 비용</span><span id="rTotal">2,000만원</span></div>
-      <div class="result-row"><span>감가상각 한도 적용 후 (800만원 한도)</span><span id="rAfterDep">2,000만원</span></div>
-      <div class="result-row"><span>운행기록부 적용 후 손금 인정액</span><span id="rRecognized">1,800만원</span></div>
-      <div class="result-row"><span>손금 불인정액</span><span id="rUnrecog">200만원</span></div>
+      <div class="result-row"><span>① 업무사용금액 (비용 × 업무사용비율)</span><span id="rAfterDep">1,800만원</span></div>
+      <div class="result-row"><span>② 당기 손금 인정액 (감가상각 800만원 한도 반영)</span><span id="rRecognized">1,800만원</span></div>
+      <div class="result-row"><span>③ 손금 불인정액</span><span id="rUnrecog">200만원</span></div>
       <div class="result-row total"><span id="rTaxLabel">추가 세금 부담</span><span id="rTax">40만원</span></div>
     </div>
   </div>
@@ -263,25 +288,48 @@
       var taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
       var inclLocal = document.getElementById('inclLocal').checked;
 
+      // 법인세법 시행령 제50조의2 순서대로 계산합니다.
+      //   1) 업무사용비율 결정  2) 업무사용금액  3) 감가상각비 상당액
+      //   4) 800만원 초과분 이월  5) 당기 손금 = 업무사용금액 - 이월액
+      // ※ 감가상각 한도를 업무사용비율보다 먼저 적용하면 안 됩니다.
       var total = dep + other;
-      var depCapped = Math.min(dep, 800);
-      var capped = depCapped + other;
 
-      var recognized;
+      // 1) 업무사용비율 — 운행기록부가 없으면 1,500만원에 해당하는 비율로 잡힙니다.
+      var usedRatio;
       if (hasLog) {
-        recognized = capped * (ratio / 100);
+        usedRatio = ratio / 100;
       } else {
-        recognized = Math.min(capped, 1500);
+        usedRatio = total > 0 ? Math.min(1, 1500 / total) : 0;
       }
-      var unrecog = total - recognized;
-      if (unrecog < 0) unrecog = 0;
+
+      // 2) 업무사용금액
+      var businessAmount = total * usedRatio;
+
+      // 3) 감가상각비 상당액 (비율을 먼저 곱한 뒤 한도와 비교)
+      var depBusiness = dep * usedRatio;
+
+      // 4) 800만원 초과분은 소멸이 아니라 이월
+      var carryover = Math.max(0, depBusiness - 800);
+
+      // 5) 당기 손금
+      var recognized = businessAmount - carryover;
+      if (recognized < 0) recognized = 0;
+
+      // 손금 못 받는 금액을 성격별로 구분합니다.
+      //   영구 불산입(비업무사용분)은 돌아오지 않고, 이월분은 나중에 인정받습니다.
+      var permanent = total - businessAmount;
+      var unrecog = permanent + carryover;
+
+      // 당기 과세소득 증가분에 붙는 세금 (이월분도 당기에는 손금이 아니므로 포함)
       var tax = unrecog * (taxRate / 100);
       if (inclLocal) tax = tax * 1.1;
 
       document.getElementById('rTotal').textContent = fmt(total);
-      document.getElementById('rAfterDep').textContent = fmt(capped) + (dep > 800 ? ' (이월 ' + fmt(dep - 800) + ')' : '');
+      document.getElementById('rAfterDep').textContent =
+        fmt(businessAmount) + ' (업무사용비율 ' + (usedRatio * 100).toFixed(1) + '%)';
       document.getElementById('rRecognized').textContent = fmt(recognized);
-      document.getElementById('rUnrecog').textContent = fmt(unrecog);
+      document.getElementById('rUnrecog').textContent =
+        fmt(unrecog) + (carryover > 0 ? ' (영구 ' + fmt(permanent) + ' + 이월 ' + fmt(carryover) + ')' : '');
       document.getElementById('rTax').textContent = fmt(tax);
     }
     ['dep','other','ratio','hasLog','taxRate','inclLocal'].forEach(function(id){
