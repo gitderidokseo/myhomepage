@@ -531,8 +531,7 @@ function AdminApp() {
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
           <a
-            href="/drivelog/downloads/DriveLogAdmin_Setup.exe"
-            download
+            href="/drivelog/download"
             className="btn-primary !py-2 !px-5 text-sm"
           >
             <Download className="w-4 h-4" /> 관리자 프로그램 다운로드 (Windows)
@@ -553,40 +552,188 @@ function AdminApp() {
   );
 }
 
+type Plan = {
+  badge: string;
+  name: string;
+  target: string;
+  monthly: string;
+  yearlyMonthly: string;
+  yearlyTotal: string;
+  unit: string;
+  features: string[];
+  featured?: boolean;
+  soon?: boolean;
+  cta: { label: string; href: string };
+};
+
+// 금액은 모두 VAT 별도. 연납은 10개월분으로 12개월 이용.
+const PERSONAL_PLANS: Plan[] = [
+  {
+    badge: "무료",
+    name: "개인 무료",
+    target: "차량 1대 · 운전자 단독",
+    monthly: "0",
+    yearlyMonthly: "0",
+    yearlyTotal: "0",
+    unit: "원",
+    features: [
+      "GPS 자동 운행 기록",
+      "국세청 양식 엑셀 추출",
+      "차량 1대",
+      "회원가입 불필요 · 휴대폰에만 저장",
+    ],
+    cta: { label: "Google Play", href: PLAY_URL },
+  },
+  {
+    badge: "출시 예정",
+    name: "개인 플러스",
+    target: "개인사업자 · 1인 법인",
+    monthly: "1,100",
+    yearlyMonthly: "917",
+    yearlyTotal: "11,000",
+    unit: "원 / 월 · 계정",
+    soon: true,
+    features: [
+      "개인 무료의 모든 기능",
+      "차량 3대까지",
+      "내 구글 드라이브로 운행기록 자동 백업",
+      "휴대폰 분실·교체에 대비한 백업",
+    ],
+    cta: { label: "출시 알림 신청", href: "#contact" },
+  },
+];
+
+const BUSINESS_PLANS: Plan[] = [
+  {
+    badge: "출시 예정",
+    name: "법인 베이직",
+    target: "설치 없이 바로 시작",
+    monthly: "2,200",
+    yearlyMonthly: "1,833",
+    yearlyTotal: "22,000",
+    unit: "원 / 월 · 대",
+    soon: true,
+    features: [
+      "관리자 프로그램 설치 불필요",
+      "회사 코드 즉시 발급",
+      "여러 운전자 운행기록 자동 취합",
+      "라라캣소프트 클라우드에 안전하게 보관",
+      "국세청 양식 운행기록부 엑셀",
+    ],
+    cta: { label: "사전 신청", href: "#contact" },
+  },
+  {
+    badge: "10대 미만",
+    name: "관리자 연동",
+    target: "우리 회사 저장소에 직접 보관",
+    monthly: "3,300",
+    yearlyMonthly: "2,750",
+    yearlyTotal: "33,000",
+    unit: "원 / 월 · 대",
+    featured: true,
+    features: [
+      "여러 운전자 운행기록 자동 취합",
+      "국세청 양식 운행기록부 엑셀",
+      "운행 원본을 우리 회사 구글 드라이브에 저장",
+      "Windows 관리자 프로그램",
+      "차량 등록 · 운전자 승인 관리",
+      "운행기록 저장 무제한",
+    ],
+    cta: { label: "지금 시작", href: "/drivelog/download" },
+  },
+  {
+    badge: "10대 이상",
+    name: "관리자 연동 비즈니스",
+    target: "10대 이상 운영 차량",
+    monthly: "3,000",
+    yearlyMonthly: "2,500",
+    yearlyTotal: "30,000",
+    unit: "원 / 월 · 대",
+    features: [
+      "관리자 연동의 모든 기능",
+      "대수 증가에 따른 자동 할인 적용",
+      "법인 관리자 대시보드",
+      "운행기록 저장 무제한",
+    ],
+    cta: { label: "도입 문의", href: "#contact" },
+  },
+];
+
+const FEATURED_STYLE = {
+  border: "1px solid transparent",
+  backgroundImage:
+    "linear-gradient(oklch(0.20 0.035 252), oklch(0.18 0.035 252)), var(--gradient-accent)",
+  backgroundOrigin: "border-box",
+  backgroundClip: "padding-box, border-box",
+  boxShadow: "var(--shadow-glow)",
+} as const;
+
+function PlanCard({ p, yearly, delay }: { p: Plan; yearly: boolean; delay: number }) {
+  const free = p.monthly === "0";
+  const external = p.cta.href.startsWith("http");
+  return (
+    <div
+      className={`card-surface p-8 reveal relative flex flex-col ${
+        p.featured ? "md:-translate-y-4" : ""
+      }`}
+      style={{ transitionDelay: `${delay}ms`, ...(p.featured ? FEATURED_STYLE : {}) }}
+    >
+      <div className="flex items-center justify-between">
+        <span
+          className={`text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full ${
+            p.featured ? "text-primary-foreground" : "text-cyan border border-border"
+          }`}
+          style={p.featured ? { background: "var(--gradient-accent)" } : {}}
+        >
+          {p.badge}
+        </span>
+        {p.featured && <Sparkles className="w-4 h-4 text-cyan" />}
+      </div>
+      <h3 className="font-display text-2xl font-bold mt-6">{p.name}</h3>
+      <p className="text-sm text-muted-foreground mt-1">{p.target}</p>
+
+      <div className="mt-8 flex items-baseline gap-2">
+        <span className="font-mono font-bold text-5xl gradient-text">
+          {yearly ? p.yearlyMonthly : p.monthly}
+        </span>
+        <span className="text-sm text-muted-foreground">{free ? "원" : p.unit}</span>
+      </div>
+      <p className="mt-2 text-xs text-muted-foreground">
+        {free
+          ? "기간 제한 없음"
+          : yearly
+            ? `연 ${p.yearlyTotal}원 일괄 결제 · 10개월분 요금으로 12개월 이용`
+            : "월 단위 결제 · 약정 없음"}
+      </p>
+
+      <div className="hairline my-8" />
+
+      <ul className="space-y-3 text-sm flex-1">
+        {p.features.map((f) => (
+          <li key={f} className="flex gap-2 items-start">
+            <CheckCircle2 className="w-4 h-4 text-cyan shrink-0 mt-0.5" />
+            <span className="text-muted-foreground">{f}</span>
+          </li>
+        ))}
+      </ul>
+
+      <a
+        href={p.cta.href}
+        {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+        className={`mt-8 inline-flex justify-center ${
+          p.featured ? "btn-primary" : "btn-ghost"
+        }`}
+      >
+        {external ? <Download className="w-4 h-4" /> : null}
+        {p.cta.label}
+        {external ? null : <ArrowRight className="w-4 h-4" />}
+      </a>
+    </div>
+  );
+}
+
 function Pricing() {
   const [yearly, setYearly] = useState(false);
-
-  const plans = [
-    {
-      badge: "기본",
-      name: "스타터",
-      target: "10대 미만",
-      monthly: "3,300",
-      yearlyMonthly: "2,750",
-      yearlyTotal: "33,000",
-      features: [
-        "GPS 자동 운행 기록",
-        "세무용 운행기록부 엑셀 출력",
-        "회사 저장소 자동 동기화",
-        "운행기록 저장 무제한",
-      ],
-    },
-    {
-      badge: "10대 이상",
-      name: "비즈니스",
-      target: "10대 이상 운영 차량",
-      monthly: "3,000",
-      yearlyMonthly: "2,500",
-      yearlyTotal: "30,000",
-      featured: true,
-      features: [
-        "스타터의 모든 기능",
-        "대수 증가에 따른 자동 할인 적용",
-        "법인 관리자 대시보드",
-        "운행기록 저장 무제한",
-      ],
-    },
-  ];
 
   return (
     <section id="pricing" className="py-32">
@@ -594,21 +741,14 @@ function Pricing() {
         <SectionHeader
           eyebrow="Pricing"
           title="요금제"
-          desc="운전자 단독 사용은 무료입니다. 회사가 운행기록을 한곳에 모아 관리하는 관리자 연동 기능부터 유료로 제공됩니다."
+          desc="차량 1대를 혼자 기록하는 것은 무료입니다. 여러 대를 쓰거나, 회사가 운전자들의 운행기록을 한곳에 모아 관리할 때 필요한 만큼만 선택하세요."
         />
 
-        {/* 오픈 기념 이벤트 — 선착순 30대 1년 무료 */}
+        {/* 오픈 기념 이벤트 — 선착순 100대 1년 무료 */}
         <div className="mt-12 reveal">
           <div
             className="mx-auto max-w-3xl rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left"
-            style={{
-              border: "1px solid transparent",
-              backgroundImage:
-                "linear-gradient(oklch(0.20 0.035 252), oklch(0.18 0.035 252)), var(--gradient-accent)",
-              backgroundOrigin: "border-box",
-              backgroundClip: "padding-box, border-box",
-              boxShadow: "var(--shadow-glow)",
-            }}
+            style={FEATURED_STYLE}
           >
             <div
               className="w-12 h-12 rounded-xl grid place-items-center shrink-0"
@@ -625,105 +765,26 @@ function Pricing() {
                 </span>
               </div>
               <h3 className="font-display text-xl md:text-2xl font-bold mt-3">
-                선착순 30대 · 1년간 무료
+                선착순 100대 · 1년간 무료
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                관리자 연동(법인) 플랜을 지금 도입하시면{" "}
-                <strong className="text-foreground">선착순 30대</strong>에 한해{" "}
+                법인 플랜을 지금 도입하시면{" "}
+                <strong className="text-foreground">선착순 100대</strong>에 한해{" "}
                 <strong className="text-foreground">1년간 무료</strong>로
                 이용하실 수 있습니다. 조기 마감될 수 있으니 서둘러 신청하세요.
               </p>
             </div>
             <a
-              href="#contact"
+              href="/drivelog/download"
               className="btn-primary !py-2 !px-5 text-sm shrink-0"
             >
-              지금 신청 <ArrowRight className="w-4 h-4" />
+              지금 시작 <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </div>
 
-        {/* 무료 플랜 */}
-        <div className="mt-16 reveal">
-          <div className="card-surface p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-8">
-            <div className="md:flex-1">
-              <div className="flex items-center gap-3">
-                <Smartphone className="w-6 h-6 text-cyan" />
-                <h3 className="font-display text-2xl font-bold">
-                  개인 / 운전자 단독
-                </h3>
-                <span className="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full text-cyan border border-border">
-                  무료
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xl">
-                회원가입 없이 바로 시작. 운행 기록을{" "}
-                <strong className="text-foreground">휴대폰에만 저장</strong>하고,
-                국세청 양식 운행기록부를 직접 엑셀로 추출할 수 있습니다.
-                개인사업자·1인 사업자에게 적합합니다.
-              </p>
-              <ul className="mt-5 grid sm:grid-cols-2 gap-2.5 text-sm">
-                {[
-                  "GPS 자동 운행 기록",
-                  "국세청 양식 엑셀 추출",
-                  "다중 차량 관리",
-                  "회원가입 불필요",
-                ].map((f) => (
-                  <li
-                    key={f}
-                    className="flex gap-2 items-start text-muted-foreground"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-cyan shrink-0 mt-0.5" />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="md:text-right">
-              <div className="font-mono font-bold text-5xl gradient-text">0</div>
-              <div className="text-sm text-muted-foreground mt-1">원</div>
-              <div className="mt-5 flex flex-wrap justify-end gap-3">
-                <a
-                  href={PLAY_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-ghost inline-flex"
-                >
-                  <Download className="w-4 h-4" /> Google Play
-                </a>
-                <a
-                  href={APP_STORE_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-ghost inline-flex"
-                >
-                  <Download className="w-4 h-4" /> App Store
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 관리자 연동 유료 플랜 */}
-        <div className="mt-16 text-center reveal">
-          <h3 className="font-display text-2xl font-bold">
-            관리자 연동 (법인)
-          </h3>
-          <p className="mt-3 text-sm text-muted-foreground">
-            운행기록을 회사 저장소로 모아 관리자가 일괄 관리하는 유료 플랜입니다.
-          </p>
-        </div>
-
-        <div className="mt-8 flex justify-center reveal">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-sm">
-            <Database className="w-4 h-4 text-cyan" />
-            운행 데이터가{" "}
-            <strong className="text-foreground">우리 회사에 저장</strong>됩니다.
-          </div>
-        </div>
-
-        {/* 월납 / 연납 토글 */}
-        <div className="mt-10 flex justify-center reveal">
+        {/* 월납 / 연납 토글 — 아래 모든 플랜에 적용 */}
+        <div className="mt-14 flex justify-center reveal">
           <div className="inline-flex items-center rounded-full border border-border bg-surface p-1 text-sm">
             <button
               type="button"
@@ -748,84 +809,46 @@ function Pricing() {
           </div>
         </div>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {plans.map((p, i) => (
-            <div
-              key={p.name}
-              className={`card-surface p-8 reveal relative flex flex-col ${
-                p.featured ? "md:-translate-y-4" : ""
-              }`}
-              style={{
-                transitionDelay: `${i * 100}ms`,
-                ...(p.featured
-                  ? {
-                      border: "1px solid transparent",
-                      backgroundImage:
-                        "linear-gradient(oklch(0.20 0.035 252), oklch(0.18 0.035 252)), var(--gradient-accent)",
-                      backgroundOrigin: "border-box",
-                      backgroundClip: "padding-box, border-box",
-                      boxShadow: "var(--shadow-glow)",
-                    }
-                  : {}),
-              }}
-            >
-              <div className="flex items-center justify-between">
-                <span
-                  className={`text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full ${
-                    p.featured
-                      ? "text-primary-foreground"
-                      : "text-cyan border border-border"
-                  }`}
-                  style={
-                    p.featured ? { background: "var(--gradient-accent)" } : {}
-                  }
-                >
-                  {p.badge}
-                </span>
-                {p.featured && <Sparkles className="w-4 h-4 text-cyan" />}
-              </div>
-              <h3 className="font-display text-2xl font-bold mt-6">{p.name}</h3>
-              <p className="text-sm text-muted-foreground mt-1">{p.target}</p>
+        {/* 개인 */}
+        <div className="mt-14 text-center reveal">
+          <h3 className="font-display text-2xl font-bold flex items-center justify-center gap-3">
+            <Smartphone className="w-6 h-6 text-cyan" /> 개인
+          </h3>
+          <p className="mt-3 text-sm text-muted-foreground">
+            운전자 혼자 쓰는 경우. 기록은 내 휴대폰과 내 구글 드라이브에만 남습니다.
+          </p>
+        </div>
+        <div className="mt-10 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {PERSONAL_PLANS.map((p, i) => (
+            <PlanCard key={p.name} p={p} yearly={yearly} delay={i * 100} />
+          ))}
+        </div>
 
-              <div className="mt-8 flex items-baseline gap-2">
-                <span className="font-mono font-bold text-5xl gradient-text">
-                  {yearly ? p.yearlyMonthly : p.monthly}
-                </span>
-                <span className="text-sm text-muted-foreground">
-                  원 / 월 · 대
-                </span>
-              </div>
-              <p className="mt-2 text-xs text-muted-foreground">
-                {yearly
-                  ? `연 ${p.yearlyTotal}원/대 일괄 결제 · 10개월분 요금으로 12개월 이용`
-                  : "월 단위 결제 · 약정 없음"}
-              </p>
-
-              <div className="hairline my-8" />
-
-              <ul className="space-y-3 text-sm">
-                {p.features.map((f) => (
-                  <li key={f} className="flex gap-2 items-start">
-                    <CheckCircle2 className="w-4 h-4 text-cyan shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="#contact"
-                className={`mt-8 inline-flex justify-center ${
-                  p.featured ? "btn-primary" : "btn-ghost"
-                }`}
-              >
-                도입 문의 <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+        {/* 법인 */}
+        <div className="mt-20 text-center reveal">
+          <h3 className="font-display text-2xl font-bold flex items-center justify-center gap-3">
+            <Building2 className="w-6 h-6 text-cyan" /> 법인
+          </h3>
+          <p className="mt-3 text-sm text-muted-foreground">
+            여러 운전자의 운행기록을 회사가 한곳에 모아 관리하는 경우. 차량 대수만큼 요금이 부과됩니다.
+          </p>
+        </div>
+        <div className="mt-8 flex justify-center reveal">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-sm">
+            <Database className="w-4 h-4 text-cyan" />
+            보관 위치를 고르세요 —{" "}
+            <strong className="text-foreground">라라캣소프트 클라우드</strong> 또는{" "}
+            <strong className="text-foreground">우리 회사 구글 드라이브</strong>
+          </div>
+        </div>
+        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {BUSINESS_PLANS.map((p, i) => (
+            <PlanCard key={p.name} p={p} yearly={yearly} delay={i * 100} />
           ))}
         </div>
 
         {/* 부가 옵션 — 차량제조사 연동 */}
-        <div className="mt-8 max-w-4xl mx-auto reveal">
+        <div className="mt-8 max-w-6xl mx-auto reveal">
           <div className="card-surface p-8 flex flex-col md:flex-row md:items-center gap-6">
             <div
               className="w-12 h-12 rounded-xl grid place-items-center shrink-0 border border-border"
@@ -844,31 +867,30 @@ function Pricing() {
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xl">
                 차량 제조사 계정을 연동하면 차량이 기록한{" "}
                 <strong className="text-foreground">실제 주행거리(계기판 누적거리)</strong>
-                로 운행기록을 보정합니다. 스타터·비즈니스 어느 플랜에서든 추가할
-                수 있습니다.
+                로 운행기록을 보정합니다. 법인 플랜 어느 것에서든 추가할 수 있습니다.
               </p>
             </div>
             <div className="md:text-right shrink-0">
               <div className="flex items-baseline gap-2 md:justify-end">
                 <span className="font-mono font-bold text-3xl gradient-text">
-                  + {yearly ? "1,833" : "2,200"}
+                  + {yearly ? "917" : "1,100"}
                 </span>
                 <span className="text-sm text-muted-foreground">원 / 월 · 대</span>
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
                 {yearly
-                  ? "연 22,000원/대 일괄 결제 · 10개월분 요금으로 12개월 이용"
+                  ? "연 11,000원/대 일괄 결제 · 10개월분 요금으로 12개월 이용"
                   : "기본 요금에 추가 · 월 단위 결제"}
               </p>
             </div>
           </div>
         </div>
 
-        <p className="mt-12 text-center text-sm text-muted-foreground reveal">
-          * 표시 금액은 차량 1대 기준 월 요금이며, VAT 별도입니다. 차량제조사
-          연동(테슬라)을 이용하시면 차량 1대당 월 2,200원이 추가됩니다. 연납은
-          10개월분 요금으로 12개월을 이용하는 방식입니다. 30대 이상 대규모
-          도입은 별도 견적을 안내드리며, 정확한 견적과 도입 절차는{" "}
+        <p className="mt-12 text-center text-sm text-muted-foreground reveal max-w-4xl mx-auto">
+          * 표시 금액은 VAT 별도입니다. 법인 플랜과 제조사 연동은 차량 1대 기준, 개인 플러스는
+          계정 1개 기준 월 요금입니다. 연납은 10개월분 요금으로 12개월을 이용하는 방식입니다.
+          &lsquo;출시 예정&rsquo; 플랜은 준비가 끝나는 대로 사전 신청하신 분께 먼저 안내드립니다.
+          30대 이상 대규모 도입은 별도 견적을 안내드리며, 정확한 견적과 도입 절차는{" "}
           <a href="#contact" className="text-cyan hover:underline">
             도입 문의
           </a>
@@ -1001,8 +1023,7 @@ function Contact() {
           </div>
 
           <a
-            href="/drivelog/downloads/DriveLogAdmin_Setup.exe"
-            download
+            href="/drivelog/download"
             className="card-surface p-8 reveal flex flex-col items-start hover:border-cyan transition-colors"
           >
             <div
@@ -1074,7 +1095,7 @@ function Guide() {
     {
       icon: Car,
       title: "차량 등록",
-      desc: "차량번호·모델명·현재 누적 주행거리를 등록합니다. 한 계정에 여러 대 등록 가능합니다.",
+      desc: "차량번호·모델명·현재 누적 주행거리를 등록합니다. 개인 무료는 1대, 법인 플랜은 여러 대를 등록할 수 있습니다.",
     },
     {
       icon: PlayCircle,

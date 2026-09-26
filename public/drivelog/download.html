@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>드라이브로그 관리자 프로그램 설치 · 회사 도입 방법 | LalaCatSoft</title>
+  <meta name="description"
+    content="드라이브로그를 회사에 도입하는 방법. Windows 관리자 프로그램 다운로드와 설치, 회사 코드 발급, 운전자 앱 연결까지 3단계로 안내합니다. 선착순 100대 1년 무료 이벤트 진행 중." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lalacatsoft.com/drivelog/download" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="드라이브로그 관리자 프로그램 설치 · 회사 도입 방법" />
+  <meta property="og:description" content="Windows 관리자 프로그램 설치부터 회사 코드 발급까지 3단계. 선착순 100대 1년 무료." />
+  <meta property="og:url" content="https://lalacatsoft.com/drivelog/download" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #131a36;
+      --border: #1f2a52;
+      --text: #e6ecff;
+      --muted: #9aa6c9;
+      --cyan: #3ee0ff;
+      --warn: #ffcf6b;
+      --ok: #6bffa8;
+      --accent-grad: linear-gradient(135deg, #3ee0ff 0%, #7af0ff 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 20% 10%, rgba(62, 224, 255, 0.08), transparent 50%),
+        radial-gradient(circle at 80% 30%, rgba(122, 240, 255, 0.06), transparent 50%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    header.site {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(11, 16, 32, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header.site .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .brand .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent-grad);
+      display: grid;
+      place-items: center;
+      color: #06122a;
+      font-weight: 800;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: 18px;
+    }
+
+    nav a:hover {
+      color: var(--cyan);
+    }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(62, 224, 255, 0.06);
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 18px 0 12px;
+      font-weight: 700;
+    }
+
+    h1 .grad {
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin: 48px 0 14px;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2 .num {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      color: #06122a;
+      background: var(--accent-grad);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-weight: 800;
+    }
+
+    .lead {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .event {
+      margin-top: 28px;
+      border: 1px solid transparent;
+      border-radius: 16px;
+      padding: 18px 20px;
+      background:
+        linear-gradient(#141b38, #111831) padding-box,
+        var(--accent-grad) border-box;
+    }
+
+    .event strong {
+      color: var(--cyan);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-top: 18px;
+    }
+
+    .dl {
+      display: block;
+      margin: 32px 0 10px;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent-grad);
+      color: #06122a;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--cyan);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      padding: 11px 22px;
+    }
+
+    .dl .sub {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .warn {
+      border: 1px solid rgba(255, 207, 107, 0.35);
+      background: rgba(255, 207, 107, 0.07);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-top: 18px;
+    }
+
+    .warn h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--warn);
+    }
+
+    ol.steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+    }
+
+    ol.steps li {
+      position: relative;
+      padding-left: 38px;
+      margin-bottom: 14px;
+    }
+
+    ol.steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(62, 224, 255, 0.12);
+      border: 1px solid var(--border);
+      color: var(--cyan);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      display: grid;
+      place-items: center;
+    }
+
+    .quote {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      background: rgba(11, 16, 32, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 10px 0;
+      color: var(--text);
+    }
+
+    p,
+    li {
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--cyan);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    footer.site {
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-family: "JetBrains Mono", monospace;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <span class="logo">L</span>
+        <span>LalaCatSoft</span>
+      </a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/#pricing">요금제</a>
+        <a href="/drivelog/help">사용설명서</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="eyebrow">For Companies</span>
+    <h1>회사에 <span class="grad">도입</span>하기</h1>
+
+    <p class="lead">
+      운전자 앱은 회사 코드 없이도 무료로 쓰실 수 있습니다.
+      <strong>여러 대의 차량과 여러 기사의 운행기록을 회사가 한곳에 모아 관리</strong>하시려면,
+      아래 Windows 관리자 프로그램을 설치하고 회사를 등록하시면 됩니다.
+      설치부터 첫 운전자 연결까지 보통 10분이면 끝납니다.
+    </p>
+
+    <div class="event">
+      <strong>선착순 100대 · 1년간 무료</strong> — 관리자 연동(법인) 플랜을 지금 도입하시면
+      차량 100대에 한해 1년간 무료로 이용하실 수 있습니다. 설치 후
+      <a href="mailto:deridokseo@gmail.com?subject=%5B%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%A1%9C%EA%B7%B8%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EC%8B%A0%EC%B2%AD%5D">이벤트
+        신청 메일</a>만 보내주시면 적용해 드립니다.
+    </div>
+
+    <div class="dl">
+      <a class="btn" href="/drivelog/downloads/DriveLogAdmin_Setup.exe" download>
+        관리자 프로그램 다운로드 (Windows)
+      </a>
+      <span class="sub">DriveLogAdmin_Setup.exe · Windows 10 이상</span>
+    </div>
+
+    <div class="warn">
+      <h3>설치할 때 "Windows의 PC 보호" 경고가 뜹니다 — 정상입니다</h3>
+      <p style="margin:0">
+        저희는 아직 유료 코드 서명 인증서를 구매하지 않았습니다. 그래서 내려받은 설치 파일을 실행하면
+        Windows가 처음 보는 프로그램이라며 파란 경고창을 띄웁니다. 바이러스라는 뜻이 아니라
+        <strong>"아직 다운로드 횟수가 적어 판단할 수 없다"</strong>는 뜻입니다. 아래대로 진행하시면 됩니다.
+      </p>
+      <ol class="steps">
+        <li>경고창에서 <strong>추가 정보</strong>를 누릅니다.</li>
+        <li>앱 이름이 <span class="quote" style="display:inline-block;margin:0">DriveLogAdmin_Setup.exe</span>
+          인지 확인합니다. (게시자는 <strong>알 수 없음</strong>으로 표시됩니다 &mdash; 서명 인증서가 없어서 정상입니다)</li>
+        <li>아래에 나타나는 <strong>실행</strong> 버튼을 누릅니다.</li>
+      </ol>
+      <p class="muted" style="margin:10px 0 0">
+        브라우저가 다운로드 자체를 막는 경우에는, 다운로드 목록에서 파일 옆의
+        <strong>⋮ → 계속</strong>(또는 <strong>보관</strong>)을 눌러 주십시오.
+      </p>
+    </div>
+
+    <h2><span class="num">01</span>관리자 프로그램 설치 · 회사 등록</h2>
+    <div class="card">
+      <ol class="steps">
+        <li>위 버튼으로 설치 파일을 내려받아 실행합니다.</li>
+        <li>구글 계정으로 로그인합니다. 운행기록은 <strong>회사 구글 드라이브</strong>에 암호화되어 저장되므로,
+          회사에서 계속 쓰실 계정으로 로그인해 주십시오.</li>
+        <li>회사 정보(상호명·사업자등록번호)를 입력하고 등록합니다.</li>
+        <li>등록이 끝나면 <strong>회사 코드</strong>가 발급됩니다. 이 코드를 기사분들에게 알려주시면 됩니다.</li>
+      </ol>
+    </div>
+
+    <h2><span class="num">02</span>기사분들 휴대폰에 운전자 앱 설치</h2>
+    <div class="card">
+      <p style="margin-top:0">
+        기사분은 Play 스토어나 App Store에서 <strong>드라이브로그</strong>를 설치한 뒤,
+        첫 화면에서 <span class="quote" style="display:inline-block;margin:0">회사 코드로 등록</span>
+        을 누르고 ①에서 발급받은 회사 코드와 본인 이름을 입력하면 됩니다.
+      </p>
+      <p style="margin-bottom:0" class="muted">
+        이미 무료(폰 저장) 모드로 쓰고 계신 기사분은 설정 화면에서 서버 연동 모드로 전환하시면 되고,
+        그동안 폰에 쌓인 기록도 월 단위로 골라서 올리실 수 있습니다.
+      </p>
+      <p style="margin-bottom:0">
+        <a href="/drivelog/help">운전자 앱 사용설명서 보기 →</a>
+      </p>
+    </div>
+
+    <h2><span class="num">03</span>관리자 승인 · 차량 등록</h2>
+    <div class="card">
+      <p style="margin-top:0">
+        기사분이 등록을 요청하면 관리자 프로그램에 <strong>승인 대기</strong>로 뜹니다.
+        승인하시면 기사분 휴대폰으로 알림이 가고, 그때부터 운행기록이 회사 드라이브로 자동 전송됩니다.
+      </p>
+      <p style="margin-bottom:0">
+        차량은 관리자 프로그램에서 등록하시거나, 기사분이 요청한 차량을 승인하시면 됩니다.
+        이후 차량별·기간별로 국세청 별지 제65호 서식 운행기록부를 바로 뽑으실 수 있습니다.
+      </p>
+    </div>
+
+    <h2><span class="num">04</span>자주 묻는 질문</h2>
+    <div class="card">
+      <p style="margin-top:0"><strong>맥(Mac)에서도 쓸 수 있나요?</strong><br />
+        <span class="muted">현재 관리자 프로그램은 Windows 전용입니다.</span>
+      </p>
+      <p><strong>운행기록이 라라캣소프트 서버에 저장되나요?</strong><br />
+        <span class="muted">아닙니다. 회사 구글 드라이브에 AES-256으로 암호화되어 저장됩니다.
+          위치 좌표는 아예 전송되지 않고, 주행거리만 기록됩니다.</span>
+      </p>
+      <p style="margin-bottom:0"><strong>먼저 써보고 결정하고 싶습니다.</strong><br />
+        <span class="muted">기사 한 분의 휴대폰에만 설치해 무료(폰 저장) 모드로 며칠 써보셔도 됩니다.
+          나중에 회사 코드를 입력해 전환하시면 그동안의 기록도 함께 올릴 수 있습니다.</span>
+      </p>
+    </div>
+
+    <div class="dl">
+      <a class="btn ghost"
+        href="mailto:deridokseo@gmail.com?subject=%5B%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%A1%9C%EA%B7%B8%20%EB%8F%84%EC%9E%85%20%EB%AC%B8%EC%9D%98%5D">
+        도입 문의하기
+      </a>
+      <span class="sub">deridokseo@gmail.com · 영업일 기준 1일 이내 회신</span>
+    </div>
+  </main>
+
+  <footer class="site">
+    © 2026 LalaCatSoft. All rights reserved. ·
+    <a href="/drivelog/privacy">개인정보처리방침</a>
+  </footer>
+</body>
+
+</html>
