@@ -607,7 +607,7 @@ const BUSINESS_PLANS: Plan[] = [
   {
     badge: "출시 예정",
     name: "법인 베이직",
-    target: "설치 없이 바로 시작",
+    target: "PC 관리자 프로그램 설치 없이 바로 시작",
     monthly: "2,200",
     yearlyMonthly: "1,833",
     yearlyTotal: "22,000",
