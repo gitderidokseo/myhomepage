@@ -605,27 +605,9 @@ const PERSONAL_PLANS: Plan[] = [
 
 const BUSINESS_PLANS: Plan[] = [
   {
-    badge: "출시 예정",
-    name: "법인 베이직",
-    target: "PC 관리자 프로그램 설치 없이 바로 시작",
-    monthly: "2,200",
-    yearlyMonthly: "1,833",
-    yearlyTotal: "22,000",
-    unit: "원 / 월 · 대",
-    soon: true,
-    features: [
-      "관리자 프로그램 설치 불필요",
-      "회사 코드 즉시 발급",
-      "여러 운전자 운행기록 자동 취합",
-      "라라캣소프트 클라우드에 안전하게 보관",
-      "국세청 양식 운행기록부 엑셀",
-    ],
-    cta: { label: "사전 신청", href: "#contact" },
-  },
-  {
     badge: "10대 미만",
     name: "관리자 연동",
-    target: "우리 회사 저장소에 직접 보관",
+    target: "PC 또는 휴대폰으로 관리",
     monthly: "3,300",
     yearlyMonthly: "2,750",
     yearlyTotal: "33,000",
@@ -635,7 +617,8 @@ const BUSINESS_PLANS: Plan[] = [
       "여러 운전자 운행기록 자동 취합",
       "국세청 양식 운행기록부 엑셀",
       "운행 원본을 우리 회사 구글 드라이브에 저장",
-      "Windows 관리자 프로그램",
+      "Windows 관리자 프로그램 또는 휴대폰으로 관리",
+      "휴대폰으로 직접 회사 등록 · 회사 코드 즉시 발급",
       "차량 등록 · 운전자 승인 관리",
       "운행기록 저장 무제한",
     ],
@@ -836,19 +819,18 @@ function Pricing() {
         <div className="mt-8 flex justify-center reveal">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-sm">
             <Database className="w-4 h-4 text-cyan" />
-            보관 위치를 고르세요 —{" "}
-            <strong className="text-foreground">라라캣소프트 클라우드</strong> 또는{" "}
-            <strong className="text-foreground">우리 회사 구글 드라이브</strong>
+            운행기록은{" "}
+            <strong className="text-foreground">우리 회사 구글 드라이브</strong>에 저장됩니다
           </div>
         </div>
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {BUSINESS_PLANS.map((p, i) => (
             <PlanCard key={p.name} p={p} yearly={yearly} delay={i * 100} />
           ))}
         </div>
 
         {/* 부가 옵션 — 차량제조사 연동 */}
-        <div className="mt-8 max-w-6xl mx-auto reveal">
+        <div className="mt-8 max-w-4xl mx-auto reveal">
           <div className="card-surface p-8 flex flex-col md:flex-row md:items-center gap-6">
             <div
               className="w-12 h-12 rounded-xl grid place-items-center shrink-0 border border-border"
