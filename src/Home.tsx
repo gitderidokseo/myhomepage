@@ -645,15 +645,15 @@ function PlanCard({ p, yearly, delay }: { p: Plan; yearly: boolean; delay: numbe
 
       <div className="mt-8 flex items-baseline gap-2">
         <span className="font-mono font-bold text-5xl gradient-text">
-          {yearly ? p.yearlyMonthly : p.monthly}
+          {yearly ? p.yearlyTotal : p.monthly}
         </span>
-        <span className="text-sm text-muted-foreground">{free ? "원" : p.unit}</span>
+        <span className="text-sm text-muted-foreground">{free ? "원" : yearly ? p.unit.replace("/ 월", "/ 년") : p.unit}</span>
       </div>
       <p className="mt-2 text-xs text-muted-foreground">
         {free
           ? "기간 제한 없음"
           : yearly
-            ? `연 ${p.yearlyTotal}원 일괄 결제 · 10개월분 요금으로 12개월 이용`
+            ? `월 ${p.yearlyMonthly}원 상당 · 10개월분 요금으로 12개월 이용`
             : "월 단위 결제 · 약정 없음"}
       </p>
 
