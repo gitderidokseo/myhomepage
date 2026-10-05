@@ -584,23 +584,6 @@ const PERSONAL_PLANS: Plan[] = [
     ],
     cta: { label: "Google Play", href: PLAY_URL },
   },
-  {
-    badge: "출시 예정",
-    name: "개인 플러스",
-    target: "개인사업자 · 1인 법인",
-    monthly: "1,100",
-    yearlyMonthly: "917",
-    yearlyTotal: "11,000",
-    unit: "원 / 월 · 계정",
-    soon: true,
-    features: [
-      "개인 무료의 모든 기능",
-      "차량 3대까지",
-      "내 구글 드라이브로 운행기록 자동 백업",
-      "휴대폰 분실·교체에 대비한 백업",
-    ],
-    cta: { label: "출시 알림 신청", href: "#contact" },
-  },
 ];
 
 const BUSINESS_PLANS: Plan[] = [
@@ -786,7 +769,7 @@ function Pricing() {
             운전자 혼자 쓰는 경우. 기록은 내 휴대폰과 내 구글 드라이브에만 남습니다.
           </p>
         </div>
-        <div className="mt-10 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="mt-10 grid gap-6 max-w-md mx-auto">
           {PERSONAL_PLANS.map((p, i) => (
             <PlanCard key={p.name} p={p} yearly={yearly} delay={i * 100} />
           ))}
@@ -854,10 +837,8 @@ function Pricing() {
         </div>
 
         <p className="mt-12 text-center text-sm text-muted-foreground reveal max-w-4xl mx-auto">
-          * 표시 금액은 VAT 별도입니다. 법인 플랜과 제조사 연동은 차량 1대 기준, 개인 플러스는
-          계정 1개 기준 월 요금입니다. 연납은 10개월분 요금으로 12개월을 이용하는 방식입니다.
-          &lsquo;출시 예정&rsquo; 플랜은 준비가 끝나는 대로 사전 신청하신 분께 먼저 안내드립니다.
-          30대 이상 대규모 도입은 별도 견적을 안내드리며, 정확한 견적과 도입 절차는{" "}
+          * 표시 금액은 VAT 별도이며, 법인 플랜과 제조사 연동은 차량 1대 기준 요금입니다.
+          연납은 10개월분 요금으로 12개월을 이용하는 방식입니다. 대규모 도입이나 요금 관련 문의는{" "}
           <a href="#contact" className="text-cyan hover:underline">
             도입 문의
           </a>
