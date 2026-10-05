@@ -9,7 +9,6 @@ import {
   PlayCircle,
   FileOutput,
   Lightbulb,
-  Database,
   Route as RouteIcon,
   Menu,
   X,
@@ -599,7 +598,6 @@ const BUSINESS_PLANS: Plan[] = [
     features: [
       "여러 운전자 운행기록 자동 취합",
       "국세청 양식 운행기록부 엑셀",
-      "운행 원본을 우리 회사 구글 드라이브에 저장",
       "Windows 관리자 프로그램 또는 휴대폰으로 관리",
       "휴대폰으로 직접 회사 등록 · 회사 코드 즉시 발급",
       "차량 등록 · 운전자 승인 관리",
@@ -766,7 +764,7 @@ function Pricing() {
             <Smartphone className="w-6 h-6 text-cyan" /> 개인
           </h3>
           <p className="mt-3 text-sm text-muted-foreground">
-            운전자 혼자 쓰는 경우. 기록은 내 휴대폰과 내 구글 드라이브에만 남습니다.
+            운전자 혼자 쓰는 경우. 기록은 내 휴대폰에만 남습니다.
           </p>
         </div>
         <div className="mt-10 grid gap-6 max-w-md mx-auto">
@@ -783,13 +781,6 @@ function Pricing() {
           <p className="mt-3 text-sm text-muted-foreground">
             여러 운전자의 운행기록을 회사가 한곳에 모아 관리하는 경우. 차량 대수만큼 요금이 부과됩니다.
           </p>
-        </div>
-        <div className="mt-8 flex justify-center reveal">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-sm">
-            <Database className="w-4 h-4 text-cyan" />
-            운행기록은{" "}
-            <strong className="text-foreground">우리 회사 구글 드라이브</strong>에 저장됩니다
-          </div>
         </div>
         <div className="mt-12 grid gap-6 max-w-md mx-auto">
           {BUSINESS_PLANS.map((p, i) => (
