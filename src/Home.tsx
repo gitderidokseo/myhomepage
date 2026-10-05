@@ -605,7 +605,7 @@ const PERSONAL_PLANS: Plan[] = [
 
 const BUSINESS_PLANS: Plan[] = [
   {
-    badge: "10대 미만",
+    badge: "법인",
     name: "관리자 연동",
     target: "PC 또는 휴대폰으로 관리",
     monthly: "3,300",
@@ -621,24 +621,9 @@ const BUSINESS_PLANS: Plan[] = [
       "휴대폰으로 직접 회사 등록 · 회사 코드 즉시 발급",
       "차량 등록 · 운전자 승인 관리",
       "운행기록 저장 무제한",
+      "대수 제한 없음 · 차량 수만큼만 과금",
     ],
     cta: { label: "지금 시작", href: "/drivelog/download" },
-  },
-  {
-    badge: "10대 이상",
-    name: "관리자 연동 비즈니스",
-    target: "10대 이상 운영 차량",
-    monthly: "3,000",
-    yearlyMonthly: "2,500",
-    yearlyTotal: "30,000",
-    unit: "원 / 월 · 대",
-    features: [
-      "관리자 연동의 모든 기능",
-      "대수 증가에 따른 자동 할인 적용",
-      "법인 관리자 대시보드",
-      "운행기록 저장 무제한",
-    ],
-    cta: { label: "도입 문의", href: "#contact" },
   },
 ];
 
@@ -748,12 +733,12 @@ function Pricing() {
                 </span>
               </div>
               <h3 className="font-display text-xl md:text-2xl font-bold mt-3">
-                선착순 100대 · 1년간 무료
+                2026년 12월 31일까지 등록 · 선착순 100대 1년 무료
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                법인 플랜을 지금 도입하시면{" "}
+                <strong className="text-foreground">2026년 12월 31일까지 등록하는 차량</strong> 중{" "}
                 <strong className="text-foreground">선착순 100대</strong>에 한해{" "}
-                <strong className="text-foreground">1년간 무료</strong>로
+                <strong className="text-foreground">등록일부터 1년간 무료</strong>로
                 이용하실 수 있습니다. 조기 마감될 수 있으니 서둘러 신청하세요.
               </p>
             </div>
@@ -823,7 +808,7 @@ function Pricing() {
             <strong className="text-foreground">우리 회사 구글 드라이브</strong>에 저장됩니다
           </div>
         </div>
-        <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="mt-12 grid gap-6 max-w-md mx-auto">
           {BUSINESS_PLANS.map((p, i) => (
             <PlanCard key={p.name} p={p} yearly={yearly} delay={i * 100} />
           ))}
@@ -849,7 +834,7 @@ function Pricing() {
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xl">
                 차량 제조사 계정을 연동하면 차량이 기록한{" "}
                 <strong className="text-foreground">실제 주행거리(계기판 누적거리)</strong>
-                로 운행기록을 보정합니다. 법인 플랜 어느 것에서든 추가할 수 있습니다.
+                로 운행기록을 보정합니다. 법인 플랜에 추가할 수 있습니다.
               </p>
             </div>
             <div className="md:text-right shrink-0">
