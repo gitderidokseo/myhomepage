@@ -198,3 +198,75 @@ footer.site {
   font-size: 0.85rem;
   padding: 24px 16px 40px;
 }
+
+/* ── User guide (/odena/help) ───────────────────────────── */
+main.guide img {
+  display: block;
+  max-width: min(100%, 320px);
+  height: auto;
+  margin: 14px 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+main.guide p:has(img + img) img {
+  display: inline-block;
+  max-width: calc(50% - 8px);
+  margin-right: 12px;
+  vertical-align: top;
+}
+
+main.guide img[src$=".jpg"] {
+  max-width: min(100%, 360px);
+}
+
+main.guide h4 {
+  font-size: 1rem;
+  margin: 28px 0 4px;
+  color: var(--accent);
+}
+
+main.guide ul,
+main.guide ol {
+  padding-left: 22px;
+}
+
+main.guide li {
+  margin: 4px 0;
+}
+
+main.guide .callout > p {
+  margin: 6px 0;
+}
+
+main.guide nav.toc {
+  margin: 20px 0 8px;
+}
+
+main.guide nav.toc ol {
+  columns: 2;
+  column-gap: 28px;
+  padding-left: 22px;
+  margin: 8px 0 0;
+}
+
+main.guide nav.toc li {
+  break-inside: avoid;
+}
+
+main.guide td:first-child {
+  width: auto;
+}
+
+main.guide .table-wrap,
+main.guide table {
+  display: block;
+  overflow-x: auto;
+}
+
+@media (max-width: 560px) {
+  main.guide nav.toc ol {
+    columns: 1;
+  }
+}
