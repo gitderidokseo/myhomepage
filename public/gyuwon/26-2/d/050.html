@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장애인 탈시설과 종교법인 — 발표 준비</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --warn-bg:#fdf7e7;--warn-line:#e6cf94;--warn-ink:#7a5b12;
+  --task-bg:#fdeeec;--task-line:#f0c0b8;--task-ink:#9b3a2a;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --warn-bg:#2b2517;--warn-line:#5f5228;--warn-ink:#e4c97f;
+    --task-bg:#2e1d1a;--task-line:#5e332b;--task-ink:#f0a292;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:32px}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin:0 0 6px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 10px;letter-spacing:-.02em;font-weight:750}
+.meta{font-size:.87rem;color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+.meta b{font-weight:600;color:var(--ink)}
+h2{font-size:1.22rem;margin:42px 0 14px;padding-left:13px;border-left:4px solid var(--accent);line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.02rem;margin:26px 0 8px;color:var(--accent-ink);font-weight:700}
+p{margin:0 0 13px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:normal;background:var(--accent-soft);padding:1px 5px;border-radius:4px;font-weight:600}
+.tldr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:8px}
+.tldr h2{margin-top:0;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:0;padding:0;color:var(--faint)}
+.tldr ol{margin-bottom:0;padding-left:20px}
+.tldr li{margin-bottom:9px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+.box{border-radius:10px;padding:16px 18px;margin:18px 0;border:1px solid}
+.box .label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 8px;display:block}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box.task{background:var(--task-bg);border-color:var(--task-line)}
+.box.task .label{color:var(--task-ink)}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+.box.warn .label{color:var(--warn-ink)}
+.tablewrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem;white-space:nowrap}
+td:first-child{font-weight:600;white-space:nowrap}
+.jp{font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif}
+.term{color:var(--faint);font-size:.9em;font-weight:400}
+footer.doc{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+footer.doc p{margin:0 0 5px}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.45rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  h2{page-break-after:avoid}
+  .box,.card,.tldr{page-break-inside:avoid}
+}
+.blank{display:inline-block;min-width:190px;border-bottom:1.5px dashed var(--accent);
+  padding:0 6px;color:var(--faint);font-size:.9em;text-align:center}
+.draft{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:0 10px 10px 0;padding:18px 20px;margin:16px 0}
+.draft p{margin:0 0 14px;line-height:1.9}
+.draft p:last-child{margin-bottom:0}
+.stage{display:block;font-size:.74rem;letter-spacing:.1em;font-weight:700;
+  color:var(--accent-ink);margin:20px 0 6px;text-transform:uppercase}
+.stage:first-child{margin-top:0}
+.check{list-style:none;padding-left:0}
+.check li{padding-left:30px;position:relative;margin-bottom:9px}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:15px;height:15px;
+  border:1.5px solid var(--accent);border-radius:3px}
+.sent{margin:0 0 18px}
+.sent .num{display:inline-block;min-width:2.1em;font-weight:700;color:var(--accent-ink)}
+.sent .ja{font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif;font-size:1.05em}
+.sent .ko{display:block;margin:3px 0 0 2.1em;color:var(--muted);font-size:.93em}
+.sent .note{display:block;margin:5px 0 0 2.1em;font-size:.85em;color:var(--faint);
+  padding-left:9px;border-left:2px solid var(--line)}
+.qa{margin:0 0 16px;padding-left:30px;position:relative}
+.qa .q{position:absolute;left:0;top:0;font-weight:700;color:var(--accent-ink)}
+.mail{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:0;margin:16px 0;overflow:hidden}
+.mail .hdr{background:var(--line-soft);padding:12px 16px;font-size:.9rem;border-bottom:1px solid var(--line)}
+.mail .hdr div{margin-bottom:4px}
+.mail .hdr div:last-child{margin-bottom:0}
+.mail .hdr b{display:inline-block;min-width:58px;color:var(--muted);font-weight:600}
+.mail .body{padding:16px 18px;line-height:1.85}
+.mail .body p{margin:0 0 12px}
+.mail .body p:last-child{margin-bottom:0}
+:root{--accent:#a2620c;--accent-ink:#a2620c;--accent-soft:#fbf1e2}
+@media (prefers-color-scheme:dark){:root{--accent:#e0a552;--accent-ink:#e0a552;--accent-soft:#332818}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="doc">
+<p class="eyebrow">발표 준비 · 주제 확정</p>
+<h1>장애인 거주시설의 탈시설과 종교법인의 역할</h1>
+<p class="meta"><span><b>과목</b> 종교와 사회복지</span><span><b>발표일</b> 11/24 (권장)</span><span><b>분량</b> 10분</span><span><b>정리일</b> 2026-09-13</span></p>
+</header>
+
+<div class="tldr">
+<h2>확정 내용</h2>
+<ol>
+<li><strong>주제1</strong> 장애인복지 — 거주시설 &nbsp;×&nbsp; <strong>주제2</strong> 탈시설 전환과 운영 주체(종교법인 위탁)</li>
+<li><strong>제목</strong> 「누가 돌봄을 맡아 왔는가 — 장애인 거주시설의 탈시설과 종교법인의 역할」</li>
+<li><strong>발표를 끌고 갈 한 문장</strong> — "종교법인이 운영한다는 사실이, 그 시설의 질에 영향을 주는가?"</li>
+</ol>
+</div>
+
+<h2>1. 왜 이 주제인가</h2>
+<ul>
+<li><strong>이 수업의 중심 질문에 정면으로 답한다.</strong> 첫 시간의 <strong>"우리나라 사회복지기관의 상당수가 종교와 관련되어 있다"</strong>는 말이, 이 주제에서는 통계가 아니라 <strong>구체적인 건물과 사람</strong>으로 확인된다. 종교가 돌봄을 떠맡은 역사와 그 시설에서 벌어진 일이 <strong>같은 대상에 겹쳐 있다.</strong></li>
+<li><strong>교수님이 이미 깔아 둔 논리 위에 올라탄다.</strong> 9/8 강의의 <strong>복지 다원화</strong> — <em>"국가가 하던 일을 민간에 위탁. 고아원, 장애인 생활시설, 복지원이 민간·종교기관 운영으로"</em> — 가 그대로 이 발표의 배경 설명이 된다.</li>
+<li><strong>수업 개념이 가장 많이 걸린다.</strong> 복지 다원화 / 비영리·공식성 / 스티그마 / 잔여적→제도적 복지의 이동 / 사회권. 교수님이 발표 후 같은 주제로 보강 강의를 하므로, 수업 개념과 맞물릴수록 발표가 살아난다.</li>
+<li><strong>결론이 정해져 있지 않다.</strong> 탈시설은 장애계 안에서도 의견이 갈린다. "옳은 답을 소개하는 발표"가 아니라 <strong>"내가 판단을 내리는 발표"</strong>가 되므로, 필수 요건인 <strong>개인적 평가·대안</strong>이 억지스럽지 않게 나온다.</li>
+<li><strong>선점된 주제와 겹치지 않는다.</strong> 노인·아동·소수자·이주민은 이미 찼지만 장애인 영역은 비어 있다. <span class="term">※ 9/8에 "장애인 노인"을 언급한 학생이 있었으나 그쪽은 <em>소수자 노인</em>이 초점이라 다르다. LMS에서 한 번 확인할 것.</span></li>
+</ul>
+
+<h2>2. 준비할 때 주의할 점</h2>
+
+<div class="box task">
+<span class="label">사실관계 — 가장 중요</span>
+<p><strong>형제복지원을 '종교법인 사례'로 쓰면 안 된다.</strong> 교수님은 이것을 <strong>비영리 원칙</strong>을 설명하며 <em>"영리 추구가 들어가면 형제복지원 같은 문제가 생긴다"</em>고 든 사례다. 형제복지원은 민간 사회복지법인이지 종교법인이 아니다.</p>
+<p>→ <strong>"민간 위탁 구조 자체의 위험"</strong>을 보여 주는 사례로 쓰고, 종교법인과 등치시키지 말 것. 혼동한 채 발표하면 바로 지적받는다.</p>
+</div>
+
+<ul>
+<li><strong>일방적 비판으로 가면 얕아진다.</strong> 이 과목은 사회복지학과와 신학과의 팀티칭이고, 공동 담당 교수님은 종교 기반 사회복지가 전공이다. 눈치를 볼 필요는 없다 — 교수님 본인이 비영리 원칙을 어긴 사례를 직접 비판했다. 다만 <strong>공(功)과 과(過)를 분리</strong>해서 다루는 쪽이 훨씬 설득력 있다. "국가가 하지 않던 시기에 떠맡았다"와 "폐쇄적 운영이 인권침해를 낳았다"는 <strong>둘 다 사실</strong>이다.</li>
+<li><strong>자료가 무겁다.</strong> 정책 로드맵·인권위 결정례·실태조사는 분량이 크다. <strong>읽은 것의 20%만 쓴다</strong>는 생각으로 골라야 10분에 맞는다.</li>
+<li><strong>현재 진행형 논쟁이다.</strong> 최신 자료인지 발행연도를 반드시 확인할 것.</li>
+</ul>
+
+<h2>3. 발표 구성 (10분)</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>순서</th><th>내용</th><th>시간</th></tr></thead>
+<tbody>
+<tr><td>① 문제 제기</td><td>"장애인 거주시설은 누가 운영하고 있는가?" — 국가가 관리하고 민간·종교법인이 운영하는 구조를 먼저 보여 준다. 끌고 갈 한 문장을 여기서 던진다</td><td>1분</td></tr>
+<tr><td>② 개념 정리</td><td>거주시설 / 탈시설 / 자립생활 / 지역사회 통합돌봄. <span class="term">여기서 길어지면 '개론식'이 되므로 압축</span></td><td>1.5분</td></tr>
+<tr><td>③ 어떻게 여기까지 왔나</td><td>수도원의 돌봄(종교 기반 복지의 원형) → 구빈원 → 복지국가 → <strong>복지 다원화로 민간·종교 위탁</strong> → 오늘의 구조</td><td>2분</td></tr>
+<tr><td>④ 쟁점</td><td>찬성 논리(사회권·자기결정권)와 우려 논리(중증장애인 돌봄 공백, 가족에게 부담 전가)를 <strong>양쪽 다</strong></td><td>2분</td></tr>
+<tr><td>⑤ 종교의 역할 평가</td><td>국가가 못 하던 시기에 떠맡은 공(功)과, 폐쇄적 운영·인권침해라는 과(過)를 분리해서</td><td>1.5분</td></tr>
+<tr><td>⑥ 나의 평가와 대안</td><td><strong>발표의 핵심.</strong> 끌고 온 질문에 내 답을 내놓는다</td><td>1.5분</td></tr>
+<tr><td>⑦ 청중에게 질문</td><td>아래 질문 중 2개</td><td>0.5분</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>4. ⑥에 쓸 관점 (초안)</h2>
+<ul>
+<li>종교법인의 운영을 <strong>없애는 것</strong>이 답인가, <strong>열게 하는 것</strong>이 답인가 — 외부 인권 모니터링·회계 공개를 조건으로 한 위탁</li>
+<li>탈시설을 <strong>제도적 복지(보편)</strong>로 설계하지 않고 <strong>잔여적 복지(선별)</strong>로 밀어 두면, 지역사회로 나온 장애인이 다시 낙인의 대상이 된다</li>
+<li>시설 축소 속도와 지역사회 인프라 구축 속도가 어긋나면 <strong>돌봄 공백</strong>이 가족(특히 여성)에게 전가된다 — 수업의 <strong>신사회 위험</strong>과 정확히 같은 구조</li>
+<li>종교의 자리는 '운영자'가 아니라 <strong>옹호자(advocacy)</strong>여야 한다는 주장도 가능 — 교수님이 성공회의 이주민 사업을 애드보커시 사례로 들었다</li>
+</ul>
+
+<h2>5. 청중에게 던질 질문</h2>
+<ul>
+<li>"국가가 하지 못하던 시절에 종교가 떠맡은 돌봄을, 지금 와서 <strong>인권의 잣대로 평가하는 것은 공정한가?</strong>"</li>
+<li>"만약 내 가족이 중증장애인이라면, 나는 <strong>탈시설에 찬성할 수 있을까?</strong>"</li>
+<li>"종교기관이 운영에서 손을 뗀다면, <strong>그 자리는 국가가 채울 수 있을까?</strong>"</li>
+</ul>
+<p class="term">▸ 예/아니오로 끝나는 질문은 피하라는 것이 교수님 요구의 취지다. 위 세 개는 모두 답이 갈린다.</p>
+
+<h2>6. 확인할 자료</h2>
+<ul>
+<li>보건복지부 — 장애인 거주시설 실태조사, <strong>탈시설 장애인 지역사회 자립지원 로드맵(2021)</strong></li>
+<li>국가인권위원회 — 장애인 거주시설 관련 결정례·실태조사</li>
+<li>한국장애인개발원 등의 발간 자료</li>
+<li>진실화해위원회 — 형제복지원 진실규명 결정문 <span class="term">(민간 위탁의 위험 사례로만 인용)</span></li>
+</ul>
+<div class="box warn">
+<span class="label">반드시</span>
+<p>교수님이 <strong>AI가 만들어 낸 가짜 출처</strong>를 특히 경계했습니다. 위 자료도 <strong>기관 홈페이지에서 실제 문서를 찾아 확인</strong>한 뒤 인용하세요. 발행연도와 링크를 슬라이드에 적어 두면 신뢰도가 올라갑니다. AI 사용 자체는 허용되지만 <strong>"내 말이 들어가야 한다 — AI가 쓴 건 티가 난다"</strong>고 했습니다.</p>
+</div>
+
+<h2>7. 교수님이 요구한 발표 요건 <span class="term">(체크리스트)</span></h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>항목</th><th>내용</th><th>확인</th></tr></thead>
+<tbody>
+<tr><td>주제 구성</td><td>주제1 × 주제2 교차, 개론식 금지</td><td>충족 — 거주시설 → 탈시설 → 운영 주체로 두 번 좁힘</td></tr>
+<tr><td>필수 ①</td><td><strong>더 필요한 것</strong> — 반드시 내 생각</td><td>④·⑥에서</td></tr>
+<tr><td>필수 ②</td><td><strong>개인적 평가·분석·대안</strong> — 복지적 접근이 잘 되고 있는지, 종교가 역할을 하는지, 무엇을 더하고 뺄지</td><td>⑤·⑥에서</td></tr>
+<tr><td>필수 ③</td><td><strong>발표자가 청중에게 던지는 질문</strong></td><td>⑦에서</td></tr>
+<tr><td>분량</td><td>10분</td><td>위 구성 합계 10분</td></tr>
+<tr><td>수업 운영</td><td>교수님은 발표 자료를 미리 보지 않고 같은 주제로 강의를 준비해 와서 보강 설명</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>8. 제출 문안</h2>
+<div class="card">
+<p class="term">교수님 이메일로 — 이름 · 발표 주제 · 발표 날짜</p>
+<p>안녕하세요, 교수님. 종교와 사회복지 수강생 <strong>○○○</strong>입니다.<br>
+발표 주제와 날짜를 아래와 같이 신청합니다.</p>
+<p><strong>· 이름</strong> ○○○<br>
+<strong>· 발표 주제</strong> 누가 돌봄을 맡아 왔는가 — 장애인 거주시설의 탈시설과 종교법인의 역할<br>
+<span class="term">&nbsp;&nbsp;(주제1: 장애인복지·거주시설 × 주제2: 탈시설 전환과 운영 주체)</span><br>
+<strong>· 발표 날짜</strong> 11월 24일</p>
+<p>감사합니다.</p>
+</div>
+<div class="box warn">
+<span class="label">서두를 것</span>
+<p>교수님이 <strong>"먼저 말하는 사람이 선점"</strong>이라고 했습니다. 마감은 따로 없지만 빨리 보낼수록 유리합니다.</p>
+<p>이미 선점된 주제 — 노인 빈곤 · 여성 폭력과 종교 · 이주민 의료 · 성소수자(+성소수자 노인) · 웰다잉 · 아동 돌봄 · 경계선 지능 · 인종차별(추정)</p>
+<p class="term">※ 녹취 기반 추정입니다. 확정 현황은 LMS 오리엔테이션 수정본(빨간색 표시)에서 확인하세요.</p>
+</div>
+<p class="term">▸ 날짜는 <strong>11/24가 유리</strong>합니다. 12/1은 학기 말과 겹쳐 다른 과제와 부딪힙니다. 자료 조사 시간을 더 벌고 싶다면 12/1.</p>
+
+<h2>9. 만약 겹쳐서 바꿔야 한다면 <span class="term">(대안)</span></h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>대안</th><th>한 줄 요지</th><th>수업 개념</th></tr></thead>
+<tbody>
+<tr><td><strong>교정복지 × 출소자 주거와 낙인</strong></td><td>종교의 개입이 <strong>제도로 명문화된</strong> 거의 유일한 영역(교정 교화 활동). "왜 범죄자를 도와야 하는가"라는 반론이 바로 나와 질문 형식과 잘 맞는다</td><td>스티그마 · 사회적 배제</td></tr>
+<tr><td><strong>노숙인복지 × 주거권과 무료급식</strong></td><td>교수님의 정의 — <em>"배고프니 밥 줄게도 좋지만, 그런 상황에 빠지지 않게 만드는 것이 사회복지"</em> — 를 무료급식에 그대로 적용. 선교와 복지의 경계 문제</td><td>공식성 · 사회성 · 비영리 · 예방</td></tr>
+<tr><td><strong>이주민 공동체의 종교시설이 왜 복지 기능을 떠맡는가</strong></td><td>차별 때문에 공적 복지에 닿지 못하는 사람들에게 교회·모스크가 사실상 유일한 안전망이 되는 구조. <span class="term">'이주민 의료'와 겹치지 않게 초점을 공동체·종교시설에 둘 것</span></td><td>사회적 배제 · 애드보커시</td></tr>
+<tr><td><strong>정신건강복지 × 자살 사별자 지원</strong></td><td>종교가 자원이면서 동시에 낙인의 원인이라는 양면성. <span class="term">'웰다잉'과 인접하므로 유가족 지원으로 좁힐 것</span></td><td>감지된 욕구 · 신사회 위험</td></tr>
+</tbody>
+</table>
+</div>
+<p class="term">▸ <strong>"소수자 인권 / 인종차별"</strong>은 권하지 않습니다. 9/8 녹취상 이미 선점된 것으로 보이고, 교수님이 지적한 <strong>"너무 넓은 주제"</strong>의 전형입니다. 이주민 의료를 고른 학생도 <em>"차별·인권은 너무 흔해서 의료로 갔다"</em>고 말했습니다.</p>
+
+<footer class="doc">
+<p>출처 — <b>종교와사회복지-0901.txt</b>(오리엔테이션·발표 규칙·주제 신청), <b>종교와 사회복지 0908.txt</b>(발표일·추가 신청·복지 이론 강의)</p>
+<p>선점 주제 현황은 녹취 기반 추정이므로, LMS 오리엔테이션 수정본에서 최종 확인이 필요합니다.</p>
+</footer>
+</div>
+</body>
+</html>

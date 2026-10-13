@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사막의 선인장과 네 개의 자 — 정신건강과 자기돌봄 ② 이야기로 읽기</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#fbfaf8;--surface:#ffffff;--ink:#1c1b19;--muted:#6a655f;--faint:#8e8880;
+  --line:#e6e2db;--line-soft:#f1ede7;
+  --accent:#2f6fb0;--accent-ink:#245a91;--accent-soft:#e8f1fa;
+  --scene-bg:#f6f3ee;--scene-line:#ddd6ca;
+  --easy-bg:#eaf6f0;--easy-line:#b8ddc9;--easy-ink:#1d6b47;
+  --key-bg:#fdf5e6;--key-line:#e8cf9a;--key-ink:#8a6314;
+  --talk-bg:#f4f0fa;--talk-line:#d6cbe9;--talk-ink:#5b4a86;
+  --task-bg:#fdeeec;--task-line:#f0c0b8;--task-ink:#9b3a2a;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a8a39c;--faint:#8c867f;
+    --line:#33363c;--line-soft:#282b30;
+    --accent:#7cb2f5;--accent-ink:#9cc6f8;--accent-soft:#182433;
+    --scene-bg:#22242a;--scene-line:#3a3e46;
+    --easy-bg:#182b22;--easy-line:#2f5943;--easy-ink:#7fd6aa;
+    --key-bg:#2b2517;--key-line:#5f5228;--key-ink:#e7cd85;
+    --talk-bg:#241f33;--talk-line:#453a5f;--talk-ink:#c0aeea;
+    --task-bg:#2e1d1a;--task-line:#5e332b;--task-ink:#f0a292;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:16.5px;line-height:1.85;-webkit-text-size-adjust:100%;margin:0}
+.wrap{max-width:800px;margin:0 auto;padding-block:44px;padding-left:20px;padding-right:20px}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:20px;margin-bottom:10px}
+.eyebrow{font-size:.76rem;letter-spacing:.16em;color:var(--accent-ink);font-weight:800;margin:0 0 8px}
+h1{font-size:1.95rem;line-height:1.34;margin:0 0 12px;letter-spacing:-.02em;font-weight:800}
+.sub{font-size:1rem;color:var(--muted);margin:0 0 12px;line-height:1.7}
+.meta{font-size:.85rem;color:var(--faint);margin:0;display:flex;flex-wrap:wrap;gap:4px 14px}
+.prologue{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:12px;padding:20px 22px;margin:26px 0 8px;font-size:1.02rem}
+.prologue .label{font-size:.74rem;letter-spacing:.12em;font-weight:800;color:var(--accent-ink);display:block;margin-bottom:10px}
+.prologue p:last-child{margin-bottom:0}
+h2{font-size:1.28rem;margin:52px 0 16px;padding-left:14px;border-left:5px solid var(--accent);
+  line-height:1.45;letter-spacing:-.01em;font-weight:800}
+h2 .act{display:block;font-size:.72rem;letter-spacing:.14em;color:var(--accent-ink);font-weight:800;margin-bottom:4px}
+h3{font-size:1.06rem;margin:30px 0 10px;color:var(--accent-ink);font-weight:750}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 16px;padding-left:23px}
+li{margin-bottom:8px}
+li>ul,li>ol{margin-top:8px;margin-bottom:4px}
+strong{font-weight:750}
+em{font-style:normal;background:var(--accent-soft);padding:1px 6px;border-radius:5px;font-weight:650}
+.scene{background:var(--scene-bg);border:1px solid var(--scene-line);border-radius:12px;
+  padding:18px 20px;margin:20px 0;font-size:1rem}
+.scene .cue{font-size:.75rem;letter-spacing:.1em;font-weight:800;color:var(--faint);display:block;margin-bottom:9px}
+.scene p:last-child,.scene ul:last-child{margin-bottom:0}
+.box{border-radius:11px;padding:16px 19px;margin:20px 0;border:1px solid}
+.box .label{font-size:.74rem;letter-spacing:.1em;font-weight:800;margin:0 0 9px;display:block}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+.box.easy{background:var(--easy-bg);border-color:var(--easy-line)}
+.box.easy .label{color:var(--easy-ink)}
+.box.key{background:var(--key-bg);border-color:var(--key-line)}
+.box.key .label{color:var(--key-ink)}
+.box.talk{background:var(--talk-bg);border-color:var(--talk-line)}
+.box.talk .label{color:var(--talk-ink)}
+.box.talk p{font-style:italic}
+.box.task{background:var(--task-bg);border-color:var(--task-line)}
+.box.task .label{color:var(--task-ink)}
+.tablewrap{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:430px}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:750;font-size:.85rem;white-space:nowrap}
+td:first-child{font-weight:650}
+.steps{list-style:none;padding:0;margin:22px 0;counter-reset:step}
+.steps li{counter-increment:step;position:relative;padding-left:46px;margin-bottom:18px}
+.steps li::before{content:counter(step);position:absolute;left:0;top:2px;width:30px;height:30px;
+  border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:.92rem;
+  display:flex;align-items:center;justify-content:center}
+.steps li b{display:block;font-size:1.03rem;margin-bottom:2px}
+.oneline{background:var(--accent-soft);border:1px solid var(--accent);border-radius:12px;
+  padding:20px 22px;margin:34px 0 10px;text-align:center;font-size:1.08rem;font-weight:700;line-height:1.7}
+.oneline .label{display:block;font-size:.72rem;letter-spacing:.14em;font-weight:800;
+  color:var(--accent-ink);margin-bottom:9px}
+.term{color:var(--faint);font-size:.9em;font-weight:400}
+footer.doc{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+footer.doc p{margin:0 0 6px}
+@media (max-width:520px){
+  body{font-size:15.5px}
+  .wrap{padding-block:30px}
+  h1{font-size:1.5rem}
+  h2{font-size:1.13rem}
+  .steps li{padding-left:40px}
+  .steps li::before{width:27px;height:27px;font-size:.85rem}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  h2{page-break-after:avoid}
+  .box,.scene,.prologue,.oneline{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+  <p class="eyebrow">이야기로 읽는 강의노트</p>
+  <h1>사막의 선인장과 네 개의 자</h1>
+  <p class="sub">적응이란 무엇이고, 힘들다는 것을 무엇으로 알아볼 수 있을까</p>
+  <p class="meta"><span>정신건강과 자기돌봄 · 9월 8일 ②</span><span>2주차 2교시</span><span>주제 — 적응과 부적응, 판단의 4가지 기준, 오감 글쓰기</span></p>
+</header>
+
+<div class="prologue">
+  <span class="label">프롤로그</span>
+  <p>사막 한가운데 선인장이 한 그루 서 있습니다. 원래 식물의 잎은 넓적합니다. 햇빛을 많이 받으려면 그게 유리하니까요. 그런데 선인장의 잎은 뾰족한 가시입니다.</p>
+  <p>왜일까요? 넓은 잎으로는 물이 너무 빨리 날아가 버리기 때문입니다. 그래서 선인장은 <strong>잎을 포기하고 가시를 택했습니다.</strong> 멋있어서가 아니라, 살아남기 위해서요.</p>
+  <p>오늘 이야기의 주인공은 이 선인장입니다. 그리고 선인장이 한 그 일의 이름이 바로 <em>적응</em>입니다.</p>
+</div>
+
+<h2><span class="act">첫 번째 장면</span>적응이란 무엇인가</h2>
+
+<p><strong>적응(Adaptation)</strong>이란 살아가며 만나는 여러 환경에 조금씩 자기를 맞춰 바꿔 가면서, 동시에 살아남는 것을 말합니다. 핵심은 딱 두 가지입니다.</p>
+
+<ol class="steps">
+  <li><b>환경에 맞추어 변한다</b>선인장이 잎을 가시로 바꾼 것처럼요.</li>
+  <li><b>살아남는다</b>바꿨는데 죽어 버리면 적응이 아닙니다.</li>
+</ol>
+
+<p>눈치챘겠지만 이 말은 원래 생물학과 진화에서 온 말입니다. 그쪽에서는 "결국 중요한 것은 살아남는 것과 자손을 남기는 것"이라고까지 말합니다.</p>
+<p>사람의 경우에는 이렇게 나타납니다. 주어진 환경에 맞춰 자기 성향을 조금 바꾸어 보거나, 딱히 좋아하지 않더라도 그 집단이 중요하게 여기는 태도와 가치를 한번 고려해 보는 것이죠.</p>
+
+<div class="box easy">
+  <span class="label">쉽게 말하면</span>
+  <p>혼자 있는 걸 좋아하는 사람이 있다고 해 봅시다. 그런데 회사에 다니게 됐어요.</p>
+  <p><strong>적응</strong>은 "나는 원래 조용한 사람이지만, 회식에도 가끔 나가고 아침에 인사 정도는 주고받자"라고 자기를 조금 조정하는 것입니다. 성격을 완전히 바꾸는 게 아니라, 원하는 것을 지키면서도 지금 환경에서 버틸 만큼 변하는 것입니다.</p>
+</div>
+
+<h3>그럼 부적응은?</h3>
+<p>환경이나 조건에 맞춰 변하지 못하는 상태입니다. 내 성향이 너무 강하거나, 환경이 나와 너무 안 맞아서 버티기가 어려워진 상태죠. 이런 상태를 <em>비정상적인 상태</em>라고 부릅니다.</p>
+
+<p>부적응은 보통 이런 모습으로 겉에 드러납니다.</p>
+<ul>
+  <li><strong>걱정이 많아집니다.</strong> 근심이 머릿속을 떠나지 않습니다.</li>
+  <li><strong>몸이 아파집니다.</strong> 소화가 안 되거나 잠을 잘 못 자는 식으로요.</li>
+  <li><strong>사회적 약속에서 벗어난 행동을 합니다.</strong> 수업 시간에 잔다든지, 9시 출근인데 계속 지각한다든지.</li>
+  <li><strong>하던 일을 예전만큼 못 합니다.</strong> 일 처리가 느려지고 기억이 잘 안 납니다. 여기서 말하는 기능이란 그 사람의 역량이라고 생각하면 됩니다.</li>
+</ul>
+
+<div class="box key">
+  <span class="label">주의</span>
+  <p>이런 모습이 보인다고 해서 곧바로 "저 사람은 부적응 상태다"라고 말하지는 않습니다. 여기서부터가 오늘의 진짜 주제입니다.</p>
+</div>
+
+<h2><span class="act">두 번째 장면</span>네 개의 자 — 시험에 나오는 부분</h2>
+
+<p>누군가가 잘 지내고 있는지 아닌지를 재려면 <strong>자(측정 도구)</strong>가 필요합니다. 그런데 자가 하나가 아니라 네 개입니다. 하나씩 꺼내 볼까요.</p>
+
+<h3>① 통계적 기준 — 평균에서 얼마나 벗어났나</h3>
+<p>가장 쉽고 흔히 쓰이는 자입니다. 사람들은 보통 평균을 가장 무난한 값이라고 여기는 경향이 있습니다. 물론 그게 꼭 정답은 아니지만요.</p>
+<ul>
+  <li>잴 수 있는 것들: 잠자는 시간, 지각과 결석 횟수, 술 마시는 양, 지능검사 점수 등</li>
+  <li>보통 평균에서 <strong>표준편차만큼</strong> 벗어나면 통계적으로 특이한 경우(아웃라이어)로 봅니다.</li>
+  <li><strong>한계:</strong> 평균을 벗어났다고 항상 문제인 건 아닙니다. 기발한 생각을 하는 사람은 평균적이지 않은 반응을 자주 보입니다.</li>
+</ul>
+
+<h3>② 규범적 기준 — 사회의 약속을 얼마나 따르나</h3>
+<p>여러 사람이 보기에 사회가 정해 둔 기준에서 너무 벗어난 행동을 했다면 부적응으로 봅니다.</p>
+<ul>
+  <li><strong>한계:</strong> 사회의 기준은 시대와 문화에 따라 달라집니다. 예전에는 남자가 귀걸이를 하거나 여자가 머리를 아주 짧게 자르면 이상하게 봤지만, 지금은 그런 생각이 많이 옅어졌습니다.</li>
+  <li><strong>그래도 쓰는 이유:</strong> 대다수가 정해 놓은 약속을 따르면 큰 탈 없이 살 수 있다고 보기 때문입니다.</li>
+</ul>
+
+<h3>③ 주관적 고통 기준 — 본인이 힘들다고 느끼나</h3>
+<p>앞의 두 자와 <strong>결정적으로 다른 점</strong>이 있습니다. ①과 ②는 남이 보고 판단하는 자였습니다. ③은 <em>본인의 관점</em>을 가장 중요하게 봅니다.</p>
+<p>통계적으로 특이한 것이 없고 사회의 기준에서 벗어나지도 않았는데, 본인이 "저는 지금 너무 힘듭니다"라고 말한다면 그것만으로도 부적응으로 볼 수 있습니다.</p>
+
+<div class="scene">
+  <span class="cue">사례 · 30대 중반 경희 씨</span>
+  <p>결혼한 지 8년, 부부 사이는 좋고 남편도 안정적입니다. 친구 관계도 잘 유지하고 있습니다. 겉으로 보면 아무 문제가 없습니다.</p>
+  <p>그러던 어느 날, 딸이 엘리베이터에서 성추행을 당했습니다. 경희 씨는 곧바로 경찰에 신고했고 가해자는 구속됐습니다. 딸은 정신과 치료를 받고 있고 회복도 잘되고 있습니다. 할 수 있는 것을 다 한 셈입니다.</p>
+  <p>그런데 정작 경희 씨 본인이 무너집니다. "딸이 무서워 떨고 있을 때 나는 아무 도움도 되지 못했다"며 끊임없이 자기를 탓했고, 요즘 부쩍 우울해졌습니다.</p>
+  <p><strong>통계로도 규범으로도 눈에 띄는 게 없지만, 본인이 예전처럼 하루를 살아내기 힘들다면 부적응으로 봅니다.</strong></p>
+</div>
+
+<ul>
+  <li><strong>한계:</strong> 이 자 하나만으로도 판단할 수 없습니다. 예를 들어 "나는 다시 태어난 예수다"라고 진심으로 믿는 사람은 본인이 전혀 괴롭지 않을 수 있습니다.</li>
+</ul>
+
+<h3>④ 역기능적 기준 — 제 역할을 해내고 있나</h3>
+<p>여기서 역기능이란 그냥 <em>문제</em>라고 이해하면 됩니다. 자기가 맡은 역할을 얼마나 해내고 있는지를 봅니다.</p>
+<ul>
+  <li><strong>관계에서의 문제:</strong> 가까운 관계를 못 맺거나, 조금만 친해지면 꼭 탈이 나거나, 다른 사람에게 심한 거부감을 일으키는 경우</li>
+  <li><strong>일에서의 문제:</strong> 자기 위치에 맞는 일을 꾸준히 해내지 못하는 경우. 교수님이 든 자기 예시는 이랬습니다. 강의 시간에 늦거나 준비를 안 해 오는 경우 — 본인이 괴롭지도 않고 통계적으로도 문제가 없지만, <strong>역할에서 문제가 드러나는 것</strong>입니다.</li>
+</ul>
+
+<div class="oneline">
+  <span class="label">가장 중요한 결론</span>
+  네 개의 자 중 어느 하나만으로는<br>적응했다, 못 했다를 말할 수 없다.
+</div>
+
+<p>사실 정신적으로 건강한지 아닌지를 한 번에 알아내는 방법은 없습니다. 아주 많은 것을 함께 고려해서 이야기할 수밖에 없습니다. 1교시에 배운 원칙 — 자 하나로 사람을 재지 말라 — 이 여기서도 그대로 이어집니다.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>기준</th><th>묻는 질문</th><th>누가 판단하나</th><th>약점</th></tr></thead>
+<tbody>
+<tr><td>① 통계적</td><td>평균에서 많이 벗어났는가</td><td>관찰자</td><td>특별한 사람도 평균에서 벗어난다</td></tr>
+<tr><td>② 규범적</td><td>사회의 약속을 따르는가</td><td>관찰자</td><td>시대와 문화에 따라 기준이 달라진다</td></tr>
+<tr><td>③ 주관적 고통</td><td>본인이 힘들다고 느끼는가</td><td>본인</td><td>본인이 못 느끼는 경우가 있다</td></tr>
+<tr><td>④ 역기능적</td><td>제 역할을 해내고 있는가</td><td>관찰자</td><td>이것만으로는 원인을 알 수 없다</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2><span class="act">세 번째 장면</span>건강의 1층 — 몸으로 느끼는 상쾌함</h2>
+
+<p>이제 방향을 바꿔 봅시다. 부적응 이야기는 여기까지, 이번엔 <strong>정신건강이 잘 실현된 모습</strong>을 볼 차례입니다. 여기에는 층이 있는데, 오늘은 그 <em>1층</em>을 봅니다.</p>
+
+<p>1층의 이름은 <strong>신체 감각적 수준</strong>입니다. 한마디로 활기차고 상쾌한 삶이죠. 인류가 가장 오래전부터 이야기해 온 층이기도 합니다.</p>
+<ul>
+  <li>몸의 기관들이 잘 돌아갑니다. 잘 자고, 잘 먹고, 소화가 잘되고, 화장실도 잘 갑니다.</li>
+  <li>에너지가 넘칩니다.</li>
+  <li>감각으로 느끼는 즐거움을 충분히 누립니다.</li>
+</ul>
+
+<div class="box key">
+  <span class="label">여기엔 논쟁이 있습니다</span>
+  <p>이 1층만 강조하면 <strong>그냥 쾌락을 좇는 것</strong>과 비슷해져 버린다는 지적이 많습니다.</p>
+  <p>다만 그리스의 쾌락주의나 동양의 풍류 사상은 기본적으로 이 감각의 기쁨을 누리는 것을 정신적으로 건강한 상태로 보았습니다. 한쪽만 옳다고 말하기 어려운 문제입니다.</p>
+</div>
+
+<h2><span class="act">네 번째 장면</span>감각이 무뎌진 사람들 — 오감 글쓰기의 유래</h2>
+
+<p>수업 시간에 <strong>오감 글쓰기</strong>를 했습니다. 오감이란 보고(시각), 듣고(청각), 만지고(촉각), 냄새 맡고(후각), 맛보는(미각) 다섯 가지 감각입니다. 이 다섯 가지를 하나하나 제대로 느낄 수 있다는 것 자체가 정신적으로 건강하다는 뜻입니다.</p>
+<p>그런데 이 활동은 어디서 왔을까요? 여기에 짧지만 인상적인 이야기가 있습니다.</p>
+
+<div class="scene">
+  <span class="cue">성프란시스대학 이야기</span>
+  <p>성공회 재단이 운영하는 다시서기센터라는 곳이 있습니다. 노숙인이 다시 자기 삶을 세울 수 있도록 돕는 기관입니다. 서울역 근처를 직접 찾아다니고, 밥을 나누고, 인문학 강의도 엽니다. 그중 <strong>성프란시스대학</strong>은 노숙 경험이 있는 분들을 위한 1년짜리 인문학 강의를 운영합니다.</p>
+  <p>여기서 글쓰기를 맡은 선생님이 어느 날 수강생들을 가만히 관찰하다가 한 가지를 발견합니다. <strong>이분들의 감각이 무뎌져 있다는 것</strong>이었습니다.</p>
+  <p>여름에 바닷가에 가도 물에 뛰어들기보다 에어컨 밑에서 쉬는 걸 더 좋아하고, 맛있는 걸 먹어도 맛있다고 느끼지 못하고, 아름다운 걸 보고도 아름답다고 느끼지 못한다는 것이었습니다.</p>
+  <p>그래서 그 선생님은 잠든 감각을 깨우는 글쓰기를 시작했습니다. 그것이 오감 글쓰기입니다.</p>
+</div>
+
+<p>교수님도 그 무렵 직접 해 보며 깨달았다고 합니다. "나도 평소에 오감을 느끼며 산다기보다, 바쁘게 그냥 지나쳐 버릴 때가 많구나."</p>
+
+<h3>활동 방법</h3>
+<ul>
+  <li>지난 한두 주 동안 보았거나, 먹었거나, 냄새 맡았거나, 만졌거나, 들었던 것 중 <strong>가장 좋았던 것 한 가지</strong>를 고릅니다.</li>
+  <li>그 대상을 제목으로 삼고, <em>감각에 집중해서</em> 씁니다. 맛있게 먹은 케이크라면 어떤 맛이었고, 입에서 어떤 느낌이었고, 왜 맛있었는지를 쓰는 식입니다.</li>
+  <li>이름을 쓰는 쪽에 작성해서, 조별로 나눈 뒤 제출합니다.</li>
+  <li>이 활동은 <strong>평가에 들어갑니다.</strong> 점수가 아니라, 수업 중 활동에 참여했는지로요.</li>
+</ul>
+
+<h3>친구들이 꺼내 놓은 순간들</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th>감각</th><th>나온 이야기들</th></tr></thead>
+<tbody>
+<tr><td>맛</td><td>바쁜 주말 아르바이트 중에 사장님이 입에 넣어 준 마라탕 / 다리를 다쳐 누워 있다가 시켜 먹은 아이스크림과 오레오 — "아는 맛이라서 기대한 그 맛이었다"</td></tr>
+<tr><td>냄새</td><td>날씨가 선선해지며 달라진 밤공기 냄새 — "여름 냄새와 가을 냄새는 다르다"</td></tr>
+<tr><td>소리</td><td>개강 하루 전, 혼자 보러 간 오케스트라 공연 — 웅장하고 경쾌했다</td></tr>
+<tr><td>감촉</td><td>오랜만에 경기장에서 만진 야구공 / 갓 나온 치킨을 집었을 때의 뜨거움과 손에 묻는 육즙 / 인형 털의 감촉</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box talk">
+  <span class="label">교수님의 이야기</span>
+  <p>고양이를 좋아하지 않아서 한 번도 만져 본 적이 없었는데, 어느 날 고양이가 먼저 다가와 나를 스치고 지나갔다. 카펫 같기도 하고, 묵직하면서 따뜻하기도 한 그 감각이 싫지 않았다.</p>
+</div>
+
+<div class="oneline">
+  <span class="label">이 활동의 뜻</span>
+  감각 하나에 온전히 집중해 볼 기회는 생각보다 많지 않다.<br>오감 글쓰기는 인생을 잘 사는 하나의 방법이 된다.
+</div>
+
+<h2><span class="act">에필로그</span>이번 주 숙제 — 나에게 건강하다는 것은</h2>
+
+<div class="box task">
+  <span class="label">쪽글 과제</span>
+  <p><strong>주제:</strong> 나에게 정신적으로 건강하다는 것은 무엇을 의미하는가</p>
+  <ul>
+    <li>완벽하게 쓸 필요는 없습니다. 나만의 신호 몇 가지를 떠올리고, <em>왜 그 행동이나 상태가 내가 건강하다는 뜻이 되는지</em>를 설명하면 됩니다.</li>
+    <li><strong>반드시 문장으로 쓰세요.</strong> "나의 정신건강 지표 — 운동, 수면" 같은 목록이 아니라, "나에게는 유머를 할 수 있다는 것이 ○○를 의미하는 신호인데, 왜냐하면…" 처럼 풀어서 정성껏 씁니다.</li>
+    <li><strong>분량:</strong> 반 페이지 이상, 세 페이지 이내</li>
+  </ul>
+</div>
+
+<h3>교수님이 예로 든 자기만의 신호</h3>
+<ul>
+  <li><strong>농담이 나오는가.</strong> 건강하지 않을 때는 유머가 전혀 나오지 않는다. (반대로 유머가 강점인 사람은 힘들 때 오히려 더 나오기도 한다)</li>
+  <li><strong>친구에게 안부를 묻는가.</strong> 다른 사람에게 관심을 가질 여유가 있는가.</li>
+  <li><strong>친구의 좋은 일을 진심으로 축하해 줄 수 있는가.</strong> 축하를 못 해 주는 자신을 발견하면, 지금 내 마음이 어렵구나 하고 알아차린다.</li>
+  <li><strong>싫은 걸 싫다고 말할 수 있는가.</strong> 남의 판단에 기대지 않고 스스로 판단할 수 있는가. 자율성에 해당하는 부분이다.</li>
+</ul>
+<p>이 밖에도 운동을 하는지, 아침에 일정한 시간에 잘 일어나는지 등 사람마다 신호는 얼마든지 다를 수 있습니다.</p>
+
+<footer class="doc">
+  <p>이 문서는 정신건강과 자기돌봄 0908 -2-정리.html 의 내용을 이야기 형식으로 다시 쓴 것입니다.</p>
+  <p>원본은 녹음 전사본을 바탕으로 만들어져 이름이나 용어가 잘못 옮겨졌을 수 있습니다. 시험 준비에는 LMS 강의자료와 함께 확인하세요.</p>
+</footer>
+
+</div>
+</body>
+</html>

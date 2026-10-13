@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>노인복지론 3주차 오프라인 준비</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --warn-bg:#fdf7e7;--warn-line:#e6cf94;--warn-ink:#7a5b12;
+  --task-bg:#fdeeec;--task-line:#f0c0b8;--task-ink:#9b3a2a;
+  --key-bg:#eef3fb;--key-line:#c3d4ec;--key-ink:#28507f;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --warn-bg:#2b2517;--warn-line:#5f5228;--warn-ink:#e4c97f;
+    --task-bg:#2e1d1a;--task-line:#5e332b;--task-ink:#f0a292;
+    --key-bg:#1b2230;--key-line:#31455f;--key-ink:#9dbde6;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:32px}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin:0 0 6px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 10px;letter-spacing:-.02em;font-weight:750}
+.meta{font-size:.87rem;color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+.meta b{font-weight:600;color:var(--ink)}
+h2{font-size:1.22rem;margin:42px 0 14px;padding-left:13px;border-left:4px solid var(--accent);line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.02rem;margin:26px 0 8px;color:var(--accent-ink);font-weight:700}
+h4{font-size:.95rem;margin:18px 0 6px;font-weight:700}
+p{margin:0 0 13px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:normal;background:var(--accent-soft);padding:1px 5px;border-radius:4px;font-weight:600}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em;background:var(--line-soft);padding:1px 5px;border-radius:4px}
+.tldr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:8px}
+.tldr h2{margin-top:0;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:0;padding:0;color:var(--faint)}
+.tldr ol{margin-bottom:0;padding-left:20px}
+.tldr li{margin-bottom:9px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+.box{border-radius:10px;padding:16px 18px;margin:18px 0;border:1px solid}
+.box .label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 8px;display:block}
+.box p:last-child,.box ul:last-child,.box ol:last-child,.box div:last-child{margin-bottom:0}
+.box.task{background:var(--task-bg);border-color:var(--task-line)}
+.box.task .label{color:var(--task-ink)}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+.box.warn .label{color:var(--warn-ink)}
+.box.key{background:var(--key-bg);border-color:var(--key-line)}
+.box.key .label{color:var(--key-ink)}
+.tablewrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:480px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem;white-space:nowrap}
+td:first-child{font-weight:600}
+.term{color:var(--faint);font-size:.9em;font-weight:400}
+.chain{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;margin:16px 0;font-size:.95rem;line-height:1.9}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.q .qn{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin-bottom:6px}
+.q .qt{font-weight:700;margin:0 0 10px}
+.q p:last-child,.q ul:last-child{margin-bottom:0}
+.check{list-style:none;padding-left:0}
+.check li{padding-left:26px;position:relative}
+.check li::before{content:"\2610";position:absolute;left:0;top:0;color:var(--accent-ink);font-weight:700}
+footer.doc{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+footer.doc p{margin:0 0 5px}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.45rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  h2{page-break-after:avoid}
+  .box,.card,.tldr,.q{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+<p class="eyebrow">26년 2학기 · 3주차</p>
+<h1>노인복지론 — 오프라인 수업 준비</h1>
+<p class="meta">
+<span><b>다음 수업</b> 9월 16일(수) 16:30–17:45</span>
+<span><b>강의실</b> 새천년관 7309</span>
+<span><b>범위</b> 3주차 온라인 「노년기의 신체적 건강」</span>
+</p>
+</header>
+
+<div class="tldr">
+<h2>한눈에 보기</h2>
+<ol>
+<li><strong>오늘 강의의 뼈대는 학습목표 1번과 5번이다.</strong> 정상적 노화와 질병을 구분하는 것, 그리고 사회복지적 개입 지점을 의료적 개입과 구분해 제시하는 것. 교수님이 "오늘 강의 내내의 주제"라고 직접 못 박았다.</li>
+<li><strong>용어를 외우지 말고 연결을 외우라고 했다.</strong> 복합이환 → 다약제 복용 → 낙상 위험 → 노쇠가 드러남. 개념들이 서로 물려 있는 구조 자체가 시험 문제가 될 가능성이 높다.</li>
+<li><strong>최영자 씨 사례가 강의 전체를 관통한다.</strong> 강의 처음에 던진 4개의 질문에 답할 수 있으면 이 주차는 끝난 것이다. 오프라인 수업에서 이 사례로 조별활동을 할 가능성이 매우 높다.</li>
+<li><strong>"골절은 치료되었으나 회복되지 않았다"</strong> — 이 한 줄이 이번 주 핵심 문장. 기대수명과 유병기간 제외 기대수명의 <em>18년 격차</em>가 통계로 표현된 같은 간극이다.</li>
+<li><strong>실무 원칙 하나:</strong> "늙어서 그렇다"는 말을 그대로 받지 말 것. 최근 몇 달 사이 생긴 변화는 노화가 아니라 질병·약물·환경 문제일 가능성이 높다.</li>
+</ol>
+</div>
+
+<h2>0. 수업 전 체크리스트</h2>
+
+<div class="box task">
+<span class="label">가기 전에 할 것</span>
+<ul class="check">
+<li>아래 <strong>「반드시 외워 갈 숫자」</strong> 표 한 번 훑기 (5분)</li>
+<li>교수님이 던진 <strong>4가지 질문에 대한 내 답</strong>을 한 문장씩 써 보기 — 조별활동에서 바로 쓸 수 있다</li>
+<li><strong>개입계획 초안</strong> 표를 보고 "내가 담당 사회복지사라면 무엇부터 하겠는가" 순서를 정해 두기</li>
+<li>LMS에서 3주차 강의자료(PPT)·복습자료 내려받아 <strong>숫자 대조</strong> — 전사본 수치에 오류 의심 구간이 있음(맨 아래 항목 참조)</li>
+<li>2주차 자료(<code>2_인구고령화 현상.pdf</code>)도 챙길 것 — 지난 오프라인처럼 앞 주차를 엮어서 물어볼 수 있음</li>
+<li>필기구 · 조별활동용 준비물</li>
+</ul>
+</div>
+
+<div class="box warn">
+<span class="label">수업 운영 참고</span>
+<ul>
+<li><strong>월요일은 온라인, 수요일이 오프라인</strong> — 월요일에 학교에 갈 필요 없음(교수님도 학교에 안 계심).</li>
+<li>지난 오프라인(9/9)은 <strong>온라인 강의 복습 → 조별활동 → 활동지 제출</strong> 구조였다. 이번에도 같은 흐름일 가능성이 높다.</li>
+<li>교수님이 강의 맨 마지막에 이렇게 말했다: <em>"복잡한 사람의 삶에 여러 어려움이 얽혀 있는 상황에서 실제로 개입 계획을 짜 보는 일을 생각해 보는 것이 매우 중요하다."</em> → <strong>사실상 조별활동 예고</strong>로 읽힌다.</li>
+</ul>
+</div>
+
+<h2>1. 사례: 최영자 씨 — 다섯 달의 타임라인</h2>
+
+<p>강의 전체가 이 사례 위에 얹혀 있다. 오프라인 수업에서 가장 먼저 소환될 내용이므로 <strong>타임라인과 등장 요인을 통째로</strong> 기억해 두는 편이 좋다.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>시점</th><th>무슨 일이</th><th>숨어 있던 요인</th></tr></thead>
+<tbody>
+<tr><td>이전</td><td>79세, 경기도 아파트에서 남편(82세)과 둘이 거주. 매일 아침 단지 안을 30분씩 걸음</td><td>겉보기엔 기능 유지 — 그러나 <strong>이미 노쇠 상태였을 가능성</strong></td></tr>
+<tr><td>3월 새벽</td><td>화장실 가려고 불을 켜지 않고 걷다 <strong>문턱에 걸려 넘어짐</strong></td><td>암순응 저하 · 명암 대비 구분 저하 · 어두운 조명 · 문턱 · 다약제</td></tr>
+<tr><td>직후</td><td><strong>대퇴골 경부 골절</strong> 진단, 이틀 뒤 수술</td><td>골밀도 저하</td></tr>
+<tr><td>수술 전</td><td>담당 의사가 약 목록을 보고 <strong>"이 조합이면 밤에 어지러울 수 있었겠다"</strong> — 그 말을 그때 처음 들음</td><td>고혈압약·당뇨약·수면제를 <strong>각각 다른 병원</strong>에서 처방받음 = 진료의 분절</td></tr>
+<tr><td>입원 6주</td><td>수술 자체는 성공. 그러나 병실에서 거의 눕거나 앉아 있고 식사량 감소. 퇴원 무렵 혼자 화장실에 가지 못함</td><td><strong>예비 능력의 고갈</strong> — 부동(不動) → 근감소 → 기능 붕괴</td></tr>
+<tr><td>퇴원 상담</td><td>의료사회복지사가 부부 면담. 남편이 돌보겠다고 했으나 <strong>남편도 관절염</strong>으로 물건을 오래 쥐지 못함. 아들은 부산, 딸은 육아 중</td><td>돌봄 자원의 부재 — <strong>남편이 또 다른 클라이언트</strong></td></tr>
+<tr><td>8월<br><span class="term">(5개월 뒤)</span></td><td>장기요양 <strong>4등급</strong>, 주 3회 방문요양 이용 중. 재활을 위해 근처 병원에 다니라는 권고를 받았으나 <strong>남편이 운전을 그만둔 뒤로 갈 방법이 없어 두 달째 못 감</strong></td><td><strong>이동수단의 문제</strong> — 의지의 문제가 아니다</td></tr>
+<tr><td>현재</td><td>집 밖에 나가지 않음("다시 넘어질까 봐 무섭다"). 아파트 이웃들과 연락 끊김. 남편은 최근 말수가 줄었음</td><td>낙상 두려움의 악순환 · 사회적 고립 · 돌봄자 소진</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box key">
+<span class="label">담당 사회복지사의 기록 한 줄</span>
+<p style="font-size:1.05rem;font-weight:700;margin:0">"골절은 치료되었으나 회복되지 않았습니다."</p>
+</div>
+
+<h2>2. 교수님이 던진 4가지 질문 — 내 답 준비하기</h2>
+
+<p>강의 도입부에서 던지고, 강의 끝에 "이제 다 답할 수 있을 것"이라고 한 질문들. <strong>오프라인 수업에서 그대로 나올 가능성이 가장 높은 항목</strong>이다. 아래는 답안 골격이니, 자기 문장으로 한 번씩 고쳐 써 볼 것.</p>
+
+<div class="q">
+<span class="qn">질문 1</span>
+<p class="qt">최 씨가 넘어진 것은 나이 때문입니까? 낙상이라는 하나의 사건 이전에 어떤 요인이 누적되었을까요?</p>
+<p>아니다. 낙상은 <strong>우연한 사고가 아니라 여러 요인이 누적된 결과</strong>다. 세 범주로 나누어 답하면 깔끔하다.</p>
+<ul>
+<li><strong>개인 요인</strong> — 근력·균형 능력 저하, 시력 저하(암순응·명암 대비), 어지럼증, <strong>다약제 복용</strong></li>
+<li><strong>환경 요인</strong> — 문턱, 어두운 조명, 손잡이 부재</li>
+<li><strong>행동·심리 요인</strong> — 불을 켜지 않고 걸은 행동, 부적절한 신발</li>
+</ul>
+<p style="margin-top:10px">즉 나이는 배경이지 원인이 아니다. <strong>각 요인은 대부분 수정 가능(modifiable)했다</strong>는 점이 답의 핵심.</p>
+</div>
+
+<div class="q">
+<span class="qn">질문 2</span>
+<p class="qt">수술은 성공했는데 왜 상태가 나빠졌을까요? 병원에서 보낸 6주 동안 무슨 일이 일어난 걸까요?</p>
+<p><strong>예비 능력(reserve capacity)의 문제</strong>다. 노화의 네 번째 특징 — 평상시의 기능은 유지되지만 수술·감염 같은 <strong>부하가 걸리는 순간 대응할 여력이 없어 기능이 급격히 무너진다</strong>.</p>
+<p>6주 동안 실제로 일어난 일: 누워 지냄 → 근육량·근력 급감 → 식사량 감소 → 영양 부족 → 다시 근육량 감소. <strong>서로 물리는 악순환</strong>이 병원 안에서 진행됐다. 넘어지기 전 매일 30분씩 걷던 사람이 퇴원 무렵 혼자 화장실에 가지 못하게 된 것이 그 결과다.</p>
+</div>
+
+<div class="q">
+<span class="qn">질문 3</span>
+<p class="qt">"치료되었으나 회복되지 않았다"는 기록은 무엇을 말할까요? 의료적 회복과 사회적 회복은 어떻게 다를까요?</p>
+<div class="tablewrap" style="margin:8px 0 10px">
+<table style="min-width:380px">
+<thead><tr><th></th><th>의료적 회복</th><th>사회적 회복</th></tr></thead>
+<tbody>
+<tr><td>대상</td><td>신체 손상 — 뼈, 수술 부위</td><td>사람의 생활 — 이동, 관계, 역할</td></tr>
+<tr><td>최 씨의 경우</td><td><strong>달성됨.</strong> 뼈는 붙었고 수술 부위는 아물었다</td><td><strong>미달성.</strong> 걷지 못하고, 집 밖에 나가지 않고, 이웃과 끊겼고, 재활을 못 받는다</td></tr>
+<tr><td>담당</td><td>의사 · 물리치료사</td><td>대부분 <strong>의료 바깥</strong> — 사회복지의 자리</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>답의 마무리 문장:</strong> "이 간극이 노인복지가 일하는 자리다." 통계로 말하면 기대수명 83.7년과 유병기간 제외 기대수명 65.5년 사이의 <em>18년</em>이고, 최 씨에게는 그 격차 안에서 실제로 겪은 다섯 달이다.</p>
+</div>
+
+<div class="q">
+<span class="qn">질문 4</span>
+<p class="qt">이 사례에서 사회복지사가 개입할 수 있는 지점은 어디일까요? 의사나 물리치료사가 할 수 없는 일 가운데 사회복지사가 할 수 있는 일은 무엇일까요?</p>
+<p>강의가 직접 제시한 <strong>다섯 지점</strong>이 답이다. 아래 7장 표를 그대로 쓰면 된다 — 이동 · 주거 · 약물 · 관계와 활동 · 돌봄자(남편).</p>
+</div>
+
+<h2>3. 1부 — 노화와 질병을 구분하기</h2>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th></th><th>노화 (aging)</th><th>질병 (disease)</th></tr></thead>
+<tbody>
+<tr><td>정의</td><td>나이가 들면서 거의 모든 사람에게 일어나는 <strong>생리적 변화</strong></td><td>특정한 <strong>병리적 과정</strong></td></tr>
+<tr><td>보편성</td><td>정도 차이는 있으나 모두에게 나타남</td><td>모든 노인에게 나타나지는 않음</td></tr>
+<tr><td>개입</td><td>되돌릴 수 없음</td><td><strong>예방과 치료의 대상</strong></td></tr>
+<tr><td>속도</td><td><strong>느리고 점진적</strong></td><td>비교적 빠르게 나타날 수 있음</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>정상적 노화의 4가지 특징 ★</h3>
+<ol>
+<li><strong>점진적</strong> — 갑자기 일어나지 않는다</li>
+<li><strong>보편적</strong> — 정도 차이는 있으나 모든 사람에게 나타난다</li>
+<li><strong>비가역적</strong> — 되돌릴 수 없다</li>
+<li><strong>예비 능력의 감소</strong> — <em>네 번째가 특히 중요</em></li>
+</ol>
+
+<div class="box key">
+<span class="label">예비 능력 (reserve capacity)</span>
+<p>평상시의 기능은 유지되지만, <strong>부하가 걸렸을 때 대응할 여력이 없다</strong>는 뜻. 젊은 사람과 노인이 같은 감염병에 걸렸을 때 결과가 다른 이유가 여기 있다.</p>
+<p>평소에는 아무 문제가 드러나지 않다가 <strong>수술·감염·사고 같은 부하가 가해지는 순간 기능이 급격히 무너지는 것</strong> — 이것이 노년기의 전형적인 모습이다. 최 씨가 6주 만에 걷지 못하게 된 것이 바로 이 문제다.</p>
+</div>
+
+<h3>구분에 실패하면 생기는 두 방향의 오류 ★</h3>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>오류</th><th>내용</th><th>결과</th></tr></thead>
+<tbody>
+<tr><td>① 질병 → 노화로 오인</td><td>"나이 들면 다 그렇다"는 말로 넘어감</td><td><strong>백내장 · 난청 · 우울증 · 갑상선 기능 저하</strong>처럼 개입하면 상당히 회복되는 문제들이 방치됨</td></tr>
+<tr><td>② 노화 → 질병으로 취급</td><td>노화의 모든 측면을 의학적 관리의 대상으로 삼음</td><td>불필요한 검사·처방, <strong>과잉 의료화</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box warn">
+<span class="label">주목</span>
+<p>①의 태도는 노인 당사자나 가족뿐 아니라 <strong>전문직 종사자에게서도 나타난다</strong>. 노년학에서는 이것을 <strong>연령차별(에이지즘)이 현장에서 작동하는 한 방식</strong>으로 본다. → <strong>11주차에서 다시 다룸</strong></p>
+</div>
+
+<div class="box key">
+<span class="label">실무 판별법 — 이것 하나만 기억하면 된다 ★★</span>
+<p><strong>노화는 느리게 진행된다.</strong> 그러니 <strong>최근 몇 달 사이에 뚜렷하게 나타난 변화라면 그것은 노화가 아니라 질병이거나 약물이거나 환경의 문제</strong>일 가능성이 있다.</p>
+<p>클라이언트가 "늙어서 그렇다"고 말할 때 그 말을 그대로 받아들이지 말 것. 확인 방법도 간단하다 — <strong>"언제부터 그러셨어요?"</strong> 라고 묻는 것.</p>
+<p>"예전부터 그랬다"와 "몇 달 사이에 그랬다"는 <strong>완전히 다른 답</strong>이다. 후자라면 반드시 다른 원인이 있다. 이 질문 하나가 방치될 뻔한 문제를 찾아내는 경우가 실제로 많다.</p>
+</div>
+
+<h3>성공적 노화(successful aging) — 로우와 칸, 1997</h3>
+
+<p><strong>3요소:</strong> ① 질병과 장애의 회피 &nbsp;② 높은 신체적·인지적 기능의 유지 &nbsp;③ 삶에 대한 적극적 관여</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th></th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>공헌</td><td>노년기를 쇠퇴로만 보던 시각을 바꿨고, <strong>노인 집단 내부의 이질성</strong>에 주목하게 만들었다</td></tr>
+<tr><td>비판</td><td>세 요건을 모두 충족하는 노인은 <strong>소수</strong>다. 그러면 만성질환·장애를 가진 다수의 노인은 <strong>"실패한 노화"의 범주로 밀려난다</strong>. 그러나 건강 상태는 개인의 노력만이 아니라 <strong>생애에 걸친 사회경제적 조건의 축적물</strong>이다 → <strong>구조적 불평등을 개인의 책임으로 돌릴 위험</strong></td></tr>
+<tr><td>이 강의의 입장</td><td>실천의 목표를 '성공'이 아니라 <strong>"그 사람이 가진 조건에서 가능한 최선의 기능과 삶의 질"</strong>로 설정한다</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box warn">
+<span class="label">교수님이 강조한 말</span>
+<p>"현장에 나가면 '건강한 노년', '활기찬 노년' 같은 말을 자주 쓰게 될 것이다. 그 말 자체가 나쁜 건 아니다. 다만 <strong>그 기준에 닿지 못하는 분들이 다수라는 것, 그리고 그 사람들이야말로 사회복지가 만나야 할 분들</strong>이라는 것을 잊지 마라." → <strong>6주차 사회참여에서 다시 나옴</strong></p>
+</div>
+
+<h2>4. 2부 — 신체 기능의 변화는 어떻게 생활의 어려움이 되는가</h2>
+
+<p>교수님이 못 박은 원칙: <strong>"우리가 볼 것은 의학적 지식 자체가 아니라, 각 변화가 노인의 일상과 관계에 어떤 결과를 낳는가다."</strong> 그러니 아래 표는 <strong>가운데 칸보다 오른쪽 칸을 외우는 것</strong>이 맞다.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>영역</th><th>신체 변화</th><th>일상 · 관계의 결과</th></tr></thead>
+<tbody>
+<tr><td>시각</td><td>수정체 탄력 저하 → 가까운 것 보기 어려움, <strong>어두운 곳에 적응하는 시간이 길어짐</strong>, 명암 대비 구분 능력 저하</td><td>젊은 사람에게는 아무 문제가 안 되는 조도에서 <strong>노인은 문턱을 보지 못한다</strong> → 최 씨의 새벽 낙상</td></tr>
+<tr><td>청각</td><td><strong>고주파 영역부터</strong> 손실 → 자음이 잘 들리지 않음</td><td>"소리는 들리는데 말은 못 알아듣는" 상태 → 되묻는 일이 잦아짐 → 민망해서 대화를 피함 → <strong>대화에서 물러남 → 사회적 고립과 우울</strong></td></tr>
+<tr><td>근골격</td><td>근육량·근력 감소, 골밀도 저하, 관절 유연성 저하</td><td>보행 속도 감소, 균형 유지 어려움, <strong>골절 위험 증가</strong></td></tr>
+<tr><td>심혈관</td><td>혈관의 탄력 저하, 심장의 최대 박출량 감소</td><td>부하에 대응하는 여력 감소 <span class="term">— 예비 능력 저하의 한 축</span></td></tr>
+<tr><td>호흡기</td><td>폐활량 감소, 기침 반사·섬모 운동 약화</td><td><strong>폐렴 위험 증가</strong> — 80세 이상 사망원인 2위</td></tr>
+<tr><td>소화기</td><td>미각·후각 둔화, 침 분비 감소, 씹고 삼키는 기능 약화</td><td>식사량 감소 → <strong>영양 부족 → 근육량 감소</strong> (서로 물리는 구조)</td></tr>
+<tr><td>비뇨기</td><td>방광 용적 감소, 배뇨 조절 어려움 / <strong>신장 기능 저하</strong></td><td>요실금 → <strong>외출 회피와 사회적 위축</strong>의 강력한 요인 / 약물 배설이 느려져 <strong>같은 용량이 더 오래, 더 강하게 작용</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box key">
+<span class="label">실무 기술 — 난청 노인과의 면담 ★ 시험·현장 모두 유용</span>
+<ul>
+<li>소음이 적은 공간을 고르고, <strong>얼굴을 마주보고</strong> 말한다</li>
+<li><strong>흔한 오해:</strong> 잘 못 들으시는 것 같아 목소리를 높이면 — 사람은 목소리를 높일 때 자연스럽게 <strong>음(音)이 높아지고</strong>, 고주파 손실이 있는 경우 <strong>오히려 더 알아듣기 어려워진다</strong></li>
+<li><strong>정답:</strong> 낮은 음으로 · 천천히 · 문장을 짧게 끊어서</li>
+</ul>
+</div>
+
+<div class="box key">
+<span class="label">이동 능력이 왜 그렇게 중요한가 ★★</span>
+<p style="font-size:1.02rem;line-height:2">걷지 못하면 <strong>장을 볼 수 없다</strong>.<br>
+걷지 못하면 <strong>병원에 갈 수 없다</strong>.<br>
+걷지 못하면 <strong>사람을 만날 수 없다</strong>.</p>
+<p>즉 이동 능력은 단순한 신체 기능이 아니라 <strong>다른 모든 활동의 전제 조건</strong>이다. 최 씨가 재활 치료를 받으러 가지 못한 이유를 다시 보라 — <strong>의지의 문제가 아니라 이동수단의 문제</strong>였다.</p>
+</div>
+
+<h3>복합이환 (multimorbidity)</h3>
+
+<p>노년기 건강의 특징은 <strong>특정 질환이 있다는 것이 아니라 여러 질환이 동시에 있다는 것</strong>이다.</p>
+
+<ul>
+<li><strong>2023년 노인실태조사</strong> — 한국 노인의 평균 만성질환 수 <strong>2.2개</strong></li>
+<li>3개 이상 보유 <strong>35.9%</strong> / 만성질환이 아예 없는 노인 <strong>13.9%</strong></li>
+<li>→ 노인의 약 <strong>3분의 1</strong>이 세 가지 이상의 만성질환을 안고 있다</li>
+</ul>
+
+<p><strong>복합이환이 만드는 문제는 "병이 여러 개"라는 사실 자체가 아니다:</strong></p>
+<ul>
+<li>질환마다 진료과가 다르니 노인은 <strong>여러 병원을 오가게 된다</strong></li>
+<li>한 질환의 치료가 <strong>다른 질환을 악화</strong>시키는 경우가 생긴다</li>
+<li>각 진료과의 지시가 <strong>서로 충돌</strong>한다</li>
+</ul>
+<p>→ 최 씨가 세 가지 약을 서로 다른 병원에서 받고 있었고 <strong>그 조합의 위험을 아무도 확인해 주지 않았던 상황</strong>이 전형적이다.</p>
+
+<h3>다약제 복용 (polypharmacy)</h3>
+
+<p>복합이환의 직접적 귀결. 여러 질환에 각각 약이 처방되면서 복용하는 약의 종류가 늘어나는 현상.</p>
+
+<h4>노년기에 특히 문제가 되는 3가지 이유 ★</h4>
+<ol>
+<li><strong>약이 다르게 작용한다.</strong> 노년기에는 약물의 흡수·분포·대사·배설이 달라진다. 신장 기능이 떨어지면 <strong>같은 용량이 더 오래, 더 강하게</strong> 작용한다.</li>
+<li><strong>약이 늘어날수록 약물 상호작용의 가능성이 기하급수적으로 늘어난다.</strong></li>
+<li><strong>처방의 연쇄.</strong> 약의 부작용이 새로운 증상으로 나타나면 그것이 또 다른 약의 처방으로 이어지는 고리가 생길 수 있다.</li>
+</ol>
+
+<div class="box key">
+<span class="label">여기서 사회복지사가 할 수 있는 일 ★★</span>
+<p><strong>처방을 조정할 권한은 없다.</strong> 그러나 <strong>클라이언트가 복용 중인 모든 약을 한자리에 모아서 확인하고, 그 목록을 의료진에게 전달하는 일</strong>은 할 수 있다.</p>
+<p>여러 병원에 흩어진 처방을 <strong>통합해서 보는 사람이 아무도 없는 상황</strong>이 실제로 흔하다. 사회복지사가 그 역할을 맡는 것이 결정적인 차이를 만들 수 있다.</p>
+</div>
+
+<h2>5. 3부 — 노쇠 · 근감소증 · 낙상</h2>
+
+<h3>노쇠 (frailty)</h3>
+
+<p><strong>정의:</strong> 특정 질병이 없더라도 여러 생리 체계의 예비 능력이 <strong>전반적으로 감소</strong>해서, 작은 부하에도 기능이 크게 무너지기 쉬운 상태.</p>
+
+<ul>
+<li><strong>프라이드(Fried)의 2001년 연구</strong> — 미국 심혈관건강연구(CHS) 자료를 사용해 노쇠를 <strong>하나의 표현형(phenotype)</strong>으로 정의하고 타당성을 검토. 노쇠가 <strong>낙상 · 장애 · 입원 · 사망의 위험을 높인다</strong>는 결과.</li>
+</ul>
+
+<div class="box key">
+<span class="label">사회복지 실천에 주는 함의 ★</span>
+<p>노쇠한 노인은 <strong>병원 진단명으로는 특별한 문제가 없어 보일 수 있다</strong>. 그런데 이들은 감염 · 수술 · 배우자 사별 같은 <strong>사건 한 번에 급격하게 무너진다</strong>.</p>
+<p>노쇠는 <strong>"아직 아프지 않지만 무너지기 쉬운 상태"</strong>다. 이 상태를 알아보는 것이 <strong>예방적 개입의 출발점</strong>이다. 최영자 씨는 낙상 이전에 이미 노쇠 상태였을 가능성이 있다.</p>
+</div>
+
+<h4>실무에서 노쇠를 알아보는 단서 — 의외로 단순하다</h4>
+<ul>
+<li>걷는 속도가 느려졌는가?</li>
+<li>의도 없이 체중이 줄었는가?</li>
+<li>쉽게 지친다고 말하는가?</li>
+<li>예전에 하던 일을 그만두었는가?</li>
+</ul>
+<p>→ 모두 <strong>검사 결과지에 나오지 않는 정보</strong>다. 그런데 <strong>정기적으로 만나는 사회복지사는 이런 변화를 알아차릴 수 있는 위치에 있다</strong>. (이 논증 구조가 서술형에 쓰기 좋다)</p>
+
+<h3>근감소증 (sarcopenia)</h3>
+
+<p><strong>정의:</strong> 연령 증가에 따른 <strong>골격근량의 감소</strong>와 <strong>근력 또는 신체 수행능력의 저하</strong>가 함께 나타나는 상태.</p>
+
+<ul>
+<li><strong>아시아근감소증연구그룹(AWGS) 2019 개정 기준</strong> — 근력 저하는 <strong>악력 기준 남자 28kg 미만, 여자 18kg 미만</strong></li>
+<li><strong>주목할 점: '근감소증 가능성(possible sarcopenia)' 범주를 새로 만들었다.</strong> 근력 저하 <strong>또는</strong> 신체 수행능력 저하 중 <strong>하나만 있어도 해당</strong>된다. 정밀한 장비가 없는 <strong>1차 의료나 지역사회 현장</strong>에서 사용해서 <strong>생활습관 개입을 앞당기려는 목적</strong>.</li>
+<li>이 합의는 <strong>치료의 중심 수단으로 운동과 영양 같은 생활습관 개입</strong>을 제시한다.</li>
+</ul>
+
+<div class="box key">
+<span class="label">이 대목이 왜 사회복지에 중요한가 ★★</span>
+<p>근감소증에 대한 주된 대응이 <strong>약물이 아니라 운동과 식사</strong>이기 때문이다.</p>
+<p>운동과 식사는 <strong>의료기관이 아니라 생활의 공간</strong>에서 이루어진다. 그리고 혼자 사는 노인이 규칙적으로 움직이고 제대로 먹을 수 있는가는 <strong>소득과 주거와 관계와 지역자원의 문제</strong>다.</p>
+<p>→ <strong>근감소증 예방은 상당 부분 사회복지의 영역이다.</strong></p>
+</div>
+
+<h3>낙상 (falls)</h3>
+
+<p>지금까지 본 문제들이 <strong>하나의 사건으로 드러나는 지점</strong>. 핵심은 낙상이 <strong>우연한 사고가 아니라 여러 요인이 누적된 결과</strong>라는 점.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>범주</th><th>위험 요인</th></tr></thead>
+<tbody>
+<tr><td>개인 요인</td><td>근력과 균형 능력의 저하, 시력 저하, 어지럼증, <strong>다약제</strong></td></tr>
+<tr><td>환경 요인</td><td>문턱, 미끄러운 욕실 바닥, 어두운 조명, 손잡이의 부재, 정리되지 않은 전선</td></tr>
+<tr><td>행동 · 심리 요인</td><td>무리한 동작, 부적절한 신발, <strong>낙상에 대한 두려움</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box warn">
+<span class="label">낙상 두려움의 악순환 ★ — 따로 외울 것</span>
+<div class="chain">
+낙상 경험 → <strong>다시 넘어질까 봐 활동을 줄임</strong> → 근력과 균형 능력이 <strong>더</strong> 떨어짐 → <strong>실제 낙상 위험이 높아짐</strong> → (반복)
+</div>
+<p>최 씨가 "이제 집 밖에 나가지 않는다"고 말한 대목이 <strong>이 악순환의 시작점</strong>이다.</p>
+<p>→ 그래서 <strong>낙상 후 개입에서는 신체 회복만이 아니라 활동 재개와 사회적 접속의 회복에 주목해야 한다.</strong></p>
+</div>
+
+<h4>낙상 통계 — 경험률은 줄었는데 사망은 늘었다</h4>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>지표</th><th>수치</th><th>출처</th></tr></thead>
+<tbody>
+<tr><td>최근 1년간 낙상 경험률</td><td><strong>5.6%</strong> (2020년 7.2% → 1.6%p 감소)</td><td>2023 노인실태조사</td></tr>
+<tr><td>추락(낙상) 사망자</td><td><strong>2,856명</strong> — 전년보다 <strong>13.8% 증가</strong></td><td>2024 사망원인통계</td></tr>
+<tr><td>추락 사망률</td><td>인구 10만 명당 <strong>5.6명</strong></td><td>2024 사망원인통계</td></tr>
+<tr><td>80세 이상 낙상 사망률</td><td><strong>45.0명</strong> — <strong>자살(53.3명) 다음으로 높은 외인사 원인</strong></td><td>2024 사망원인통계</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box key">
+<span class="label">교수님이 직접 던진 해석 문제 ★ 시험 유형</span>
+<p><strong>Q. 경험률은 줄었는데 사망은 늘었다 — 이것을 어떻게 볼 것인가?</strong></p>
+<p><strong>A.</strong> 고령 인구, 특히 <strong>초고령 인구 자체가 늘고 있기 때문</strong>으로 볼 수 있다. <strong>같은 비율이라도 모수가 커지면 절대수는 늘어난다.</strong></p>
+<p class="term">※ 2주차 '노년부양비 지표의 한계'와 같은 결의 사고다 — 지표 하나를 그대로 읽지 말고 분모를 보라는 것.</p>
+</div>
+
+<h2>6. 4부 — 통계로 보는 한국 노인의 건강 실태</h2>
+
+<h3>기대수명과 건강수명 — 2024 생명표</h3>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>지표</th><th>수치</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td>기대수명</td><td><strong>83.7년</strong> (남 80.8 / 여 86.6)</td><td>—</td></tr>
+<tr><td>주관적 건강 기대수명</td><td><strong>73.8년</strong></td><td>스스로 건강하다고 <strong>평가한</strong> 기간</td></tr>
+<tr><td>유병기간 제외 기대수명</td><td><strong>65.5년</strong></td><td>질병이나 사고로 <strong>아팠던 기간을 뺀</strong> 기간</td></tr>
+<tr><td>65세 기대여명 (2023)</td><td><strong>21.5년</strong></td><td>OECD 평균 대비 남 <strong>+0.7년</strong>, 여 <strong>+1.9년</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box key">
+<span class="label">핵심 문장</span>
+<p>기대수명 83.7년과 유병기간 제외 기대수명 65.5년 사이에 <strong>18년 이상의 간격</strong>이 있다.</p>
+<p><strong>"오래 사는 것과 건강하게 오래 사는 것은 다른 문제다. 그리고 그 사이의 기간을 어떻게 지원할 것인가가 노인복지에서 다루는 문제다."</strong></p>
+<p>한국 노인은 국제적으로 <strong>오래 사는 편</strong>이다. 문제는 <strong>그 기간의 질</strong>이다.</p>
+</div>
+
+<div class="box warn">
+<span class="label">용어 주의 — 인용할 때 반드시 확인할 것</span>
+<p>유병기간 제외 기대수명은 흔히 <strong>'건강수명'</strong>이라고 불린다. 그런데 <strong>무엇을 건강하지 않은 상태로 볼 것인가는 조사 방식에 따라 달라진다.</strong></p>
+<p><strong>73.8년</strong>(본인이 주관적으로 건강하다고 답한 기간)과 <strong>65.5년</strong>(질병·사고로 아팠던 기간을 뺀 기간)이 <strong>같은 '건강수명'이라는 말로 함께 쓰인다</strong>. 어떤 기준의 숫자인지 확인하고 인용할 것.</p>
+</div>
+
+<h3>기능 상태 — ADL과 IADL</h3>
+
+<p>2023 노인실태조사에서 ADL과 IADL을 함께 평가한 결과, <strong>노인의 18.6%가 기능상 제한</strong>이 있는 것으로 나타났다.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th></th><th>ADL <span class="term">일상생활수행능력</span></th><th>IADL <span class="term">수단적 일상생활수행능력</span></th></tr></thead>
+<tbody>
+<tr><td>평가 대상</td><td><strong>생존에 직결되는 기본적 활동</strong></td><td><strong>지역사회에서 독립적으로 살아가는 데 필요한 활동</strong></td></tr>
+<tr><td>항목</td><td>옷 입기, 세수하기, 목욕, 식사, 이동, 화장실 사용, <strong>대소변 조절</strong></td><td>전화 사용, 물건 사기, 식사 준비, 청소, <strong>빨래, 교통수단 이용</strong>, 약 복용, <strong>금전 관리</strong></td></tr>
+<tr><td>손상 순서</td><td>나중</td><td><strong>먼저</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box key">
+<span class="label">실천적으로 가장 중요한 포인트 ★★</span>
+<p><strong>IADL이 ADL보다 먼저 손상된다.</strong></p>
+<p>혼자 버스를 타지 못하게 되는 것이 혼자 옷을 입지 못하게 되는 것보다 <strong>먼저</strong>다.</p>
+<ul>
+<li>→ <strong>IADL 항목에서 나타나는 초기 변화를 포착하면 훨씬 이른 지점에 개입할 수 있다.</strong></li>
+<li>→ 반대로 <strong>ADL 손상이 확인되었을 때는 이미 상당히 진행된 상태</strong>라고 볼 수 있다.</li>
+</ul>
+</div>
+
+<h3>사망원인의 구조 변화 — 2024 사망원인통계</h3>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>순위</th><th>70대</th><th>80세 이상</th></tr></thead>
+<tbody>
+<tr><td>1위</td><td>암(악성신생물) <strong>35.3%</strong></td><td>암 <strong>16.3%</strong> <span class="term">— 절반 아래로 떨어짐</span></td></tr>
+<tr><td>2위</td><td>심장질환 8.4%</td><td><strong>폐렴 11.8%</strong></td></tr>
+<tr><td>3위</td><td>뇌혈관질환 7.3%</td><td>심장질환 10.5%</td></tr>
+<tr><td>4위</td><td>폐렴 6.8%</td><td>뇌혈관질환 7.3%</td></tr>
+<tr><td>5위</td><td>당뇨병</td><td><strong>알츠하이머병 5.5%</strong> <span class="term">— 새로 등장</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box key">
+<span class="label">이 변화가 뜻하는 바 ★</span>
+<ul>
+<li><strong>전기 고령기</strong> — <strong>특정 질환의 치료</strong>가 중심 과제</li>
+<li><strong>후기 고령기</strong> — <strong>감염에 대한 취약성, 인지 기능, 전반적인 기능 소실</strong>이 중심</li>
+</ul>
+</div>
+
+<div class="box key">
+<span class="label">폐렴이 왜 사회복지의 문제인가 ★★ — 오늘 강의에서 가장 좋은 논증</span>
+<p>폐렴은 그 자체로 독립적인 사건이라기보다 <strong>삼킴 기능 저하 + 영양 상태 악화 + 활동 감소가 누적된 결과</strong>로 발생하는 경우가 많다. (2부에서 본 소화기 변화가 여기로 이어진다)</p>
+<p>그렇다면 물어야 할 것은:</p>
+<ul>
+<li>삼킴 기능이 떨어진 노인에게 <strong>어떤 형태의 음식이 제공되는가?</strong></li>
+<li><strong>식사를 도와줄 사람이 있는가?</strong></li>
+<li><strong>구강 관리가 되고 있는가?</strong></li>
+</ul>
+<p>이 항목들은 전부 <strong>의료가 아니라 돌봄의 영역</strong>이다. 즉 <strong>사망원인 통계의 두 번째 자리에 있는 것이 돌봄으로 상당 부분 예방 가능한 문제</strong>라는 뜻이다.</p>
+</div>
+
+<h4>그 밖의 숫자</h4>
+<ul>
+<li>전체 사망자 <strong>358,569명</strong> 중 <strong>80세 이상이 54.1%</strong> — 10년 전보다 <strong>15.3%p 증가</strong>. 사망이 고령기에 집중된 구조가 뚜렷해지고 있다.</li>
+<li><strong>치매 사망률</strong> — 2024년 인구 10만 명당 <strong>29.3명</strong>, 전년보다 <strong>5.3% 증가</strong>. <strong>여자가 남자의 2.1배</strong>. 80~89세 352.9명, <strong>90세 이상 1,759.4명</strong>. <span class="term">→ 치매는 10주차에서 다룸</span></li>
+</ul>
+
+<h3>의료 이용 — 많이 쓴다고 잘 관리되는 것은 아니다</h3>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>지표</th><th>수치</th></tr></thead>
+<tbody>
+<tr><td>65세 이상 1인당 진료비 (2023)</td><td><strong>530만 6천 원</strong></td></tr>
+<tr><td>본인부담금</td><td><strong>125만 2천 원</strong></td></tr>
+<tr><td>건강검진 수검률</td><td><strong>69.3%</strong></td></tr>
+<tr><td>최근 한 달간 병의원 외래 이용률<br><span class="term">(2023 노인실태조사)</span></td><td><strong>68.8%</strong> — 노인 10명 중 7명 가까이</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box key">
+<span class="label">해석 ★</span>
+<p><strong>높은 의료 이용이 곧 좋은 건강관리를 뜻하지 않는다.</strong> 질환별로 흩어진 진료가 반복되면 <strong>다제 복용과 진료의 분절</strong>이 심해질 수 있다.</p>
+<p>→ <strong>최근 한국의 노인 건강정책이 '통합'을 핵심으로 삼고 있는 배경이 바로 여기에 있다.</strong></p>
+<p class="term">※ 2주차 오프라인에서 언급된 <strong>통합돌봄법</strong>(의료·요양 등 지역사회 돌봄 통합지원법, 올해 3월 시행)과 바로 연결되는 지점. 수업에서 물어보면 좋을 질문.</p>
+</div>
+
+<h2>7. 결론 — 사회복지사의 5가지 개입 지점 ★★★</h2>
+
+<p>강의의 결론이자 질문 4의 답. <strong>"의사는 수술을 하고 물리치료사는 재활을 담당한다. 그런데 최 씨의 회복을 실제로 막고 있는 요인들은 대부분 의료 바깥에 있다."</strong></p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>#</th><th>지점</th><th>최 씨의 상황</th><th>사회복지사가 할 일</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>이동</strong></td><td>재활을 받지 못하는 이유가 <strong>병원까지 갈 방법이 없어서</strong></td><td>지역의 <strong>이동지원 서비스 연계</strong></td></tr>
+<tr><td>2</td><td><strong>주거</strong></td><td>문턱, 어두운 조명, 욕실 손잡이 부재가 그대로 남아 있음</td><td><strong>문턱 제거 · 욕실 손잡이 설치 · 야간 조명 확보</strong> = 낙상을 막는 직접적 조치. <strong>장기요양보험 복지용구 급여</strong>, <strong>지자체 주거환경 개선 사업</strong> 검토</td></tr>
+<tr><td>3</td><td><strong>약물</strong></td><td>세 병원에 처방이 흩어져 있고 통합해서 보는 사람이 없음</td><td>흩어진 처방을 <strong>통합해서 확인하고 의료진에게 전달</strong></td></tr>
+<tr><td>4</td><td><strong>관계와 활동</strong></td><td>이웃과 연락이 끊기고 집 밖에 나가지 않음</td><td>사회적 접속이 끊긴 것은 <strong>신체 문제의 결과이면서 동시에 악화를 촉진하는 원인</strong> → 활동 재개와 관계 회복을 계획에 넣을 것</td></tr>
+<tr><td>5</td><td><strong>남편<br>(돌봄자)</strong></td><td>82세, 관절염, 최근 말수가 줄었음</td><td><strong>이 사례의 또 다른 클라이언트</strong>로 볼 것. <strong>돌봄자의 소진과 우울은 돌봄받는 사람의 상태에 직접 영향을 미친다</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box warn">
+<span class="label">교수님이 특별히 짚은 한 줄</span>
+<p>주거 개선에 대해: <strong>"비용도 크지 않고 효과가 즉각적인데, 아무도 제안하지 않으면 그냥 넘어가는 항목이다."</strong> → 사회복지사의 존재 이유를 보여주는 대목이라 시험·발표 모두에서 쓰기 좋다.</p>
+</div>
+
+<h2>8. 조별활동 대비 — 개입계획 초안</h2>
+
+<p>교수님이 강의 마지막에 "실제로 개입 계획을 짜 보는 일"을 언급했으므로, <strong>미리 한 번 짜 두면 그대로 쓸 수 있다</strong>. 우선순위는 <strong>① 즉시 위험을 줄이는 것 → ② 회복 경로를 여는 것 → ③ 관계를 복구하는 것</strong> 순으로 잡았다.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>순위</th><th>문제</th><th>개입</th><th>연계 자원 · 제도</th><th>근거</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>재낙상 위험이 그대로 남아 있음</td><td>가정 내 환경 점검 후 문턱 제거, 욕실 손잡이·미끄럼 방지 매트 설치, <strong>야간 센서등</strong> 설치</td><td>장기요양보험 복지용구 급여, 지자체 주거환경 개선 사업</td><td>낙상 위험요인 중 <strong>환경 요인</strong>이 가장 빠르고 싸게 수정 가능</td></tr>
+<tr><td>2</td><td>재활 중단 (2개월째)</td><td>이동지원 서비스 연계, 또는 <strong>방문재활 전환 가능성</strong> 검토</td><td>지자체 이동지원(노인·장애인 콜택시 등), 방문요양·방문간호 급여</td><td>"의지가 아니라 <strong>이동수단</strong>의 문제"</td></tr>
+<tr><td>3</td><td>다약제 — 세 병원의 처방이 통합되지 않음</td><td>복용 중인 <strong>모든 약을 한자리에 모아 목록 작성</strong> → 주치의·약사에게 전달, 수면제 지속 필요성 재검토 요청</td><td>의료진 연계, 지역 약국 복약상담</td><td>처방 조정 권한은 없지만 <strong>통합해서 보는 역할</strong>은 할 수 있다</td></tr>
+<tr><td>4</td><td>근감소 · 영양 악화</td><td>식사 형태·섭취량 점검, 필요 시 <strong>식사 배달·영양 지원</strong> 연계. 앉아서도 가능한 근력운동 안내</td><td>노인맞춤돌봄서비스, 식사배달, 복지관·경로당 운동 프로그램</td><td>근감소증 대응의 중심은 <strong>약물이 아니라 운동과 영양</strong></td></tr>
+<tr><td>5</td><td>낙상 두려움 → 활동 축소 악순환</td><td>짧은 거리부터 <strong>단계적 외출 목표</strong> 설정, 동행 지원</td><td>방문요양 동행, 자원봉사 연계</td><td>낙상 후 개입은 신체 회복만이 아니라 <strong>활동 재개</strong>가 목표</td></tr>
+<tr><td>6</td><td>사회적 고립 — 이웃과 단절</td><td>기존 아파트 이웃 관계 <strong>재연결</strong> 시도, 복지관·경로당 프로그램 참여 유도</td><td>노인복지관, 경로당, 지역 자조모임</td><td>사회적 접속 상실은 결과이면서 <strong>악화의 원인</strong></td></tr>
+<tr><td>7</td><td>남편의 돌봄 부담 · 우울 신호</td><td>남편을 <strong>별도 클라이언트로 사정</strong>. 우울 선별, 가족 돌봄자 지원 프로그램 · 휴식(레스핏) 연계</td><td>가족요양 지원, 돌봄가족 지원사업</td><td>돌봄자의 소진은 <strong>돌봄받는 사람의 상태에 직접 영향</strong></td></tr>
+<tr><td>8</td><td>자녀 자원 미활용</td><td>아들(부산) · 딸(육아 중)과 역할 분담 조정 — <strong>물리적 돌봄이 아닌 형태</strong>(비용 분담, 정기 연락 등)로 재설계</td><td>가족 사례회의</td><td>자원이 없는 게 아니라 <strong>형태가 안 맞는</strong> 것일 수 있음</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box task">
+<span class="label">조별활동에서 쓸 만한 한 마디</span>
+<p>"이 사례에서 <strong>의료가 해결한 문제는 하나(골절)</strong>이고, <strong>남은 문제는 일곱 개</strong>인데 그중 어느 것도 병원에서 해결되지 않습니다. 그래서 <strong>개입계획의 1순위는 재활 재개가 아니라 재낙상 방지</strong>여야 한다고 봤습니다 — 다시 넘어지면 지금까지 한 모든 것이 무효가 되니까요."</p>
+</div>
+
+<h2>9. 반드시 외워 갈 숫자</h2>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>숫자</th><th>내용</th><th>출처</th></tr></thead>
+<tbody>
+<tr><td><strong>2.2개</strong></td><td>한국 노인의 평균 만성질환 수</td><td>2023 노인실태조사</td></tr>
+<tr><td><strong>35.9% / 13.9%</strong></td><td>만성질환 3개 이상 / 아예 없음</td><td>2023 노인실태조사</td></tr>
+<tr><td><strong>28kg / 18kg</strong></td><td>근감소증 악력 기준 (남 / 여)</td><td>AWGS 2019</td></tr>
+<tr><td><strong>5.6%</strong></td><td>최근 1년 낙상 경험률 (2020년 7.2%)</td><td>2023 노인실태조사</td></tr>
+<tr><td><strong>2,856명 / +13.8%</strong></td><td>추락(낙상) 사망자 수와 증가율</td><td>2024 사망원인통계</td></tr>
+<tr><td><strong>45.0명 / 53.3명</strong></td><td>80세 이상 낙상 사망률 / 자살 사망률 (10만 명당)</td><td>2024 사망원인통계</td></tr>
+<tr><td><strong>83.7 / 73.8 / 65.5년</strong></td><td>기대수명 / 주관적 건강 기대수명 / 유병기간 제외 기대수명 — <strong>18년 격차</strong></td><td>2024 생명표</td></tr>
+<tr><td><strong>21.5년</strong></td><td>65세 기대여명 (OECD 대비 남 +0.7, 여 +1.9)</td><td>2023</td></tr>
+<tr><td><strong>18.6%</strong></td><td>ADL·IADL 기준 기능상 제한이 있는 노인 비율</td><td>2023 노인실태조사</td></tr>
+<tr><td><strong>35.3% → 16.3%</strong></td><td>암이 차지하는 사망 비중 (70대 → 80세 이상)</td><td>2024 사망원인통계</td></tr>
+<tr><td><strong>11.8%</strong></td><td>80세 이상 폐렴 사망 비중 — <strong>2위</strong></td><td>2024 사망원인통계</td></tr>
+<tr><td><strong>54.1% / +15.3%p</strong></td><td>전체 사망자 중 80세 이상 비중과 10년 전 대비 증가폭</td><td>2024 사망원인통계</td></tr>
+<tr><td><strong>29.3명 / 2.1배</strong></td><td>치매 사망률(10만 명당) / 여자가 남자의 배수</td><td>2024 사망원인통계</td></tr>
+<tr><td><strong>530.6만 / 125.2만 원</strong></td><td>65세 이상 1인당 진료비 / 본인부담금</td><td>2023</td></tr>
+<tr><td><strong>1997 / 2001 / 2019</strong></td><td>성공적 노화(로우·칸) / 노쇠 표현형(프라이드) / AWGS 개정</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>10. 헷갈리기 쉬운 개념 구분</h2>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>개념</th><th>한 줄 정의</th><th>구분 포인트</th></tr></thead>
+<tbody>
+<tr><td><strong>복합이환</strong><br><span class="term">multimorbidity</span></td><td>여러 만성질환이 동시에 있는 상태</td><td><strong>질환의 개수</strong> 문제. 진료 분절의 출발점</td></tr>
+<tr><td><strong>다약제 복용</strong><br><span class="term">polypharmacy</span></td><td>복용하는 약의 종류가 늘어나는 현상</td><td>복합이환의 <strong>귀결</strong>. <strong>약</strong>의 문제</td></tr>
+<tr><td><strong>노쇠</strong><br><span class="term">frailty</span></td><td>예비 능력이 전반적으로 감소해 작은 부하에도 무너지기 쉬운 상태</td><td><strong>질병 이전</strong>의 상태. 진단명이 없어도 해당. <strong>전신</strong>의 문제</td></tr>
+<tr><td><strong>근감소증</strong><br><span class="term">sarcopenia</span></td><td>골격근량 감소 + 근력·신체수행능력 저하</td><td><strong>근육</strong>에 한정된, 진단 기준이 있는 상태 (악력 28/18kg)</td></tr>
+<tr><td><strong>낙상</strong><br><span class="term">falls</span></td><td>위의 요인들이 <strong>하나의 사건</strong>으로 드러나는 지점</td><td>원인이 아니라 <strong>결과</strong>이자 새로운 악순환의 <strong>시작점</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box key">
+<span class="label">연결 고리 — 교수님이 "이걸 따라오면 된다"고 한 것 ★★</span>
+<div class="chain">
+<strong>복합이환</strong>이 <strong>다약제 복용</strong>을 낳고 → 다약제 복용이 <strong>낙상 위험</strong>을 높이고 → 낙상이 <strong>노쇠</strong>를 드러낸다
+</div>
+<p>"개별 용어를 다 외우려 하지 마시고 <strong>그 연결을 따라오시면</strong> 자연스럽게 될 것입니다."</p>
+</div>
+
+<h2>11. 다른 주차와의 연결 (강의 중 직접 예고된 것)</h2>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>주차</th><th>주제</th><th>이번 주차와의 연결</th></tr></thead>
+<tbody>
+<tr><td>2주차 <span class="term">(완료)</span></td><td>인구 고령화</td><td>노년부양비 지표의 한계 ↔ 낙상 경험률 vs 사망자 수 해석 — <strong>지표를 그대로 읽지 말라</strong>는 같은 사고</td></tr>
+<tr><td><strong>6주차</strong></td><td>사회 참여</td><td>"성공적 노화의 기준에 닿지 못하는 다수가 사회복지가 만나야 할 사람들"이라는 논점이 다시 나옴</td></tr>
+<tr><td><strong>10주차</strong></td><td>치매</td><td>80세 이상 사망원인 5위 알츠하이머병, 치매 사망률 통계</td></tr>
+<tr><td><strong>11주차</strong></td><td>연령차별(에이지즘)</td><td>"나이 들면 다 그렇다"로 질병을 방치하는 태도 = 에이지즘이 현장에서 작동하는 방식</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>12. 토론문제 — 교재에 실린 4문항 ★★★</h2>
+
+<div class="box task">
+<span class="label">교재 10장 · 오프라인 수업에서 이대로 나올 가능성이 높음</span>
+<p style="margin-bottom:0">전사본에는 없지만 <strong>교재에 그대로 실려 있는 토론문제</strong>입니다. 지난 오프라인(9/9)이 조별활동 중심이었던 것을 생각하면, 이 넷 중 하나가 활동지가 될 가능성이 큽니다. <strong>가기 전에 각각 세 문장씩만 메모해 두세요.</strong></p>
+</div>
+
+<div class="q">
+<span class="qn">토론 1</span>
+<p class="qt">"골절은 치료되었으나 회복되지 않았다"는 기록을 사회복지 개입 계획으로 바꾸어 보라. 우선순위를 어떻게 정하겠으며, 그 근거는 무엇인가?</p>
+<p>→ 위 <strong>8장 개입계획 초안</strong>이 그대로 답입니다. 우선순위 논리만 한 문장으로 준비해 두세요.</p>
+<p><strong>준비된 답:</strong> "1순위는 재활 재개가 아니라 <strong>재낙상 방지</strong>입니다. 낙상 위험요인 중 <strong>환경 요인</strong>이 가장 빠르고 싸게 수정 가능하고, 다시 넘어지면 그동안의 개입이 전부 무효가 되기 때문입니다."</p>
+</div>
+
+<div class="q">
+<span class="qn">토론 2</span>
+<p class="qt">성공적 노화 개념에 따르면 세 가지 만성질환을 가진 노인은 성공적으로 노화하고 있지 않은 것이 된다. 이 판단에 동의하는가? 대안적 기준을 제시한다면 무엇을 사용하겠는가?</p>
+<p><strong>쓸 재료:</strong> ① 한국 노인의 <strong>35.9%</strong>가 만성질환 3개 이상 — 즉 '실패'로 분류되는 쪽이 <strong>다수</strong>입니다. ② 건강은 <strong>생애에 걸친 사회경제적 조건의 축적물</strong> → 구조적 불평등의 개인화 위험. ③ 대안 기준 = <em>"그 사람이 가진 조건에서 가능한 최선의 기능과 삶의 질"</em>, 그리고 <strong>IADL 유지 여부</strong>처럼 생활의 독립성을 보는 지표.</p>
+</div>
+
+<div class="q">
+<span class="qn">토론 3</span>
+<p class="qt">담당하는 독거노인이 "요새 기운이 없고 자꾸 넘어질 것 같다"고 말한다. 이 말에서 확인해야 할 것을 이 장의 개념을 사용하여 목록으로 만들어 보라.</p>
+<p>→ <strong>거의 정답이 정해진 문제</strong>입니다. 순서대로 쓰면 됩니다.</p>
+<ol>
+<li><strong>"언제부터 그러셨어요?"</strong> — 최근 몇 달 사이면 노화가 아니라 질병·약물·환경</li>
+<li><strong>노쇠 단서 4가지</strong> — 보행 속도 / 의도치 않은 체중 감소 / 쉽게 지침 / 하던 일을 그만둠</li>
+<li><strong>복용 약 전체 목록</strong> — 특히 수면제·혈압약 등 어지럼증을 유발할 수 있는 조합</li>
+<li><strong>집 안 환경</strong> — 문턱, 욕실 바닥, 야간 조명, 손잡이, 전선</li>
+<li><strong>IADL 변화</strong> — 장보기·버스 이용·약 챙기기에서 달라진 것</li>
+<li><strong>감각</strong> — 시력(암순응), 청각</li>
+<li><strong>영양·식사</strong> — 삼킴 문제, 식사량, 함께 먹는 사람</li>
+<li><strong>낙상 두려움</strong> — 이미 활동을 줄이고 있는지</li>
+</ol>
+</div>
+
+<div class="q">
+<span class="qn">토론 4</span>
+<p class="qt">근감소증 예방에는 운동과 영양이 중요하다. 그런데 소득이 낮고 혼자 살며 조리가 어려운 노인에게 "운동하고 잘 드세요"라는 조언은 어떤 문제가 있는가? 이 조언을 실행 가능한 지원으로 바꾸려면 무엇이 필요한가?</p>
+<p><strong>핵심 문장:</strong> "맞는 말이지만 <strong>할 수 없는 일을 하라는 말</strong>입니다. 조언은 개인의 의지를 전제하는데, 이 사람에게 부족한 것은 의지가 아니라 <strong>조건</strong>입니다."</p>
+<p><strong>바꾸는 방법:</strong> 식사 배달·영양 지원 / 함께 먹는 자리(경로식당·공동체 식사) / 앉아서도 가능한 근력 프로그램 / 프로그램까지 데려다줄 이동 지원 / 조리가 가능한 주거 환경. <span class="term">→ 결국 소득·주거·관계·지역자원의 문제로 돌아옵니다.</span></p>
+</div>
+
+<h2>13. 제도라는 도구상자 — 네 갈래</h2>
+
+<p class="term">교재 8장. 전사본에는 거의 나오지 않았지만 <strong>개입계획을 쓸 때 근거로 인용할 제도</strong>이므로 정리해 둡니다.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>갈래</th><th>내용</th><th>여기서 사회복지의 자리</th></tr></thead>
+<tbody>
+<tr><td><strong>① 건강보험 · 국가건강검진</strong></td><td>2023년 고령자 건강검진 수검률 <strong>69.3%</strong></td><td>교재가 짚는 것은 수검률이 아니라 <strong>"검진 결과가 실제 관리로 이어지는가"</strong> — <strong>이 연결이 끊기는 지점</strong>에서 역할이 생긴다</td></tr>
+<tr><td><strong>② 장기요양보험</strong><br><span class="term">노인장기요양보험법</span></td><td>최 씨가 받은 <strong>4등급</strong>이 이것. <strong>복지용구 급여</strong>가 주거 개선의 근거</td><td>법 제2조 1호의 <strong>'노인등'</strong> = 65세 이상 <strong>+ 65세 미만이라도 치매·뇌혈관성 질환 등</strong> → <strong>나이가 아니라 상태를 기준</strong>으로 삼은 사례 <span class="term">(2주차 '65세 기준의 한계'와 연결)</span></td></tr>
+<tr><td><strong>③ 노인복지법 체계</strong></td><td>노인복지시설 · 재가서비스 · <strong>노인맞춤돌봄서비스</strong></td><td>식사·안부·활동 프로그램 연계의 근거</td></tr>
+<tr><td><strong>④ 돌봄통합지원법</strong><br><span class="term">의료·요양 등 지역 돌봄의<br>통합지원에 관한 법률</span></td><td><strong>2024. 3. 26. 제정</strong> → 시행령·시행규칙 2025. 12. 공포 → <strong>시행일 2026. 3. 27.</strong><br>살던 곳에서 계속 지낼 수 있도록 의료·요양·돌봄을 <strong>지역에서 통합·연계</strong></td><td><strong>이 사례가 바로 이 법이 겨냥하는 공백</strong> — 병원은 수술했고 장기요양은 방문요양을 배정했지만, <strong>이동·주거·약물·관계를 함께 보는 주체가 없었다</strong> <span class="term">(→ 14주차에서 본격적으로)</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box warn">
+<span class="label">교재가 덧붙인 단서</span>
+<p><strong>"법의 존재가 곧 실천의 변화를 뜻하지는 않으며, 통합이 실제로 이루어지는지는 현장에서 확인되어야 할 문제다."</strong> → 통합돌봄을 답에 쓸 때 이 문장을 같이 쓰면 좋습니다.</p>
+</div>
+
+<h2>14. 교재 대조 결과 — 전사본과 달랐던 것</h2>
+
+<div class="box key">
+<span class="label">교재 PDF로 확인 완료 · 이 문서는 교재 수치로 수정되었습니다</span>
+<div class="tablewrap">
+<table>
+<thead><tr><th>항목</th><th>전사본</th><th>교재 (정답)</th></tr></thead>
+<tbody>
+<tr><td>70대 암 사망 비중</td><td>35.5%</td><td><strong>35.3%</strong></td></tr>
+<tr><td>치매 사망률 (10만 명당)</td><td>26.3명</td><td><strong>29.3명</strong></td></tr>
+<tr><td>80~89세 치매 사망률</td><td>356명 <span class="term">(끊김)</span></td><td><strong>352.9명</strong></td></tr>
+<tr><td>80세 이상 추락 사망률</td><td>45명</td><td><strong>45.0명</strong></td></tr>
+<tr><td>골절명</td><td>대퇴 경부 골절</td><td><strong>대퇴골 경부 골절</strong></td></tr>
+<tr><td>70대 사망원인 5위</td><td>언급 없음</td><td><strong>당뇨병</strong></td></tr>
+<tr><td>추락 사망자 수</td><td>불명확</td><td>2,856명 <span class="term">— 일치</span></td></tr>
+<tr><td>전체 사망자 수</td><td>불명확</td><td>358,569명 <span class="term">— 일치</span></td></tr>
+<tr><td>최 씨 79세 / 남편 82세 / 30분 산책</td><td>—</td><td><span class="term">모두 일치</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="box warn">
+<span class="label">교재에만 있고 강의에서 안 나온 것 — 추가로 알아 둘 것</span>
+<ul>
+<li><strong>퇴원은 5월</strong>이었습니다 <span class="term">(교재 [장면 2])</span></li>
+<li><strong>심혈관계 변화</strong> — 혈관 탄력 저하, 심장 최대 박출량 감소 <span class="term">(2부 표에 추가함)</span></li>
+<li><strong>ADL에 '대소변 조절'</strong>, <strong>IADL에 '빨래·교통수단 이용·금전 관리'</strong>가 더 있습니다</li>
+<li><strong>외래 이용률 68.8%</strong>는 2020년 <strong>70.6%</strong>에서 1.8%p <strong>감소</strong>한 수치입니다</li>
+<li><strong>65세 기대여명 21.5년</strong>의 내역 — 남자 19.2년 / 여자 23.6년</li>
+<li>노쇠는 <strong>장애나 복합이환과 구별되는 독립적인 임상 증후군</strong>이라는 점을 Fried 논문이 제시했습니다</li>
+<li>학습목표 3번에는 <strong>'기능제한'</strong>도 포함됩니다 <span class="term">(전사본에는 빠져 있었음)</span></li>
+<li>AWGS 2019 합의의 출처 표기는 <strong>Chen et al., 2020</strong>입니다</li>
+</ul>
+</div>
+
+<footer class="doc">
+<p>이 문서는 <code>노인복지론03.txt</code>(3주차 온라인 강의 전사본)와 <code>노인복지론_제3장_노년기신체적건강.pdf</code>(교재)를 함께 정리한 것입니다.</p>
+<p><strong>수치는 교재를 기준으로 수정했습니다.</strong> 전사본과 달랐던 항목은 14장에 정리해 두었습니다.</p>
+<p>작성일 2026-09-14 · 대상 수업 9월 16일(수) 16:30–17:45, 새천년관 7309</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02주차 · 인구 고령화 — 쉽게 다시 쓴 수업 노트</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --code-bg:#f4f1ec;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --code-bg:#22252a;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","\B9D1\C740 \ACE0\B515",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 26px;padding-bottom:16px;border-bottom:3px solid var(--accent);
+  letter-spacing:-.02em;font-weight:750}
+h2{font-size:1.25rem;margin:44px 0 14px;padding-left:13px;border-left:4px solid var(--accent);
+  line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.05rem;margin:28px 0 9px;color:var(--accent-ink);font-weight:700}
+h4{font-size:.97rem;margin:20px 0 7px;font-weight:700}
+h5,h6{font-size:.92rem;margin:16px 0 6px;font-weight:700;color:var(--muted)}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 15px;padding-left:24px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:italic}
+del{color:var(--faint)}
+a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,"D2Coding",monospace;font-size:.89em;
+  background:var(--code-bg);padding:2px 6px;border-radius:4px}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:15px 17px;overflow-x:auto;margin:18px 0;line-height:1.6}
+pre code{background:none;padding:0;font-size:.86rem;white-space:pre}
+blockquote{margin:18px 0;padding:13px 18px;border-left:4px solid var(--accent);
+  background:var(--accent-soft);border-radius:0 8px 8px 0}
+blockquote p:last-child{margin-bottom:0}
+blockquote h1,blockquote h2,blockquote h3{margin-top:4px;border:0;padding:0}
+blockquote h1{font-size:1.25rem;margin-bottom:6px;padding-bottom:0}
+blockquote h2{font-size:1.1rem;margin-bottom:6px}
+.tablewrap{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem}
+td:first-child{font-weight:600}
+footer.gen{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:.8rem;color:var(--faint)}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.42rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.55}
+  .wrap{padding:0;max-width:none}
+  h2,h3{page-break-after:avoid}
+  pre,blockquote,table,.tablewrap{page-break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>02주차 · 인구 고령화 — 쉽게 다시 쓴 수업 노트</h1>
+<blockquote><p>노인복지론 2주차 온라인 강의(노인복지론02.txt) 정리 정리일: 2026-09-10</p></blockquote>
+<hr>
+<h2>0. 이번 주를 한 문장으로</h2>
+<blockquote><p><strong>"노인 인구가 늘었다"는 말이 정확히 무슨 뜻인지 따져보는 시간.</strong></p></blockquote>
+<p>교수님이 직접 말합니다. 오늘 목표는 *"고령화가 얼마나 심각한지 보여주는 게 아니라, 흔히 하는 이야기 중 어디까지가 사실이고 어디부터가 해석인지 구분하는 것"*이라고요. 이게 시험 출제 방향(01 강의에서 "암기 아니라 적용·해석")과 정확히 맞물립니다.</p>
+<h3>오늘의 학습목표 5가지</h3>
+<ol>
+<li>개인의 노화와 인구의 고령화를 구분하기</li>
+<li><strong>고령화를 재는 지표들이 무엇을 재고, 무엇을 재지 못하는지 알기</strong> ← 핵심</li>
+<li>왜 고령화가 일어나는지 원인을 나누어 보기</li>
+<li>한국의 고령화가 다른 나라와 무엇이 다른지 비교하기</li>
+<li><strong>인구 고령화를 '위기'로 보는 담론을 학문적 입장과 함께 검토하기</strong> ← 핵심</li>
+</ol>
+<p>(2번과 5번이 오늘의 핵심이고, 나머지는 그 둘을 위한 준비입니다.)</p>
+<hr>
+<h2>1. 먼저 나온 사례 — 세 장면</h2>
+<p>강의는 항상 사례로 엽니다. 이건 실존 인물이 아니라 통계와 보도 조건으로 만든 <strong>가상 사례</strong>예요.</p>
+<h3>① 박정호 씨 (인천, 1961년생, 만 65세)</h3>
+<ul>
+<li>자동차 부품 협력업체에서 32년 일하고 2년 전 퇴직</li>
+<li>지금은 아파트 관리사무소 시설관리, 주 5일 근무</li>
+<li>국민연금은 나오지만 부부 생활비로는 빠듯</li>
+<li>생일이 지나 지하철 무임승차 대상이 됐는데 <strong>경로우대 카드를 서랍에 넣어두고 안 씀</strong></li>
+<li>주말엔 산악회. 회원 중엔 자기보다 열 살 어린 사람도 있음</li>
+<li>아내가 "경로당도 나가보라"고 하자 → <strong>"거기 계신 분들은 나보다 스무 살 위야. 내가 거기 가서 뭘 해."</strong></li>
+</ul>
+<h3>② 정순임 씨 (전남 고흥군, 1942년생, 만 84세)</h3>
+<ul>
+<li>8년 전 남편과 사별, 이후 혼자 삶. 자녀 셋은 모두 수도권</li>
+<li>소득은 기초연금 + 남에게 빌려준 작은 밭 임대료가 전부</li>
+<li>무릎 관절염으로 오래 걷기 어려움</li>
+<li>읍내 병원 가려면 <strong>마을 앞을 하루 네 번 지나는 버스</strong>를 타야 하고, 놓치면 다음 차까지 3시간</li>
+<li>노인맞춤돌봄서비스 생활지원사가 주 2회 방문. <strong>그 두 번을 빼면 하루 종일 말할 일이 없는 날도 있음</strong></li>
+</ul>
+<h3>③ 이현수 주무관 (군청 사회복지직 3년차)</h3>
+<p>내년 노인복지 사업계획을 세우며 통계표를 봅니다. 표의 한 칸 <strong>"65세 이상 인구"</strong> — 이 칸 안에 박정호 씨와 정순임 씨가 <strong>같이</strong> 들어갑니다. 두 사람은 <strong>19살 차이</strong>. 사는 곳도, 소득의 원천도, 하루를 보내는 방식도, 스스로를 부르는 이름도 다른데, 예산 배분의 근거가 되는 지표에서는 <strong>똑같은 한 명</strong>으로 계산됩니다.</p>
+<p>그래서 주무관이 회의에서 던진 질문:</p>
+<blockquote><p><strong>"제가 '노인 인구가 늘었다'고 말할 때, 그 말이 정확히 무엇이 늘었다는 뜻입니까?"</strong></p></blockquote>
+<p>오늘 강의 전체가 이 질문에 답하는 과정이고, 마지막 슬라이드에서 다시 이 질문으로 돌아옵니다. <strong>오프라인 세션도 이 질문으로 시작한다고 예고했습니다.</strong></p>
+<hr>
+<h2>2. 1부 — 고령화란 무엇이고, 어떻게 재는가</h2>
+<h3>(1) 개인의 '노화' ≠ 인구의 '고령화' — 이번 주 첫 번째 핵심</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th></th>
+<th>노화 (aging)</th>
+<th>인구 고령화 (population aging)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>누구에게</td>
+<td><strong>한 사람</strong>에게 일어나는 일</td>
+<td><strong>인구 집단</strong>에 일어나는 일</td>
+</tr>
+<tr>
+<td>무엇이 변하나</td>
+<td>신체 기능, 사회적 역할, 자기 인식</td>
+<td>전체 인구의 <strong>연령 구조</strong>(고령자 비중)</td>
+</tr>
+<tr>
+<td>대응 수단</td>
+<td>건강, 돌봄 → <strong>개인의 삶의 조건</strong></td>
+<td>연금·의료보장·노동시장·재정배분 → <strong>제도 설계</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>두 개가 진짜 다른 말이라는 증거 (강의에 나온 사고실험):</strong></p>
+<ul>
+<li>아무도 지금보다 오래 살지 않아도 → <strong>아이가 안 태어나면 인구는 고령화됩니다.</strong></li>
+<li>모두가 지금보다 오래 살아도 → <strong>출생아가 그보다 빠르게 늘면 인구는 오히려 젊어집니다.</strong></li>
+</ul>
+<p>즉 인구 고령화는 *"사람들이 늙는 현상"*이 아니라 <strong>"인구의 구성비가 바뀌는 현상"</strong>입니다.</p>
+<p><strong>왜 구분이 중요한가 — 섞으면 생기는 사고:</strong> 정순임 씨가 병원에 못 가는 건 <strong>인구 고령화 때문이 아닙니다.</strong> 그 지역의 교통 인프라 + 그분의 건강 상태가 만나서 생긴 문제죠. 이걸 "고령화 때문"이라고 말해버리면 <strong>아무것도 바꿀 수 없게 됩니다.</strong> (버스는 늘릴 수 있어도 고령화는 못 되돌리니까요.)</p>
+<blockquote><p>이게 01 강의에서 말한 <strong>"진단이 틀리면 엉뚱한 서비스를 연결하게 된다"</strong>의 실제 예시입니다.</p></blockquote>
+<h3>(2) '노인 = 65세'는 어디서 온 숫자인가?</h3>
+<ul>
+<li><strong>노인복지법은 1981년 6월 5일 제정</strong>됐습니다.</li>
+<li>그런데 <strong>이 법에는 "노인은 몇 살 이상"이라는 일반 정의 규정이 없습니다.</strong> 정의 조항이 규정하는 건 부양의무자·보호자·치매·노인학대 같은 것들입니다.</li>
+<li>65세는 경로우대, 사업 지원 같은 <strong>개별 조항의 '대상 요건'으로 등장할 뿐</strong>입니다.</li>
+</ul>
+<p><strong>결론: 65세는 어느 법이 한 번에 정한 게 아니라, 개별 제도들이 각각 대상을 정하는 과정에서 굳어진 '사실상의 표준'입니다.</strong> 그래서 제도마다 기준이 다르기도 합니다.</p>
+<p><strong>연령이 아니라 '상태'가 기준인 제도도 이미 있습니다</strong> — 노인장기요양보험법 제2조 1호의 대상은 <strong>"노인 등"</strong>:</p>
+<ul>
+<li>65세 이상인 사람 <strong>+</strong></li>
+<li>65세 미만이라도 치매·뇌혈관성 질환 같은 <strong>노인성 질병</strong>이 있는 사람</li>
+</ul>
+<h3>(3) 제도의 65세 vs 당사자의 71.6세 — 6.6년의 간격</h3>
+<p><strong>2023년 노인실태조사</strong></p>
+<ul>
+<li>노인이라고 생각하는 연령 기준 <strong>평균 71.6세</strong> (2020년 조사 70.5세 → 3년 만에 1.1세 상승)</li>
+<li>전체 노인의 <strong>79.1%</strong>가 "70세 이상부터가 노인"이라고 응답</li>
+</ul>
+<p><strong>제도가 정한 65세 ↔ 당사자가 느끼는 71.6세 = 6.6년의 간격.</strong></p>
+<p>박정호 씨가 경로우대 카드를 서랍에 넣어둔 건 <strong>개인의 고집이 아니라 일반적인 인식</strong>이라는 뜻입니다. 이 간격은 <strong>서비스 이용률과 수용성에 직접 영향</strong>을 줍니다. 노인 대상이라고 잘 만든 서비스가 <strong>정작 당사자에게 닿지 않는 일</strong>이 생기니까요.</p>
+<h3>(4) 고령화를 재는 지표 4개 — 외우지 말고 "무엇을 재는지"를 보세요</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>지표</th>
+<th>계산</th>
+<th>특징</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>고령화율</strong></td>
+<td>전체 인구 중 65세 이상 <strong>%</strong></td>
+<td>가장 널리 쓰임, 국제 비교 쉬움</td>
+</tr>
+<tr>
+<td><strong>노령화지수</strong></td>
+<td>유소년(0~14세) 100명당 고령인구 수</td>
+<td>저출산+고령화가 동시에 오면 <strong>아주 빠르게</strong> 치솟음</td>
+</tr>
+<tr>
+<td><strong>노년부양비</strong></td>
+<td>생산연령(15~64세) 100명당 고령인구 수</td>
+<td>가장 자주 오독되는 지표</td>
+</tr>
+<tr>
+<td><strong>중위연령</strong></td>
+<td>전 인구를 나이순으로 세웠을 때 <strong>한가운데 사람의 나이</strong></td>
+<td>특정 연령 기준(65세)에 의존하지 않는 게 장점</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>(5) 노년부양비의 함정 — 오늘 가장 중요한 대목</h3>
+<p>이 지표는 <strong>계산할 때 두 가지를 가정</strong>합니다.</p>
+<ul>
+<li>65세 이상은 <strong>전원 부양받는 쪽</strong></li>
+<li>15~64세는 <strong>전원 부양하는 쪽</strong></li>
+</ul>
+<p><strong>그런데 실제로는?</strong></p>
+<ul>
+<li>2023년 노인실태조사 기준 <strong>고령자의 39%가 일하고 있습니다.</strong> (10명 중 약 4명)</li>
+<li>손자녀 돌봄, 자원봉사처럼 <strong>시장에서 거래되지 않지만 분명한 노동</strong>을 하는 분들도 많습니다.</li>
+<li>반대로 생산연령인구 안에도 <strong>학업 중, 실업 상태, 질병으로 노동시장 밖에 있는 사람</strong>이 섞여 있습니다.</li>
+</ul>
+<p><strong>→ 노년부양비는 '연령 구조'를 보여주는 지표이지, '실제 부양 부담'을 측정한 지표가 아닙니다.</strong> 이 지표는 ① 1인당 생산성의 변화 ② 여성·고령자의 노동시장 참여 확대 ③ 이민의 영향 — <strong>셋 다 전혀 반영하지 못합니다.</strong></p>
+<h3>(6) 고령화 단계 구분</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>고령화율</th>
+<th>명칭</th>
+<th>한국 도달 시점</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>7%</td>
+<td>고령화 사회</td>
+<td><strong>2000년</strong></td>
+</tr>
+<tr>
+<td>14%</td>
+<td>고령 사회</td>
+<td><strong>2017년</strong> (7%→14% : <strong>17년</strong>)</td>
+</tr>
+<tr>
+<td>20%</td>
+<td>초고령 사회</td>
+<td><strong>2024년</strong> (14%→20% : <strong>7년</strong>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>7% → 20%까지 총 24년.</strong> 이게 빠른 건지는 3부에서 다른 나라와 비교합니다.</p>
+<h3>(7) '나이 그 자체'가 좋은 잣대인가? — 학계의 문제 제기</h3>
+<p>기대수명이 계속 늘어나는 사회에서 <strong>역연령(태어난 뒤 지난 햇수)</strong>은 같은 것을 재는 자가 되지 못합니다. <strong>1970년의 65세와 2025년의 65세</strong>는 남은 생의 기간도, 건강 상태도, 사회적 역할도 전부 다르니까요.</p>
+<ul>
+<li><strong>라이더(Ryder, 1975)</strong>: 고정된 나이가 아니라 <strong>앞으로 남은 생존 연수</strong>를 기준으로 노인을 분류하는 편이 낫다고 제안.</li>
+<li><strong>샌더슨 &amp; 셰르보프(Sanderson &amp; Scherbov, 2005)</strong>: 이 착상을 인구 수준 지표로 발전시켜, 중위연령을 <strong>기대여명으로 표준화</strong>한 새 척도를 만듦. 그렇게 계산하니 독일·일본·미국 같은 나라 인구가 <strong>통상적 중위연령으로는 계속 늙어가는데, 이 척도로는 어느 시기엔 오히려 젊어지는</strong> 모습으로 나옴.</li>
+</ul>
+<p><strong>오해 금지:</strong> 이 연구들이 고령화를 부정하는 게 아닙니다. <strong>"하나의 숫자로 사회적 부담을 결론짓지 말자"</strong>는 겁니다. <strong>지표는 언제나 특정한 가정 위에 만들어집니다.</strong></p>
+<hr>
+<h2>3. 2부 — 왜 인구가 고령화되는가</h2>
+<p>인구의 연령 구조를 결정하는 건 <strong>출생 · 사망 · 인구이동</strong> 세 가지뿐입니다. 고령화도 이 세 경로로 진행됩니다.</p>
+<h3>경로 ① 아래로부터의 고령화 (출생 감소)</h3>
+<p>태어나는 아이가 줄면 인구 피라미드의 <strong>아랫부분이 좁아지고</strong>, 상대적으로 고령자 비중이 커집니다. → <strong>고령자의 수가 전혀 늘지 않아도 비중은 커질 수 있습니다.</strong> (시험 포인트)</p>
+<h3>경로 ② 위로부터의 고령화 (사망률 개선)</h3>
+<p>사람들이 더 오래 살면 피라미드 <strong>윗부분이 두꺼워집니다.</strong></p>
+<p>여기 흥미로운 반전이 있습니다.</p>
+<ul>
+<li><strong>20세기 중반까지</strong>의 사망률 개선은 주로 <strong>영유아 사망 감소</strong> → 오히려 인구를 <strong>젊게</strong> 만들었습니다.</li>
+<li><strong>최근</strong>의 사망률 개선은 <strong>고령기 생존의 개선</strong> → 고령화를 <strong>직접 촉진</strong>합니다.</li>
+</ul>
+<h3>경로 ③ 인구 이동</h3>
+<p>이동은 대체로 <strong>청년층</strong>에서 활발합니다. 그래서 청년이 빠져나가는 지역은 고령화가 <strong>가속</strong>되고, 유입되는 지역은 <strong>완화</strong>됩니다. <strong>한국의 지역 간 격차가 바로 이 경로의 영향을 크게 받습니다.</strong> (3부에서 확인)</p>
+<h3>여기에 하나 더 — 코호트 효과</h3>
+<p>특정 시기에 태어난 <strong>대규모 코호트</strong>가 고령기에 진입하면서 나타나는 효과입니다. 한국은 <strong>한국전쟁이 끝난 뒤 출생아 수가 급증한 시기의 코호트가 큽니다.</strong> 이들이 65세를 넘어서는 게 바로 <strong>지금 2020년대</strong>입니다. → <strong>박정호 씨가 1961년생 = 바로 이 코호트.</strong></p>
+<h3>인구변천, 그리고 '압축'</h3>
+<p><strong>인구변천(demographic transition)</strong>: 산업화되면서 <strong>고출생·고사망 → 저출생·저사망</strong>으로 이행하는 것. 사망률이 <strong>먼저</strong> 떨어지고 출생률이 <strong>늦게</strong> 떨어지기 때문에, 변천이 끝나면 인구 증가가 멈추고 연령 구조가 고령화됩니다.</p>
+<ul>
+<li>선진국: 이 변천이 <strong>한 세기 이상</strong>에 걸쳐 진행</li>
+<li>한국: 1960년대 이후 <strong>급속한 산업화 + 가족계획 정책</strong>이 결합해 훨씬 짧은 기간에 <strong>압축적으로</strong> 발생</li>
+</ul>
+<blockquote><p><strong>인구변천이 압축되면 고령화도 압축된다.</strong> 한국 고령화의 가장 두드러진 특징인 <strong>'속도'</strong>가 바로 여기서 나옵니다.</p></blockquote>
+<h3>최근 수치</h3>
+<ul>
+<li><strong>합계출산율</strong>: 2023년 0.7명대 초반까지 내려갔다가 2024·2025년 <strong>2년 연속 상승</strong>. 다만 대체수준(2.1명)에는 여전히 크게 못 미침</li>
+<li><strong>2025년</strong>: 출생아 25만 4,500명 vs 사망자 36만 3,400명 → <strong>인구 자연감소 지속</strong></li>
+<li><strong>기대수명</strong>: 2024년 출생아 기준 <strong>83.7년</strong> (남 80.8년 / 여 86년대)</li>
+<li><strong>65세 시점 기대여명</strong>: 2023년 기준 <strong>21.5년</strong>. OECD 평균보다 남자 +0.7년, 여자 +1.9년</li>
+</ul>
+<h3>코호트 관점 — 2부의 마무리</h3>
+<p>같은 시기에 태어난 사람들은 <strong>같은 역사적 사건을 같은 생의 단계에서</strong> 통과합니다. 그래서 어떤 시점의 노인은 단순히 '나이 많은 사람들의 집합'이 아니라 <strong>특정한 역사적 경험을 공유한 집단</strong>입니다.</p>
+<p><strong>왜 중요한가?</strong> 시간이 흐르면 <strong>'노인 집단'의 성격 자체가 달라진다</strong>는 뜻이기 때문입니다.</p>
+<blockquote><p>노인 취업률: <strong>2017년 30.9% → 2020년 36.9% → 2023년 39.0%</strong> (6년 사이 8%p 넘게 상승)</p></blockquote>
+<p><strong>어제의 65세 ≠ 오늘의 65세 ≠ 내일의 65세.</strong> 사례의 두 사람이 서로 다른 건 <strong>개인차 때문만이 아니라, 서로 다른 코호트이기 때문</strong>입니다.</p>
+<hr>
+<h2>4. 3부 — 한국은 실제로 어떤 모습인가 (통계)</h2>
+<h3>(1) 현재 위치</h3>
+<ul>
+<li><strong>2024년 12월 23일</strong>, 행정안전부 주민등록 인구 기준: 총인구 5,122만 186명 중 65세 이상 <strong>1,024만 4,550명 = 20.0%</strong> → <strong>주민등록 인구 기준 65세 이상 비중이 처음으로 20%를 넘어선 날</strong> (초고령사회 진입)</li>
+<li><strong>통계청 2025년 고령자통계</strong>: 고령인구 <strong>1,051만 4천 명, 전체의 20.3%</strong>
+<ul>
+<li>성별: 여자 <strong>22.6%</strong> vs 남자 <strong>18.0%</strong> (4.6%p 차이)</li>
+<li>전망: <strong>2030년 30%, 2050년 40%</strong> 돌파</li>
+</ul></li>
+</ul>
+<h3>(2) 2072년 장래인구추계 (2022년 기준, 중위 시나리오)</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>구분</th>
+<th>2022년</th>
+<th>2072년</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>0~14세</td>
+<td>11.5%</td>
+<td><strong>6.6%</strong></td>
+</tr>
+<tr>
+<td>15~64세</td>
+<td>71.1%</td>
+<td><strong>45.8%</strong></td>
+</tr>
+<tr>
+<td>65세 이상</td>
+<td>17.4%</td>
+<td><strong>47.7%</strong></td>
+</tr>
+<tr>
+<td>총인구</td>
+<td>5,167만 명</td>
+<td><strong>3,622만 명</strong> (1977년 수준)</td>
+</tr>
+<tr>
+<td>중위연령</td>
+<td>44.9세</td>
+<td><strong>63.4세</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>강의에서 강조한 주의사항: "추계는 예언이 아닙니다."</strong> 출산율·사망률·인구이동에 관한 <strong>가정을 조합한 시나리오 중 하나</strong>일 뿐입니다. 실제로 2024·2025년 합계출산율이 2년 연속 오르면서 <strong>추계를 만들 때의 가정과 다른 흐름</strong>이 나타나고 있습니다.</p>
+<h3>(3) 부양비 — 1부 내용이 다시 등장</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th></th>
+<th>2022년</th>
+<th>2072년</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>총부양비</td>
+<td>40.6명</td>
+<td><strong>118.5명</strong></td>
+</tr>
+<tr>
+<td>노년부양비</td>
+<td>24.4명</td>
+<td><strong>104.2명</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>2022년 한국의 총부양비는 OECD <strong>최저</strong> 수준인데, 2072년엔 <strong>최고</strong>가 될 전망입니다.</p>
+<p><strong>여기가 이번 주 최대 시험 포인트:</strong></p>
+<blockquote><p>언론은 노년부양비 104.2명을 두고 흔히 <strong>"생산연령인구 1명이 노인 1명을 부양하게 된다"</strong>고 씁니다. <strong>숫자가 틀린 게 아닙니다. 계산은 맞습니다.</strong> 다만 그 숫자에서 <strong>"한 명이 한 명을 먹여 살린다"는 결론으로 넘어가는 순간, 그건 지표가 아니라 해석</strong>입니다. 그 해석에는 <strong>① 고령자는 일하지 않는다 ② 생산성은 변하지 않는다</strong> 는 가정이 숨어 있습니다.</p></blockquote>
+<h3>(4) 속도 — 한국 고령화를 이해하는 핵심</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>나라</th>
+<th>7%→14%</th>
+<th>14%→20%</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>한국</strong></td>
+<td><strong>17년</strong> (2000→2017)</td>
+<td><strong>7년</strong> (2017→2024)</td>
+</tr>
+<tr>
+<td>미국</td>
+<td>약 73년</td>
+<td>—</td>
+</tr>
+<tr>
+<td>일본</td>
+<td>—</td>
+<td>약 13년</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>교수님이 직접 언급: <strong>"자료마다 숫자가 조금씩 다릅니다."</strong> 한국의 7%→14%가 어떤 자료엔 17년, 어떤 자료엔 18년. 미국은 73년 또는 72년. 일본은 13년 또는 10년. → <strong>그러니 인용할 때 반드시 출처를 확인하세요.</strong> (01 강의의 "출처 확인 습관"과 연결)</p>
+<p><strong>속도가 왜 중요한가?</strong> 고령화 자체는 여러 나라가 이미 겪은 <strong>보편적 현상</strong>입니다. 진짜 문제는 <strong>연금 제도를 성숙시키고 돌봄 체계를 갖출 시간을 얼마나 확보했느냐</strong>입니다.</p>
+<blockquote><p><strong>서유럽이 한 세기에 걸쳐 준비한 것을, 한국은 한 세대 안에 마련해야 했습니다.</strong> → <strong>한국의 노인 빈곤이 심각한 이유의 상당 부분이 여기 있습니다.</strong></p></blockquote>
+<h3>(5) 지역 격차 — 고령화는 전국에 고르게 오지 않습니다</h3>
+<p>2025년 기준 시도별 고령인구 비율</p>
+<ul>
+<li><strong>최고: 전남 27.4%</strong> (이어서 경북, 강원, 전북, 부산… 20% 넘는 지역이 9곳)</li>
+<li><strong>최저: 세종 11.6%</strong> (경기 약 17%, 울산 17.8%)</li>
+<li><strong>전남 ↔ 세종 격차: 15.8%p</strong></li>
+</ul>
+<p><strong>원인은 2부의 세 번째 경로 = 인구 이동.</strong> 청년층이 수도권·대도시로 이동하면서 유출 지역의 연령 구조가 급격히 고령화된 겁니다. 2038년쯤이면 세종을 제외한 모든 지역이 20%를 넘을 전망입니다.</p>
+<p><strong>중요한 건 이게 단순한 통계상의 차이가 아니라는 점:</strong> 고령인구 비중이 높은 지역일수록 → <strong>인구밀도가 낮고 → 재정 여건이 취약하고 → 의료기관과 서비스의 밀도도 낮습니다.</strong></p>
+<blockquote><p><strong>정순임 씨가 하루 네 번 다니는 버스를 기다려야 하는 상황 = 이 구조적 격차가 한 사람의 하루에 나타난 모습.</strong></p></blockquote>
+<h3>(6) '노인' 안을 들여다보면 — 하나의 집단으로 다루기 어렵습니다</h3>
+<p>2025년 기준 (전체 인구 대비)</p>
+<ul>
+<li>65~69세 <strong>7.1%</strong> / 70~74세 <strong>4.9%</strong> / 75세 이상 <strong>8.3%</strong></li>
+<li>아직은 <strong>전기 고령자(65~74세)가 더 많습니다.</strong></li>
+</ul>
+<p><strong>그런데 통계청 전망:</strong></p>
+<ul>
+<li><strong>2038년부터 75세 이상 인구가 65~74세 인구보다 많아집니다.</strong></li>
+<li>격차는 계속 벌어져 <strong>2072년엔 65~74세 15.8% vs 75세 이상 31.5% — 약 2배 차이.</strong></li>
+</ul>
+<p><strong>왜 중요한가? 노인복지의 성격이 근본적으로 바뀌기 때문입니다.</strong></p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>65~74세가 다수인 사회</th>
+<th>75세 이상이 다수인 사회</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>고용 · 소득 · 사회참여</strong> 중심</td>
+<td><strong>돌봄 · 의료 · 주거 · 이동</strong> 중심</td>
+</tr>
+<tr>
+<td>← 박정호 씨에게 필요한 것</td>
+<td>← 정순임 씨에게 필요한 것</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>(7) 가구 구조 — '가족 돌봄' 전제가 무너지고 있습니다</h3>
+<p><strong>2023년 노인실태조사</strong></p>
+<ul>
+<li>부부가구 <strong>55.2%</strong> / 1인가구 <strong>32.8%</strong> / 자녀동거가구 <strong>10.3%</strong></li>
+<li>→ <strong>자녀와 함께 사는 노인은 10명 중 1명.</strong></li>
+</ul>
+<p><strong>수준보다 속도가 더 중요합니다 (3년 사이 변화)</strong></p>
+<ul>
+<li>1인가구 비율 <strong>13%p 증가</strong></li>
+<li>자녀동거가구 <strong>20.1% → 10.3%</strong> (절반으로)</li>
+<li>평균 가구원 수 <strong>2.0명 → 1.8명</strong></li>
+</ul>
+<p><strong>가구 단위로 보면:</strong> 2025년 고령자 가구 <strong>678만 7천 가구 = 전체의 27.6%</strong> → <strong>2052년 50.6%</strong>, 전체 가구의 <strong>절반</strong>을 넘습니다.</p>
+<blockquote><p>한국의 주거정책·돌봄정책·지역사회 서비스 설계가 전제해 온 <strong>'가족 돌봄'이라는 조건이 더 이상 유효하지 않다</strong>는 뜻입니다. (이 주제는 <strong>12주차</strong>에서 본격적으로 다룹니다)</p></blockquote>
+<h3>(8) 경제적 지위 — 노인 상대적 빈곤율</h3>
+<p><strong>상대적 빈곤율</strong> = 소득이 <strong>중위소득의 50%</strong>에 미치지 못하는 인구의 비율. → 절대적 결핍이 아니라, <strong>그 사회의 일반적 생활수준에 비해 얼마나 뒤처져 있는지</strong>를 재는 지표입니다.</p>
+<p><strong>국제 비교 가능한 2022년 기준</strong></p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>높은 쪽</th>
+<th></th>
+<th>낮은 쪽</th>
+<th></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>한국</strong></td>
+<td><strong>39.7%</strong> ← OECD 1위</td>
+<td>영국</td>
+<td>14.6%</td>
+</tr>
+<tr>
+<td>에스토니아</td>
+<td>37.4%</td>
+<td>캐나다</td>
+<td>11.6%</td>
+</tr>
+<tr>
+<td>라트비아</td>
+<td>33%</td>
+<td>프랑스</td>
+<td>6.1%</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>네덜란드</td>
+<td>4.4%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote><p><strong>한국은 노인 10명 중 4명이 빈곤선 아래. 프랑스·네덜란드는 20명 중 1명 수준.</strong> 교수님 표현: <strong>"이건 정도의 차이가 아니라 다른 종류의 상황입니다."</strong></p></blockquote>
+<p>국내 수치로는 2023년 기준 <strong>39.8%</strong> (전년보다 0.1%p 상승).</p>
+<p><strong>이 조건은 노동 참여로 나타납니다.</strong> 2025년 기준 65~79세 고령자의 <strong>57.6%</strong>가 "계속 일하고 싶다"고 응답했고, <strong>이유 1위가 '생활비에 보탬' 51.3%</strong>. → <strong>한국 고령자의 높은 노동 참여는 상당 부분 선택이 아니라 필요에서 나옵니다.</strong></p>
+<hr>
+<h2>5. 4부 — 이 현상을 어떻게 볼 것인가 (가장 중요한 파트)</h2>
+<h3>(1) 위기의 언어</h3>
+<p>지금까지 본 통계는 대체로 "심각하다"는 인상을 줍니다. 실제로 한국 공론장에서 인구 고령화는 거의 언제나 <strong>위기의 언어</strong>로 서술됩니다. — <em>인구절벽, 고령화 쇼크, 재정 파탄…</em></p>
+<h3>(2) 그런데 노년학계는 이 서술 방식을 오래 전부터 비판적으로 검토해 왔습니다</h3>
+<ul>
+<li><strong>로버트슨(Robertson, 1990)</strong>: 이런 파국적 전망을 <strong>"종말론적 인구학(apocalyptic demography)"</strong>이라고 불렀습니다.</li>
+<li><strong>지 &amp; 것먼(Gee &amp; Gutman, 2000)</strong>: 인구 고령화가 <strong>복지국가 축소의 논거로 쓰인다</strong>는 점을 지적했습니다.</li>
+</ul>
+<h3>(3) 비판의 요점 4가지 (서술형 단골)</h3>
+<p><strong>① 인구학적 결정론</strong> 인구 구조가 사회적 결과를 <strong>자동으로</strong> 결정한다는 전제는 성립하지 않습니다. 같은 고령화율이라도 <strong>연금제도의 성숙도, 노동시장 구조, 조세 체계</strong>에 따라 전혀 다른 결과가 나옵니다.</p>
+<blockquote><p><strong>인구 구조는 '조건'이지 '운명'이 아닙니다.</strong></p></blockquote>
+<p><strong>② 부양비 지표의 한계</strong> (강의에서 이미 두 번 나온 그것) 생산성 변화도, 여성·고령자의 노동시장 참여 확대도, 이민의 영향도 전혀 반영하지 못합니다.</p>
+<p><strong>③ 세대 갈등의 프레임</strong> 고령화를 *"젊은 세대가 노인 세대를 부양하는 문제"*로 좁히면, <strong>실제 자원 배분의 축인 계층 간 불평등이 시야에서 사라집니다.</strong></p>
+<blockquote><p>근거: <strong>고령자 내부의 불평등은 다른 어떤 연령대보다 큽니다.</strong> (박정호 씨 ↔ 정순임 씨가 바로 그 증거)</p></blockquote>
+<p><strong>④ 특정 기준의 고정</strong> 65세라는 기준선을 <strong>고정한 채</strong> 미래를 전망하는 것은, 그 사이 <strong>건강과 기대수명이 달라지지 않는다</strong>고 암묵적으로 가정하는 겁니다.</p>
+<h3>(4) 절대 오해하면 안 되는 부분</h3>
+<p><strong>이 비판들이 "인구 고령화는 아무 문제도 아니다"라고 말하는 게 아닙니다.</strong> 연금 재정, 돌봄 인력 확보, 지역 소멸 대응은 <strong>전부 실질적 과제</strong>이고, 한국은 <strong>① 속도가 빠르고 ② 빈곤율이 높다</strong>는 두 조건이 겹쳐서 <strong>절박성이 더 큽니다.</strong></p>
+<h3>(5) 결론 — 진단이 처방을 바꾼다</h3>
+<blockquote><p><strong>비판의 요지는 문제의 존재를 부정하는 데 있지 않고, 문제를 정확하게 규정하자는 데 있습니다.</strong></p></blockquote>
+<p>이렇게 물어보라고 합니다.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>진단 A</th>
+<th>진단 B</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>"노인이 많아진 것 자체가 문제인가?"</strong></td>
+<td><strong>"노인이 많아지는 속도에 비해 소득보장 제도가 성숙하지 못한 것이 문제인가?"</strong></td>
+</tr>
+<tr>
+<td>→ 노인 인구를 줄이거나 <strong>노인 대상 지출을 줄이는</strong> 방향</td>
+<td>→ <strong>제도를 보완하는</strong> 방향</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>어떤 진단이 선택되느냐에 따라 무엇이 정당한 정책으로 여겨지는지가 달라집니다.</strong> → 01 강의의 <strong>"이 과목은 진단하는 법을 배우는 과목"</strong>이 여기서 실제로 작동합니다.</p>
+<h3>(6) 실천에 주는 함의 2가지</h3>
+<ol>
+<li><strong>'노인'이라는 범주를 그대로 실천 단위로 삼지 말 것.</strong> 기능 상태 · 소득 · 가구 형태 · 지역처럼 <strong>개입의 필요를 훨씬 잘 설명해 주는 것</strong>을 실천 단위로 삼으세요.</li>
+<li><strong>통계를 인용할 때 그 지표가 무엇을 전제하는지 반드시 확인할 것.</strong> 숫자는 언제나 <strong>가정 위에서</strong> 만들어집니다.</li>
+</ol>
+<hr>
+<h2>6. 꼭 기억할 숫자 (한 페이지 요약용)</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>항목</th>
+<th>숫자</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>노인복지법 제정</td>
+<td>1981. 6. 5. (연령 정의 규정 <strong>없음</strong>)</td>
+</tr>
+<tr>
+<td>당사자 인식 노인 기준</td>
+<td><strong>71.6세</strong> (2020년 70.5세) / 70세 이상 응답 79.1%</td>
+</tr>
+<tr>
+<td>초고령사회 진입</td>
+<td><strong>2024년 12월 23일</strong>, 20.0%</td>
+</tr>
+<tr>
+<td>2025년 고령화율</td>
+<td><strong>20.3%</strong> (여 22.6% / 남 18.0%)</td>
+</tr>
+<tr>
+<td>고령화 단계 통과</td>
+<td>2000년 7% → 2017년 14% → 2024년 20% (<strong>17년 + 7년 = 24년</strong>)</td>
+</tr>
+<tr>
+<td>2072년 65세 이상 비중</td>
+<td><strong>47.7%</strong></td>
+</tr>
+<tr>
+<td>2072년 노년부양비</td>
+<td><strong>104.2명</strong> (2022년 24.4명)</td>
+</tr>
+<tr>
+<td>고령자 취업률</td>
+<td>2017년 30.9% → 2023년 <strong>39.0%</strong></td>
+</tr>
+<tr>
+<td>노인 상대적 빈곤율</td>
+<td><strong>39.7%</strong> (2022, OECD 1위) / 프랑스 6.1%</td>
+</tr>
+<tr>
+<td>지역 격차</td>
+<td>전남 <strong>27.4%</strong> ↔ 세종 <strong>11.6%</strong> (15.8%p)</td>
+</tr>
+<tr>
+<td>노인 1인가구</td>
+<td><strong>32.8%</strong> / 자녀동거 <strong>10.3%</strong></td>
+</tr>
+<tr>
+<td>75세 이상 &gt; 65~74세 역전</td>
+<td><strong>2038년</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2>7. 시험에서 틀리기 쉬운 함정 3개</h2>
+<p><strong>"노년부양비 104.2명 → 1명이 1명을 부양한다"</strong> → 계산은 맞지만 <strong>결론은 해석</strong>. 65세 이상 전원이 피부양자라는 가정이 숨어 있고, 실제 고령자 39%는 일합니다.</p>
+<p><strong>"고령화율이 오른다 = 노인이 늘어난다"</strong> → 아닙니다. <strong>아이가 줄어도 비중은 오릅니다.</strong> 고령자 수가 그대로여도 고령화율은 오를 수 있습니다.</p>
+<p><strong>"정순임 씨가 병원 못 가는 건 고령화 때문"</strong> → 아닙니다. <strong>개인의 노화 ≠ 인구 고령화.</strong> 교통 인프라와 건강 상태가 만난 문제입니다.</p>
+<p><em>(참고: 01 강의에서 예고한 함정도 같은 종류입니다 — "치매 유병률이 9.5%→9.25%로 낮아졌다 = 치매가 줄고 있다"는 <strong>틀립니다.</strong> 분모인 고령인구가 늘어서 비율이 낮아진 것이고, 환자 수는 계속 증가합니다.)</em></p>
+<hr>
+<h2>8. 오프라인 세션 준비 (교수님이 직접 예고한 것)</h2>
+<p><strong>예고된 시작 질문</strong></p>
+<blockquote><p><em>"여러분이 이현수 주무관 자리에 있다면, 어떤 지표를 근거로 예산을 배분하겠습니까? 65세 이상 인구 수를 쓸 것인가, 아니면 다른 것을 볼 것인가?"</em></p></blockquote>
+<p><strong>답을 만드는 틀 (정답은 하나가 아니고, '근거'를 요구합니다)</strong></p>
+<ol>
+<li><strong>65세 이상 인구 수만 쓰면 안 되는 이유</strong> → 박정호 씨와 정순임 씨가 같은 1명으로 계산됨. 필요가 전혀 다른데 예산은 똑같이 배분됨.</li>
+<li><strong>대신 볼 것 (4부 실천 함의 그대로)</strong> → <strong>연령대 분리</strong>(65~74 / 75+), <strong>기능 상태</strong>, <strong>소득</strong>(기초연금 수급 여부), <strong>가구 형태</strong>(1인가구 비율), <strong>지역 접근성</strong>(의료기관·교통 밀도).</li>
+<li><strong>근거 문장</strong> → "이 지표는 ○○를 전제하고 있어서 우리 지역의 ○○를 설명하지 못한다. 그래서 ○○를 함께 보겠다."</li>
+</ol>
+<p>01 강의에서 "발언량이 아니라 <strong>준비했는지</strong>를 보겠다"고 했으니, 위 3단계를 메모해서 가면 참여 점수(30%)에 그대로 반영됩니다.</p>
+<p><strong>세션 전 체크리스트</strong></p>
+<ul>
+<li>[ ] 온라인 강의 시청 (수치 나오는 구간은 멈춰가며)</li>
+<li>[ ] 교재 2장 읽기</li>
+<li>[ ] 한 페이지 복습자료 훑기 (<strong>세션 직전이 가장 효과적</strong>)</li>
+<li>[ ] 퀴즈 풀기 (해설 먼저 보지 말고)</li>
+<li>[ ] 위 준비 질문에 대한 내 답 만들어 가기</li>
+</ul>
+<hr>
+<h2>9. 숫자 확인 목록 (녹취 오류 정정분)</h2>
+<p>원본 txt가 자동 받아쓰기라 숫자가 여러 군데 깨져 있었습니다. 앞뒤 계산으로 바로잡았지만, <strong>슬라이드로 한 번 대조</strong>해 두세요.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>녹취 표기</th>
+<th>바로잡은 값</th>
+<th>근거</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>"124만 4,550명"</td>
+<td><strong>1,024만 4,550명</strong></td>
+<td>5,122만의 20%는 1,024만</td>
+</tr>
+<tr>
+<td>"151만 4천 명"</td>
+<td><strong>1,051만 4천 명</strong></td>
+<td>5,168만의 20.3%</td>
+</tr>
+<tr>
+<td>"6078면 7천 가구"</td>
+<td><strong>678만 7천 가구</strong></td>
+<td>전체 가구의 27.6%</td>
+</tr>
+<tr>
+<td>중위연령 "53.4세"</td>
+<td><strong>63.4세</strong> (추정)</td>
+<td>통계청 2072 추계</td>
+</tr>
+<tr>
+<td>합계출산율 "2023년 0.75"</td>
+<td><strong>0.72</strong> (추정)</td>
+<td>2024년이 0.75</td>
+</tr>
+<tr>
+<td>"2017년 13%, 2014년 20%"</td>
+<td><strong>2017년 14%, 2024년 20%</strong></td>
+<td>앞 문단과 불일치</td>
+</tr>
+</tbody>
+</table>
+</div>
+<footer class="gen">이 문서는 마크다운 원본에서 자동 변환되었습니다.</footer>
+</div>
+</body>
+</html>

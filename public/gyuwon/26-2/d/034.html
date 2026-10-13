@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>정신건강과 자기돌봄 쪽글 보완본</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --warn-bg:#fdf7e7;--warn-line:#e6cf94;--warn-ink:#7a5b12;
+  --task-bg:#fdeeec;--task-line:#f0c0b8;--task-ink:#9b3a2a;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --warn-bg:#2b2517;--warn-line:#5f5228;--warn-ink:#e4c97f;
+    --task-bg:#2e1d1a;--task-line:#5e332b;--task-ink:#f0a292;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:32px}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin:0 0 6px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 10px;letter-spacing:-.02em;font-weight:750}
+.meta{font-size:.87rem;color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+.meta b{font-weight:600;color:var(--ink)}
+h2{font-size:1.22rem;margin:42px 0 14px;padding-left:13px;border-left:4px solid var(--accent);line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.02rem;margin:26px 0 8px;color:var(--accent-ink);font-weight:700}
+p{margin:0 0 13px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:normal;background:var(--accent-soft);padding:1px 5px;border-radius:4px;font-weight:600}
+.tldr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:8px}
+.tldr h2{margin-top:0;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:0;padding:0;color:var(--faint)}
+.tldr ol{margin-bottom:0;padding-left:20px}
+.tldr li{margin-bottom:9px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+.box{border-radius:10px;padding:16px 18px;margin:18px 0;border:1px solid}
+.box .label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 8px;display:block}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box.task{background:var(--task-bg);border-color:var(--task-line)}
+.box.task .label{color:var(--task-ink)}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+.box.warn .label{color:var(--warn-ink)}
+.tablewrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem;white-space:nowrap}
+td:first-child{font-weight:600;white-space:nowrap}
+.jp{font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif}
+.term{color:var(--faint);font-size:.9em;font-weight:400}
+footer.doc{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+footer.doc p{margin:0 0 5px}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.45rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  h2{page-break-after:avoid}
+  .box,.card,.tldr{page-break-inside:avoid}
+}
+.blank{display:inline-block;min-width:190px;border-bottom:1.5px dashed var(--accent);
+  padding:0 6px;color:var(--faint);font-size:.9em;text-align:center}
+.draft{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:0 10px 10px 0;padding:18px 20px;margin:16px 0}
+.draft p{margin:0 0 14px;line-height:1.9}
+.draft p:last-child{margin-bottom:0}
+.stage{display:block;font-size:.74rem;letter-spacing:.1em;font-weight:700;
+  color:var(--accent-ink);margin:20px 0 6px;text-transform:uppercase}
+.stage:first-child{margin-top:0}
+.check{list-style:none;padding-left:0}
+.check li{padding-left:30px;position:relative;margin-bottom:9px}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:15px;height:15px;
+  border:1.5px solid var(--accent);border-radius:3px}
+.sent{margin:0 0 18px}
+.sent .num{display:inline-block;min-width:2.1em;font-weight:700;color:var(--accent-ink)}
+.sent .ja{font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif;font-size:1.05em}
+.sent .ko{display:block;margin:3px 0 0 2.1em;color:var(--muted);font-size:.93em}
+.sent .note{display:block;margin:5px 0 0 2.1em;font-size:.85em;color:var(--faint);
+  padding-left:9px;border-left:2px solid var(--line)}
+.qa{margin:0 0 16px;padding-left:30px;position:relative}
+.qa .q{position:absolute;left:0;top:0;font-weight:700;color:var(--accent-ink)}
+.mail{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:0;margin:16px 0;overflow:hidden}
+.mail .hdr{background:var(--line-soft);padding:12px 16px;font-size:.9rem;border-bottom:1px solid var(--line)}
+.mail .hdr div{margin-bottom:4px}
+.mail .hdr div:last-child{margin-bottom:0}
+.mail .hdr b{display:inline-block;min-width:58px;color:var(--muted);font-weight:600}
+.mail .body{padding:16px 18px;line-height:1.85}
+.mail .body p{margin:0 0 12px}
+.mail .body p:last-child{margin-bottom:0}
+mark{padding:1px 3px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone;
+  print-color-adjust:exact;-webkit-print-color-adjust:exact}
+mark.add{background:#fdf08a;color:#332800}
+mark.fix{background:#bfeed3;color:#0c2e1d}
+mark.fill{background:#ffd4dd;color:#4a1220;border-bottom:2px dashed #cf5c78;font-weight:600}
+@media (prefers-color-scheme:dark){
+  mark.add{background:#7d6a10;color:#fff8d4}
+  mark.fix{background:#1d5b3b;color:#d6f5e3}
+  mark.fill{background:#6d2536;color:#ffdbe3;border-bottom-color:#c4738a}
+}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:14px 0 4px;font-size:.88rem}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:17px;height:17px;border-radius:4px;display:inline-block;flex:none}
+.legend i.a{background:#fdf08a}.legend i.f{background:#bfeed3}.legend i.p{background:#ffd4dd}
+@media (prefers-color-scheme:dark){
+  .legend i.a{background:#7d6a10}.legend i.f{background:#1d5b3b}.legend i.p{background:#6d2536}
+}
+.essay{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:26px 28px;margin:18px 0}
+.essay h3.t{font-size:1.25rem;color:var(--ink);text-align:center;margin:0 0 6px;font-weight:700}
+.essay .nick{text-align:center;color:var(--muted);font-size:.9rem;margin:0 0 24px;
+  padding-bottom:18px;border-bottom:1px solid var(--line)}
+.essay p{line-height:2.0;margin:0 0 18px;text-align:justify}
+.essay p:last-child{margin-bottom:0}
+@media (max-width:520px){.essay{padding:18px 16px}.essay p{line-height:1.9;text-align:left}}
+:root{--accent:#1f5fbf;--accent-ink:#1f5fbf;--accent-soft:#e9f1fc}
+@media (prefers-color-scheme:dark){:root{--accent:#7cb2f5;--accent-ink:#7cb2f5;--accent-soft:#182433}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="doc">
+<p class="eyebrow">과제 · 쪽글 #1 · 보완본</p>
+<h1>정신건강과 자기돌봄 — 쪽글</h1>
+<p class="meta"><span><b>닉네임</b> 나물</span><span><b>마감</b> 9/14(월) 12:00 · LMS</span><span><b>분량</b> 약 2,100자</span></p>
+</header>
+
+<div class="tldr">
+<h2>보완 요약</h2>
+<ol>
+<li><strong>수업 개념 연결 5곳 삽입</strong> — 리프 6요인(환경 통제 · 자기수용), 부적응 4기준(주관적 고통), 신체 감각적 수준, 소극적/적극적 모형, 26%·17% 데이터</li>
+<li><strong>"생각한다" 11회 → 5회</strong> — 절반을 단정형으로 교체</li>
+<li><strong>구체적 경험 자리 3곳 표시</strong> — 2·3·4번 지표에 본인 경험을 넣을 위치</li>
+</ol>
+<div class="legend">
+<span><i class="a"></i>추가한 문장 (수업 개념 연결)</span>
+<span><i class="f"></i>어미 수정 (생각한다 → 단정형)</span>
+<span><i class="p"></i>본인이 채울 자리</span>
+</div>
+</div>
+
+<h2>보완본 전문</h2>
+<p class="term">아래를 그대로 복사해 한글/워드에 붙여 넣고, 분홍색 <span class="jp">【 】</span> 세 곳만 채우면 제출 가능합니다.</p>
+
+<div class="essay">
+<h3 class="t">나에게 정신적으로 건강하다는 것은 무엇을 의미하는가</h3>
+<p class="nick">닉네임: 나물</p>
+
+<p>나에게 정신적으로 건강하다는 것은 밤낮이 바뀌지 않고 규칙적으로 생활하며, 운동과 같은 일상적인 활동을 꾸준히 할 수 있는 <mark class="fix">상태다</mark>. 내 인생에서 가장 우울했던 때를 떠올려 보면 가장 무기력했던 시기였고, 그때는 생활패턴도 완전히 망가져 있었다. 잘 씻지도, 먹지도, 나가지도, 제대로 자지도 못했다. 그래서 나에게 규칙적인 생활습관은 단순히 부지런하게 사는 것이 아니라, 나의 정신적인 체계가 어느 정도 온전하다는 것을 보여주는 지표이다. 일정한 루틴을 지키고 나 자신을 관리할 수 있다는 것은 그만큼 삶에 대한 의지와 자존감이 있다는 <mark class="fix">의미다</mark>. <mark class="add">이것은 수업에서 배운 리프의 심리적 안녕감 여섯 요인 중 환경 통제, 즉 나에게 주어진 일을 책임감 있게 해낼 수 있는가와 맞닿아 있다. 동시에 정신건강이 실현된 첫 번째 수준인 신체 감각적 수준, 다시 말해 잘 자고 잘 먹고 신체 기관이 원활하게 기능하는 상태이기도 하다.</mark></p>
+
+<p>두 번째로는 회복탄력성이 좋은 사람이 정신적으로 건강하다고 생각한다. 인생을 살면서 힘든 일은 계속 생기기 마련이다. 그때마다 속으로 불평하고 얼굴에 싫은 티를 내거나 주변 사람들에게 계속 하소연한다면 결국 시간과 감정을 낭비하는 것은 나 <mark class="fix">자신이다</mark>. 특히 지나간 일을 계속 곱씹다 보면 이미 끝난 일에 다시 감정을 소비하게 된다. <mark class="fill">【 곱씹다가 스스로 그만둔 경험 한 가지 — 언제, 어떤 일이었고 어떻게 끊어냈는지 한두 문장 】</mark> 그래서 힘든 일을 겪더라도 감정을 적절히 조절하고, 지나간 일은 지나간 대로 받아들이며 다시 일상으로 돌아올 수 있는 능력이 <mark class="fix">중요하다</mark>. 나에게 회복탄력성이 좋다는 것은 감정을 참는 것이 아니라, 힘든 감정에 오래 머무르지 않고 스스로 회복할 수 있다는 의미이다. <mark class="add">수업에서는 부적응을 판단하는 기준 중 하나로 주관적 고통 기준을 배웠다. 통계적으로도 사회적으로도 문제가 없어 보여도 본인이 힘들다고 느끼면 부적응으로 볼 수 있다는 것인데, 나는 그 고통에 머무는 시간이 얼마나 짧은가가 곧 회복탄력성이라고 이해했다.</mark></p>
+
+<p>세 번째로는 번아웃에 빠지지 않고 자신의 에너지를 조절할 수 있는 것이다. 겉으로는 성실하고 부지런한 사람이라도 자신의 에너지를 계속 소모하기만 한다면 주말이나 방학이 되었을 때 아무것도 하지 못하고 시간을 흘려보낼 수 있다. <mark class="fill">【 번아웃을 겪었던 시기 — 언제였고 그때 하루를 어떻게 보냈는지 한두 문장 】</mark> 물론 쉬는 것은 필요하지만, 나는 충분히 쉬면서도 운동이나 취미 등 자신에게 필요한 활동을 이어갈 수 있는 사람이 정신적으로 건강하다고 생각한다. 결국 중요한 것은 무조건 열심히 하는 것이 아니라, 자신을 완전히 소진시키지 않으면서 꾸준히 살아갈 수 있는 <mark class="fix">힘이다</mark>. 그런 의미에서 시간을 의미 없이 낭비하지 않고 자신의 에너지를 스스로 관리할 수 있는 것도 정신건강의 한 <mark class="fix">지표다</mark>. <mark class="add">자신을 소진시키지 않는다는 것은 결국 나를 있는 그대로 받아들이는 자기수용과도 연결된다. 무리해서 무언가를 해내야만 나를 인정할 수 있다면, 그 상태는 이미 건강하다고 보기 어렵기 때문이다.</mark></p>
+
+<p>마지막으로 자신만의 취미가 있는 것도 정신적으로 건강하다는 것을 <mark class="fix">보여준다</mark>. 해야 할 일만 하고 남는 시간에는 스마트폰에만 고립되어 있는 것과 달리, 핸드폰을 끄고 내가 좋아하는 활동을 할 수 있다는 것은 삶에서 새로운 즐거움과 에너지를 만들어낼 수 있다는 의미이기 때문이다. <mark class="fill">【 실제 취미 — 무엇을 할 때 시간 가는 줄 모르는지, 그때 기분이 어떤지 한두 문장 】</mark> 취미는 단순한 시간 보내기가 아니라 지친 나를 회복시키고 다시 일상을 살아갈 원동력이 될 수 <mark class="fix">있다</mark>. <mark class="add">교수님이 정신건강이 실현된 첫 번째 수준으로 든 것이 감각 경험의 즐거움을 충분히 누리는 것이었다. 수업에서 했던 오감 글쓰기도 결국 무뎌진 감각을 깨우는 연습이었다는 점에서, 취미를 가진다는 것은 그 감각을 스스로 되살리는 일이다.</mark></p>
+
+<p>결국 나에게 정신적으로 건강하다는 것은 항상 행복하거나 아무런 문제가 없는 상태가 아니다. 규칙적인 생활을 유지하고, 힘든 일을 겪어도 회복하며, 자신의 에너지를 조절하고, 스스로 즐거움을 만들어낼 수 있는 상태에 가깝다. <mark class="add">수업에서 배운 소극적 모형처럼 정신건강을 질병이 없는 상태로만 본다면, 정신장애에 해당하지 않는 나머지 사람들은 모두 건강해야 한다. 그러나 실제로는 정신장애를 가진 사람이 26퍼센트인데 행복하다고 분류된 사람은 17퍼센트뿐이었다. 내가 떠올린 네 가지 지표는 모두 무언가가 '없는 것'이 아니라 무언가를 '할 수 있는 것'에 대한 이야기였다는 점에서, 적극적 모형에 가까운 기준이었다고 생각한다.</mark> 나는 결국 정신적으로 건강한 사람은 무조건 열심히 사는 사람이 아니라, 자신을 소진시키지 않으면서 자신의 삶을 꾸준히 살아갈 수 있는 사람이라고 생각한다.</p>
+</div>
+
+<h2>무엇이 왜 바뀌었나</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>위치</th><th>보완 내용</th><th>연결한 수업 개념</th></tr></thead>
+<tbody>
+<tr><td>1문단 끝</td><td>규칙적 생활을 이론과 연결</td><td>리프 <strong>환경 통제</strong> + 신체 감각적 수준</td></tr>
+<tr><td>2문단 끝</td><td>회복탄력성을 판단 기준과 연결</td><td>부적응 4기준 중 <strong>주관적 고통</strong></td></tr>
+<tr><td>3문단 끝</td><td>에너지 조절을 자기 인식과 연결</td><td>리프 <strong>자기수용</strong></td></tr>
+<tr><td>4문단 끝</td><td>취미를 감각 경험과 연결</td><td><strong>신체 감각적 수준</strong> · 오감 글쓰기</td></tr>
+<tr><td>결론</td><td>네 지표의 성격을 규정</td><td><strong>소극적 vs 적극적 모형</strong> · 26%/17% 데이터</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box">
+<span class="label">왜 이 연결이 중요한가</span>
+<p>교수님은 자신의 지표를 제시한 뒤, 3교시에서 리프의 '관계' 요인을 설명하며 <strong>"제가 정신건강 지표로 삼았던 것과 좀 유사한데, 타인의 안녕에 대한 관심이 있는가"</strong>라고 직접 연결했습니다.</p>
+<p>즉 이 수업이 원하는 글의 형태는 <strong>개인적 경험 → 수업 이론과의 연결</strong>이고, 교수님이 그 시범을 보인 셈입니다. 원본에는 수업 개념이 한 번도 등장하지 않아 이 부분만 보완했습니다.</p>
+</div>
+
+<h2>보완 전후 비교</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>항목</th><th>원본</th><th>보완본</th></tr></thead>
+<tbody>
+<tr><td>글자 수 (공백 포함)</td><td>1,441자</td><td>약 2,100자</td></tr>
+<tr><td>수업 개념 언급</td><td><strong>0회</strong></td><td>5곳</td></tr>
+<tr><td>"생각한다"</td><td>11회</td><td>5회</td></tr>
+<tr><td>구체적 경험</td><td>1문단만</td><td>4문단 모두 <span class="term">(3곳은 채워야 함)</span></td></tr>
+<tr><td>분량 요건</td><td>충족</td><td>충족 <span class="term">(3페이지 이내)</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box warn">
+<span class="label">제출 전 반드시</span>
+<p>분홍색 <span class="jp">【 】</span> <strong>세 곳을 본인 경험으로 채우세요.</strong> 비워 두면 2·3·4번 지표가 일반론으로 남습니다.</p>
+<p>1문단의 <strong>"잘 씻지도, 먹지도, 나가지도, 제대로 자지도 못했다"</strong>가 글 전체에서 가장 힘이 센 문장입니다. 나머지 세 곳도 그 정도의 구체성이면 충분합니다. 길 필요 없이 한두 문장이면 됩니다.</p>
+</div>
+
+<div class="box task">
+<span class="label">제출 체크리스트</span>
+<ul class="check">
+<li>분홍색 <span class="jp">【 】</span> 세 곳을 모두 채웠는가</li>
+<li>형광 표시를 지우고 일반 텍스트로 바꿨는가 <span class="term">(복사하면 자동으로 지워짐)</span></li>
+<li>제목과 닉네임(나물)이 맨 위에 있는가</li>
+<li>분량이 반 페이지 이상 3페이지 이내인가</li>
+<li>9월 14일(월) 12:00 전에 LMS 과제란에 업로드했는가</li>
+</ul>
+</div>
+
+<div class="box">
+<span class="label">다음 수업 준비물</span>
+<ul>
+<li><strong>펜</strong> — 다른 사람 쪽글에 손으로 댓글 다는 활동</li>
+<li><strong>클리어파일</strong> — 활동지 보관용. 이름이 맨 앞에 오게</li>
+</ul>
+</div>
+
+<footer class="doc">
+<p>원문은 본인 작성, 보완은 9/8 강의 녹취(<code>정신건강과 자기돌봄 0908 -1~3.txt</code>)에 근거했습니다.</p>
+<p>인용한 수치(26%·17%)와 학자명(리프)은 강의 전사본 기준입니다. 제출 전 LMS 강의자료로 한 번 확인하세요.</p>
+</footer>
+</div>
+</body>
+</html>

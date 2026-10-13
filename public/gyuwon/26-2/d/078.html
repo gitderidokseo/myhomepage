@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>토론 기반 지식 ④ 모노즈쿠리 — 맞춤 정장의 나라, 레고의 세상</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --code-bg:#f4f1ec;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --code-bg:#22252a;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","\B9D1\C740 \ACE0\B515",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 26px;padding-bottom:16px;border-bottom:3px solid var(--accent);
+  letter-spacing:-.02em;font-weight:750}
+h2{font-size:1.25rem;margin:44px 0 14px;padding-left:13px;border-left:4px solid var(--accent);
+  line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.05rem;margin:28px 0 9px;color:var(--accent-ink);font-weight:700}
+h4{font-size:.97rem;margin:20px 0 7px;font-weight:700}
+h5,h6{font-size:.92rem;margin:16px 0 6px;font-weight:700;color:var(--muted)}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 15px;padding-left:24px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:italic}
+del{color:var(--faint)}
+a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,"D2Coding",monospace;font-size:.89em;
+  background:var(--code-bg);padding:2px 6px;border-radius:4px}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:15px 17px;overflow-x:auto;margin:18px 0;line-height:1.6}
+pre code{background:none;padding:0;font-size:.86rem;white-space:pre}
+blockquote{margin:18px 0;padding:13px 18px;border-left:4px solid var(--accent);
+  background:var(--accent-soft);border-radius:0 8px 8px 0}
+blockquote p:last-child{margin-bottom:0}
+blockquote h1,blockquote h2,blockquote h3{margin-top:4px;border:0;padding:0}
+blockquote h1{font-size:1.25rem;margin-bottom:6px;padding-bottom:0}
+blockquote h2{font-size:1.1rem;margin-bottom:6px}
+.tablewrap{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem}
+td:first-child{font-weight:600}
+footer.gen{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:.8rem;color:var(--faint)}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.42rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.55}
+  .wrap{padding:0;max-width:none}
+  h2,h3{page-break-after:avoid}
+  pre,blockquote,table,.tablewrap{page-break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>토론 기반 지식 ④ 모노즈쿠리 — 맞춤 정장의 나라, 레고의 세상</h1>
+<blockquote><p>일본기업론 토론 준비용 배경지식 어려운 단어는 맨 뒤 <strong>[단어 사전]</strong> 에 모아두었습니다.</p></blockquote>
+<hr>
+<h2>프롤로그 — 아프지 않은 주삿바늘</h2>
+<p>주사를 맞을 때 아픈 이유가 뭘까요? 바늘이 굵기 때문입니다. 그러면 바늘을 가늘게 만들면 되겠네요. 그런데 그게 어렵습니다. 너무 가늘면 약이 안 들어가고, 바늘이 휘어지거나 부러집니다.</p>
+<p>일본 도쿄의 작은 동네 공장에 이 문제를 붙들고 있던 사람들이 있었습니다. 직원이 몇 명밖에 안 되는, 골목에 있는 평범한 공장이었습니다.</p>
+<p>그들이 만들어낸 것은 이런 바늘이었습니다.</p>
+<ul>
+<li>굵기는 <strong>모기 침 수준</strong></li>
+<li>끝은 가늘고, 뿌리 쪽은 굵게 → 약은 잘 들어가고 부러지지 않음</li>
+<li>통증은 거의 느껴지지 않음</li>
+</ul>
+<p>매일 인슐린 주사를 맞아야 하는 당뇨 환자들에게는 인생이 바뀌는 물건이었습니다.</p>
+<p><strong>동네의 작은 공장이, 세계에서 가장 아프지 않은 주삿바늘을 만든 겁니다.</strong></p>
+<p>이 이야기가 바로 <strong>모노즈쿠리</strong>입니다.</p>
+<hr>
+<h2>1장 — 모노즈쿠리가 뭘까</h2>
+<p><strong>모노즈쿠리</strong>를 그대로 옮기면 <strong>'물건 만들기'</strong> 입니다. 너무 평범한 말이죠. 그런데 일본에서 이 말은 훨씬 무거운 뜻으로 쓰입니다.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>그냥 제조</th>
+<th>모노즈쿠리</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>정해진 대로 만든다</td>
+<td><strong>혼을 담아 만든다</strong></td>
+</tr>
+<tr>
+<td>팔리면 된다</td>
+<td><strong>내 이름이 부끄럽지 않아야 한다</strong></td>
+</tr>
+<tr>
+<td>설명서대로</td>
+<td><strong>몸이 기억할 때까지 익힌다</strong></td>
+</tr>
+<tr>
+<td>빨리, 많이</td>
+<td><strong>끝까지, 제대로</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>초밥 장인이 밥 짓는 법만 3년 배우고, 생선 손질만 또 몇 년 배우는 이야기를 들어본 적 있나요? "그걸 왜 그렇게까지 해?"라는 생각이 들 수도 있습니다. 그런데 그 태도가 나라 전체 산업에 퍼져 있었던 것이 일본 제조업의 힘이었습니다.</p>
+<p>일본 정부는 아예 법까지 만들었습니다. <strong>모노즈쿠리 기반기술 진흥법</strong>입니다. 나라가 "우리나라의 경쟁력은 물건 만드는 기술에 있다"고 공식 선언한 셈입니다.</p>
+<h3>마치코바 — 동네 공장의 힘</h3>
+<p>일본 제조업에는 특이한 구조가 있습니다. <strong>마치코바</strong>, 즉 동네 공장입니다.</p>
+<p>도쿄의 오타구, 오사카의 히가시오사카 같은 동네에 가면 주택가 골목마다 작은 공장이 빼곡히 있습니다. 직원이 서너 명, 사장님이 직접 기계를 돌리는 곳들입니다.</p>
+<p>이런 공장들이 뭘 할까요? <strong>세상에서 그 공장밖에 못 만드는 부품 하나</strong>를 만듭니다.</p>
+<ul>
+<li>머리카락 굵기보다 작은 나사</li>
+<li>0.001mm 오차도 허용하지 않는 금형</li>
+<li>우주 탐사선에 들어가는 특수 부품</li>
+</ul>
+<p>대기업이 아무리 돈이 많아도 이런 건 못 만듭니다. <strong>수십 년 손으로 익힌 감각</strong>이 필요하기 때문입니다.</p>
+<p>그래서 이런 말이 있습니다.</p>
+<blockquote><p>"일본의 대기업은 동네 공장 위에 서 있다."</p></blockquote>
+<hr>
+<h2>2장 — 일본이 진짜 잘하는 것의 정체</h2>
+<p>여기서 이 수업 전체에서 가장 쓸모 있는 개념이 하나 나옵니다. 이걸 알면 <strong>반도체는 왜 졌고 자동차는 왜 이겼는지가 한 번에 설명됩니다.</strong></p>
+<h3>맞춤 정장 vs 레고</h3>
+<p>세상의 물건은 크게 두 종류로 나눌 수 있습니다.</p>
+<p><strong>① 맞춤 정장형</strong></p>
+<p>부품 하나하나를 그 제품에만 맞게 깎고 다듬어야 하는 물건입니다. 이 부품을 조금 바꾸면 저 부품도 같이 바꿔야 합니다. 전부 얽혀 있습니다. 만들려면 <strong>모든 부서가 계속 대화하고 조율</strong>해야 합니다.</p>
+<p>일본에서는 이걸 <strong>스리아와세</strong>, 즉 '서로 맞춰가기'라고 부릅니다.</p>
+<blockquote><p>대표 선수: <strong>자동차</strong> 부품 3만 개가 전부 서로 영향을 줍니다. 엔진을 바꾸면 차체도 바꿔야 합니다.</p></blockquote>
+<p><strong>② 레고형</strong></p>
+<p>부품 규격이 정해져 있어서, 아무 거나 가져다 끼우면 되는 물건입니다. 이 부품을 만드는 회사와 저 부품을 만드는 회사가 서로 대화할 필요가 없습니다. 규격만 지키면 됩니다.</p>
+<blockquote><p>대표 선수: <strong>PC, 스마트폰, 디지털 제품</strong> CPU는 여기서, 메모리는 저기서, 화면은 또 다른 데서 사다가 끼우면 완성됩니다.</p></blockquote>
+<h3>그래서 무슨 일이 벌어졌나</h3>
+<p>일본은 <strong>맞춤 정장을 기막히게 잘 만드는 나라</strong>입니다. 현장 사람들이 서로 몇십 년을 부대끼며 호흡을 맞춰왔으니까요. 그래서 자동차에서 세계 1위가 됐습니다.</p>
+<p>그런데 1990년대 이후, 세상의 중심이 <strong>레고형으로 옮겨갔습니다.</strong> 컴퓨터, 휴대폰, 디지털 기기. 전부 부품을 사다가 조립하는 물건입니다.</p>
+<p>레고 세상에서는 무엇이 중요할까요? 정교한 조율이 아니라 <strong>속도와 가격</strong>입니다. 규격만 맞으면 되니까, 대만이든 중국이든 어디서 만들어도 상관없습니다.</p>
+<p><strong>일본의 최고 무기가, 별로 필요 없는 무기가 되어버린 겁니다.</strong></p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th></th>
+<th>맞춤 정장형</th>
+<th>레고형</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>필요한 능력</td>
+<td>오랜 호흡, 정교한 조율</td>
+<td>규격, 속도, 가격</td>
+</tr>
+<tr>
+<td>잘하는 나라</td>
+<td><strong>일본</strong></td>
+<td>미국·대만·중국·한국</td>
+</tr>
+<tr>
+<td>대표 제품</td>
+<td>자동차, 정밀기계, 소재</td>
+<td>PC, 스마트폰, 반도체 조립</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>①번 자료에서 본 "설계와 생산을 나누지 않은 일본"을 기억하시나요? 사실 그건 실수라기보다 <strong>일본이 잘하는 방식 그대로 한 것</strong>이었습니다. 맞춤 정장은 원래 나눠서 만들 수 없으니까요.</p>
+<p>문제는 반도체가 어느새 <strong>레고형 산업으로 바뀌어 있었다</strong>는 점입니다.</p>
+<hr>
+<h2>3장 — 완벽함이 독이 될 때</h2>
+<h3>갈라파고스 이야기</h3>
+<p>남아메리카 앞바다에 <strong>갈라파고스</strong>라는 섬들이 있습니다. 육지에서 멀리 떨어져 있어서, 이 섬의 동물들은 밖과 섞이지 않고 혼자 진화했습니다. 그래서 세상 어디에도 없는 신기한 동물들이 살고 있습니다.</p>
+<p>그런데 이 동물들에겐 문제가 하나 있습니다. <strong>섬 밖으로 나가면 살아남지 못한다</strong>는 것입니다.</p>
+<p>일본에서는 자기네 제품을 두고 <strong>갈라파고스화</strong>라는 말을 씁니다. 일본 안에서만 완벽하게 진화한 나머지, 밖에 나가면 안 팔리는 현상입니다.</p>
+<p><strong>가장 유명한 사례가 일본 휴대폰입니다.</strong></p>
+<p>2000년대 초, 일본 휴대폰은 세계에서 가장 앞서 있었습니다.</p>
+<ul>
+<li>휴대폰으로 인터넷을 하고 (다른 나라보다 훨씬 먼저)</li>
+<li>휴대폰으로 결제를 하고</li>
+<li>휴대폰으로 TV를 보고</li>
+<li>이모티콘도 일본이 먼저 만들었습니다</li>
+</ul>
+<p>그런데 2007년 아이폰이 나왔을 때, 일본 휴대폰은 순식간에 무너졌습니다.</p>
+<p>왜일까요? 일본 휴대폰은 <strong>일본 통신사가 요구하는 일본식 기능</strong>에 맞춰 만들어졌습니다. 일본 시장에서는 완벽했지만, 세계 표준과는 맞지 않았습니다. 외국에 팔 수도 없었고, 외국 앱도 돌아가지 않았습니다.</p>
+<p><strong>완벽하게 최적화됐기 때문에, 밖으로 나갈 수 없었던 겁니다.</strong></p>
+<h3>과잉 품질 — 아무도 부탁하지 않은 완벽함</h3>
+<p>또 하나의 함정이 있습니다. <strong>과잉 품질</strong>입니다.</p>
+<ul>
+<li>25년 가는 반도체 → 아무도 25년 쓰지 않습니다</li>
+<li>기능이 200개 달린 리모컨 → 실제로 쓰는 건 5개입니다</li>
+<li>설명서가 100쪽인 전자레인지 → 아무도 안 읽습니다</li>
+</ul>
+<p>만드는 사람은 "이만큼 잘 만들었다"고 뿌듯해합니다. 그런데 쓰는 사람은 <strong>"그래서 얼마인데요?"</strong> 라고 묻습니다.</p>
+<p>여기서 이 주제의 핵심 질문이 나옵니다.</p>
+<blockquote><p><strong>품질은 누가 정하는 걸까요? 만드는 사람일까요, 쓰는 사람일까요?</strong></p></blockquote>
+<p>모노즈쿠리는 오랫동안 "만드는 사람이 정한다"고 믿었습니다. 장인이 최고라고 생각하는 것을 만들면, 손님은 그 가치를 알아본다는 믿음이었죠. 그 믿음이 통하던 시대가 있었고, 통하지 않게 된 시대가 왔습니다.</p>
+<h3>그리고 이어받을 사람이 없다</h3>
+<p>여기서 ③번(장수기업) 이야기와 만납니다.</p>
+<p>모노즈쿠리의 기술은 <strong>말로 설명이 안 됩니다.</strong> "여기서 이만큼 더 깎아야 해"의 '이만큼'을 숫자로 못 씁니다. 손이 압니다. 이런 걸 <strong>암묵지</strong>라고 합니다. 문서로 옮길 수 없는 지식이죠.</p>
+<p>그래서 배우는 데 10년, 20년이 걸립니다.</p>
+<p>그런데 지금 그 장인들이 70대, 80대가 되었습니다. 배우겠다는 젊은이는 없습니다. 힘들고, 오래 걸리고, 월급도 많지 않으니까요.</p>
+<p><strong>세계 최고의 기술이 후계자가 없어 이번 세대에 사라지고 있습니다.</strong></p>
+<hr>
+<h2>4장 — 그래도 남아 있는 것</h2>
+<p>그렇다고 모노즈쿠리가 끝난 건 아닙니다. 오히려 <strong>레고형 세상에서도 대체 불가능한 자리</strong>가 있습니다.</p>
+<p>①번 자료의 케이크 비유를 다시 떠올려봅시다. 일본은 케이크 굽는 가게 싸움에서 졌지만, <strong>밀가루와 오븐을 파는 자리</strong>를 지켰습니다.</p>
+<p>그 밀가루와 오븐이 바로 모노즈쿠리의 영역입니다.</p>
+<ul>
+<li>반도체를 만드는 장비와 검사기</li>
+<li>웨이퍼, 특수 화학약품</li>
+<li>자동차·기계에 들어가는 정밀 부품과 금형</li>
+<li>로봇 관절에 들어가는 감속기</li>
+</ul>
+<p>이런 것들은 <strong>레고로 만들 수 없습니다.</strong> 맞춤 정장이어야 합니다. 그래서 값이 비싸도 일본에서 사 올 수밖에 없습니다.</p>
+<p><strong>눈에 보이는 완제품은 뺏겼지만, 그 완제품을 만드는 도구는 지켰다.</strong> 이것이 오늘날 모노즈쿠리가 서 있는 자리입니다.</p>
+<hr>
+<h2>에필로그 — 장인 정신은 옳았을까</h2>
+<p>이 이야기는 결론을 내리기 어렵습니다.</p>
+<p>같은 태도가 어떤 산업에서는 세계 1등을 만들고(자동차, 정밀부품), 어떤 산업에서는 몰락을 불렀습니다(반도체, 휴대폰).</p>
+<p>그렇다면 문제는 <strong>태도</strong>가 아니라 <strong>어디에 그 태도를 쓰느냐</strong>였을지도 모릅니다.</p>
+<p>그리고 이런 질문이 남습니다.</p>
+<blockquote><p>세상이 "빨리, 싸게, 대충"으로 가고 있을 때, <strong>끝까지 제대로 만들겠다는 고집은 촌스러운 걸까요, 지켜야 할 걸까요?</strong></p></blockquote>
+<p>여러분이 쓰는 물건 중에, 싸고 금방 망가지는 것과 비싸지만 10년 쓰는 것이 있다면 어느 쪽을 택할지 생각해보면 좋겠습니다.</p>
+<hr>
+<h2>토론할 때 던져볼 만한 질문</h2>
+<ol>
+<li><strong>품질의 기준은 누가 정해야 할까?</strong> 만드는 사람일까, 쓰는 사람일까?</li>
+<li>기능이 많은 제품과 단순한 제품, 어느 쪽이 더 좋은 제품일까?</li>
+<li>우리 주변에도 <strong>갈라파고스화</strong>된 것이 있을까? (한국에만 있는 서비스, 제도, 앱 등)</li>
+<li>10년 걸려 배우는 기술을 <strong>AI나 기계로 대신할 수 있을까?</strong> 없다면 왜?</li>
+<li>장인 기술이 사라지는 것을 <strong>나라가 나서서 막아야 할까?</strong></li>
+<li>일본이 자동차에서 이기고 반도체에서 진 것은 <strong>태도의 문제</strong>였을까, <strong>분야의 문제</strong>였을까?</li>
+<li>한국 제조업은 맞춤 정장형과 레고형 중 <strong>어느 쪽에 가까울까?</strong></li>
+<li>"빨리 만들고 빨리 바꾼다"와 "오래 쓰게 만든다" — <strong>환경을 생각하면</strong> 어느 쪽이 옳을까?</li>
+</ol>
+<hr>
+<h2>[단어 사전]</h2>
+<h3>모노즈쿠리 관련</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>단어</th>
+<th>뜻</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>모노즈쿠리</strong></td>
+<td>'물건 만들기'라는 뜻의 일본어. 혼을 담아 최고 품질로 만든다는 제조 정신</td>
+</tr>
+<tr>
+<td><strong>장인(쇼쿠닌)</strong></td>
+<td>한 가지 기술을 평생 갈고닦은 사람</td>
+</tr>
+<tr>
+<td><strong>마치코바</strong></td>
+<td>'동네 공장'. 주택가에 있는 작은 공장. 대기업이 못 만드는 부품을 만듦</td>
+</tr>
+<tr>
+<td><strong>금형</strong></td>
+<td>똑같은 모양을 찍어내기 위한 틀. 이 틀의 정밀도가 제품 품질을 좌우함</td>
+</tr>
+<tr>
+<td><strong>암묵지</strong></td>
+<td>말이나 글로 설명할 수 없고 몸으로 익혀야 하는 지식</td>
+</tr>
+<tr>
+<td><strong>형식지</strong></td>
+<td>반대로 문서·매뉴얼로 정리해 전달할 수 있는 지식</td>
+</tr>
+<tr>
+<td><strong>현장력</strong></td>
+<td>공장 바닥에서 일하는 사람들이 스스로 문제를 찾고 고치는 힘</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>핵심 개념</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>단어</th>
+<th>뜻</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>스리아와세(맞춤형·통합형)</strong></td>
+<td>부품끼리 서로 영향을 주어, 계속 조율해가며 만들어야 하는 방식. 자동차가 대표</td>
+</tr>
+<tr>
+<td><strong>모듈형(레고형)</strong></td>
+<td>규격이 정해져 있어 부품을 사다 끼우면 완성되는 방식. PC·스마트폰이 대표</td>
+</tr>
+<tr>
+<td><strong>갈라파고스화</strong></td>
+<td>국내 시장에만 완벽히 맞춰 진화한 나머지 해외에서는 통하지 않게 되는 현상</td>
+</tr>
+<tr>
+<td><strong>과잉 품질(오버스펙)</strong></td>
+<td>고객이 원하지도 않는 수준까지 과하게 잘 만들어 값만 비싸지는 것</td>
+</tr>
+<tr>
+<td><strong>표준(스탠더드)</strong></td>
+<td>세계가 함께 쓰기로 약속한 규격. 표준을 잡는 쪽이 시장을 가짐</td>
+</tr>
+<tr>
+<td><strong>후계자난</strong></td>
+<td>기술이나 사업을 물려받을 사람을 구하지 못하는 어려움</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>기억해둘 사례</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>사례</th>
+<th>설명</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>무통 주삿바늘</strong></td>
+<td>도쿄의 작은 동네 공장이 만든, 거의 아프지 않은 초정밀 주삿바늘</td>
+</tr>
+<tr>
+<td><strong>일본 휴대폰</strong></td>
+<td>2000년대 세계에서 가장 앞섰지만 일본 안에만 맞춰져 있어 스마트폰 시대에 몰락</td>
+</tr>
+<tr>
+<td><strong>반도체 소재·장비</strong></td>
+<td>완제품은 뺏겼지만 일본이 여전히 세계적 강자인 분야 (①번 자료 참고)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<footer class="gen">이 문서는 마크다운 원본에서 자동 변환되었습니다.</footer>
+</div>
+</body>
+</html>

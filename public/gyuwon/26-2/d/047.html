@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>혼자 돕는 마음에서 함께 만드는 제도로 — 종교와 사회복지 이야기로 읽기</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#fbfaf8;--surface:#ffffff;--ink:#1c1b19;--muted:#6a655f;--faint:#8e8880;
+  --line:#e6e2db;--line-soft:#f1ede7;
+  --accent:#a2620c;--accent-ink:#8a5209;--accent-soft:#fbf1e2;
+  --scene-bg:#f6f3ee;--scene-line:#ddd6ca;
+  --easy-bg:#eaf6f0;--easy-line:#b8ddc9;--easy-ink:#1d6b47;
+  --key-bg:#fdf5e6;--key-line:#e8cf9a;--key-ink:#8a6314;
+  --talk-bg:#f4f0fa;--talk-line:#d6cbe9;--talk-ink:#5b4a86;
+  --task-bg:#fdeeec;--task-line:#f0c0b8;--task-ink:#9b3a2a;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a8a39c;--faint:#8c867f;
+    --line:#33363c;--line-soft:#282b30;
+    --accent:#e0a552;--accent-ink:#eab76e;--accent-soft:#332818;
+    --scene-bg:#22242a;--scene-line:#3a3e46;
+    --easy-bg:#182b22;--easy-line:#2f5943;--easy-ink:#7fd6aa;
+    --key-bg:#2b2517;--key-line:#5f5228;--key-ink:#e7cd85;
+    --talk-bg:#241f33;--talk-line:#453a5f;--talk-ink:#c0aeea;
+    --task-bg:#2e1d1a;--task-line:#5e332b;--task-ink:#f0a292;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:16.5px;line-height:1.85;-webkit-text-size-adjust:100%;margin:0}
+.wrap{max-width:800px;margin:0 auto;padding-block:44px;padding-left:20px;padding-right:20px}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:20px;margin-bottom:10px}
+.eyebrow{font-size:.76rem;letter-spacing:.16em;color:var(--accent-ink);font-weight:800;margin:0 0 8px}
+h1{font-size:1.95rem;line-height:1.34;margin:0 0 12px;letter-spacing:-.02em;font-weight:800}
+.sub{font-size:1rem;color:var(--muted);margin:0 0 12px;line-height:1.7}
+.meta{font-size:.85rem;color:var(--faint);margin:0;display:flex;flex-wrap:wrap;gap:4px 14px}
+.prologue{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:12px;padding:20px 22px;margin:26px 0 8px;font-size:1.02rem}
+.prologue .label{font-size:.74rem;letter-spacing:.12em;font-weight:800;color:var(--accent-ink);display:block;margin-bottom:10px}
+.prologue p:last-child{margin-bottom:0}
+h2{font-size:1.28rem;margin:52px 0 16px;padding-left:14px;border-left:5px solid var(--accent);
+  line-height:1.45;letter-spacing:-.01em;font-weight:800}
+h2 .act{display:block;font-size:.72rem;letter-spacing:.14em;color:var(--accent-ink);font-weight:800;margin-bottom:4px}
+h3{font-size:1.06rem;margin:30px 0 10px;color:var(--accent-ink);font-weight:750}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 16px;padding-left:23px}
+li{margin-bottom:8px}
+li>ul,li>ol{margin-top:8px;margin-bottom:4px}
+strong{font-weight:750}
+em{font-style:normal;background:var(--accent-soft);padding:1px 6px;border-radius:5px;font-weight:650}
+.scene{background:var(--scene-bg);border:1px solid var(--scene-line);border-radius:12px;
+  padding:18px 20px;margin:20px 0;font-size:1rem}
+.scene .cue{font-size:.75rem;letter-spacing:.1em;font-weight:800;color:var(--faint);display:block;margin-bottom:9px}
+.scene p:last-child,.scene ul:last-child{margin-bottom:0}
+.box{border-radius:11px;padding:16px 19px;margin:20px 0;border:1px solid}
+.box .label{font-size:.74rem;letter-spacing:.1em;font-weight:800;margin:0 0 9px;display:block}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+.box.easy{background:var(--easy-bg);border-color:var(--easy-line)}
+.box.easy .label{color:var(--easy-ink)}
+.box.key{background:var(--key-bg);border-color:var(--key-line)}
+.box.key .label{color:var(--key-ink)}
+.box.talk{background:var(--talk-bg);border-color:var(--talk-line)}
+.box.talk .label{color:var(--talk-ink)}
+.box.talk p{font-style:italic}
+.box.task{background:var(--task-bg);border-color:var(--task-line)}
+.box.task .label{color:var(--task-ink)}
+.tablewrap{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:430px}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:750;font-size:.85rem;white-space:nowrap}
+td:first-child{font-weight:650}
+.steps{list-style:none;padding:0;margin:22px 0;counter-reset:step}
+.steps li{counter-increment:step;position:relative;padding-left:46px;margin-bottom:18px}
+.steps li::before{content:counter(step);position:absolute;left:0;top:2px;width:30px;height:30px;
+  border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:.92rem;
+  display:flex;align-items:center;justify-content:center}
+.steps li b{display:block;font-size:1.03rem;margin-bottom:2px}
+.oneline{background:var(--accent-soft);border:1px solid var(--accent);border-radius:12px;
+  padding:20px 22px;margin:34px 0 10px;text-align:center;font-size:1.08rem;font-weight:700;line-height:1.7}
+.oneline .label{display:block;font-size:.72rem;letter-spacing:.14em;font-weight:800;
+  color:var(--accent-ink);margin-bottom:9px}
+.term{color:var(--faint);font-size:.9em;font-weight:400}
+footer.doc{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+footer.doc p{margin:0 0 6px}
+@media (max-width:520px){
+  body{font-size:15.5px}
+  .wrap{padding-block:30px}
+  h1{font-size:1.5rem}
+  h2{font-size:1.13rem}
+  .steps li{padding-left:40px}
+  .steps li::before{width:27px;height:27px;font-size:.85rem}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  h2{page-break-after:avoid}
+  .box,.scene,.prologue,.oneline{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+  <p class="eyebrow">이야기로 읽는 강의노트</p>
+  <h1>혼자 돕는 마음에서<br>함께 만드는 제도로</h1>
+  <p class="sub">복지는 어떻게 착한 마음이 아니라 사회의 약속이 되었을까</p>
+  <p class="meta"><span>종교와 사회복지 · 9월 8일(화)</span><span>2주차</span><span>주제 — 현대사회와 복지, 그리고 복지국가</span></p>
+</header>
+
+<div class="box task">
+  <span class="label">가장 먼저 처리할 것 — 발표 신청</span>
+  <ul>
+    <li><strong>발표일:</strong> 11월 24일 또는 12월 1일 중 하나를 고릅니다.</li>
+    <li><strong>주제 정하는 법:</strong> 강의계획서의 주제1(아동복지, 노인복지, 소수자복지 같은 <em>영역</em>)과 주제2(빈곤, 폭력, 학대 같은 <em>문제</em>)를 서로 교차해서 만듭니다.</li>
+    <li><strong>제출:</strong> 이름 · 발표 주제 · 발표 날짜를 적어 교수님 이메일로 보냅니다.</li>
+    <li><strong>주제는 더 좁혀야 합니다.</strong> 예를 들어 "성소수자"는 너무 넓습니다. 실제 신청 사례는 성소수자, 웰다잉, 노인 빈곤, 이주민 의료, 아동 돌봄, 경계선 지능 등이 있었습니다.</li>
+    <li><strong>먼저 말하는 사람이 선점합니다.</strong> 바꾸고 싶으면 그때그때 말하면 됩니다.</li>
+    <li>지난주에 못 왔다면 LMS의 오리엔테이션 자료를 먼저 확인하세요. 수정본도 함께 올라와 있습니다.</li>
+  </ul>
+</div>
+
+<div class="prologue">
+  <span class="label">프롤로그</span>
+  <p>배가 고픈 친구가 있습니다. 내가 밥을 사 줍니다. 참 좋은 일이죠. 그런데 이것은 <strong>복지가 아닙니다.</strong></p>
+  <p>왜일까요? 내일도 내가 사 준다는 보장이 없고, 나 말고 다른 배고픈 사람은 아무도 못 먹기 때문입니다. 무엇보다 그 친구가 <em>왜 배가 고픈 상황에 빠졌는지</em>는 그대로 남아 있습니다.</p>
+  <p>오늘 이야기는 바로 여기서 시작합니다. 착한 마음이 어떻게 사회의 약속이 되었는가에 대한 이야기입니다.</p>
+</div>
+
+<h2><span class="act">첫 번째 장면</span>사회복지란 무엇인가</h2>
+
+<p>정의부터 봅시다. <strong>사회복지란, 사람이 사회에서 누구나 겪을 수 있는 공통된 문제를 해결하고 예방하기 위한, 개인의 노력이 아닌 제도적이고 실천적인 활동</strong>입니다.</p>
+<p>말이 어렵죠. 풀어 쓰면 이렇습니다. 배고픔, 질병, 살 곳이 없는 것은 어느 한 사람만의 문제가 아닙니다. "배고프니 밥 줄게, 살 곳 없으니 집 줄게"도 좋지만, <em>애초에 그런 상황에 빠지지 않게 만드는 것</em>이 사회복지입니다. 그리고 그 일을 개인이 아니라 <strong>사회 시스템이 합니다.</strong></p>
+
+<h3>사회복지의 4가지 특징</h3>
+<ol class="steps">
+  <li><b>보편적인 문제를 다룬다</b>한 사람만의 특수한 사정이 아니라, 누구에게나 닥칠 수 있는 문제를 다룹니다.</li>
+  <li><b>제도적이다</b>개인의 선의가 아니라 제도로 움직입니다.</li>
+  <li><b>예방이 포함된다</b>터진 문제를 수습하는 데서 그치지 않고, 터지지 않게 막습니다.</li>
+  <li><b>통합적이고 직접적이다</b>인생 전체의 질을 높이기 위해 여러 문제를 묶어서 보고, 실제로 문제를 풀 수 있는 직접적인 방법을 씁니다.</li>
+</ol>
+
+<h3>여기에 세 가지를 더하면</h3>
+<ul>
+  <li><strong>공식성:</strong> "이런 상황이니까 이렇게 해결한다"는 공식이 있어야 합니다. 내일도 똑같이 적용된다는 보장이 필요합니다.</li>
+  <li><strong>사회성:</strong> 너와 나 둘 사이의 일이 아니라, 그 문제가 <em>사회의 문제로 인정되고 사회가 해결</em>하는 것입니다.</li>
+  <li><strong>비영리:</strong> 돈 벌려고 복지를 하면 반드시 탈이 납니다. 이익을 좇는 순간 형제복지원 같은 일이 벌어집니다.</li>
+</ul>
+
+<div class="box easy">
+  <span class="label">거꾸로 보면 더 쉽습니다 — 이건 복지가 아닙니다</span>
+  <ul>
+    <li>좋은 마음으로 학생 한 명을 도와주는 것 → <strong>공식이 없습니다.</strong> 개인적인 베풂일 뿐입니다.</li>
+    <li>15평에 사는데 32평에 살고 싶은 것 → 사회가 인정하는 필요가 아닌 <strong>개인의 바람</strong>입니다.</li>
+    <li>한 달에 50만 원 주고 세금 혜택을 받으려는 것, 기관을 운영해 이익을 남기는 것 → <strong>영리</strong>입니다.</li>
+    <li>배도 고프고 집도 없고 몸도 아픈데 먹는 것만 봐 주는 것 → <strong>조각난 지원</strong>입니다.</li>
+    <li>친구는 두부찌개를 먹자는데 나는 돈가스가 먹고 싶다 → 이건 복지로 해결되지 않습니다. 개인적인 일이니까요.</li>
+  </ul>
+</div>
+
+<h3>사회복지는 무슨 일을 하나</h3>
+<ul>
+  <li><strong>권리를 넓힙니다.</strong> 사회 구성원이라면 마땅히 누려야 할 것을 실제로 누리게 합니다. 이것을 사회권이라고 합니다.</li>
+  <li><strong>양극화를 완화합니다.</strong> 해결이나 해소가 아니라 <em>완화</em>입니다. 완전히 없애 버리면 그건 이상적인 사회주의 국가가 됩니다. 그리고 양극화는 돈 문제만이 아니라 마음과 삶의 질까지 포함합니다.</li>
+  <li><strong>경제 성장에 기여합니다.</strong> 단, 이건 의견이 갈립니다. 복지 수준이 오르면 관련 산업이 커지고 일자리가 생긴다는 쪽과, 복지가 꼭 경제 성장에 기여해야 하는 건 아니라는 쪽이 있습니다.</li>
+</ul>
+
+<h2><span class="act">두 번째 장면</span>사람의 욕구, 그리고 다섯 가지 얼굴</h2>
+
+<p>사회복지는 결국 <strong>사람의 욕구</strong>와 연결되어 있습니다. 욕구는 태어나는 순간부터 죽을 때까지 있는, 살기 위한 가장 기본적인 장치입니다. 다만 사회복지가 다루는 욕구는 <em>살아가고 스스로 설 수 있으려면 반드시 채워져야 하는 것</em>으로 한정됩니다.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>욕구의 종류</th><th>설명과 예시</th></tr></thead>
+<tbody>
+<tr><td>개인적 욕구</td><td>배고픔, 추위, 아픔, 마음의 어려움, 사회활동을 하기 어려움</td></tr>
+<tr><td>사회적 욕구</td><td>사회 차원에서 생기는 욕구. 예를 들어 배달 일을 하는 사람들의 노동권 보장 — 원래는 개인의 어려움이었지만 그런 사람이 많아지며 사회의 문제로 커진 경우</td></tr>
+<tr><td>감지된 욕구</td><td>아무도 대놓고 말하지 않지만 사회적으로 느껴지는 것. 예를 들어 "어떤 모습으로 삶을 마무리해야 할까"에 대한 논의(웰다잉)</td></tr>
+<tr><td>표현된 욕구</td><td>직접 밖으로 드러나는 것. 예를 들어 장애인 단체의 지하철 시위 — 이동할 권리를 보장해 달라는 요구</td></tr>
+<tr><td>비교 욕구</td><td>남과 비교하면서 생기는 것. 나는 삼각김밥으로 끼니를 때우는데 SNS에는 20만 원짜리 식사가 올라올 때 느끼는 것</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>욕구가 채워지지 않으면 어떻게 되나</h3>
+<p>개인 차원에서는 불만, 공격성, 병적인 상태, 자기 합리화, 회피 같은 부정적인 방식으로 터져 나옵니다. 한두 명일 때는 "저 사람 문제네"로 끝납니다. 그런데 <strong>그런 사람이 많아지면 사회 문제가 됩니다.</strong></p>
+
+<div class="oneline">
+  <span class="label">사회복지의 자리</span>
+  사회 문제로 번지기 전에,<br>문제가 터지는 지점이나 그 앞을 막아 주는 것.
+</div>
+
+<h2><span class="act">세 번째 장면</span>한 사람의 어깨 위에 올려진 시대</h2>
+
+<p><strong>사회적 위험</strong>이란 사회의 구조와 환경 때문에 생기는 위험을 말합니다. 사회가 어떤 모습이냐에 따라 위험의 종류와 크기가 달라집니다. 그리고 문제가 달라지면 해결 방법도 달라져야 합니다.</p>
+
+<div class="scene">
+  <span class="cue">구사회 위험 · 공장이 돌아가던 시절</span>
+  <p>한 집을 떠올려 보세요. 아버지 한 사람이 아침마다 일하러 나갑니다. 어머니는 집안일을 합니다. 그 아래 자녀들, 그리고 조부모, 형제자매까지 모두 그 한 사람에게 매달려 있습니다.</p>
+  <p><strong>한 사람의 월급이 열몇 명을 먹여 살리는 구조입니다.</strong></p>
+  <p>그럼 위험은 무엇일까요? 간단합니다. 이 사람이 다치거나, 병들거나, 나이 들어 일을 못 하게 되면 <em>한 명이 아니라 열 명이 한꺼번에 무너집니다.</em></p>
+  <p>그래서 이 시대의 복지는 목표가 아주 분명했습니다. <strong>어떻게든 이 사람이 계속 일할 수 있게 붙들어 주는 것.</strong> 그래서 나온 것이 병에 걸렸을 때 보상해 주는 제도, 돈을 받으며 쉬는 휴가, 나이 들면 나오는 연금이었습니다.</p>
+  <p>다만 이 시스템에는 <strong>한 가지 전제</strong>가 있었습니다. 일하려는 사람은 누구나 일자리를 구할 수 있어야 한다는 것. 이것을 완전고용이라고 합니다.</p>
+</div>
+
+<h3>그런데 그 전제가 무너졌습니다 — 신사회 위험</h3>
+<ul>
+  <li><strong>여성이 일하러 나가면서 돌봄 공백이 생겼습니다.</strong> 아이와 나이 든 부모를 돌볼 사람이 사라진 것입니다.
+    <p class="term">※ 짚고 넘어갈 것 — 전업주부의 자리는 그냥 집에 있는 자리가 아니었습니다. 일하는 사람이 다음 날 다시 일할 수 있도록 뒤에서 모든 것을 해결해 주는, 매우 중요한 역할이었습니다.</p>
+  </li>
+  <li><strong>지식이 곧 힘이 되는 사회가 됐습니다.</strong> 정보와 지식, 그리고 그것을 활용할 여유를 가진 사람과 그렇지 못한 사람 사이의 격차가 벌어집니다.</li>
+  <li><strong>일자리와 학벌이 딱 붙어 버렸습니다.</strong> "좋은 대학을 나와야 좋은 회사에 간다"는 구조가 생기면서, 거기서 밀려나는 사람들이 나타납니다.</li>
+  <li><strong>그런데 이제는 그 연결고리마저 끊어지고 있습니다.</strong> 인공지능으로 대표되는 변화 때문입니다. 이제는 "졸업하면 취업이 확실하다"고 말하는 사람도, "전공에 딱 맞는 일을 하게 될 것"이라고 말하는 사람도 없습니다.</li>
+  <li><strong>복지 서비스가 민간에 넘어갔습니다.</strong> 이익을 좇는 순간 복지는 망가집니다.</li>
+</ul>
+
+<div class="box key">
+  <span class="label">교수님이 길게 강조한 부분 — 인공지능과 새로운 위험</span>
+  <p>요즘 <strong>사고의 외주화</strong>라는 말이 나옵니다. 지금까지 사람이 해 오던 생각과 잡다한 일을 기계가 대신하고 있고, 심지어 그것을 관리하는 역할까지 넘어갈 수 있다는 전망입니다.</p>
+  <p>그렇게 되면 <em>이 도구를 잘 쓸 수 있는 사람과 그렇지 못한 사람 사이에 엄청난 격차</em>가 생깁니다. 그래서 최소한 기본소득 정도는 필요하다는 이야기가 나옵니다.</p>
+  <p><strong>이미 벌어지고 있는 일:</strong> 변호사와 회계사 업계에서 신입 채용이 크게 줄었습니다. 문서 찾고 요약하고 표 정리하는 일을 기계가 잘하기 때문입니다. 그런데 질문이 남습니다. <em>그럼 5년, 10년 뒤에 그 중간 자리는 누가 채우나요?</em></p>
+</div>
+
+<h2><span class="act">네 번째 장면</span>필요한 사람에게만? 아니면 모두에게?</h2>
+
+<p>복지를 나누는 가장 큰 갈래가 여기 있습니다. 도움을 <strong>고른 사람에게만 줄 것인가</strong>, 아니면 <strong>모두에게 열어 둘 것인가</strong>.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>구분</th><th>잔여적 복지 (골라서 주는 방식)</th><th>제도적 복지 (모두에게 열린 방식)</th></tr></thead>
+<tbody>
+<tr><td>누구에게</td><td>필요한 사람에게만. 어려운 사람을 가려냅니다</td><td>국민 대다수에게</td></tr>
+<tr><td>문제의 원인은</td><td>그 사람에게 있다고 봅니다</td><td>사회 구조에 있다고 봅니다. 가난의 대물림, 양극화 같은 것</td></tr>
+<tr><td>깔린 생각</td><td>시장경제, 각자도생</td><td>사회권, 시민의 당연한 권리</td></tr>
+<tr><td>대표 예시</td><td>공공부조 — 기초생활수급비, 의료지원, 주거지원. <em>돈을 내지 않아도 받습니다</em></td><td>사회보험 — 건강보험, 노인장기요양보험. <em>모두가 보험료를 냅니다</em></td></tr>
+<tr><td>장점</td><td>정말 필요한 사람에게 집중해서 줄 수 있습니다. 자원이 한정된 경우(주택 등)에 효율적입니다</td><td>낙인이 없습니다. 누구나 필요하면 쓸 수 있다는 걸 알기에 예방 효과도 있습니다</td></tr>
+<tr><td>단점</td><td><strong>낙인</strong>, 그리고 부정하게 받아 가는 경우</td><td>돈이 많이 듭니다</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>낙인이란 이런 것입니다</h3>
+<p>어려운 말로 <strong>스티그마</strong>라고 합니다. 잔여적 복지의 가장 큰 단점이죠.</p>
+<ul>
+  <li>수급자라는 말만 들어도 사람들은 "아주 가난한 사람"이라는 이미지를 먼저 떠올립니다.</li>
+  <li>모두에게 열려 있는 장기요양보험조차, "없는 사람 취급 받을까 봐" 신청하지 않는 어르신이 많습니다.</li>
+  <li><strong>학생이 든 사례:</strong> 임대아파트만 외벽 색을 다르게 칠하거나, 아예 단지를 분리하거나, 아이들이 어울리지 못하게 하는 것.
+    <p>교수님의 답은 이랬습니다. "그건 낙인과, 그 낙인을 이용하는 것이 함께 엮인 겁니다. 밖에서 그걸 이용하는 사람이 있고, 안에서 <em>나는 이 세계를 넘어갈 수 없는 사람이구나</em> 하고 느끼는 사람이 있는 거죠."</p>
+  </li>
+</ul>
+
+<div class="scene">
+  <span class="cue">반대편 이야기 · 교수님 가족의 경험</span>
+  <p>아버지가 일반 건강검진에서 초기 위암이 발견되어 내시경 시술을 받으셨습니다. 병원비 전체는 약 <strong>1,000만 원</strong>이었습니다.</p>
+  <p>그런데 암 진단을 받으면 적용되는 제도가 있어서, 실제로 낸 돈은 전체의 <strong>5%, 200만 원이 채 안 됐습니다.</strong></p>
+  <p>평소 그리 진보적이지 않던 부모님이 갑자기 이렇게 말씀하셨다고 합니다. "우리나라 복지가 제일 잘 돼 있어."</p>
+  <p>이 이야기의 핵심은 두 가지입니다. 하나, 병을 앓다가 그냥 돌아가시는 일을 <em>미리 막을 수 있었다</em>는 것. 둘, <strong>1,000만 원 중 5%만 냈다고 해서 아무도 그 집에 낙인을 찍지 않았다</strong>는 것입니다.</p>
+</div>
+
+<h3>지금 흐름은 어느 쪽일까</h3>
+<p>골라서 주는 방식에서 <strong>모두에게 열린 방식으로 이동하는 중</strong>입니다. 복지는 모두가 누려야 하고, 그것이 시민의 권리라고 보기 때문입니다.</p>
+<p>예전에는 요양보호사를 부르거나 아이를 어린이집에 맡기면 "되먹지 못했다"는 소리를 들었습니다. 지금은 사회와 국가가 함께 책임져야 한다는 생각이 훨씬 우세합니다.</p>
+
+<div class="box key">
+  <span class="label">하지만 둘 중 하나만 고를 수는 없습니다</span>
+  <p>모두에게 열린 제도를 만들어도, 그 안에는 <strong>여전히 더 힘든 사람이 남습니다.</strong> 그래서 골라서 주는 방식도 계속 필요합니다. 둘은 섞여서 갈 수밖에 없습니다.</p>
+</div>
+
+<h2><span class="act">다섯 번째 장면</span>복지국가는 어떻게 생겨났나</h2>
+
+<h3>제도가 없던 시절 — 마을이 대신하던 일</h3>
+<ul>
+  <li>마을과 친척 공동체가 어려운 사람을 돌봤습니다. 열 집이 돌아가며 끼니를 챙기고 빨래를 도와주는 식으로요.</li>
+  <li>조선에도 가난한 사람을 구제하는 제도가 있었고, 앞을 보지 못하는 사람들을 모아 잔치를 열어 주는 행사도 정기적으로 있었습니다. 심청전에 나오는 그 장면의 실제 배경입니다.</li>
+  <li>흉년이 들면 나라가 쌀을 나눠 주기도 했습니다.</li>
+  <li>서양에서는 <strong>수도원</strong>이 그 역할을 했습니다. 버려진 아이, 갈 곳 없는 노인, 일하기 어려운 사람을 돌봤습니다. <em>종교가 하는 복지의 원형</em>입니다.</li>
+</ul>
+
+<h3>구빈법 — 복지의 시작, 그러나 목적은 달랐다</h3>
+<p>1300년대부터 가난한 사람을 모아 두는 시설 비슷한 것이 있었고, <strong>엘리자베스 1세</strong>가 이것을 법으로 만들었습니다. 나라가 나선 복지의 출발점으로 봅니다.</p>
+<div class="box key">
+  <span class="label">그런데 목적을 알면 놀랍습니다</span>
+  <p>삶의 질을 높이려는 게 아니었습니다. 돈도 땅도 집도 먹을 것도 없어 <strong>무리 지어 떠도는 사람들을 통제하는 것</strong>이 가장 큰 목적이었습니다.</p>
+  <p>구빈원에 모아 놓고 일을 시켰습니다. 주는 것은 겨우 살아 있을 만큼 — 하루에 빵 하나 수준이었습니다. 그런데 일은 하루 12시간에서 14시간까지 시켰습니다. 논리는 이랬습니다. "나라가 먹여 주니 이 정도는 해야지."</p>
+</div>
+
+<h3>비스마르크 — 사랑해서가 아니라, 필요해서</h3>
+<p>독일은 좀 특이한 경우였습니다. 산업과 자본주의가 미국, 영국, 프랑스만큼 발전하기도 전에 이 위험이 먼저 닥쳤습니다. <em>완전고용을 누려 본 적도 없는데 문제가 먼저 터진</em> 상황이었죠.</p>
+<p>여기서 철혈재상이라 불린 <strong>비스마르크</strong>가 복지 제도를 시작합니다. 고용보험, 산재보험, 연금을 만들었습니다.</p>
+
+<div class="box easy">
+  <span class="label">왜 만들었을까 — 착해서가 아닙니다</span>
+  <p>직장을 잃거나 은퇴했거나 다친 사람이 천 명, 만 명이 되면 그건 더 이상 개인의 문제가 아닙니다. <strong>사회가 흔들리고 시스템이 유지되지 않습니다.</strong></p>
+  <p>그래서 세 가지를 노렸습니다.</p>
+  <ul>
+    <li>① 이 사람들을 어쨌든 살아 있게 한다</li>
+    <li>② 나라에서 혜택을 받았으니 나라에 쓸모 있는 사람이 되자고 생각하게 만든다</li>
+    <li>③ 다음 세대의 일할 사람을 계속 길러 낸다</li>
+  </ul>
+  <p>폭동을 막으려는 목적도 있었습니다. 방식은 <strong>보험료를 내고 필요할 때 받는 것</strong>이었습니다. 그래서 일한 적 없는 사람에게는 연금이 없습니다.</p>
+</div>
+
+<h3>황금기 — 제도와 생각이 함께 자라다</h3>
+<ul>
+  <li>독일의 제도가 여러 나라에서 호응을 얻습니다. "보기에도 좋고, 효과도 있고, 사회 문제도 덜 일으킨다"는 것이었죠.</li>
+  <li>그런데 <strong>제도만으로는 부족합니다.</strong> 생각과 가치가 따라가지 않으면 제도는 곧 없어집니다. 그래서 <em>사람답게 살 기본 조건은 나라가 책임져야 한다</em>는 생각이 함께 자랐습니다.</li>
+  <li>이것을 떠받친 것은 2차 대전 이후의 엄청난 경제 성장이었습니다. 일하고 싶은 사람은 거의 다 일할 수 있는 상태가 실현됩니다.</li>
+  <li>복지 예산이 나라 살림의 1%에서 3%, 5%로 빠르게 늘어납니다.</li>
+</ul>
+
+<h3>위기 — 석유가 멈추자 모든 것이 무너졌다</h3>
+<div class="scene">
+  <span class="cue">오일쇼크</span>
+  <p>2차 대전 이후 세계는 복지의 황금기이자 자본주의의 황금기였습니다. 그리고 그 속도를 내게 해 준 연료가 <strong>석유</strong>였습니다.</p>
+  <p>그런데 중동에서 전쟁이 나고, 석유 생산국들이 모여 생산량을 줄이고 가격을 맞추기로 하면서 경제에 큰 지진이 일어납니다.</p>
+  <p>그다음은 도미노였습니다. 가난한 사람과 실업자가 늘고 → 완전고용이 무너지고 → "다 같이 부담하자"던 사회적 합의가 깨지고 → "돈도 없는데 복지 예산을 어디서 가져오나"가 되고 → 복지가 줄고 → 노동 분쟁이 늘고 → 경제가 더 나빠집니다.</p>
+  <p class="term">※ 교수님의 지적: 노동쟁의 자체가 나빴던 게 아니라, 그것을 받아들이는 기업과 사회의 대응이 문제였습니다.</p>
+</div>
+
+<h3>레이건과 대처의 시대 — 국가가 손을 떼다</h3>
+<ul>
+  <li><strong>민영화.</strong> 영국은 전기, 수도, 가스를 민간에 팔았습니다. 그래서 공급 회사가 계속 바뀌고 "우리 회사로 바꾸세요" 같은 연락이 옵니다.
+    <p class="term">생각해 볼 것 — 수도와 전기와 가스가 통신사처럼 경쟁하다가, 가격을 서로 맞추거나 불리한 조건을 내밀면 우리가 거부할 수 있을까요?</p>
+  </li>
+  <li><strong>노동시장 유연화.</strong> 원래는 좋은 것이어야 했지만, 실제로는 일하는 사람을 불안정하게 만드는 방향으로 작동했습니다.
+    <p>좋게 작동한다면 이런 모습일 겁니다. 한 자리를 둘이 나누되, 정규직 한 명에게 줄 임금과 보험료와 수당을 <em>일한 시간 비율대로 나눠 주는 것</em>. 그러면 질 좋은 일자리가 되고 안정적입니다. 지금은 그게 전부 아르바이트와 비정규직으로 흘러가는 게 문제입니다.</p>
+  </li>
+  <li><strong>복지 다원화.</strong> 나라가 하던 일을 민간에 맡깁니다. 보육원, 장애인 생활시설, 복지원 등이 민간과 종교기관 운영으로 넘어갑니다. 나라가 관리하고 민간이 운영하는 구조입니다.</li>
+  <li><strong>노동자들이 갈라집니다.</strong> 같은 일을 해도 정규직과 비정규직의 대우가 다르니까요. 본사는 억대 성과급을 받는데 협력업체는 월 300만 원 전후입니다. "우리 성과급을 위해 함께 싸웁시다" 할 때, 하루 일당으로 사는 사람은 참여하면 그날 벌이를 잃습니다. <em>같은 노동자가 아닌 것입니다.</em></li>
+  <li><strong>공영주택 매각.</strong> 영국은 전쟁 후 지은 공공 주택을 개인에게 팔았습니다. 반면 독일은 지금도 나라가 가진 공공 주택이 많습니다.</li>
+</ul>
+
+<h2><span class="act">여섯 번째 장면</span>복지국가를 줄 세워 본 학자</h2>
+
+<p><strong>에스핑-안데르센</strong>이라는 학자는 복지국가를 세 가지 유형으로 나눴습니다. 나누는 기준은 <strong>탈상품화</strong>의 정도입니다.</p>
+
+<div class="box easy">
+  <span class="label">탈상품화가 뭐길래</span>
+  <p>내 노동력을 시장에 상품으로 내놓지 않고도 <strong>먹고살 수 있는 정도</strong>를 말합니다.</p>
+  <p>쉽게 말해 이런 질문입니다. <em>일하러 나가지 않아도 먹고살 수 있는가? 그리고 그때의 삶의 질은 어느 정도인가?</em></p>
+  <p>복지 수준이 높은 곳이란, 주당 50시간씩 야근하고 주말까지 일하지 않아도 생계가 유지되는 곳입니다.</p>
+</div>
+
+<h3>이 이론의 약점</h3>
+<ul>
+  <li>북유럽 나라들과 미국만 가지고 이야기했습니다. (미국은 탈상품화 정도가 너무 낮아 복지국가라고 부르기도 어렵습니다)</li>
+  <li>자본주의가 극도로 발전하거나 완전고용을 겪어 보지 않고 복지를 하는 나라에 대한 이해가 부족합니다.</li>
+  <li>한국, 대만, 싱가포르처럼 자본주의와 복지가 <em>함께</em> 자랐고 그 밑에 유교적 가치가 깔린 나라에 대한 인식이 거의 없습니다.</li>
+  <li>자본주의 발전 근처에도 못 가 본 나라들의 복지에 대한 이해도 없습니다.</li>
+</ul>
+<p class="term">※ 그럼에도 사회복지사 시험에는 한 번씩 나옵니다.</p>
+
+<h3>그럼 한국은 어디쯤일까</h3>
+<div class="box talk">
+  <span class="label">교수님의 답</span>
+  <p>놀랍게도 중간 정도는 될 겁니다.</p>
+  <p>네팔에서 빙하가 무너지고 홍수가 났다는 뉴스를 보며 가장 무서웠던 건 이것이었습니다. "남아 있는 사람들은 이제 어떻게 되는 거지?" 지금은 구호 물자가 가지만, 그 뒤에 살아남고 다시 세우고 스스로 설 수 있게 받쳐 줄 시스템이 없습니다.</p>
+  <p>한국은 산불이나 홍수가 나면 오래 걸리고 질이 좋지 않더라도 컨테이너 주택 같은 임시 거처를 줍니다. 그리고 지방자치단체 단위로 가입된 재해보험이 있어서 피해를 입으면 보험금이 나옵니다.</p>
+</div>
+
+<h2><span class="act">일곱 번째 장면</span>사회복지사는 무슨 일을 하는 사람인가</h2>
+
+<div class="box easy">
+  <span class="label">한 문장으로</span>
+  <p><strong>무엇을 하나:</strong> 도움이 필요한 사람에게 가장 필요한 것을 주어서 삶의 질을 높여 주는 사람입니다.</p>
+  <p><strong>어떻게 하나:</strong> 여기저기 흩어져 있는 복지 자원과 제도를 <em>찾아내서</em>, 그 사람에게 가장 필요한 것과 <em>연결해 주는</em> 방식으로 합니다.</p>
+</div>
+
+<p>그래서 영역이 많이 나뉘어 있습니다. 노인복지관에서 20년 일한 사람이 장애인복지관으로 가면, 시스템도 법도 자원도 사람 관계도 다 다르기 때문에 바닥부터 다시 시작해야 합니다.</p>
+
+<h3>법을 찾아내는 것이 실력입니다</h3>
+<p>사회복지사업법 말고도 관련된 법이 아주 많고, 복지 내용이 여러 법 속에 숨어 있듯 흩어져 있습니다. 그래서 <strong>어디에 무엇이 숨어 있는지 잘 찾아내는 사람이 유능한 사회복지사가 됩니다.</strong></p>
+<ul>
+  <li><strong>국가법령정보센터</strong>를 쓰면 법률부터 시행령, 조례, 규칙까지 전국 단위로 찾을 수 있습니다. 언제 어떻게 바뀌었는지도 볼 수 있습니다. 생활법령 코너는 더 쉽게 정리되어 있습니다.</li>
+  <li>예를 들어 주거복지 관련 내용은 어디에 있을까요? 뜻밖에도 성폭력 피해자 거주시설에 관한 조항 속에 들어 있을 수도 있습니다.</li>
+</ul>
+
+<div class="box key">
+  <span class="label">이 일을 기계가 대신하기 어려운 이유</span>
+  <p>어떤 방식으로 접근하느냐에 따라 결과가 완전히 달라지기 때문입니다.</p>
+  <p>"주거복지 관련 법 찾아 줘"라고 물어서는 안 됩니다. <em>이 사람은 어떤 상황이고, 어떤 문제를 갖고 있고, 무엇을 원하는데, 그건 어느 법에 녹아 있을까</em>를 스스로 떠올릴 수 있어야 합니다.</p>
+</div>
+
+<h3>어떤 영역들이 있나</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th>영역</th><th>주요 내용과 이슈</th></tr></thead>
+<tbody>
+<tr><td>노인복지</td><td>소득 보장, 건강 보장, 주거와 여가, 실종과 인권.<br><strong>통합돌봄법</strong>이 올해 3월 시행됐습니다. 올해는 노인과 65세 미만 중증장애인부터 시작하지만, 설계상으로는 전 국민이 대상입니다. 병원에서 퇴원했는데 돌볼 사람이 없을 때 식사, 병원 동행, 집에서 받는 물리치료까지 묶어서 제공합니다.</td></tr>
+<tr><td>아동복지</td><td>건강한 발달(주어진 조건 안에서 능력과 자질을 최대한 펼치게 하는 것), 가정의 연속성, 보호, 안전, 학대.<br>— 아이는 표현 능력이 부족하고 가해자에게 심리적으로 매여 있는 경우가 많아 피해를 드러내기 어렵습니다.<br>— 문화와 정체성의 다양성, 기후 재난이 아이 건강에 미치는 영향도 다룹니다.<br>— <strong>지역 격차:</strong> 서울의 한 동네에서는 어린이집 한 곳이 50명을 돌보는데, 어떤 군 단위 지역에는 어린이집이 두 곳뿐이라 한 시간씩 가야 합니다.</td></tr>
+<tr><td>장애인복지</td><td>보건복지부 홈페이지에 정책 목표와 서비스가 정리되어 있습니다.</td></tr>
+<tr><td>그 밖에</td><td><strong>교정복지</strong>(수감자와 출소자 — 범죄 예방과 재범 방지까지 해야 하는데 인력이 매우 적습니다), <strong>의료복지</strong>(최근 활발해지는 중), <strong>군복지</strong>(부대 안 상담전화 등)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>자격 체계</h3>
+<ul>
+  <li>일반 사회복지사 자격에 더해 따는 것: 정신보건 사회복지사, 의료 사회복지사, 학교 사회복지사</li>
+  <li>따로 자격증 없이 그 분야에서 일하는 사람을 부르는 이름: 산업 사회복지사, 군 사회복지사, 교정 사회복지사</li>
+  <li>관련해서 일하는 사람은 생각보다 다양합니다. 변호사도 있고, 학교나 요양원이나 병원의 영양사도 있습니다.</li>
+</ul>
+
+<h2><span class="act">여덟 번째 장면</span>종교가 하는 복지</h2>
+
+<p>이 수업의 제목이 종교와 사회복지인 이유가 여기 있습니다. 종교 기관은 지역사회에서 무엇을 할 수 있을까요?</p>
+
+<ol class="steps">
+  <li><b>옹호하기 — 애드보커시와 얼라이</b>사회적으로 약한 자리에 있는 사람들을 대신해 목소리를 내 주고, 곁에 서 주는 활동입니다. 예를 들어 성공회의 용산 나눔의집은 성소수자 옹호를 중심으로 하고, 지역사회복지관과 노동자복지관은 이주노동자를 옹호합니다.</li>
+  <li><b>불러 모으기 — 모빌라이징</b>당사자들이 직접 자기 문제에 목소리를 낼 수 있도록 참여시키는 것입니다.</li>
+  <li><b>지역을 조직하기 — 커뮤니티 오거나이징</b>지역사회 전체가 스스로 힘을 내고 목소리를 내게 만드는 것입니다. 시민단체를 만드는 일 같은 것이죠.</li>
+</ol>
+<p class="term">※ 로스만의 ABC 모델(지역사회 문제 해결 모델) — 시험에 나온다고 하셨습니다.</p>
+
+<h3>종교마다 다른 모습</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th>종교</th><th>특징</th></tr></thead>
+<tbody>
+<tr><td>가톨릭</td><td>많은 일을 하고 있고, 내부에 사회복지 전문가가 많습니다.</td></tr>
+<tr><td>불교</td><td>종단이 아주 많습니다. 산속의 종교라는 이미지가 강해 밖으로 넓히기보다 공동체 안쪽에 집중해 왔지만, 최근 사회복지법인이 상당히 늘고 있습니다.<br><span class="term">천태종, 태고종, 법륜종, 진각종 같은 곳은 스님이 결혼을 하기도 합니다. 이상하게 보지 말라고 하셨습니다.</span></td></tr>
+<tr><td>개신교</td><td>등록된 교단만 300개가 넘습니다(7~8년 전 기준). 다양한 교단이 다양한 일을 합니다. 한국전쟁 이후 외국의 원조에 힘입어 복지기관이 크게 발전한 것이 특징입니다.<br>구세군은 아동과 해외 사업, 성공회는 이주민과 빈민, 장로교는 전 영역을 다룹니다.</td></tr>
+<tr><td>원불교</td><td>"숫자는 많지 않은데 돈이 많다"고 하셨습니다. 남미까지 교당이 있습니다. 불교의 부패한 부분을 문제 삼으며 나온 측면이 있어 건전한 종단으로 인식됩니다. 원광대가 원불교 재단입니다.<br><strong>모토:</strong> 나라나 민간 단체가 감당하기 어려운 분야에 종교 사회복지가 참여해야 한다.<br>다만 아직 전문성은 조금 부족한 편입니다. 복지 인력이 이제 막 길러지는 분위기입니다.</td></tr>
+<tr><td>대순진리회</td><td><strong>1인 1실 요양원</strong>을 운영합니다. 보통 요양원은 한 방에 4~6명이 지내는데, 여기는 한 사람이 한 방을 씁니다. 월 500만 원짜리 실버타운에서나 가능하다고 여겨지던 것을 일반 어르신에게 제공하는 것입니다.<br><span class="term">서구 복지국가의 요양원은 대체로 1인 1실이고, 자기 물건과 가구를 가지고 들어갈 수 있습니다. 자기가 누구인지를 잃지 않게 하는 환경입니다.</span></td></tr>
+<tr><td>중국</td><td>절과 교회의 규모가 큽니다. 종교기관이 운영하는 복지시설이 생각보다 많습니다. 돌봄을 돕는 로봇 기술은 중국이 최고 수준입니다.</td></tr>
+<tr><td>이슬람</td><td><strong>와크프</strong>라는 독특한 전통이 있습니다. 복지 제도가 없던 시절부터 있었습니다. 부자가 기부해서 만든 재단은 <em>가족에게 물려줄 수 없고</em>, 어려운 사람을 돕는 데 써야 합니다. 성지 순례 지원, 은퇴자 지원, 사원 건립 등에 쓰입니다.<br>이것을 복지라고 부르는 이유는, 돈을 개인적으로 나눠 주는 게 아니라 <strong>시스템으로 만들기 때문</strong>입니다.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2><span class="act">에필로그</span>결국 남는 한 문장</h2>
+
+<div class="oneline">
+  <span class="label">오늘의 핵심</span>
+  복지가 복지인 이유는 개인의 일이 아니라<br>국가적이고 사회적인 일이며, 제도여야 하기 때문이다.
+</div>
+
+<p>이론을 전부 설명하려면 한 학기를 다 써도 부족합니다. 중요한 것은 <strong>그것이 내 삶과 어떻게 연결되어 있는지</strong>를 생각해 보는 것입니다.</p>
+<p>아주 일상적인 데서 개념을 적용해 보면 쉽게 이해됩니다. "친구는 두부찌개를 먹자는데 나는 돈가스가 먹고 싶다 — 이게 복지로 해결되나?" 안 됩니다. 개인적인 일이니까요.</p>
+
+<div class="box task">
+  <span class="label">수업 운영 공지</span>
+  <ul>
+    <li><strong>중간에 특강이 있습니다.</strong> 호주에서 사회복지를 가르치는 교수님을 초청합니다. 주제는 지역사회에서 종교 기반 사회복지기관이 어떤 일을 하고, 또 할 수 있는지입니다. 궁금한 점을 미리 적어 내면 주제를 추려 전달하고 답을 받아 옵니다.</li>
+    <li><strong>평가:</strong> 수강생이 19명이라 절대평가가 될 가능성이 높습니다.</li>
+    <li><strong>중간고사:</strong> 앞서 들은 내용을 가지고 그 자리에서 써 내는 방식이 될 것 같습니다.</li>
+    <li><strong>인공지능 사용은 가능합니다.</strong> 다만 내 말이 들어가야 합니다. "기계가 쓴 건 너무 티가 난다"고 하셨습니다.</li>
+    <li>이번 주는 교수님 단독 강의였고, 강의자료는 LMS에 올라갑니다.</li>
+  </ul>
+</div>
+
+<footer class="doc">
+  <p>이 문서는 종교와 사회복지 0908-정리.html 의 내용을 이야기 형식으로 다시 쓴 것입니다.</p>
+  <p>원본은 녹음 전사본을 바탕으로 만들어져 사람 이름, 기관 이름, 법령 이름이 잘못 옮겨졌을 수 있습니다. 시험 준비에는 LMS 강의자료와 함께 확인하세요.</p>
+</footer>
+
+</div>
+</body>
+</html>

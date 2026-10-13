@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>노인복지론 0909 정리</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --warn-bg:#fdf7e7;--warn-line:#e6cf94;--warn-ink:#7a5b12;
+  --task-bg:#fdeeec;--task-line:#f0c0b8;--task-ink:#9b3a2a;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --warn-bg:#2b2517;--warn-line:#5f5228;--warn-ink:#e4c97f;
+    --task-bg:#2e1d1a;--task-line:#5e332b;--task-ink:#f0a292;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:32px}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin:0 0 6px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 10px;letter-spacing:-.02em;font-weight:750}
+.meta{font-size:.87rem;color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+.meta b{font-weight:600;color:var(--ink)}
+h2{font-size:1.22rem;margin:42px 0 14px;padding-left:13px;border-left:4px solid var(--accent);line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.02rem;margin:26px 0 8px;color:var(--accent-ink);font-weight:700}
+p{margin:0 0 13px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:normal;background:var(--accent-soft);padding:1px 5px;border-radius:4px;font-weight:600}
+.tldr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:8px}
+.tldr h2{margin-top:0;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:0;padding:0;color:var(--faint)}
+.tldr ol{margin-bottom:0;padding-left:20px}
+.tldr li{margin-bottom:9px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+.box{border-radius:10px;padding:16px 18px;margin:18px 0;border:1px solid}
+.box .label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 8px;display:block}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box.task{background:var(--task-bg);border-color:var(--task-line)}
+.box.task .label{color:var(--task-ink)}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+.box.warn .label{color:var(--warn-ink)}
+.tablewrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem;white-space:nowrap}
+td:first-child{font-weight:600;white-space:nowrap}
+.jp{font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif}
+.term{color:var(--faint);font-size:.9em;font-weight:400}
+footer.doc{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+footer.doc p{margin:0 0 5px}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.45rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  h2{page-break-after:avoid}
+  .box,.card,.tldr{page-break-inside:avoid}
+}
+:root{--accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2}
+@media (prefers-color-scheme:dark){:root{--accent:#58c2b4;--accent-ink:#58c2b4;--accent-soft:#1c2f2d}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="doc">
+<p class="eyebrow">26년 2학기 · 3주차</p>
+<h1>노인복지론 — 9월 9일(수) 오프라인</h1>
+<p class="meta"><span><b>주제</b> 인구 고령화 복습 &amp; 예산 배분 조별활동</span><span><b>녹음</b> 73분</span></p>
+</header>
+
+<div class="tldr">
+<h2>한눈에 보기</h2>
+<ol>
+<li><strong>노화(aging)와 고령화(population aging)는 다른 개념이다.</strong> 노화는 개인의 변화, 고령화는 인구 구조의 변화 — 정책 대응도 완전히 다르다.</li>
+<li><strong>65세라는 노인 기준은 생각보다 근거가 약하다.</strong> 노인복지법에도 연령 정의 조항이 없고, 노인 스스로는 평균 71.6세부터를 노인으로 본다.</li>
+<li><strong>고령화 위기담론은 4가지 지점에서 비판받는다.</strong> 특히 노년부양비 지표의 한계는 시험에 나올 확률이 높다.</li>
+<li><strong>정책 결정은 진리 탐구가 아니라 선택의 기술이다.</strong> 지표 하나를 고르면 다른 가치가 통째로 버려진다 — 오늘 조별활동의 결론.</li>
+</ol>
+</div>
+
+<h2>1. 노화 vs 고령화 — 반드시 구분할 것</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th></th><th>노화 (Aging)</th><th>고령화 (Population Aging)</th></tr></thead>
+<tbody>
+<tr><td>단위</td><td>개인에게 일어나는 변화</td><td>전체 인구 구조의 변화</td></tr>
+<tr><td>내용</td><td>시간이 지나며 신체·정신이 변하는 것</td><td>전체 인구 중 65세 이상 비율</td></tr>
+<tr><td>영향 영역</td><td>건강, 주거, 돌봄 관계</td><td>연금, 의료보장, 노동시장, 재정</td></tr>
+<tr><td>대응 방식</td><td>의료진·사회복지사의 치료·상담 등 <strong>실천(practice)</strong></td><td>제도 설계 등 <strong>정책(policy)</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>교수님이 짚은 포인트</h3>
+<ul>
+<li><strong>노화는 노인만의 것이 아니다.</strong> "여러분도 어릴 때부터 노화해서 지금까지 온 것" — 영어 <em>aging</em>에는 '늙을 노(老)'자가 들어가지 않는다. 한국어 '노화'로 번역하면서 부정적 <span class="term">커노테이션(connotation)</span>이 붙었다 → <strong>언어에 문화적 편견이 담긴 사례</strong>.</li>
+<li><strong>둘은 논리적으로 구별된다.</strong> 아무도 더 오래 살지 않아도, 아이가 태어나지 않으면 고령화는 진행된다.</li>
+</ul>
+
+<h2>2. 65세 기준은 왜 애매한가</h2>
+<ul>
+<li><strong>1981년 제정 노인복지법에는 노인을 연령으로 정의하는 일반 규정 자체가 없다.</strong> 다만 부양의무자·보호자·치매·노인학대 관련 조항들이 65세를 가리키고 있어 관행적으로 65세를 쓴다.</li>
+<li><strong>노인장기요양보험법은 65세 미만도 포함한다.</strong> 초로기 치매 같은 '노인성 질병'이 있으면 50대, 드물게 40대도 적용 대상이 된다.</li>
+<li><strong>당사자 인식과의 격차.</strong> 2020년 조사에서 노인 스스로 생각하는 노인의 나이는 <strong>평균 71.6세</strong>였다. 70세는 노인 축에도 안 낀다는 것.</li>
+<li><strong>현장 감각.</strong> 경로당은 80대가 활동하는 공간이고, 90대쯤 되어야 요양 이야기가 나온다. 70대는 "여기 왜 왔냐"는 분위기.</li>
+<li><strong>교수 정년도 65세.</strong> 3년 전 퇴임한 이영환 교수님은 지금도 수요일마다 축구를 하신다 — "이분을 노인이라고 부를 수 있을까?"</li>
+</ul>
+
+<h2>3. 측정 지표와 기억할 숫자</h2>
+<p>이번 주 새로 알게 된 지식: <strong>고령화율 / 노령화지수 / 중위연령</strong></p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>숫자</th><th>의미</th></tr></thead>
+<tbody>
+<tr><td>2024. 12. 23.</td><td>주민등록 인구 기준 65세 이상이 <strong>20%를 돌파</strong>한 날 → 초고령사회 진입</td></tr>
+<tr><td>약 40%</td><td>노인 상대적 빈곤율. 원래 50% 수준이었으나 기초연금 확대(박근혜·문재인 정부)로 하락</td></tr>
+<tr><td>프랑스 ~6% / 네덜란드 4%</td><td>비교 대상 — 고령화율이 높은 나라들도 노인 빈곤율은 한 자릿수</td></tr>
+</tbody>
+</table>
+</div>
+<p class="term">※ 마일스톤 숫자는 인구 산출의 한계상 정확한 것은 아니다. 사망·출생을 초 단위로 셀 수 없으므로 주민등록 정보 업데이트 기준 날짜다.</p>
+
+<h2>4. 고령화 위기담론에 대한 4가지 비판 <span class="term">— 핵심 출제 포인트</span></h2>
+<ol>
+<li><strong>인구 구조 변화가 사회 변화를 결정하지 않는다.</strong> "2500년이면 대한민국이 사라진다"류의 주장은 방정식 계산일 뿐. 계속 출산율이 떨어진다는 가정에 의존하는데, 2025~2026년 출산율은 오히려 반등했다 — 재작년까지 아무도 예측 못 한 트렌드.</li>
+<li><strong>노년부양비 지표의 한계</strong> (아래 별도 정리)</li>
+<li><strong>세대갈등 프레임은 과장되어 있다.</strong> 유럽에서는 노인 폭행·사망 사건이 실제로 빈번하지만 한국은 그 수준이 아니다. "지난 한 달 사이 조부모 세대와 실제로 싸운 적 있나?" 문제는 이 프레임이 부각되면서 <strong>해결되지 않은 젠더 갈등·계급 갈등이 가려진다</strong>는 점.</li>
+<li><strong>65세 기준의 고정</strong> — 앞서 본 대로. 기준을 고정하면 64세·63세 같은 인접 연령대가 사각지대가 된다.</li>
+</ol>
+
+<div class="box warn">
+<span class="label">시험 포인트 — 노년부양비의 한계</span>
+<p>"세 가지 정도를 쓸 수 있으면 공부를 똑바로 한 것이다"</p>
+<ul>
+<li>65세 이상 <strong>전원을 피부양자로 가정</strong>하지만, 실제로는 상당수 고령자가 일하고 있다.</li>
+<li>손자녀 돌봄, 자원봉사 등 <strong>눈에 띄지 않는 노동이 반영되지 않는다.</strong></li>
+<li>15~64세를 모두 생산활동 인구로 보지만, 학업 중이거나 돌봄을 하는 사람도 포함되어 있다.</li>
+<li><strong>1인당 생산성의 변화</strong>를 설명하지 못한다.</li>
+<li>이민자 증가, 여성의 사회참여 확대 등 <strong>사회 구조 변화를 반영하지 못한다.</strong></li>
+</ul>
+<p>※ 이 지표는 지적을 받으면서도 학교에서조차 여전히 널리 쓰인다. "기억하고 있다가 지적해 줄 수 있으면 좋겠다."</p>
+</div>
+
+<h2>5. 조별활동 — 노인복지 예산 배분 지표 고르기</h2>
+<p>4명 1조, 총 6조. LMS 열린게시판에 같은 파일이 올라와 있다.</p>
+
+<h3>주어진 지표들</h3>
+<p>65세 이상 인구수 / 75세 이상 인구수 / 기초연금 수급자 수 / 소득·재산 기준 / 장기요양 인정자 수</p>
+
+<h3>문제 구성</h3>
+<ol>
+<li><strong>어떤 지표를 예산 배분 근거로 삼을 것인가?</strong> 조별로 하나를 합의해야 한다.</li>
+<li><strong>그 지표가 놓치는 것은?</strong> 예시 답변 — ① 자녀 용돈 같은 <strong>비공식적 소득</strong>은 잡히지 않는다 ② 재산 외의 <strong>건강 상태·거주 환경</strong>은 알 수 없다.</li>
+<li><strong>박정호 씨와 정수임 씨 사례 중 지표에서 안 보이는 사람은?</strong> → 계약직으로 일하는 <strong>박정호 씨</strong>. 소득이 잡히므로 대상자가 되기 어렵지만, 실제로는 일을 멈추면 연금만으로 살 수 없는 상태.</li>
+<li><strong>보이게 하려면 무엇을 추가해야 하나?</strong> → 가구원수, 가구 부채 등.</li>
+</ol>
+
+<h3>조별 논의에서 나온 쟁점</h3>
+<ul>
+<li>돌봄 욕구(75세 기준)를 볼 것인가, 경제적 취약성(소득·재산)을 볼 것인가 → 대부분 조가 <strong>경제 기준</strong>으로 수렴. 이유: "돈이 있어야 선택의 기회가 생긴다", "같은 상황이라도 경제적으로 약하면 타격이 더 크다"</li>
+<li>기초연금은 만 65세 이상 &amp; 소득인정액 <strong>하위 70%</strong>가 대상 — 조 안에서 확인한 내용</li>
+<li>자녀의 재산을 반영하면 → 지원이 필요한데 못 받는 역효과 발생 가능</li>
+<li>위기담론 4비판과의 연결: <strong>기준의 고정</strong>(65세 축), <strong>노년부양비</strong>, <strong>노인 내부 격차</strong>가 가려지는 문제</li>
+</ul>
+
+<h2>6. 마무리 — 정책 결정이란 무엇인가</h2>
+<div class="card">
+<p><strong>"정책 결정은 진리를 탐구하는 과정과 다르다. 선택의 과정에 가깝다."</strong></p>
+<p>여러 지표 중 하나를 선택하면 다른 맥락이 버려진다. 소득을 기준으로 정하는 순간 <strong>사회적 관계가 통째로 날아갈</strong> 수 있고, 돌봄 수요를 목적으로 삼으면 소득이 뒤로 밀린다. 각 지표의 우열은 결국 누군가의 판단이다.</p>
+<p>그래서 정책 결정은 수많은 장단점과 주장을 종합적으로 판단하는 <strong>일종의 예술(art)</strong>이다. 공무원들이 무식하거나 일을 대충 처리해서 그런 결정이 나오는 게 아니라는 점을 알아 두면 좋겠다.</p>
+</div>
+
+<h2>7. 공지 · 수업 운영</h2>
+<ul>
+<li><strong>월요일에 학교에 올 필요 없다.</strong> 월요일은 온라인 강의, 수요일이 오프라인 수업. (지난주 혼선에 대한 정정)</li>
+<li><strong>이 과목은 어렵다.</strong> 3·4학년이 많고, 시중 교재는 너무 쉽게 쓰여 있어 현장에 도움이 안 된다고 판단해 쓰지 않는다. <strong>학부 고학년~대학원 석사 과정이 섞인 수준</strong>으로 공부하게 될 것.</li>
+<li><strong>온라인 강의는 미리 업로드된다.</strong> 주말에 미리 공부하고 올 것. 10분 조금 넘는 분량.</li>
+<li><strong>용어(vocabulary)와 이론을 확실히 익혀 둘 것.</strong> 그래야 수요일에 토론·문제풀이가 가능하다.</li>
+<li><strong>복습 자료</strong>를 매주 한 페이지 분량으로 LMS 열린게시판에 올려 준다.</li>
+<li><strong>중간·기말고사도 이런 방식</strong>이다. 수업 중 활동을 성실히 해 두는 것이 시험기간 벼락치기보다 훨씬 효과적.</li>
+</ul>
+
+<div class="box task">
+<span class="label">과제 · 제출</span>
+<ul>
+<li>오늘 조별 활동지 <strong>제출하고 귀가</strong></li>
+<li>다음 주 온라인 강의 성실히 수강 — <strong>생각할 거리</strong>가 포함되어 있음</li>
+<li>주말에 온라인 강의 내용 예습 + 주요 용어 정리</li>
+</ul>
+</div>
+
+<h2>덧 — 커리어 조언</h2>
+<p>복지관에 취직해서 말단으로 있다 퇴직하지 말고 <strong>관장까지 커리어를 쌓으라</strong>는 이야기. 15~20년 꾸준히 성실하게 해야 하지만, 그 이후의 처우는 대기업 억대 연봉에 육박하면서도 업무 변동이 적다. 반면 공단은 연봉은 높지만 <strong>지방 이전 이슈</strong>가 있다. 복지관은 지역 단위로 배치되어 있어 지방 발령이 없다.</p>
+
+<footer class="doc">
+<p>이 문서는 <code>노인복지론 0909.txt</code> 음성 전사본을 바탕으로 정리했습니다.</p>
+<p>자동 전사 특성상 고유명사·수치에 오인식이 있을 수 있으니, 시험 대비 시 LMS 강의자료와 대조해 확인하세요.</p>
+</footer>
+</div>
+</body>
+</html>

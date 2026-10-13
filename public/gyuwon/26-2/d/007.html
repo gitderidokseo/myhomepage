@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02주차 인구 고령화 — 한 장 요약</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --code-bg:#f4f1ec;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --code-bg:#22252a;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","\B9D1\C740 \ACE0\B515",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 26px;padding-bottom:16px;border-bottom:3px solid var(--accent);
+  letter-spacing:-.02em;font-weight:750}
+h2{font-size:1.25rem;margin:44px 0 14px;padding-left:13px;border-left:4px solid var(--accent);
+  line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.05rem;margin:28px 0 9px;color:var(--accent-ink);font-weight:700}
+h4{font-size:.97rem;margin:20px 0 7px;font-weight:700}
+h5,h6{font-size:.92rem;margin:16px 0 6px;font-weight:700;color:var(--muted)}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 15px;padding-left:24px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:italic}
+del{color:var(--faint)}
+a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,"D2Coding",monospace;font-size:.89em;
+  background:var(--code-bg);padding:2px 6px;border-radius:4px}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:15px 17px;overflow-x:auto;margin:18px 0;line-height:1.6}
+pre code{background:none;padding:0;font-size:.86rem;white-space:pre}
+blockquote{margin:18px 0;padding:13px 18px;border-left:4px solid var(--accent);
+  background:var(--accent-soft);border-radius:0 8px 8px 0}
+blockquote p:last-child{margin-bottom:0}
+blockquote h1,blockquote h2,blockquote h3{margin-top:4px;border:0;padding:0}
+blockquote h1{font-size:1.25rem;margin-bottom:6px;padding-bottom:0}
+blockquote h2{font-size:1.1rem;margin-bottom:6px}
+.tablewrap{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem}
+td:first-child{font-weight:600}
+footer.gen{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:.8rem;color:var(--faint)}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.42rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.55}
+  .wrap{padding:0;max-width:none}
+  h2,h3{page-break-after:avoid}
+  pre,blockquote,table,.tablewrap{page-break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>02주차 인구 고령화 — 한 장 요약</h1>
+<blockquote><p><strong>오프라인 세션 직전에 이 한 장만 훑으세요.</strong> 상세본: <code>노인복지론02_수업노트.md</code> / 이야기본: <code>노인복지론02_이야기로읽기.md</code> / <strong>짧은 이야기본</strong>: <code>노인복지론02_핵심이야기.md</code></p></blockquote>
+<hr>
+<h2>🎯 이번 주 한 문장</h2>
+<blockquote><p><strong>"노인 인구가 늘었다"는 말이 정확히 무엇이 늘었다는 뜻인지 따진다.</strong> 목표는 심각성 확인이 아니라 <strong>사실과 해석을 구분하는 것.</strong></p></blockquote>
+<hr>
+<h2>🧍 사례 (모든 문제의 출발점)</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th></th>
+<th><strong>박정호</strong></th>
+<th><strong>정순임</strong></th>
+</tr></thead>
+<tbody>
+<tr>
+<td>나이 / 출생</td>
+<td>만 65세 / <strong>1961년생</strong></td>
+<td>만 84세 / 1942년생</td>
+</tr>
+<tr>
+<td>지역</td>
+<td>인천</td>
+<td>전남 고흥군</td>
+</tr>
+<tr>
+<td>일</td>
+<td>아파트 시설관리 <strong>주 5일</strong></td>
+<td>없음 (관절염)</td>
+</tr>
+<tr>
+<td>소득</td>
+<td>국민연금 + 근로소득(빠듯)</td>
+<td>기초연금 + 밭 임대료</td>
+</tr>
+<tr>
+<td>관계</td>
+<td>산악회, 부부</td>
+<td><strong>혼자</strong>, 자녀 셋 수도권</td>
+</tr>
+<tr>
+<td>결정적 장면</td>
+<td><strong>경로우대 카드 서랍에 넣어둠</strong></td>
+<td><strong>버스 하루 4번</strong>, 놓치면 3시간</td>
+</tr>
+<tr>
+<td>필요한 것</td>
+<td>고용·소득</td>
+<td>돌봄·의료·이동</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>19살 차이. 그런데 통계표의 "65세 이상 인구" 한 칸에 같이 들어감.</strong> → 이현수 주무관의 질문 = 이번 주 전체 + 오프라인 세션 시작 질문</p>
+<hr>
+<h2>1️⃣ 개념 — 반드시 구분</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th><strong>노화 (개인)</strong></th>
+<th><strong>인구 고령화 (집단)</strong></th>
+</tr></thead>
+<tbody>
+<tr>
+<td>한 사람의 기능·역할·자기인식 변화</td>
+<td>인구의 <strong>연령 구조</strong> 변화</td>
+</tr>
+<tr>
+<td>→ 건강, 돌봄 (삶의 조건)</td>
+<td>→ 연금·의료·노동시장·재정 (<strong>제도 설계</strong>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>아무도 더 오래 안 살아도 <strong>아이가 줄면 고령화된다</strong></li>
+<li>모두 더 오래 살아도 <strong>출생이 더 빨리 늘면 젊어진다</strong></li>
+<li>⚠️ 정순임 씨가 병원 못 가는 건 <strong>고령화 때문이 아님</strong> → 교통 인프라 + 건강 상태 (고령화 탓으로 돌리면 <strong>아무것도 못 바꿈</strong>)</li>
+</ul>
+<p><strong>65세의 정체</strong></p>
+<ul>
+<li>노인복지법(<strong>1981.6.5.</strong>)에 <strong>연령 정의 규정 없음</strong> → 개별 제도가 대상 정하며 굳어진 <strong>사실상의 표준</strong></li>
+<li>노인장기요양보험법 §2-1호 <strong>"노인 등"</strong> = 65세 이상 <strong>+ 65세 미만 노인성 질병자</strong> → <strong>나이 아닌 상태 기준</strong></li>
+<li>당사자 인식 <strong>71.6세</strong>(2020년 70.5) / 70세 이상 응답 <strong>79.1%</strong> → <strong>6.6년 간격</strong> → 서비스 이용률·수용성에 영향</li>
+</ul>
+<hr>
+<h2>2️⃣ 지표 4개 + 함정</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>지표</th>
+<th>무엇을 재나</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>고령화율</td>
+<td>전체 중 65+ <strong>%</strong></td>
+</tr>
+<tr>
+<td>노령화지수</td>
+<td>유소년(0~14) 100명당 고령인구</td>
+</tr>
+<tr>
+<td><strong>노년부양비</strong></td>
+<td>생산연령(15~64) 100명당 고령인구</td>
+</tr>
+<tr>
+<td>중위연령</td>
+<td>나이순 <strong>한가운데</strong> 사람의 나이 (연령 기준선 불필요)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>🔥 노년부양비의 숨은 가정</h3>
+<blockquote><p>① 65+ = <strong>전원 피부양</strong> ② 15~64 = <strong>전원 부양</strong></p></blockquote>
+<p><strong>반증:</strong> 고령자 <strong>39% 취업</strong> / 손자녀 돌봄·자원봉사(비시장 노동) / 생산연령 내 학업·실업·질병 <strong>→ 연령 구조 지표이지 실제 부양 부담 지표가 아님</strong> <strong>못 재는 것:</strong> 생산성 변화 · 여성/고령자 노동참여 확대 · 이민</p>
+<h3>연령 기준 자체의 한계</h3>
+<ul>
+<li><strong>라이더(1975)</strong>: 고정 나이 대신 <strong>남은 생존 연수</strong> 기준</li>
+<li><strong>샌더슨&amp;셰르보프(2005)</strong>: 기대여명으로 표준화 → 같은 나라가 <strong>오히려 젊어지는</strong> 시기도</li>
+<li>취지 = 고령화 부정 ❌ / <strong>하나의 숫자로 부담을 결론짓지 말자</strong> ⭕</li>
+</ul>
+<hr>
+<h2>3️⃣ 원인 — 세 경로 + α</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>경로</th>
+<th>내용</th>
+<th>포인트</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>아래로부터</strong></td>
+<td>출생 감소 → 피라미드 밑동 좁아짐</td>
+<td><strong>고령자 수가 안 늘어도 비중은 커짐</strong></td>
+</tr>
+<tr>
+<td><strong>위로부터</strong></td>
+<td>사망률 개선 → 윗부분 두꺼워짐</td>
+<td>20세기 중반까지는 <strong>영유아</strong> 사망 감소 → 인구를 <strong>젊게</strong>. 최근은 <strong>고령기 생존</strong> 개선 → 고령화 촉진</td>
+</tr>
+<tr>
+<td><strong>인구 이동</strong></td>
+<td>청년층 이동</td>
+<td>유출 지역 고령화 <strong>가속</strong> → <strong>지역 격차의 원인</strong></td>
+</tr>
+<tr>
+<td>(+) <strong>코호트</strong></td>
+<td>전후 대규모 출생 세대가 65세 진입 = <strong>지금 2020년대</strong></td>
+<td><strong>박정호=1961년생</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>인구변천</strong>: 고출생·고사망 → 저출생·저사망 (사망률이 <strong>먼저</strong>, 출생률이 <strong>나중에</strong> 하락) → 선진국 100년+ / 한국은 산업화+가족계획으로 <strong>압축</strong> → <strong>압축되면 고령화도 압축 = '속도'의 기원</strong></p>
+<p><strong>최근 수치</strong>: 합계출산율 2023년 0.7명대 초반 → 2년 연속 상승(대체수준 2.1엔 크게 못 미침) / 2025년 출생 25.5만 vs 사망 36.3만(<strong>자연감소</strong>) / 기대수명 <strong>83.7년</strong> / 65세 기대여명 <strong>21.5년</strong></p>
+<hr>
+<h2>4️⃣ 한국의 숫자</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>항목</th>
+<th>값</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>초고령사회 진입</strong></td>
+<td><strong>2024.12.23.</strong> 총 5,122만 중 65+ <strong>1,024만4,550명 = 20.0%</strong></td>
+</tr>
+<tr>
+<td>2025년 고령화율</td>
+<td><strong>20.3%</strong> (여 22.6 / 남 18.0) → 2030년 30%, 2050년 40%</td>
+</tr>
+<tr>
+<td>문턱 통과</td>
+<td>7%(2000) →<strong>17년</strong>→ 14%(2017) →<strong>7년</strong>→ 20%(2024) = <strong>24년</strong></td>
+</tr>
+<tr>
+<td>비교</td>
+<td>미국 7→14% 약 73년 / 일본 14→20% 약 13년 (<strong>자료마다 다름 → 출처 확인</strong>)</td>
+</tr>
+<tr>
+<td>2072 추계</td>
+<td>0~14세 6.6% / 15~64세 45.8% / <strong>65+ 47.7%</strong> / 총인구 3,622만 / 중위연령 63.4세</td>
+</tr>
+<tr>
+<td>부양비</td>
+<td>총 40.6→<strong>118.5</strong> / 노년 24.4→<strong>104.2</strong> (2022→2072)</td>
+</tr>
+<tr>
+<td><strong>지역</strong></td>
+<td>전남 <strong>27.4%</strong> ↔ 세종 <strong>11.6%</strong> = <strong>15.8%p</strong> (20% 초과 9곳)</td>
+</tr>
+<tr>
+<td>노인 내부</td>
+<td>65~69 7.1 / 70~74 4.9 / <strong>75+ 8.3</strong> → <strong>2038년 75+ 역전</strong> → 2072년 15.8 vs 31.5</td>
+</tr>
+<tr>
+<td>가구</td>
+<td>부부 55.2 / <strong>1인 32.8</strong> / <strong>자녀동거 10.3</strong>(3년 새 20.1→10.3, 반토막)</td>
+</tr>
+<tr>
+<td>고령자 가구</td>
+<td>2025년 <strong>27.6%</strong> → 2052년 <strong>50.6%</strong></td>
+</tr>
+<tr>
+<td><strong>빈곤</strong></td>
+<td>상대빈곤율 <strong>39.7%(2022, OECD 1위)</strong> ↔ 프랑스 6.1 · 네덜란드 4.4 / 국내 2023년 39.8%</td>
+</tr>
+<tr>
+<td>노동</td>
+<td>65~79세 <strong>57.6%</strong> 취업 희망, 이유 1위 <strong>생활비 51.3%</strong> → <strong>선택이 아니라 필요</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>연결 고리 3개</strong></p>
+<ul>
+<li>속도 빠름 → 제도 성숙 시간 부족 → <strong>노인 빈곤 39.7%</strong></li>
+<li>인구 이동 → 지역 격차 → <strong>정순임 씨의 하루 네 번 버스</strong></li>
+<li>2038년 75+ 역전 → 정책 중심축이 <strong>고용·소득 → 돌봄·의료·주거·이동</strong>으로 이동</li>
+</ul>
+<hr>
+<h2>5️⃣ 담론 비판 (서술형 1순위)</h2>
+<p><strong>위기의 언어</strong>: 인구절벽 · 고령화 쇼크 · 재정 파탄</p>
+<ul>
+<li><strong>로버트슨(1990)</strong>: <strong>종말론적 인구학</strong></li>
+<li><strong>지 &amp; 것먼(2000)</strong>: 고령화가 <strong>복지국가 축소의 논거</strong>로 쓰임</li>
+</ul>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>#</th>
+<th>비판</th>
+<th>핵심 문장</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>①</td>
+<td><strong>인구학적 결정론</strong></td>
+<td>같은 고령화율도 연금 성숙도·노동시장·조세에 따라 결과가 다름 → <strong>인구 구조는 조건이지 운명이 아니다</strong></td>
+</tr>
+<tr>
+<td>②</td>
+<td><strong>부양비 지표의 한계</strong></td>
+<td>생산성·여성/고령자 참여·이민 미반영</td>
+</tr>
+<tr>
+<td>③</td>
+<td><strong>세대 갈등 프레임</strong></td>
+<td>'청년 대 노인'으로 좁히면 <strong>계층 간 불평등이 사라짐</strong> (고령자 <strong>내부</strong> 불평등이 가장 큼)</td>
+</tr>
+<tr>
+<td>④</td>
+<td><strong>기준의 고정</strong></td>
+<td>65세를 고정한 채 전망 = 건강·기대수명이 안 변한다는 암묵적 가정</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>⚠️ <strong>비판 ≠ "문제 없다"</strong> — 연금 재정·돌봄 인력·지역 소멸은 실질 과제. 한국은 <strong>속도 + 빈곤</strong> 두 조건이 겹쳐 <strong>절박성이 더 큼</strong>.</p>
+<h3>🔥 결론: 진단이 처방을 바꾼다</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>진단 A</th>
+<th>진단 B</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>노인이 <strong>많아진 것 자체</strong>가 문제</td>
+<td>많아지는 <strong>속도에 비해 소득보장 제도가 미성숙</strong>한 것이 문제</td>
+</tr>
+<tr>
+<td>→ 노인 인구·지출 <strong>축소</strong></td>
+<td>→ 제도 <strong>보완</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>어떤 진단을 택하느냐가 무엇을 정당한 정책으로 만드는지를 결정한다.</strong></p>
+<h3>실천 함의 2</h3>
+<ol>
+<li><strong>'노인' 범주를 그대로 실천 단위로 쓰지 말 것</strong> → 기능 상태 · 소득 · 가구 형태 · 지역</li>
+<li><strong>지표가 무엇을 전제하는지 확인할 것</strong> → 숫자는 언제나 가정 위에 만들어짐</li>
+</ol>
+<hr>
+<h2>⚠️ 3대 함정</h2>
+<ol>
+<li><strong>"노년부양비 104.2 → 1명이 1명 부양"</strong> → 계산은 맞지만 <strong>결론은 해석</strong>. 39%는 일한다.</li>
+<li><strong>"고령화율↑ = 노인 수↑"</strong> → <strong>아이가 줄어도 오른다.</strong></li>
+<li><strong>"정순임 씨가 병원 못 가는 건 고령화 탓"</strong> → <strong>개인 노화 ≠ 인구 고령화.</strong></li>
+</ol>
+<hr>
+<h2>🗣 오프라인 세션 준비</h2>
+<p><strong>시작 질문</strong></p>
+<blockquote><p><em>"당신이 이현수 주무관이라면, 어떤 지표로 예산을 배분하겠습니까? 65세 이상 인구 수인가, 다른 것인가?"</em></p></blockquote>
+<p><strong>답변 3단계</strong></p>
+<ol>
+<li><strong>못 쓰는 이유</strong> — 박정호·정순임이 같은 1명. 필요가 다른데 배분은 동일.</li>
+<li><strong>대신 볼 것</strong> — 연령대 분리(65~74 / 75+) · 기능 상태 · 소득(기초연금 수급) · 가구 형태(1인가구율) · 지역 접근성(의료·교통 밀도)</li>
+<li><strong>문장 틀</strong> — "이 지표는 ○○를 전제해서 우리 지역의 ○○를 설명하지 못합니다. 그래서 ○○를 함께 보겠습니다."</li>
+</ol>
+<blockquote><p>평가는 <strong>발언량이 아니라 준비 여부</strong>. 위 3단계를 메모해 가면 참여점수(30%)에 반영.</p></blockquote>
+<footer class="gen">이 문서는 마크다운 원본에서 자동 변환되었습니다.</footer>
+</div>
+</body>
+</html>

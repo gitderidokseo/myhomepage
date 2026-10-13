@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04주차 · 독거노인의 어려움 — 셀프 퀴즈</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --code-bg:#f4f1ec;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --code-bg:#22252a;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","\B9D1\C740 \ACE0\B515",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 26px;padding-bottom:16px;border-bottom:3px solid var(--accent);
+  letter-spacing:-.02em;font-weight:750}
+h2{font-size:1.25rem;margin:44px 0 14px;padding-left:13px;border-left:4px solid var(--accent);
+  line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.05rem;margin:28px 0 9px;color:var(--accent-ink);font-weight:700}
+h4{font-size:.97rem;margin:20px 0 7px;font-weight:700}
+h5,h6{font-size:.92rem;margin:16px 0 6px;font-weight:700;color:var(--muted)}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 15px;padding-left:24px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:italic}
+del{color:var(--faint)}
+a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,"D2Coding",monospace;font-size:.89em;
+  background:var(--code-bg);padding:2px 6px;border-radius:4px}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:15px 17px;overflow-x:auto;margin:18px 0;line-height:1.6}
+pre code{background:none;padding:0;font-size:.86rem;white-space:pre}
+blockquote{margin:18px 0;padding:13px 18px;border-left:4px solid var(--accent);
+  background:var(--accent-soft);border-radius:0 8px 8px 0}
+blockquote p:last-child{margin-bottom:0}
+blockquote h1,blockquote h2,blockquote h3{margin-top:4px;border:0;padding:0}
+blockquote h1{font-size:1.25rem;margin-bottom:6px;padding-bottom:0}
+blockquote h2{font-size:1.1rem;margin-bottom:6px}
+.tablewrap{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem}
+td:first-child{font-weight:600}
+footer.gen{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:.8rem;color:var(--faint)}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.42rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.55}
+  .wrap{padding:0;max-width:none}
+  h2,h3{page-break-after:avoid}
+  pre,blockquote,table,.tablewrap{page-break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>04주차 · 독거노인의 어려움 — 셀프 퀴즈</h1>
+<blockquote><p><strong>사용법</strong> 먼저 답을 종이에 적고, 그다음 해설을 보세요. 해설을 먼저 보면 아무 소용이 없습니다. <strong>구성</strong> 객관식 16 · 단답/숫자 12 · 서술형 4 <strong>출처</strong> 교재 4장 + 4주차 온라인 강의</p></blockquote>
+<hr>
+<h1>PART 1 · 객관식 16문항</h1>
+<h3>1. 독거, 사회적 고립, 외로움의 구분에 대한 설명으로 <strong>옳지 않은</strong> 것은?</h3>
+<p>① 독거는 가구 구성에 관한 사실이며 그 자체로는 문제가 아니다 ② 사회적 고립은 관계의 양에 관한 객관적 상태다 ③ 외로움은 주관적 경험이므로 접촉하는 사람의 수가 많아지면 해소된다 ④ 가족과 함께 살면서도 고립될 수 있다 ⑤ 독거는 확인이 쉽고 다른 취약성과 상관관계가 높아 정책의 표지로 쓰인다</p>
+<hr>
+<h3>2. 여는 사례의 세 사람을 세 개념으로 분류한 것으로 <strong>옳은</strong> 것은?</h3>
+<p>① 김말순 — 독거 ○, 고립 ○ ② 박성호 — 독거 ○, 고립 ✕ ③ 정순덕 — 독거 ○, 고립 ✕, 외로움 ○ ④ 김말순 — 독거 ✕, 외로움 ○ ⑤ 정순덕 — 독거 ○, 고립 ○, 외로움 ✕</p>
+<hr>
+<h3>3. 세 개념과 그에 대응하는 개입을 연결한 것으로 <strong>옳지 않은</strong> 것은?</h3>
+<p>① 독거 → 안전 확인과 위기 대응 체계의 구축 ② 사회적 고립 → 관계망의 형성, 프로그램 참여와 지역 모임 연계 ③ 외로움 → 의미 있는 관계와 역할의 회복 ④ 사회적 고립 → 안부 전화 횟수의 증대 ⑤ 독거 → 혼자 있을 때 쓰러지면 발견해 줄 사람이 없다는 위험에 대한 대응</p>
+<hr>
+<h3>4. 강의에서 "세 가지 문제를 모두 안부 확인 방식으로 다루는 오류"가 생기는 이유로 제시된 것은?</h3>
+<p>① 안부 확인이 비용이 가장 적게 들기 때문 ② 세 가지 중 첫 번째만 측정하기 쉽기 때문 ③ 법률이 안부 확인만 규정하고 있기 때문 ④ 노인들이 다른 개입을 원하지 않기 때문 ⑤ 사회복지사의 전문성이 부족하기 때문</p>
+<hr>
+<h3>5. Holt-Lunstad 등(2015)의 메타분석 결과에 대한 설명으로 <strong>옳지 않은</strong> 것은?</h3>
+<p>① 1980년 1월부터 2014년 2월까지 발표된 연구를 대상으로 했다 ② 교란변수를 통제한 연구들에서 사회적 고립의 오즈비는 1.29였다 ③ 혼자 사는 것의 오즈비가 세 요인 중 가장 높았다 ④ 객관적 사회적 고립을 측정한 연구와 주관적 사회적 고립을 측정한 연구 사이에 차이가 없었다 ⑤ 관계의 결핍이 사망을 예측하는 정도는 평균 연령 65세 <strong>이상</strong>인 표본에서 더 컸다</p>
+<hr>
+<h3>6. 2023년 노인실태조사에 나타난 노인의 가구 형태로 <strong>옳은</strong> 것은?</h3>
+<p>① 부부가구 55.2% · 1인 가구 32.8% · 자녀동거 10.3% ② 부부가구 48.6% · 1인 가구 34.2% · 자녀동거 20.1% ③ 부부가구 55.2% · 1인 가구 30.8% · 자녀동거 13.9% ④ 부부가구 32.8% · 1인 가구 55.2% · 자녀동거 10.3% ⑤ 부부가구 50.0% · 1인 가구 35.5% · 자녀동거 10.3%</p>
+<hr>
+<h3>7. 통계청 「장래가구추계: 2022~2052년」의 내용으로 <strong>옳은</strong> 것은?</h3>
+<p>① 65세 이상 1인 가구는 2.6배 증가하여 2052년 496만 1천 가구가 된다 ② 2052년에도 1인 가구 중 30대 이하의 비중이 가장 높다 ③ 전체 가구에서 1인 가구가 차지하는 비중은 2052년 34.1%가 된다 ④ 고령자 가구는 2052년까지 2.6배 증가한다 ⑤ 2052년 1인 가구 중 70대 이상의 비중은 36.6%다</p>
+<hr>
+<h3>8. 노인 1인 가구 증가의 세 요인 중, 교재가 <strong>"자주 간과되지만 중요하다"</strong>고 지적한 것은?</h3>
+<p>① 기대수명의 증가와 남녀 기대수명 차이 ② 자녀 수의 감소 ③ 자녀의 도시 이동 ④ 노인 자신의 선호 변화 ⑤ 세대 간 동거 규범의 약화</p>
+<hr>
+<h3>9. 1인 가구 노인과 노인부부 가구를 비교한 자료의 해석에 대한 설명으로 <strong>옳은</strong> 것은?</h3>
+<p>① 혼자 살기 때문에 건강이 나빠진다는 인과관계가 이 자료로 확정된다 ② 우울증상 비율은 1인 가구가 노인부부 가구보다 두 배 이상 높았다 ③ '건강하다'고 응답한 비율은 1인 가구가 48.6%로 더 높았다 ④ 생활상의 어려움을 겪는 비율은 두 집단이 비슷했다 ⑤ 이 자료는 노인 1인 가구에 대한 지원 필요성을 뒷받침하지 못한다</p>
+<hr>
+<h3>10. 강의에서 <strong>"'혼자 살면 우울해진다'로 요약하면 안 된다"</strong>고 한 이유로 제시된 것은?</h3>
+<p>① 그 문장이 통계적으로 완전히 틀렸기 때문 ② 그렇게 요약하면 개입의 방향이 '혼자 살지 않게 하는 것'으로 좁아지기 때문 ③ 노인들이 그 표현을 불쾌하게 여기기 때문 ④ 우울증상은 1인 가구에서 더 낮게 나타나기 때문 ⑤ 법률이 그런 표현을 금지하고 있기 때문</p>
+<hr>
+<h3>11. 2023년 노인실태조사의 자녀 관계 자료에 대한 설명으로 <strong>옳지 않은</strong> 것은?</h3>
+<p>① 자녀와 연락하는 비중은 2020년 67.8%에서 2023년 64.9%로 감소했다 ② 전체 노인의 9.2%는 연락 가능한 자녀가 없다 ③ 3.2%는 자녀와 연락이 두절된 상태다 ④ 6.0%는 생존한 자녀가 없는 경우다 ⑤ 3.2%와 6.0%는 실천적으로 같은 성격이므로 구분할 필요가 없다</p>
+<hr>
+<h3>12. 박성호 씨의 방문 거부에 대한 교재의 설명으로 <strong>옳지 않은</strong> 것은?</h3>
+<p>① 거부의 배후에는 수치심과 낙인에 대한 우려가 있을 수 있다 ② 과거에 제도나 사람에게 실망한 경험이 원인일 수 있다 ③ 우울로 인한 무기력이 원인일 수 있다 ④ "본인이 거부하니 어쩔 수 없다"는 결론은 정확하다 ⑤ 문을 열지 않았다는 사실은 위험도를 높이는 근거다</p>
+<hr>
+<h3>13. 노인맞춤돌봄서비스에 대한 설명으로 <strong>옳지 않은</strong> 것은?</h3>
+<p>① 대상은 65세 이상 노인 중 기초생활수급자, 차상위계층, 기초연금 수급자다 ② 대상자 선정 조사지로 사회·신체·정신 영역의 돌봄 필요도를 평가한다 ③ 전담사회복지사와 생활지원사 등이 서비스를 제공한다 ④ 특화서비스는 고독사와 자살 예방을 목적으로 맞춤형 사례관리를 제공한다 ⑤ 특화서비스의 대상 연령은 어떤 경우에도 65세 미만으로 낮출 수 없다</p>
+<hr>
+<h3>14. 「고독사 예방 및 관리에 관한 법률」상 고독사 정의의 변화에 대한 설명으로 <strong>옳지 않은</strong> 것은?</h3>
+<p>① 법은 2020년 3월 31일 제정되어 2021년 4월 1일부터 시행되었다 ② 2023년 개정에서 '홀로 사는 사람'이 '사회적 고립 상태로 생활하던 사람'으로 바뀌었다 ③ 2024년 시행된 현행 정의에서는 '시신이 일정한 시간이 흐른 뒤에 발견되는' 요건이 삭제되었다 ④ 정의의 변화로 초점이 '고립되어 있는가'에서 '혼자 사는가'로 이동했다 ⑤ 정의가 넓어지면 같은 현실에서도 집계되는 숫자가 늘어난다</p>
+<hr>
+<h3>15. 2023년 기준 연령대별 고독사 비중에 대한 설명으로 <strong>옳은</strong> 것은?</h3>
+<p>① 80대 이상이 가장 높은 비중을 차지했다 ② 50대와 60대를 합하면 전체의 61.8%에 이른다 ③ 70대 이상이 전체의 과반을 차지했다 ④ 이 분포는 2017년과 크게 달라진 결과다 ⑤ 여성이 남성보다 다섯 배 이상 많았다</p>
+<hr>
+<h3>16. 2023년 고독사 현장의 최초 발견 및 신고자에 대한 설명으로 <strong>옳지 않은</strong> 것은?</h3>
+<p>① 임대인·경비원·건물관리자가 34.5%로 가장 많았다 ② 가족이 26.2%로 두 번째였다 ③ 보건복지서비스 종사자가 발견한 경우는 7.0%였다 ④ 보건복지서비스 종사자의 발견 비율은 2017년 이후 감소해 왔다 ⑤ 가족보다 임대인이나 경비원이 먼저 발견하는 경우가 더 많다는 사실은 고립의 정도를 보여준다</p>
+<hr>
+<h1>PART 2 · 단답 / 숫자 확인 12문항</h1>
+<p>빈칸을 채우세요.</p>
+<p><strong>1.</strong> 독거는 ( ) 에 관한 사실이고, 사회적 고립은 관계의 ( ) 에 관한 객관적 상태이며, 외로움은 관계의 ( ) 에 관한 주관적 경험이다.</p>
+<p><strong>2.</strong> Holt-Lunstad 등(2015)의 오즈비 — 사회적 고립 ( ), 외로움 ( ), 혼자 사는 것 ( ).</p>
+<p><strong>3.</strong> 2023년 1인 가구 비율은 ( )%이며, 2020년 조사 대비 ( )%포인트 증가했다.</p>
+<p><strong>4.</strong> 2052년 1인 가구 중 가장 큰 비중을 차지할 연령대는 ( )이며, 그 비중은 ( )%다.</p>
+<p><strong>5.</strong> 1인 가구 노인의 우울증상 비율은 ( )%로, 노인부부 가구 ( )%의 두 배 이상이다.</p>
+<p><strong>6.</strong> 전체 노인의 ( )%는 연락 가능한 자녀가 없으며, 이 중 ( )%는 연락 두절, ( )%는 생존 자녀가 없는 경우다.</p>
+<p><strong>7.</strong> 접근 전략 네 가지 — ① ( ) 을 앞세우기 ② ( ) 를 매개로 하기 ③ ( ) 로 시작하기 ④ ( ).</p>
+<p><strong>8.</strong> 노인맞춤돌봄서비스 특화서비스는 고독사·자살 위험이 크다고 판단되는 경우 대상 연령을 만 ( )세 이상으로 낮출 수 있다.</p>
+<p><strong>9.</strong> 2023년 고독사 연령대별 비중 — 60대 ( )%, 50대 ( )%. 50·60대 합 ( )%, 70대 이상 ( )%.</p>
+<p><strong>10.</strong> 2023년 고독사 사망자 중 남성은 ( )%, 여성은 ( )%였다.</p>
+<p><strong>11.</strong> 고독사 사망자 중 기초생활보장 수급자 비중은 2023년 ( )%였다. 이는 두 방향으로 읽어야 하는데, 나머지 약 ( )%는 수급자가 아니라는 뜻이기도 하다.</p>
+<p><strong>12.</strong> 무연고 사망자를 유형별로 보면 '연고자가 있으나 인수를 거부·기피'한 경우가 ( )%를 차지한다.</p>
+<hr>
+<h1>PART 3 · 서술형 4문항</h1>
+<blockquote><p>교재 10절 토론문제입니다. <strong>오프라인 활동지가 될 가능성이 높습니다.</strong> 각 문항 6~10줄로 답해 보세요.</p></blockquote>
+<h3>서술형 1</h3>
+<p><strong>고독사가 노인 문제라는 통념과 실제 통계 사이의 간극은 왜 생겼다고 보는가? 이 통념이 정책에 미친 영향은 무엇일 수 있는가?</strong></p>
+<p><em>(자료로 근거를 제시할 것 — 연령대별 비중, 성별 분포, 제도의 연령 기준)</em></p>
+<hr>
+<h3>서술형 2</h3>
+<p><strong>박성호 씨처럼 방문을 거부하는 사람에 대해, 자기결정권 존중과 개입의 필요성은 어떻게 조정되어야 하는가? 어느 지점에서 개입이 정당화된다고 보는가?</strong></p>
+<p><em>(거부의 배후 4가지, 접근 전략, 위험 프로필을 함께 쓸 것)</em></p>
+<hr>
+<h3>서술형 3</h3>
+<p><strong>정순덕 씨와 같이 어떤 요건에도 해당하지 않는 노인을 포착하려면 어떤 방법이 필요한가? 그 방법의 비용과 사생활 침해 가능성은 어떻게 다루어야 하는가?</strong></p>
+<p><em>(제도의 구조적 공백, 예방적 개입의 시점, 3장의 연결 고리를 쓸 것)</em></p>
+<hr>
+<h3>서술형 4</h3>
+<p><strong>안부 확인 중심의 서비스가 고립과 외로움을 해소하지 못한다면, 어떤 개입이 대안이 될 수 있는가? 여러분이 설계한다면 무엇을 하겠는가?</strong></p>
+<p><em>(세 개념과 세 처방의 대응, 시범사업 4유형의 공백을 근거로 쓸 것)</em></p>
+<hr>
+<hr>
+<h1>정답과 해설</h1>
+<h2>PART 1 정답</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>문항</th>
+<th>정답</th>
+<th>해설</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>③</strong></td>
+<td>외로움은 <strong>관계의 수로 결정되지 않는다.</strong> 사람들 사이에 있으면서도 외로울 수 있고, 혼자 있으면서도 외롭지 않을 수 있다. 접촉 횟수를 늘려서 해소되지 않으며 <strong>의미 있는 관계와 역할의 회복</strong>이 필요하다.</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>③</strong></td>
+<td>김말순 = 독거 ○, 고립 <strong>✕</strong> (경로당·노래교실·이웃·생활지원사) / 박성호 = 독거 ○, 고립 <strong>○</strong> / 정순덕 = 독거 ○, 고립 ✕(딸이 이틀에 한 번 전화), <strong>외로움 ○</strong>(상실 이후).</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>④</strong></td>
+<td>안부 전화 횟수를 늘리는 것은 <strong>독거에 대한 대응</strong>이다. 이것으로 고립까지 해결하려는 것이 바로 <strong>실무에서 흔히 나타나는 오류</strong>.</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>②</strong></td>
+<td>전화 횟수·방문 건수는 실적으로 남지만 관계망이 넓어졌는지·외로움이 줄었는지는 남기기 어렵다. → <strong>측정이 쉬운 것만 관리되고, 관리되는 것에만 자원이 간다.</strong></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>⑤</strong></td>
+<td><strong>65세 미만</strong>인 표본에서 더 컸다. ★ 이 조절 효과가 4부의 고독사 연령 분포와 같은 방향을 가리킨다 — 교수님이 직접 연결한 대목. ③은 맞다(1.32가 최고).</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>①</strong></td>
+<td>부부 55.2% / 1인 <strong>32.8%</strong> / 자녀동거 10.3%. ②는 건강 응답률(34.2% vs 48.6%)과 2020년 자녀동거(20.1%)를 섞어 놓은 것. ③의 13.9%는 3장의 '만성질환 없음' 수치.</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>①</strong></td>
+<td>② 2052년에는 <strong>70대 이상 42.2%</strong>가 최다. ③ 2052년 <strong>41.3%</strong>(34.1%는 2022년). ④ 고령자 가구는 <strong>2.3배</strong>(2.6배는 65세 이상 1인 가구). ⑤ 36.6%는 <strong>2022년 30대 이하</strong> 비중.</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>④</strong></td>
+<td><strong>노인 자신의 선호 변화.</strong> 자녀와 동거하지 않는 것이 반드시 '버려진 결과'가 아니라 <strong>독립적으로 살고자 하는 선택</strong>인 경우도 많다. → 그래서 증가를 곧바로 '가족 해체·효의 쇠퇴'로 읽는 것은 성급하다.</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td><strong>②</strong></td>
+<td>16.1% vs 7.8%. ① <strong>확정할 수 없다</strong> — 역인과와 제3의 요인(소득·사별·연령) 가능성이 남는다. ③ 1인 가구가 34.2%로 <strong>더 낮다</strong>. ④ 73.9% vs 48.1%로 차이가 크다. ⑤ <strong>어느 방향이든 지원 필요성이라는 실천적 함의는 달라지지 않는다.</strong></td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>②</strong></td>
+<td>그렇게 요약하면 개입이 <strong>"혼자 살지 않게 하는 것"</strong>으로 좁아진다 → 자녀와 합치도록 권하거나 시설 입소를 서두르는 방향. <strong>문제는 독거가 아니라 고립이다.</strong></td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td><strong>⑤</strong></td>
+<td><strong>반드시 구분해야 한다.</strong> 생존 자녀 없음(6.0%)은 <strong>인구학적 사실</strong>, 연락 두절(3.2%)은 <strong>관계의 파열</strong>. 후자는 부양의무자 기준이 작동하지 않으면서도 서류상으로는 가족이 있는 것으로 처리된다.</td>
+</tr>
+<tr>
+<td><strong>12</strong></td>
+<td><strong>④</strong></td>
+<td>"본인이 거부하니 어쩔 수 없다"는 <strong>손쉽지만 부정확하다.</strong> 정확한 기록은 <strong>"고위험군, 접근 전략 재수립 필요"</strong>에 가깝다.</td>
+</tr>
+<tr>
+<td><strong>13</strong></td>
+<td><strong>⑤</strong></td>
+<td>특화서비스는 고독사·자살 위험이 크다고 판단되는 경우 <strong>만 60세 이상으로 대상 연령을 낮출 수 있다.</strong></td>
+</tr>
+<tr>
+<td><strong>14</strong></td>
+<td><strong>④</strong></td>
+<td>방향이 반대다. 초점은 <strong>'혼자 사는가' → '고립되어 있는가'</strong>로 이동했다. 이는 3절의 개념 구분이 법에 반영된 과정.</td>
+</tr>
+<tr>
+<td><strong>15</strong></td>
+<td><strong>②</strong></td>
+<td>60대 31.6% + 50대 30.2% = <strong>61.8%</strong>. 70대 이상은 <strong>18.7%</strong>. ④ 이 분포는 <strong>2017년 이래 크게 달라지지 않았다</strong>(우연이 아니라는 뜻). ⑤ <strong>남성이</strong> 여성의 5배 이상(84.1% vs 15.9%).</td>
+</tr>
+<tr>
+<td><strong>16</strong></td>
+<td><strong>④</strong></td>
+<td><strong>증가</strong>했다 — 1.7%(2017) → 6.2%(2022) → <strong>7.0%</strong>(2023). 안부 확인 체계 확대의 결과이면서, 동시에 공식 서비스가 닿는 범위가 여전히 제한적임을 보여준다.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2>PART 2 정답</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>#</th>
+<th>정답</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>가구 구성</strong> / <strong>양</strong> / <strong>질</strong></td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>1.29</strong> / <strong>1.26</strong> / <strong>1.32</strong></td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>32.8</strong>% / <strong>13.0</strong>%p</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>70대 이상</strong> / <strong>42.2</strong>% (406만 3천 가구)</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>16.1</strong>% / <strong>7.8</strong>%</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>9.2</strong>% / <strong>3.2</strong>% / <strong>6.0</strong>%</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>① <strong>실질적 이익이 되는 용건</strong>(급여 신청 안내 등) ② <strong>이미 접촉이 있는 사람</strong>(이웃·건물 관리인) ③ <strong>문에 남기는 메모</strong> ④ <strong>여러 차례에 걸쳐 시도하기</strong>(한 번 거부로 종결하지 않기)</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>60</strong>세</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td>60대 <strong>31.6</strong>% / 50대 <strong>30.2</strong>% / 합 <strong>61.8</strong>% / 70대 이상 <strong>18.7</strong>%</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td>남성 <strong>84.1</strong>% / 여성 <strong>15.9</strong>%</td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td><strong>41.4</strong>% / 약 <strong>60</strong>%</td>
+</tr>
+<tr>
+<td><strong>12</strong></td>
+<td><strong>74.1</strong>%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2>PART 3 · 서술형 채점 기준</h2>
+<h3>서술형 1 — 통념과 자료의 간극</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>배점</th>
+<th>들어가야 할 내용</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>필수 (40%)</strong></td>
+<td><strong>자료 제시</strong> — 2023년 50·60대 <strong>61.8%</strong> vs 70대 이상 <strong>18.7%</strong>, 남성 <strong>84.1%</strong>, 2024년 최다 집단은 <strong>60대 남성 27.8%</strong>. <strong>이 분포가 2017년 이래 유지</strong>되어 왔다는 점</td>
+</tr>
+<tr>
+<td><strong>필수 (25%)</strong></td>
+<td><strong>간극이 생긴 두 이유</strong> — ① 노인의 고독사가 <strong>언론에 더 자주 보도</strong> ② <strong>노인 대상 지원 체계가 먼저 구축</strong>되어 있었음</td>
+</tr>
+<tr>
+<td><strong>필수 (25%)</strong></td>
+<td><strong>정책에 미친 영향</strong> — 예방 정책이 <strong>65세 이상 중심으로 설계</strong>되어 <strong>가장 취약한 집단(50·60대 남성)을 놓친다</strong>. 특화서비스도 하향 한계가 <strong>만 60세</strong></td>
+</tr>
+<tr>
+<td>가점 (10%)</td>
+<td><strong>균형 잡기</strong> — 그렇다고 노인의 고독사가 중요하지 않다는 뜻은 아니다. <strong>인구 10만 명당 발생률</strong>로 보면 순위가 달라진다(60대 &gt; 50대 &gt; 70대 &gt; 80대 이상). <strong>절대 수와 발생률을 함께 읽어야 한다</strong></td>
+</tr>
+<tr>
+<td>가점</td>
+<td><strong>1부와의 연결</strong> — Holt-Lunstad 메타분석의 조절 효과(65세 미만에서 예측력이 더 컸다)가 <strong>같은 방향</strong>을 가리킨다</td>
+</tr>
+<tr>
+<td>가점</td>
+<td><strong>3부와의 연결</strong> — <strong>측정이 쉬운 것만 관리되고, 관리되는 것에만 자원이 간다</strong>는 구조가 여기서도 작동</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote><p><strong>감점 포인트</strong> — "노인은 문제가 아니다"로 단정하면 감점. 두 지표(절대 수/발생률)를 모두 쓰지 않으면 감점.</p></blockquote>
+<hr>
+<h3>서술형 2 — 자기결정권 vs 개입의 필요성</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>배점</th>
+<th>들어가야 할 내용</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>필수 (25%)</strong></td>
+<td><strong>"본인이 거부하니 어쩔 수 없다"는 손쉽지만 부정확하다</strong>는 출발점</td>
+</tr>
+<tr>
+<td><strong>필수 (25%)</strong></td>
+<td><strong>거부의 배후 4가지</strong> — ① 수치심·낙인 우려 ② 과거의 실망 경험 ③ 우울로 인한 무기력 ④ <strong>도움 청하는 일을 자기 삶의 실패로 받아들이는 태도</strong> → <strong>즉 거부가 자유로운 의사 표현이라고 단정할 수 없다</strong></td>
+</tr>
+<tr>
+<td><strong>필수 (25%)</strong></td>
+<td><strong>위험 프로필로 근거 제시</strong> — 68세 남성·이혼·자녀 연락 두절·무소득·음주·원룸(발생장소 20.7%)·방문 거부 = <strong>한국에서 가장 위험한 프로필</strong>. <strong>문을 열지 않은 것은 위험을 낮추는 근거가 아니라 높이는 근거</strong></td>
+</tr>
+<tr>
+<td><strong>필수 (15%)</strong></td>
+<td><strong>기록의 재작성</strong> — "접촉 실패, 재방문 예정" → <strong>"고위험군, 접근 전략 재수립 필요"</strong>. 두 기록은 이후의 조치를 전혀 다르게 만든다</td>
+</tr>
+<tr>
+<td>가점 (10%)</td>
+<td><strong>개입 정당화의 선을 스스로 제시</strong> — 예: 강제성 없는 접촉 시도는 계속, 자기결정권을 침해하는 조치(강제 입소 등)는 즉각적 생명 위험이 확인될 때로 한정. <strong>접근 전략 4가지</strong>를 대안으로 제시</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote><p><strong>감점 포인트</strong> — "자기결정권이 우선이다"로만 끝내면 감점(거부의 배후를 검토하지 않음). 반대로 "위험하니 강제해야 한다"로만 끝내도 감점(정당화의 선을 제시하지 않음).</p></blockquote>
+<hr>
+<h3>서술형 3 — 요건에 해당하지 않는 노인의 포착</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>배점</th>
+<th>들어가야 할 내용</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>필수 (30%)</strong></td>
+<td><strong>제도의 구조적 공백 진단</strong> — 제도는 <strong>소득이 낮거나 기능이 저하된 사람</strong>을 대상으로 설계. 두 조건 모두에 해당하지 않는 노인은 아무 서비스와도 연결되지 않는다. <strong>상태가 나빠져 요건을 충족한 뒤에야 제도가 작동한다</strong></td>
+</tr>
+<tr>
+<td><strong>필수 (20%)</strong></td>
+<td><strong>정 씨의 신호를 위험으로 번역</strong> — 식사 준비 회피·결식 / TV로 소리 채우기 / 습관적 "잘 지낸다". (3장) <strong>식사량 감소 → 근육량 감소 → 기능 저하 → 낙상 위험</strong>. <strong>IADL이 ADL보다 먼저 손상된다</strong></td>
+</tr>
+<tr>
+<td><strong>필수 (20%)</strong></td>
+<td><strong>예방 개입의 시점</strong> — 현재의 문제가 아니라 앞으로의 문제. <strong>예방적 개입의 이득이 가장 큰 위치</strong></td>
+</tr>
+<tr>
+<td><strong>필수 (20%)</strong></td>
+<td><strong>구체적 포착 방법 2가지 이상</strong> — 예: 사별 노인에 대한 <strong>보편적 사후 접촉</strong>(사망신고·연금 전환 시점 활용), 공동 식사 프로그램 등 <strong>낙인 없는 보편 서비스</strong>를 발굴 창구로 활용, 아파트 관리사무소·검진기관 등 <strong>비복지 접점의 활용</strong>, 자녀·이웃의 신고 경로</td>
+</tr>
+<tr>
+<td>가점 (10%)</td>
+<td><strong>비용과 사생활</strong> — 전수 조사는 비용과 사생활 침해가 크다 → <strong>보편 서비스 참여를 통한 자연스러운 관찰</strong>이 대안. 정보 수집의 범위·보관 기간·본인 동의 절차를 명시. <strong>거부할 권리를 보장하면서도 문은 열어 두는</strong> 설계</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote><p><strong>감점 포인트</strong> — "찾아가서 다 확인하자"로만 답하면 비용·사생활 논점을 놓쳐 감점. 3장과의 연결 고리를 쓰면 가점.</p></blockquote>
+<hr>
+<h3>서술형 4 — 안부 확인을 넘어서는 개입 설계</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>배점</th>
+<th>들어가야 할 내용</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>필수 (25%)</strong></td>
+<td><strong>왜 안부 확인만으로 부족한가</strong> — 안부 확인은 <strong>죽음이 늦게 발견되는 것을 막지만 고립 자체를 해소하지 못한다.</strong> 안부 확인은 <strong>독거에 대한 대응</strong>일 뿐</td>
+</tr>
+<tr>
+<td><strong>필수 (25%)</strong></td>
+<td><strong>세 개념 ↔ 세 처방의 대응을 설계의 뼈대로 사용</strong> — 독거는 안전 확인 / 고립은 <strong>관계망 형성</strong> / 외로움은 <strong>관계의 질과 역할</strong></td>
+</tr>
+<tr>
+<td><strong>필수 (20%)</strong></td>
+<td><strong>시범사업 4유형의 공백 지적</strong> — 안부 확인(독거) · 생활환경 개선(주거 안전) · 공동체 공간과 관계망(고립) · 사후관리. <strong>외로움에 직접 대응하는 항목이 없다</strong> — 정책 수단으로 다루기 가장 어려운 영역</td>
+</tr>
+<tr>
+<td><strong>필수 (20%)</strong></td>
+<td><strong>자기 설계안</strong> — 관계망 형성과 <strong>역할 부여</strong>를 구분해 제시할 것. 예: 공동 식사(관계망) + <strong>참여자가 준비·운영에 역할을 맡는 구조</strong>(역할 회복), 세 사람별 맞춤 개입(김=유지, 박=접촉 개방, 정=역할 회복)</td>
+</tr>
+<tr>
+<td>가점 (10%)</td>
+<td><strong>측정 문제까지 다루기</strong> — 관계망·외로움은 실적으로 남기기 어려워 자원이 가지 않는다 → <strong>성과지표를 무엇으로 바꿀 것인가</strong>까지 제안하면 최고 점수</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote><p><strong>감점 포인트</strong> — "프로그램을 많이 만들자"로만 끝내면 감점. <strong>고립과 외로움을 구분하지 않으면</strong> 이 문항의 핵심을 놓친 것으로 본다.</p></blockquote>
+<hr>
+<h2>자가 진단</h2>
+<p>객관식 채점 후 확인하세요.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>맞은 개수</th>
+<th>상태</th>
+<th>할 일</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>15~16</strong></td>
+<td>준비 완료</td>
+<td>서술형 4문항을 실제로 써 보세요. <strong>쓸 수 있어야 아는 것입니다</strong></td>
+</tr>
+<tr>
+<td><strong>12~14</strong></td>
+<td>양호</td>
+<td>틀린 문항의 주제만 <code>노인복지론04_한장요약.md</code>에서 다시 확인</td>
+</tr>
+<tr>
+<td><strong>9~11</strong></td>
+<td>보통</td>
+<td><code>노인복지론04_한장요약.md</code> 전체 + 틀린 부분은 <code>노인복지론04_정리.md</code></td>
+</tr>
+<tr>
+<td><strong>8 이하</strong></td>
+<td>재학습 필요</td>
+<td><code>노인복지론04_이야기로읽기.md</code>부터 다시 → 한장요약 → 퀴즈 재도전</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>틀린 문항별 복습 위치</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>문항</th>
+<th>주제</th>
+<th>어디를 볼 것인가</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1~4</td>
+<td><strong>세 개념 구분과 대응</strong></td>
+<td>한장요약 1 / 용어정리 1 / 이야기로읽기 1~3장</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Holt-Lunstad 메타분석</strong></td>
+<td>한장요약 2 / 이야기로읽기 4장</td>
+</tr>
+<tr>
+<td>6~8</td>
+<td><strong>규모와 전망</strong></td>
+<td>한장요약 3 / 이야기로읽기 5장</td>
+</tr>
+<tr>
+<td>9~11</td>
+<td><strong>취약성과 해석</strong></td>
+<td>한장요약 4 / 이야기로읽기 6~7장</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>접근 거부</strong></td>
+<td>한장요약 5 / 이야기로읽기 8장</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>노인맞춤돌봄서비스</strong></td>
+<td>한장요약 6 / 이야기로읽기 9장</td>
+</tr>
+<tr>
+<td>14~16</td>
+<td><strong>고독사</strong></td>
+<td>한장요약 7 / 이야기로읽기 10~11장</td>
+</tr>
+<tr>
+<td>PART 2-12</td>
+<td><strong>무연고 사망</strong></td>
+<td>한장요약 8 / 이야기로읽기 12장</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2>이것만은 틀리면 안 되는 3개</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>#</th>
+<th>내용</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>독거 / 고립 / 외로움은 서로 다르고, 각각 다른 처방을 지시한다</strong> — 이걸 틀리면 나머지가 다 어긋납니다</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>한국의 고독사는 50·60대 남성에게 집중된다 (61.8%, 남성 84.1%)</strong> — 이번 주의 반전</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>행정 기준(소득·연령·등급)과 실제 위험도는 일치하지 않는다</strong> — 이 간극을 메우는 것이 사회복지사의 일</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<blockquote><p><strong>오프라인 준비물</strong> — 4번 질문(누구를 먼저 지원할 것인가 + 기준)에 대한 <strong>답과 근거</strong> → <code>노인복지론04_오프라인활동자료.md</code></p></blockquote>
+<footer class="gen">이 문서는 마크다운 원본에서 자동 변환되었습니다.</footer>
+</div>
+</body>
+</html>

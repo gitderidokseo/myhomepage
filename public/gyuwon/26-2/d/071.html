@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>일본 기업론 0910 정리</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --warn-bg:#fdf7e7;--warn-line:#e6cf94;--warn-ink:#7a5b12;
+  --task-bg:#fdeeec;--task-line:#f0c0b8;--task-ink:#9b3a2a;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --warn-bg:#2b2517;--warn-line:#5f5228;--warn-ink:#e4c97f;
+    --task-bg:#2e1d1a;--task-line:#5e332b;--task-ink:#f0a292;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:32px}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin:0 0 6px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 10px;letter-spacing:-.02em;font-weight:750}
+.meta{font-size:.87rem;color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+.meta b{font-weight:600;color:var(--ink)}
+h2{font-size:1.22rem;margin:42px 0 14px;padding-left:13px;border-left:4px solid var(--accent);line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.02rem;margin:26px 0 8px;color:var(--accent-ink);font-weight:700}
+p{margin:0 0 13px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:normal;background:var(--accent-soft);padding:1px 5px;border-radius:4px;font-weight:600}
+.tldr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:8px}
+.tldr h2{margin-top:0;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:0;padding:0;color:var(--faint)}
+.tldr ol{margin-bottom:0;padding-left:20px}
+.tldr li{margin-bottom:9px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+.box{border-radius:10px;padding:16px 18px;margin:18px 0;border:1px solid}
+.box .label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 8px;display:block}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box.task{background:var(--task-bg);border-color:var(--task-line)}
+.box.task .label{color:var(--task-ink)}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+.box.warn .label{color:var(--warn-ink)}
+.tablewrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem;white-space:nowrap}
+td:first-child{font-weight:600;white-space:nowrap}
+.jp{font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif}
+.term{color:var(--faint);font-size:.9em;font-weight:400}
+footer.doc{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+footer.doc p{margin:0 0 5px}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.45rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  h2{page-break-after:avoid}
+  .box,.card,.tldr{page-break-inside:avoid}
+}
+:root{--accent:#b0322c;--accent-ink:#b0322c;--accent-soft:#fbeceb}
+@media (prefers-color-scheme:dark){:root{--accent:#ef7f78;--accent-ink:#ef7f78;--accent-soft:#33201f}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="doc">
+<p class="eyebrow">26년 2학기 · 2주차</p>
+<h1>일본 기업론 — 9월 10일(목)</h1>
+<p class="meta"><span><b>주제</b> 전후 일본 경제사 개관 — 고도성장 · 버블 · 잃어버린 30년</span><span><b>녹음</b> 177분</span></p>
+</header>
+
+<div class="tldr">
+<h2>한눈에 보기</h2>
+<ol>
+<li><strong>오늘은 경제사 훑기.</strong> 낯선 용어가 많지만 다음 주까지만이다. 그 뒤로는 개별 케이스로 넘어간다.</li>
+<li><strong>모든 것이 환율과 금리로 연결된다.</strong> 1달러 = 360엔 고정환율 → 플라자 합의로 엔고 → 가격경쟁력 상실 → 저금리 → 버블 → 대출 규제 → 붕괴.</li>
+<li><strong>잃어버린 30년의 원인은 "빚 갚는 데 모든 돈이 쓰였기 때문"</strong>이라는 해석. 좀비기업, 인구·노동 구조 변화도 함께 작동했다.</li>
+<li><strong>2024년이 전환점.</strong> 마이너스 금리 종료(8년 만), 금리 인상(17년 만), 닛케이가 34년 만에 버블기 최고치 돌파.</li>
+</ol>
+</div>
+
+<h2>0. 수업 시작 — 이번 주 일본 경제 뉴스</h2>
+<p>매 수업 시작에 <strong>최근 일주일간 일본 경제 뉴스</strong>를 검색해 옆 사람과 공유한다.</p>
+<ul>
+<li><strong>최저임금 인상 논의</strong> — 일본 청년들이 원하는 평균적 생활을 하려면 현 최저임금으로는 부족하다는 기사. 한국 청년 세대와 통하는 지점.</li>
+<li><strong>AI와 제조업</strong> — AI 도입으로 제조업 지표가 늘었다는 보도</li>
+<li><strong>정권 교체와 아베노믹스</strong> — 경제 노선이 어떻게 달라질지, 미국·중국의 요구가 어떻게 달라질지</li>
+<li><strong>금리와 미 국채</strong> — 일본은 <strong>미국 국채를 세계에서 가장 많이 보유한 나라</strong>. 미국이 일본에 금리 인상을 요구하는 배경.</li>
+</ul>
+
+<h2>1. 학술적 글을 읽는 법 — 연도인가, 정권인가</h2>
+<div class="card">
+<p>같은 사실도 <strong>"1998년에"</strong>라고 쓰는 사람과 <strong>"김대중 정권에서"</strong>라고 쓰는 사람이 있다. 이 차이는 우연이 아닐 수 있다.</p>
+<p>연도로만 쓰는 경우 → 그 <strong>시기를 강조</strong>하고 싶거나, 의도적으로 <strong>그 정권을 평가하고 싶지 않은</strong> 의도가 깔려 있을 수 있다.</p>
+<p>그러니 책이나 페이퍼를 읽을 때 <strong>필자가 정권 간 비교를 하고 있는지, 시대적 흐름을 말하고 있는지</strong>를 눈여겨 볼 것. 특히 앞으로 "아베 정권에서는 이러했다"는 설명이 나올 때, 그게 비난인지 호평인지 의도된 것인지 아닌지를 적절히 판단해야 한다.</p>
+</div>
+
+<h3>기억해 둘 연도</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th>연도</th><th>사건</th></tr></thead>
+<tbody>
+<tr><td>1965</td><td>한일 수교 체결 — "65년 체제"를 강조하는 연구자들이 있다</td></tr>
+<tr><td>1998</td><td>한일 파트너십 선언(김대중 정권) — 일본 문화 개방. 그 이전에는 만화·애니메이션이 해적판으로 유통됐다. 정치인 교류를 넘어 <strong>일반 시민이 서로의 문화를 접하게 된 전환점</strong>으로 보는 시각</td></tr>
+<tr><td>1985</td><td><strong>플라자 합의</strong> — 일본 경제의 가장 중요한 빅 이벤트<br><span class="term">※ 강의 중에는 1986년으로 언급되었으나 실제 체결은 1985년 9월. 시험 전 확인 필요</span></td></tr>
+<tr><td>2001</td><td>9·11 테러</td></tr>
+<tr><td>2011</td><td>동일본 대지진(3·11) — 일본에서 가장 의미 있는 최근 연도</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>2. 왜 일본 경제를 배우는가</h2>
+<ul>
+<li>일본 사회의 흐름과 국제사회 속 변화를 <strong>빠르게 캐치</strong>할 수 있다</li>
+<li>취업 준비 시 <strong>한일 비교를 통한 전문성</strong>을 어필할 수 있다</li>
+<li>생활에 직결된다 — 환율이 왜 떨어지는지, 지금이 엔화를 살 타이밍인지 판단할 수 있다</li>
+<li>"경제학 입문이 정말 싫다면 <strong>경제 입문 관련 책</strong>이라도 보고, <strong>국제법 수업</strong>도 꼭 한 번 들어 보라"</li>
+</ul>
+
+<h2>3. 기초 개념 ① 금리</h2>
+<p><strong>금리 = 돈에 대한 가격, 돈의 몸값.</strong></p>
+<div class="tablewrap">
+<table>
+<thead><tr><th></th><th>금리 인상</th><th>금리 인하</th></tr></thead>
+<tbody>
+<tr><td>개인 행동</td><td>저축한다 (100만 원 맡기면 5만 → 10만 원)</td><td>저축 안 하고 빌려서 투자한다</td></tr>
+<tr><td>주가</td><td>하락 경향 — 주식은 불확실하지만 저축은 확정 이자</td><td>상승 경향</td></tr>
+<tr><td>경제</td><td>브레이크 (긴축)</td><td>액셀 (확장)</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>핵심 논리:</strong> 주식은 1분 1초 급변해 오를지 떨어질지 알 수 없다. 금리는 요동치지 않고 고정금리라면 확정 이자를 받는다. 같은 10%라면 <strong>확정된 쪽</strong>을 택하는 것이 합리적이다. 그래서 "금리가 오르면 주가가 떨어진다"는 원리가 성립한다.</p>
+
+<div class="box">
+<span class="label">마이너스 금리 (일본, 2016~2024)</span>
+<p>돈을 맡기면 이자를 받는 게 아니라 <strong>오히려 수수료를 내야 하는</strong> 제도.</p>
+<p><strong>정부의 의도:</strong> 은행에 맡기지 말고 투자하라 → 시중에 돈이 흘러가게 하라 → 경제 활성화.</p>
+<p><strong>결과:</strong> 실상은 그렇지 않았다 — <strong>실패한 부분이 존재한다</strong>는 평가.</p>
+</div>
+
+<h2>4. 기초 개념 ② 환율</h2>
+<p>패전 후 GHQ(연합군 최고사령부) 점령하에 <strong>1달러 = 360엔 고정환율</strong>이 설정되었다.</p>
+<div class="box warn">
+<span class="label">헷갈리기 쉬운 지점 — 반드시 정리할 것</span>
+<p><strong>360엔 → 120엔</strong>으로 숫자가 <strong>작아지면</strong> = <strong>엔화 가치 상승 = 엔고(円高) = 강세</strong></p>
+<p>왜? 예전엔 1달러를 받으려면 360엔이 필요했는데, 이제 120엔만 주면 1달러를 준다. 360엔으로 3달러를 바꿀 수 있게 된 것.</p>
+<p>반대로 <strong>120엔 → 360엔</strong>이 되면 = <strong>엔화 가치 하락 = 엔저(円安)</strong></p>
+</div>
+
+<h3>환율이 만드는 순환</h3>
+<p><strong>엔고 → 일본 물건이 비싸짐 → 안 팔림 → 공장 안 돌아감 → 해고 → 월급 없음 → 외식·여행 안 함 → 관련 산업 타격 → 악순환</strong></p>
+<p>반대로 물건이 잘 팔리면 → 더 만듦 → 채용 → 소득 증가 → 소비 → 여행사·음식점도 살아남 → <strong>선순환</strong>.</p>
+<p class="term">※ 참고: 빅맥 가격으로 각국 물가를 비교하는 이야기도 있다. 또 중국처럼 거의 고정환율로 묶는 나라도, 한국처럼 변동환율인 나라도 있으며, 정부가 외화를 풀거나 사들여 개입하는 일은 실제로 있다 — 다만 어느 나라도 공식적으로 "개입했다"고 말하지는 않는다.</p>
+
+<h2>5. 기초 개념 ③ 외환보유고는 왜 필요한가</h2>
+<div class="card">
+<p>다른 나라 입장에서 한국 원화는 <strong>믿기 어려운 돈</strong>이다. 전쟁이 날 수도 있고, 환율이 급락할 수도 있다. 그래서 사람들은 <strong>기축통화</strong>(달러, 그리고 어느 정도는 엔·유로)를 선호한다.</p>
+<p>정부가 외환을 보유하는 이유: <strong>"원화로 결제하더라도 정부가 그에 상당하는 외환을 갖고 있으니 걱정 말고 거래하자"</strong>는 시그널. 즉 무역 거래의 <strong>판단 근거</strong>를 제공하기 위한 것이다.</p>
+<p>→ IMF 외환위기 때 외환보유고 부족이 문제가 되었던 이유가 여기에 있다.</p>
+</div>
+<p><strong>통화스와프</strong>도 같은 맥락 — 국가 간에 통화를 빌려주는 거래. 한일 통화스와프가 체결됐다 풀렸다 하는 것도 이 이야기다.</p>
+<p class="term">덧: 미국과 중국은 석유 거래를 달러로 할지 위안화로 할지를 두고 팽팽히 맞서고 있다. 달러의 지위가 흔들리는 상황에서 트럼프 행정부가 비트코인 결제를 밀고 있는 것도 이 맥락으로 볼 수 있다.</p>
+
+<h2>6. 전후 고도성장 (1950s~1970s)</h2>
+<div class="box">
+<span class="label">고도성장의 3대 요인</span>
+<ol>
+<li><strong>1949년 닷지 라인</strong> — GHQ 점령하에 시행된 경제 정책. 1달러 = 360엔 고정환율로 <strong>가격경쟁력</strong>을 갖추게 한 토대</li>
+<li><strong>1950년 한국전쟁 특수</strong> — 미국이 일본에 공장을 지어 군수물자를 조달. 공장·도로·항만이 정비되고 고용이 늘었다</li>
+<li><strong>재건 자본 융자</strong> — 주요 산업에 자원을 몰아주는 할당제</li>
+</ol>
+<p>한정된 외환을 주요 산업에 배분·지원한 이 방식 때문에, 일부 연구자는 당시 일본을 <strong>발전국가(developmental state)</strong>로 명명해 분석한다.</p>
+</div>
+
+<h3>성과</h3>
+<ul>
+<li>1960년대 후반에 이미 <strong>세계 2위 GDP</strong> 달성</li>
+<li><strong>1964년 도쿄 올림픽</strong> — 패전 20년 만. 신칸센 개통과 함께 일본의 회복을 보여준 역사적 장면<br><span class="term">(비교: 한국의 88 서울올림픽 — 6·25 이후 북한보다 앞섰음을 보여주고 세계에 경제성장을 생중계한 사건)</span></li>
+<li>1980년대 피크, 1990년대까지 유지 → 90년대 중반부터 하락</li>
+</ul>
+
+<div class="box warn">
+<span class="label">교수님이 강조한 비교 구도</span>
+<p><strong>20세기 후반:</strong> 미국 ↔ 일본 무역마찰. 미국이 일본을 눌러버렸다.</p>
+<p><strong>21세기:</strong> 미국 ↔ 중국. 1990년대 말부터 "라이징 차이나", 2010년대부터 미국의 강한 제재.</p>
+<p>→ <strong>같은 구도가 반복되고 있다.</strong> 세계 경제 속에서 미국의 역할과 위상을 함께 보면 흥미로운 것이 보인다.</p>
+</div>
+
+<h2>7. 플라자 합의와 버블 (1985~1989)</h2>
+<h3>플라자 합의</h3>
+<p>고정환율 덕에 저렴했던 일본 제품이 미국 시장을 점령하다시피 하며 미국은 막대한 적자를 봤다. 미국(+서방 국가들)은 <strong>엔화 가치를 올리라</strong>고 요구했고, 그 결과가 플라자 합의다.</p>
+<ul>
+<li><strong>엔화 가치가 2년 만에 두 배로 폭등</strong></li>
+<li>일본은 <strong>가격경쟁력을 상실</strong> → 산업이 흔들림</li>
+<li>미국 정부에는 좋았지만, 일본에는 <strong>슬픈 역사적 빅 이벤트</strong></li>
+</ul>
+
+<h3>버블은 어떻게 형성되었나</h3>
+<ol>
+<li>산업이 흔들리자 <strong>금리를 낮춤</strong></li>
+<li>금리가 싸니 저축할 이유가 없다 → <strong>빌려서 투자</strong></li>
+<li>땅·건물·맨션을 매입 → 그 건물을 담보로 <strong>또 대출</strong> → 또 매입 → 연쇄</li>
+<li>"땅값은 오른다"는 믿음 + <strong>거의 100% 대출로 매입 가능</strong>했던 당시 제도</li>
+<li>부동산 가격 폭등, <strong>1989년 닛케이 사상 최고치</strong></li>
+</ol>
+<p class="term">※ 교수님이 든 유사 사례: 전세금을 받아 다음 빌라를 매입하고 또 전세를 주는 식으로 돌리는 전세사기 구조. 자기 돈 없이 빚으로 계속 사들이다가 결국 파산한다.</p>
+
+<h2>8. 버블 붕괴 (1990~)</h2>
+<div class="box">
+<span class="label">붕괴의 방아쇠 — 대장성의 총량 규제</span>
+<p><strong>1990년, 대장성이 부동산 대출 총량 규제를 단행</strong>했다. 은행 전체 대출 증가율을 넘겨 부동산 대출을 늘리지 못하도록 못을 박은 것.</p>
+<p>→ 은행이 주택담보대출을 해 줄 수 없게 됨 → <strong>살 사람이 사라짐</strong> → 부동산 가격 급락</p>
+<p>동시에 <strong>긴축 정책</strong>으로 금리를 인상 → 대출 이자 부담 급증 → 아무도 사지 않음</p>
+</div>
+
+<h3>긴축 vs 확장 <span class="term">— 상식으로 알아둘 용어</span></h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th></th><th>긴축 정책</th><th>확장 정책</th></tr></thead>
+<tbody>
+<tr><td>한 줄 요약</td><td>돈을 아껴 쓰자 / 시중에 풀린 돈을 거둬들이자</td><td>돈을 풀자</td></tr>
+<tr><td>수단</td><td>금리 인상, 대출 규제</td><td>복지 확대, 재정 지출</td></tr>
+<tr><td>효과</td><td>과열 진정</td><td>소비 → 산업 성장 → 채용 → 소비 (선순환)</td></tr>
+</tbody>
+</table>
+</div>
+<p class="term">교수님 언급: "시험에 '긴축 정책에 대해 쓰시오' 같은 문제는 내지 않는다. 용어가 어렵다고 포기하지 말 것."</p>
+
+<h3>붕괴 이후 — 빚더미의 구조</h3>
+<p>10억짜리 빌딩을 <strong>전액 대출</strong>로 샀는데 가격이 2억으로 폭락하면, 팔아도 <strong>8억의 빚이 그대로 남는다.</strong> 게다가 경기 침체로 세입자가 빠져 월세 수입(예: 6개 층 × 100만 원 = 600만 원)도 사라진다. 팔자니 손해라 들고 있다가 결국 파산 — 이런 사례가 비일비재했다.</p>
+
+<h2>9. 잃어버린 30년의 구조적 원인</h2>
+<h3>① 빚 상환의 악순환 <span class="term">— 가장 많이 언급되는 설명</span></h3>
+<div class="card">
+<p>"장학금 300만 원을 준다고 해서 여행·시계·중고차를 계획했는데, 갑자기 50만 원만 준다면?" → <strong>정말 필요한 것만 소비한다.</strong></p>
+<p>일본도 마찬가지였다. 돈을 벌어도 여유롭게 쓰는 게 아니라 <strong>전부 빚 갚는 데</strong> 들어갔다. 여가·외식·여행을 안 하니 경제가 선순환하지 못하고 <strong>빚만 돌고 도는 악순환</strong>에 빠졌다.</p>
+</div>
+
+<h3>② 좀비기업(ゾンビ企業)</h3>
+<p>은행이 10억을 빌려줬는데 1억만 회수한 상황. 기업이 완전히 부도나면 나머지 9억을 아예 못 받는다. 그래서 은행은 <strong>이자를 감면해 주고 오히려 돈을 더 빌려주며</strong> 부도를 막았다.</p>
+<p>→ 폐업해야 할 기업이 좀비처럼 계속 살아남았고, <strong>부도날 기업은 부도나고 재생할 기업은 재생하는 순환이 일어나지 못했다.</strong></p>
+
+<h3>③ 인구·노동 구조의 변화</h3>
+<ol>
+<li>50년대 한국전쟁 특수로 부모 세대는 공장에서 일했고, <strong>그 자식 세대는 교육을 받았다</strong></li>
+<li>60~70년대 교육받은 세대 → <strong>학생운동·노동자운동</strong>이 활발<br><span class="term">(한국의 7·80년대 학생운동·노동운동과 같은 구조)</span></li>
+<li>교육받은 세대는 도시로 이동해 <strong>화이트칼라·사무직</strong>을 원함</li>
+<li><strong>3D 업종</strong>(Dirty · Difficult · Dangerous) 기피 → 공장 노동력 부족</li>
+</ol>
+
+<div class="box">
+<span class="label">해법 — 일본계 남미 이민자</span>
+<p>외국인 노동자를 받아들이는 것은 <strong>정치적으로 리스크</strong>가 크다("세금을 다 가져간다", "일자리를 뺏는다"는 경계심 → 선거 패배 위험).</p>
+<p>그래서 일본은 <strong>일본계 라틴아메리카인</strong>을 특별 정주자 비자로 받아들였다. 남미에 일본계가 많은 이유는, 일본도 경제적으로 어려웠던 시기에 하와이로 이민을 갔다가 심한 차별과 열악한 환경 때문에 다시 남미로 이동했기 때문이다. <span class="term">(한국의 아메리칸드림·이민사와 같은 구조)</span></p>
+<p><strong>1984년 국적법 개정</strong> — 그 이전에는 <strong>아버지</strong>가 일본인이어야 국적을 얻었으나, 이후 <strong>어머니가 일본인이어도</strong> 국적을 얻게 되었다(부계혈통주의 → 부모양계혈통주의).</p>
+</div>
+
+<h3>④ 공장의 해외 이전</h3>
+<p>인건비·땅값·운영비 상승으로 일본 내 공장 운영의 메리트가 사라지자 <strong>80년대를 전후해 많은 공장이 동남아로 이전</strong>했다.</p>
+<p>→ 그래서 <strong>엔저가 되어도 수출이 늘지 않는다.</strong> 완제품이 이미 해외에서 만들어져 유통되므로 환율 영향을 크게 받지 않고, 가격경쟁력만으로는 중국 등을 이길 수 없게 된 것.</p>
+
+<h2>10. 현재 (2024~2026)</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>항목</th><th>현황</th></tr></thead>
+<tbody>
+<tr><td>경제 순위</td><td>2010년 중국에 추월당해 3위 → 계속 하락 (5위권)</td></tr>
+<tr><td>마이너스 금리</td><td><strong>2024년 종료</strong> (2016년 시작, 8년 만)</td></tr>
+<tr><td>금리 인상</td><td>2007년 이후 처음 — <strong>17년 만</strong>의 대대적 변화</td></tr>
+<tr><td>닛케이 지수</td><td>2024년 <strong>버블기(1989) 최고치 돌파</strong> — 34년 만. 이후에도 사상 최고치 갱신 보도</td></tr>
+<tr><td>반도체</td><td>80~90년대에는 압도적이었으나 현재 점유율은 처참한 수준. 최근 한국이 무역 지수에서 일본을 추월</td></tr>
+<tr><td>현재 악재</td><td>캐나다-미국 관세 이슈로 캐나다 소재 일본 자동차 공장 등이 영향을 받는 중</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>11. 케이레츠(系列)와 한국 재벌 — 조별 토론</h2>
+<div class="card">
+<p><strong>일본:</strong> 원래는 <strong>자이바쓰(財閥)</strong>라는 가족 중심 거대 기업집단이었다. 메이지 유신 이후 산업화·근대화 과정에서 문어발식으로 확장(쌀 만들던 회사가 기차를 만드는 식). 전후 <strong>GHQ가 해체</strong>했으나, 은행과 <strong>상호 주식 보유</strong>까지는 해체하지 못했다. 그 은행과 주식을 중심으로 기업들이 다시 모인 것이 <strong>케이레츠</strong>다. → 여러 회사가 <strong>연합</strong>되어 있는 느낌.</p>
+<p><strong>한국:</strong> 해체 과정 없이 한 가족 중심의 <strong>거대 기업집단</strong>이 그대로 이어져 왔다. → 하나의 거대 기업 같은 느낌.</p>
+</div>
+<p><strong>GHQ가 해체한 이유(학생 의견):</strong> 통치를 편하게 하려고 / 소수 재벌의 장악이 일본 군국주의를 뒷받침했다고 보아서</p>
+<p><strong>케이레츠의 그늘:</strong> 외부 기업이 들어가기 어렵다 / 강하지 않은 회사도 오래 살아남는다 / 다만 <strong>원청과 대기업 간의 수직적 관계는 옛날이나 지금이나 마찬가지</strong>다.</p>
+
+<h3>엔저 효과는 무조건 좋은가? (학생 조사)</h3>
+<ul>
+<li>일본 내에서 생산해 수출하면 <strong>긍정적</strong></li>
+<li>그러나 해외 원자재 수입 비용이 늘어 <strong>부정적</strong> 측면도 생김</li>
+<li><strong>내수 기업</strong>에는 대체로 부정적</li>
+<li><strong>가격경쟁력이 중요한 수출 기업</strong>에는 여전히 긍정적이라는 평가</li>
+</ul>
+
+<div class="box warn">
+<span class="label">시험 방식 — 반드시 기억할 것</span>
+<p>중간·기말 모두 <strong>시험 2주 전에 예상 문제 5개를 제시</strong>하고, <strong>그 안에서 한두 문제를 출제</strong>한다.</p>
+<p>→ 전체적인 이해를 한 다음, 시험 대비는 제시된 예상 문제로 하면 충분하다.</p>
+</div>
+
+<div class="box task">
+<span class="label">과제 · 활동</span>
+<ul>
+<li><strong>매 수업 시작</strong>: 최근 일주일 일본 경제 뉴스 검색해 오기 (옆 사람과 공유)</li>
+<li><strong>조별 토론 주제</strong> — ① 엔저가 지속되면 일본 수출 기업에 무조건 좋은가? ② 일본의 케이레츠와 한국 재벌은 어떻게 다른가? ③ 닛케이 사상 최고치는 제2의 버블인가?</li>
+<li>AI로 검색해 보고 토론하는 방식 — 검색 활용을 적극 권장</li>
+<li>다음 주까지 경제사 개관, 그 이후 개별 케이스로 전환</li>
+</ul>
+</div>
+
+<h2>덧 — 교수님의 조언</h2>
+<ul>
+<li>"AI 시대에 우리가 어디로 나아갈 것인가는 굉장히 큰 과제다."</li>
+<li>"이걸 안다고 인생이 달라질까? 어쩌면 아닐 수도 있다. 하지만 공부하고 생각해 보다 보면 <strong>세상을 바라보는 시야가 트이고 넓어질 것</strong>이다."</li>
+<li>"여러분 나이 때 <strong>경제학과 국제법</strong>을 배웠던 것이 지금도 정말 큰 도움이 된다."</li>
+<li>일본을 타깃으로 기획·창업을 한다면, 일본 시장만이 아니라 <strong>유럽권으로도 뚫릴 수 있다</strong>고 생각한다.</li>
+<li><strong>국제교류</strong>(도시샤 대학 등) 기회가 있으면 참여해 볼 것. 간사이와 도쿄, 세대와 지역에 따라 분위기가 다르다.</li>
+</ul>
+
+<footer class="doc">
+<p>이 문서는 <code>일본 기업론 0910.txt</code> 음성 전사본을 바탕으로 정리했습니다.</p>
+<p>자동 전사 특성상 연도·수치에 오인식이 있을 수 있습니다. 특히 플라자 합의 연도(1985)는 강의 중 1986년으로 언급되었으니 LMS 자료로 확인하세요.</p>
+</footer>
+</div>
+</body>
+</html>

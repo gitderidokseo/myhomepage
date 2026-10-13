@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>일본어 표현연습 과제</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --warn-bg:#fdf7e7;--warn-line:#e6cf94;--warn-ink:#7a5b12;
+  --task-bg:#fdeeec;--task-line:#f0c0b8;--task-ink:#9b3a2a;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --warn-bg:#2b2517;--warn-line:#5f5228;--warn-ink:#e4c97f;
+    --task-bg:#2e1d1a;--task-line:#5e332b;--task-ink:#f0a292;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:32px}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin:0 0 6px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 10px;letter-spacing:-.02em;font-weight:750}
+.meta{font-size:.87rem;color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+.meta b{font-weight:600;color:var(--ink)}
+h2{font-size:1.22rem;margin:42px 0 14px;padding-left:13px;border-left:4px solid var(--accent);line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.02rem;margin:26px 0 8px;color:var(--accent-ink);font-weight:700}
+p{margin:0 0 13px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:normal;background:var(--accent-soft);padding:1px 5px;border-radius:4px;font-weight:600}
+.tldr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:8px}
+.tldr h2{margin-top:0;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:0;padding:0;color:var(--faint)}
+.tldr ol{margin-bottom:0;padding-left:20px}
+.tldr li{margin-bottom:9px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+.box{border-radius:10px;padding:16px 18px;margin:18px 0;border:1px solid}
+.box .label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 8px;display:block}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box.task{background:var(--task-bg);border-color:var(--task-line)}
+.box.task .label{color:var(--task-ink)}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+.box.warn .label{color:var(--warn-ink)}
+.tablewrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem;white-space:nowrap}
+td:first-child{font-weight:600;white-space:nowrap}
+.jp{font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif}
+.term{color:var(--faint);font-size:.9em;font-weight:400}
+footer.doc{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+footer.doc p{margin:0 0 5px}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.45rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  h2{page-break-after:avoid}
+  .box,.card,.tldr{page-break-inside:avoid}
+}
+.blank{display:inline-block;min-width:190px;border-bottom:1.5px dashed var(--accent);
+  padding:0 6px;color:var(--faint);font-size:.9em;text-align:center}
+.draft{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:0 10px 10px 0;padding:18px 20px;margin:16px 0}
+.draft p{margin:0 0 14px;line-height:1.9}
+.draft p:last-child{margin-bottom:0}
+.stage{display:block;font-size:.74rem;letter-spacing:.1em;font-weight:700;
+  color:var(--accent-ink);margin:20px 0 6px;text-transform:uppercase}
+.stage:first-child{margin-top:0}
+.check{list-style:none;padding-left:0}
+.check li{padding-left:30px;position:relative;margin-bottom:9px}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:15px;height:15px;
+  border:1.5px solid var(--accent);border-radius:3px}
+.sent{margin:0 0 18px}
+.sent .num{display:inline-block;min-width:2.1em;font-weight:700;color:var(--accent-ink)}
+.sent .ja{font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif;font-size:1.05em}
+.sent .ko{display:block;margin:3px 0 0 2.1em;color:var(--muted);font-size:.93em}
+.sent .note{display:block;margin:5px 0 0 2.1em;font-size:.85em;color:var(--faint);
+  padding-left:9px;border-left:2px solid var(--line)}
+.qa{margin:0 0 16px;padding-left:30px;position:relative}
+.qa .q{position:absolute;left:0;top:0;font-weight:700;color:var(--accent-ink)}
+.mail{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:0;margin:16px 0;overflow:hidden}
+.mail .hdr{background:var(--line-soft);padding:12px 16px;font-size:.9rem;border-bottom:1px solid var(--line)}
+.mail .hdr div{margin-bottom:4px}
+.mail .hdr div:last-child{margin-bottom:0}
+.mail .hdr b{display:inline-block;min-width:58px;color:var(--muted);font-weight:600}
+.mail .body{padding:16px 18px;line-height:1.85}
+.mail .body p{margin:0 0 12px}
+.mail .body p:last-child{margin-bottom:0}
+:root{--accent:#6d3fc0;--accent-ink:#6d3fc0;--accent-soft:#f1ecfb}
+@media (prefers-color-scheme:dark){:root{--accent:#b493f0;--accent-ink:#b493f0;--accent-soft:#251d33}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="doc">
+<p class="eyebrow">과제 · 수요반</p>
+<h1>일본어 표현연습 — 작문 과제</h1>
+<p class="meta"><span><b>주제</b> 9/9 수업 단어로 작문 10~15개</span><span><b>마감</b> 9/16(수) 수업 전</span><span><b>형식</b> 문장 + 단어 정리 + 질문</span></p>
+</header>
+
+<div class="tldr">
+<h2>제출물 구성</h2>
+<ol>
+<li><strong>1부</strong> — 조사(だけ/ばかり/さえ/しか/も) 작문 11문장</li>
+<li><strong>2부</strong> — 한자어·사자성어 작문 5문장</li>
+<li><strong>3부</strong> — 확인한 단어 정리표</li>
+<li><strong>4부</strong> — "이런 표현도 괜찮은가요?" 질문 5개</li>
+</ol>
+</div>
+
+<h2>1부. 조사(助詞) 작문</h2>
+
+<h3>だけ — ~만 (중립) / ~만큼</h3>
+<p class="sent"><span class="num">1.</span><span class="ja">私は朝ごはんにコーヒーだけ飲みます。</span>
+<span class="ko">나는 아침으로 커피만 마십니다.</span>
+<span class="note">사실을 담담히 진술. 부정적 뉘앙스가 없다.</span></p>
+
+<p class="sent"><span class="num">2.</span><span class="ja">この店は現金だけで、カードは使えません。</span>
+<span class="ko">이 가게는 현금만 되고, 카드는 쓸 수 없습니다.</span></p>
+
+<p class="sent"><span class="num">3.</span><span class="ja">好きなだけ食べてください。</span>
+<span class="ko">드시고 싶은 만큼 드세요.</span>
+<span class="note"><strong>だけ의 다른 의미</strong> — "~만"이 아니라 "~만큼". 수업에서 특히 강조된 부분.</span></p>
+
+<h3>ばかり — ~만 (부정적 뉘앙스)</h3>
+<p class="sent"><span class="num">4.</span><span class="ja">弟は休みの日、ゲームばかりしています。</span>
+<span class="ko">동생은 쉬는 날에 게임만 합니다.</span>
+<span class="note">못마땅함이 담긴다. だけ로 바꾸면 중립적 진술이 된다.</span></p>
+
+<p class="sent"><span class="num">5.</span><span class="ja">寝てばかりいないで、少し運動したらどうですか。</span>
+<span class="ko">잠만 자지 말고 운동 좀 하는 게 어때요?</span>
+<span class="note">「～てばかり」 형태 — 동사 て형에 접속한다.</span></p>
+
+<p class="sent"><span class="num">6.</span><span class="ja">文句ばかり言う人とは一緒に働きたくありません。</span>
+<span class="ko">불평만 하는 사람과는 같이 일하고 싶지 않습니다.</span></p>
+
+<h3>さえ — ~만 하면 (조건) / ~조차</h3>
+<p class="sent"><span class="num">7.</span><span class="ja">時間さえあれば、毎日日本語を勉強したいです。</span>
+<span class="ko">시간만 있으면 매일 일본어를 공부하고 싶습니다.</span>
+<span class="note">「～さえ～ば」 조건 형태 — 가장 전형적인 용법.</span></p>
+
+<p class="sent"><span class="num">8.</span><span class="ja">この漢字は子供さえ知っています。</span>
+<span class="ko">이 한자는 아이조차 알고 있습니다.</span>
+<span class="note"><strong>さえ의 두 번째 의미</strong> — "~조차". "한 조사가 여러 의미를 갖는다"고 강조된 부분.</span></p>
+
+<h3>しか — ~밖에 (반드시 부정과 함께)</h3>
+<p class="sent"><span class="num">9.</span><span class="ja">財布に千円しか残っていません。</span>
+<span class="ko">지갑에 천 엔밖에 남아 있지 않습니다.</span>
+<span class="note">뒤에 반드시 부정형이 온다. 「残っています」는 틀린 문장.</span></p>
+
+<p class="sent"><span class="num">10.</span><span class="ja">もう待つしかないと思います。</span>
+<span class="ko">이제 기다릴 수밖에 없다고 생각합니다.</span></p>
+
+<h3>も — ~씩이나 (강조)</h3>
+<p class="sent"><span class="num">11.</span><span class="ja">田中さんは一日にコーヒーを五杯も飲むそうです。</span>
+<span class="ko">다나카 씨는 하루에 커피를 다섯 잔씩이나 마신다고 합니다.</span>
+<span class="note">수량 강조. 「五杯しか飲みません」과 대비해 보면 좋다.</span></p>
+
+<h2>2부. 한자어·사자성어 작문</h2>
+
+<p class="sent"><span class="num">12.</span><span class="ja">週末の道はいつも混んでいるので、電車で行きましょう。</span>
+<span class="ko">주말 길은 항상 막히니까 전철로 갑시다.</span>
+<span class="note">「複雑」가 아니라 <strong>混んでいる</strong>. 한국어 "복잡하다"를 그대로 옮기면 안 되는 대표 사례.</span></p>
+
+<p class="sent"><span class="num">13.</span><span class="ja">その映画は来月公開されるそうです。</span>
+<span class="ko">그 영화는 다음 달 개봉된다고 합니다.</span>
+<span class="note">영화는 <strong>公開</strong>. 봉투 등을 여는 것은 開封.</span></p>
+
+<p class="sent"><span class="num">14.</span><span class="ja">先生にお会いできて光栄です。</span>
+<span class="ko">선생님을 뵙게 되어 영광입니다.</span></p>
+
+<p class="sent"><span class="num">15.</span><span class="ja">この工場は関係者以外立入禁止です。</span>
+<span class="ko">이 공장은 관계자 외 출입금지입니다.</span>
+<span class="note"><strong>たちいりきんし</strong>. 「入」를 「はいる」가 아니라 「立ち入(い)る」로 읽는 것이 포인트.</span></p>
+
+<p class="sent"><span class="num">16.</span><span class="ja">そのイベントには老若男女が集まりました。</span>
+<span class="ko">그 행사에는 남녀노소가 모였습니다.</span>
+<span class="note"><strong>ろうにゃくなんにょ</strong>. 한국어 "남녀노소"의 어순을 그대로 옮기지 않는다.</span></p>
+
+<div class="box warn">
+<span class="label">분량 조정</span>
+<p>현재 <strong>16문장</strong>입니다. 요구 분량은 10~15개이므로, 제출 시 자신 없는 문장 1~2개를 빼거나 그대로 내도 됩니다. 빼야 한다면 <strong>2번·6번</strong>이 조사 용법 중복이 가장 적은 손실입니다.</p>
+</div>
+
+<h2>3부. 확인한 단어 정리</h2>
+
+<h3>조사</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th class="jp">조사</th><th>의미</th><th>주의점</th></tr></thead>
+<tbody>
+<tr><td class="jp">だけ</td><td>~만 (중립) / ~만큼</td><td>의미가 두 가지</td></tr>
+<tr><td class="jp">ばかり</td><td>~만 (부정적)</td><td>「～てばかり」 형태 주의</td></tr>
+<tr><td class="jp">さえ</td><td>~만 하면 / ~조차</td><td>「～さえ～ば」 조건</td></tr>
+<tr><td class="jp">しか</td><td>~밖에</td><td><strong>반드시 부정과 함께</strong></td></tr>
+<tr><td class="jp">も</td><td>~씩이나</td><td>수량 강조</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>한자어 — 그대로 옮기면 안 되는 것</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th>한국어</th><th class="jp">올바른 일본어</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td>길이 복잡하다</td><td class="jp">道が混(こ)んでいる</td><td>複雑 ✕</td></tr>
+<tr><td>단속</td><td class="jp">取(と)り締(し)まり</td><td>—</td></tr>
+<tr><td>(영화) 개봉</td><td class="jp">公開(こうかい)</td><td>—</td></tr>
+<tr><td>(봉투) 개봉</td><td class="jp">開封(かいふう)</td><td>밀폐된 것을 여는 느낌</td></tr>
+<tr><td>열정</td><td class="jp">情熱(じょうねつ)</td><td>熱情은 한자 순서가 반대</td></tr>
+<tr><td>영광</td><td class="jp">光栄(こうえい)</td><td>—</td></tr>
+<tr><td>흑백</td><td class="jp">白黒(しろくろ)</td><td>순서 반대</td></tr>
+<tr><td>인근 주민</td><td class="jp">近隣(きんりん)の住民</td><td>신문·뉴스 등 딱딱한 문체</td></tr>
+<tr><td>동서고금</td><td class="jp">古今東西(ここんとうざい)</td><td>—</td></tr>
+<tr><td>업그레이드</td><td class="jp">グレードアップ</td><td>アップグレード보다 흔함</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>사자성어 · 관용구</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th>한국어</th><th class="jp">일본어</th><th>읽기</th></tr></thead>
+<tbody>
+<tr><td>남녀노소</td><td class="jp">老若男女</td><td class="jp">ろうにゃくなんにょ</td></tr>
+<tr><td>출입금지</td><td class="jp">立入禁止</td><td class="jp">たちいりきんし</td></tr>
+<tr><td>관계자 외 출입금지</td><td class="jp">関係者以外立入禁止</td><td>—</td></tr>
+<tr><td>내숭 떨다</td><td class="jp">猫(ねこ)をかぶる</td><td>좋은 의미가 아니므로 사용 주의</td></tr>
+<tr><td>누구에게나</td><td class="jp">誰(だれ)にでも</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>지난 시간(월요일) 어휘 — 펫 맡기기 대화</h3>
+<p><span class="jp">飼(か)う</span> 기르다 / <span class="jp">餌(えさ)をやる</span> 먹이를 주다 / <span class="jp">掃除(そうじ)</span> 청소 / <span class="jp">鳥(とり)かご</span> 새장 / <span class="jp">水槽(すいそう)</span> 수조 / <span class="jp">昆虫(こんちゅう)</span> 곤충 / <span class="jp">預(あず)ける</span> 맡기다 ↔ <span class="jp">預(あず)かる</span> 맡다</p>
+<p class="term">▸ 사람에게는 <span class="jp">あげる</span>, 동물·식물에게는 <span class="jp">やる</span></p>
+
+<h2>4부. 질문 — 이런 표현도 괜찮은가요?</h2>
+<p class="term">교수님이 "이런 표현도 괜찮은가요? 하고 적어 주세요"라고 하신 부분입니다.</p>
+
+<div class="qa"><span class="q">Q1</span>「ラーメンばかり食べる」와「ラーメンだけ食べる」의 차이는 이해했습니다. 그렇다면 <strong>칭찬하는 맥락</strong>에서도 ばかり를 쓸 수 있나요? 예를 들어「彼はいい本ばかり読んでいます」가 자연스러운 문장인가요, 아니면 부정적으로 들리나요?</div>
+
+<div class="qa"><span class="q">Q2</span>「好きなだけ」처럼 だけ가 "~만큼"으로 쓰이는 경우와 "~만"으로 쓰이는 경우를 <strong>문장만 보고 구분하는 방법</strong>이 있나요? 접속 형태로 구분되는 건가요?</div>
+
+<div class="qa"><span class="q">Q3</span>「時間さえあれば」와「時間があれば」를 한국어로 옮기면 둘 다 "시간이 있으면"이 되는 것 같습니다. <strong>さえ가 들어갈 때만 생기는 뉘앙스</strong>를 어떻게 이해하면 좋을까요?</div>
+
+<div class="qa"><span class="q">Q4</span>「道が混んでいる」를 배웠는데, <strong>사람이 많아서 붐빈다</strong>고 할 때도 같은「混んでいる」를 쓰나요? 예:「電車が混んでいる」</div>
+
+<div class="qa"><span class="q">Q5</span>사자성어 중 한국과 일본이 <strong>같은 형태로 쓰는 것</strong>도 있나요? 차이 나는 것만 배웠는데, 그대로 통하는 것들도 정리해 두고 싶습니다.</div>
+
+<div class="box task">
+<span class="label">제출 전 확인</span>
+<ul class="check">
+<li>문장 수를 10~15개로 맞췄는가</li>
+<li>히라가나 읽기 표기를 확인했는가</li>
+<li>손글씨 제출이라면 한자 획순을 확인했는가</li>
+<li>질문 항목을 함께 적었는가</li>
+</ul>
+</div>
+</div>
+</body>
+</html>

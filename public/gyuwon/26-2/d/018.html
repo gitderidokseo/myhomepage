@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>노인복지론 3주차 셀프 퀴즈</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --warn-bg:#fdf7e7;--warn-line:#e6cf94;--warn-ink:#7a5b12;
+  --task-bg:#fdeeec;--task-line:#f0c0b8;--task-ink:#9b3a2a;
+  --key-bg:#eef3fb;--key-line:#c3d4ec;--key-ink:#28507f;
+  --ok-bg:#edf6ee;--ok-line:#b9d9bd;--ok-ink:#2c6b38;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --warn-bg:#2b2517;--warn-line:#5f5228;--warn-ink:#e4c97f;
+    --task-bg:#2e1d1a;--task-line:#5e332b;--task-ink:#f0a292;
+    --key-bg:#1b2230;--key-line:#31455f;--key-ink:#9dbde6;
+    --ok-bg:#1a2620;--ok-line:#33543c;--ok-ink:#8fd09b;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:28px}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin:0 0 6px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 10px;letter-spacing:-.02em;font-weight:750}
+.meta{font-size:.87rem;color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+.meta b{font-weight:600;color:var(--ink)}
+h2{font-size:1.22rem;margin:44px 0 14px;padding-left:13px;border-left:4px solid var(--accent);line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.02rem;margin:26px 0 8px;color:var(--accent-ink);font-weight:700}
+p{margin:0 0 13px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:7px}
+strong{font-weight:700}
+em{font-style:normal;background:var(--accent-soft);padding:1px 5px;border-radius:4px;font-weight:600}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em;background:var(--line-soft);padding:1px 5px;border-radius:4px}
+.howto{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:8px}
+.howto p:last-child{margin-bottom:0}
+.box{border-radius:10px;padding:16px 18px;margin:18px 0;border:1px solid}
+.box .label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 8px;display:block}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+.box.task{background:var(--task-bg);border-color:var(--task-line)}
+.box.task .label{color:var(--task-ink)}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+.box.warn .label{color:var(--warn-ink)}
+.box.key{background:var(--key-bg);border-color:var(--key-line)}
+.box.key .label{color:var(--key-ink)}
+
+/* 문항 */
+.item{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0}
+.item .num{display:inline-block;font-size:.72rem;letter-spacing:.1em;font-weight:700;color:#fff;background:var(--accent);border-radius:20px;padding:2px 11px;margin-bottom:9px}
+.item .stem{font-weight:700;margin:0 0 12px;line-height:1.65}
+.opts{list-style:none;padding-left:0;margin:0;counter-reset:opt}
+.opts li{padding-left:30px;position:relative;margin-bottom:9px;line-height:1.6}
+.opts li::before{counter-increment:opt;content:counter(opt);position:absolute;left:0;top:2px;width:20px;height:20px;line-height:20px;text-align:center;
+  font-size:.75rem;font-weight:700;color:var(--accent-ink);border:1.5px solid var(--accent-ink);border-radius:50%}
+blockquote{margin:0 0 12px;padding:10px 14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 6px 6px 0;font-weight:600}
+blockquote p{margin:0}
+.essay{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:16px 18px;margin:16px 0}
+.essay .num{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin-bottom:7px}
+.essay p:last-child{margin-bottom:0}
+
+/* 해설 토글 */
+details.key{margin:28px 0 0;border:2px solid var(--accent);border-radius:12px;background:var(--surface);overflow:hidden}
+details.key>summary{cursor:pointer;list-style:none;padding:16px 20px;font-weight:750;font-size:1.05rem;
+  background:var(--accent-soft);color:var(--accent-ink);user-select:none}
+details.key>summary::-webkit-details-marker{display:none}
+details.key>summary::before{content:"▶ ";font-size:.8em}
+details.key[open]>summary::before{content:"▼ "}
+details.key>summary:hover{filter:brightness(.97)}
+.keybody{padding:4px 20px 20px}
+.ans{background:var(--ok-bg);border:1px solid var(--ok-line);border-radius:10px;padding:14px 16px;margin:16px 0}
+.ans .label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--ok-ink);display:block;margin-bottom:8px}
+.sol{border-top:1px solid var(--line);padding-top:16px;margin-top:18px}
+.sol h4{font-size:1rem;margin:0 0 7px;font-weight:700}
+.sol h4 .badge{display:inline-block;font-size:.78rem;font-weight:700;color:var(--ok-ink);background:var(--ok-bg);
+  border:1px solid var(--ok-line);border-radius:20px;padding:1px 10px;margin-left:7px;vertical-align:1px}
+.sol p:last-child,.sol ul:last-child{margin-bottom:0}
+.model{background:var(--line-soft);border-radius:8px;padding:14px 16px;margin:12px 0;font-size:.95rem;line-height:1.85}
+.model .label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--faint);display:block;margin-bottom:7px}
+.model p:last-child{margin-bottom:0}
+
+.tablewrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem;white-space:nowrap}
+table.grid{min-width:0;text-align:center}
+table.grid th,table.grid td{text-align:center;padding:8px 6px;font-weight:700}
+table.grid td{font-size:1.05rem;color:var(--ok-ink)}
+.term{color:var(--faint);font-size:.9em;font-weight:400}
+footer.doc{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+footer.doc p{margin:0 0 5px}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.45rem}
+  h2{font-size:1.1rem}
+  .item,.keybody{padding-left:15px;padding-right:15px}
+}
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .wrap{padding:0;max-width:none}
+  h2{page-break-after:avoid}
+  .item,.box,.essay,.sol{page-break-inside:avoid}
+  details.key{border-width:1px}
+  details.key>summary::before{content:""}
+  details.key:not([open])>.keybody{display:block}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+<p class="eyebrow">26년 2학기 · 3주차</p>
+<h1>노년기의 신체적 건강 — 셀프 퀴즈</h1>
+<p class="meta">
+<span><b>범위</b> 3주차 온라인 강의</span>
+<span><b>구성</b> 객관식 14 + 서술형 3</span>
+<span><b>대상 수업</b> 9/16(수) 오프라인</span>
+</p>
+</header>
+
+<div class="howto">
+<p><strong>푸는 법</strong> — 아래 <strong>해설</strong>을 먼저 열지 마세요. 14문항을 다 풀고 → 채점 → <strong>틀린 것만</strong> 요약본에서 복습.</p>
+<p style="margin-bottom:0">서술형에는 <strong>채점 기준과 모범 답안 뼈대</strong>가 포함되어 있습니다.</p>
+</div>
+
+<h2>PART 1 · 객관식 14문항</h2>
+
+<div class="item">
+<span class="num">문항 1</span>
+<p class="stem">강의에서 제시한 <strong>정상적 노화의 4가지 특징</strong>에 해당하지 <strong>않는</strong> 것은?</p>
+<ol class="opts">
+<li>점진적이다 — 갑자기 일어나지 않는다</li>
+<li>보편적이다 — 정도 차이는 있으나 모든 사람에게 나타난다</li>
+<li>되돌릴 수 없다</li>
+<li>예방과 치료의 대상이 된다</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 2</span>
+<p class="stem">최영자 씨는 넘어지기 전 매일 30분씩 걸을 수 있었는데, 수술 후 6주 입원을 거치자 혼자 화장실에 가지 못하게 되었다. 이 현상을 설명하는 <strong>가장 적절한</strong> 개념은?</p>
+<ol class="opts">
+<li>복합이환 — 여러 질환이 동시에 있었기 때문</li>
+<li>예비 능력의 감소 — 평상시 기능은 유지되나 부하가 걸렸을 때 대응할 여력이 없다</li>
+<li>근감소증 — 악력이 18kg 미만으로 떨어졌기 때문</li>
+<li>다약제 복용 — 약물 상호작용이 누적되었기 때문</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 3</span>
+<p class="stem">노화와 질병을 구분하지 못할 때 생기는 <strong>두 방향의 오류</strong>와 그 결과가 바르게 연결된 것은?</p>
+<ol class="opts">
+<li>질병을 노화로 오인 → 과잉 의료화 / 노화를 질병으로 취급 → 치료 가능한 문제 방치</li>
+<li>질병을 노화로 오인 → 치료 가능한 문제 방치 / 노화를 질병으로 취급 → 불필요한 검사·처방</li>
+<li>두 오류 모두 결과적으로 과잉 의료화로 이어진다</li>
+<li>두 오류 모두 결과적으로 치료 가능한 문제의 방치로 이어진다</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 4</span>
+<p class="stem">"나이 들면 다 그렇다"는 말로 넘어가는 태도에 대해 강의가 특별히 지적한 것은?</p>
+<ol class="opts">
+<li>노인 당사자와 가족에게서만 나타나는 현상이다</li>
+<li>의학적으로는 대체로 정확한 판단이므로 실무상 문제가 크지 않다</li>
+<li>전문직 종사자에게서도 나타나며, 노년학에서는 이를 <strong>연령차별이 현장에서 작동하는 한 방식</strong>으로 본다</li>
+<li>과잉 의료화를 막아 주는 순기능이 있다</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 5</span>
+<p class="stem">클라이언트가 "늙어서 그런 것"이라고 말할 때, 강의가 제시한 <strong>실무 판별법</strong>으로 옳은 것은?</p>
+<ol class="opts">
+<li>연령대별 표준 기능 수치와 대조한다</li>
+<li>가족에게 같은 증상이 있었는지 확인한다</li>
+<li><strong>"언제부터 그러셨어요?"</strong>라고 묻는다 — 노화는 느리게 진행되므로, 최근 몇 달 사이의 뚜렷한 변화라면 질병·약물·환경의 문제일 가능성이 있다</li>
+<li>의료기관에 즉시 의뢰해 진단을 받게 한다</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 6</span>
+<p class="stem"><strong>성공적 노화</strong>(Rowe &amp; Kahn, 1997) 개념에 대한 비판으로 강의가 제시한 핵심 논지는?</p>
+<ol class="opts">
+<li>세 가지 요건이 서로 모순되어 동시에 충족할 수 없다</li>
+<li>노인 집단 내부의 이질성을 지나치게 강조한다</li>
+<li>세 요건을 모두 충족하는 노인은 소수이므로 나머지 다수가 "실패한 노화"로 밀려나는데, 건강은 생애에 걸친 사회경제적 조건의 축적물이므로 <strong>구조적 불평등을 개인 책임으로 돌릴 위험</strong>이 있다</li>
+<li>신체 기능만 다루고 심리적 관여를 다루지 않는다</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 7</span>
+<p class="stem">난청이 있는 노인과 면담할 때 <strong>목소리를 높이는 것</strong>이 권장되지 않는 이유는?</p>
+<ol class="opts">
+<li>노인이 모욕감을 느낄 수 있기 때문</li>
+<li>목소리를 높이면 자연스럽게 음(音)이 높아지는데, <strong>고주파 영역부터 손실</strong>되므로 오히려 더 알아듣기 어려워지기 때문</li>
+<li>주변 소음이 함께 증폭되기 때문</li>
+<li>큰 소리가 이명을 악화시키기 때문</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 8</span>
+<p class="stem">최영자 씨가 재활 치료를 받으러 가지 못한 이유에 대한 강의의 해석은?</p>
+<ol class="opts">
+<li>재활 의지가 저하된 우울 상태였기 때문</li>
+<li>장기요양 4등급으로는 재활 급여를 받을 수 없기 때문</li>
+<li><strong>이동수단의 문제</strong> — 의지의 문제가 아니다</li>
+<li>대퇴골 경부 골절의 특성상 재활 효과가 낮다고 판단했기 때문</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 9</span>
+<p class="stem">2023년 노인실태조사 기준, 한국 노인의 <strong>만성질환 보유 실태</strong>로 옳은 것은?</p>
+<ol class="opts">
+<li>평균 1.5개 / 3개 이상 20.1% / 없음 25.3%</li>
+<li>평균 2.2개 / 3개 이상 35.9% / 없음 13.9%</li>
+<li>평균 3.1개 / 3개 이상 52.4% / 없음 8.2%</li>
+<li>평균 2.2개 / 3개 이상 13.9% / 없음 35.9%</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 10</span>
+<p class="stem">다약제 복용과 관련해 <strong>사회복지사가 할 수 있는 일</strong>로 강의가 제시한 것은?</p>
+<ol class="opts">
+<li>중복 처방된 약의 복용을 중단하도록 권고한다</li>
+<li>처방을 조정할 권한은 없지만, 복용 중인 <strong>모든 약을 한자리에 모아 확인하고 그 목록을 의료진에게 전달</strong>한다</li>
+<li>약물 상호작용 데이터베이스를 조회해 위험 조합을 판정한다</li>
+<li>주치의를 한 명으로 지정하도록 제도적으로 강제한다</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 11</span>
+<p class="stem"><strong>노쇠(frailty)</strong>에 대한 설명으로 옳은 것은?</p>
+<ol class="opts">
+<li>골격근량 감소와 근력 저하가 함께 나타나는 상태로, 악력으로 진단한다</li>
+<li>여러 만성질환이 동시에 존재하는 상태를 가리킨다</li>
+<li>특정 질병이 없더라도 여러 생리 체계의 예비 능력이 전반적으로 감소해, 작은 부하에도 기능이 크게 무너지기 쉬운 <strong>질병 이전의 상태</strong>다</li>
+<li>낙상 이후에 나타나는 이차적 기능 저하를 가리킨다</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 12</span>
+<p class="stem">AWGS(아시아근감소증연구그룹)가 2019년 개정에서 <strong>'근감소증 가능성'</strong> 범주를 새로 만든 목적은?</p>
+<ol class="opts">
+<li>진단 기준을 엄격히 해 과잉 진단을 막기 위해</li>
+<li>근력 저하 또는 신체 수행능력 저하 중 하나만 있어도 해당되게 하여, <strong>정밀 장비가 없는 1차 의료·지역사회 현장에서 사용하고 생활습관 개입을 앞당기기</strong> 위해</li>
+<li>아시아인의 체격 차이를 반영해 악력 기준을 상향하기 위해</li>
+<li>약물 치료 대상자를 조기에 선별하기 위해</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 13</span>
+<p class="stem">낙상 통계에서 <strong>최근 1년 낙상 경험률은 7.2%(2020) → 5.6%(2023)로 줄었는데 추락 사망자는 전년보다 13.8% 늘었다.</strong> 강의가 제시한 해석은?</p>
+<ol class="opts">
+<li>낙상 예방 사업이 실패했음을 보여준다</li>
+<li>경험률 조사의 응답 편향이 커졌기 때문이다</li>
+<li>고령 인구, 특히 <strong>초고령 인구 자체가 늘고 있기 때문</strong> — 같은 비율이라도 모수가 커지면 절대수는 늘어난다</li>
+<li>낙상의 중증도가 높아졌기 때문이다</li>
+</ol>
+</div>
+
+<div class="item">
+<span class="num">문항 14</span>
+<p class="stem">ADL과 IADL에 관한 설명 중, 강의가 <strong>실천적으로 가장 중요</strong>하다고 강조한 것은?</p>
+<ol class="opts">
+<li>ADL이 IADL보다 먼저 손상되므로, ADL 항목의 변화를 먼저 확인해야 한다</li>
+<li><strong>IADL이 ADL보다 먼저 손상되므로</strong>, IADL의 초기 변화를 포착하면 훨씬 이른 지점에 개입할 수 있다</li>
+<li>두 척도는 손상 순서가 일정하지 않으므로 함께 평가해야만 의미가 있다</li>
+<li>IADL은 시설 입소자에게, ADL은 재가 노인에게 적용하는 척도다</li>
+</ol>
+</div>
+
+<h2>PART 2 · 서술형 3문항</h2>
+
+<div class="essay">
+<span class="num">서술형 1 · 배점 10</span>
+<p>최영자 씨 사례의 담당 사회복지사는 기록에 <strong>"골절은 치료되었으나 회복되지 않았습니다"</strong>라고 적었다. 이 기록이 뜻하는 바를 <strong>의료적 회복과 사회적 회복의 구분</strong>을 통해 설명하고, 이 사례에서 사회복지사가 개입할 수 있는 지점을 제시하시오.</p>
+</div>
+
+<div class="essay">
+<span class="num">서술형 2 · 배점 10</span>
+<p>사회복지 실천에서 <strong>정상적 노화와 질병을 구분하는 일</strong>이 왜 중요한지를, 구분에 실패했을 때 발생하는 두 방향의 오류와 실무 판별법을 들어 설명하시오.</p>
+</div>
+
+<div class="essay">
+<span class="num">서술형 3 · 배점 10</span>
+<p>근감소증과 폐렴은 모두 의학적 문제로 보이지만, 강의는 이 둘을 <strong>사회복지의 문제</strong>로 재규정한다. 그 논증을 재구성하고, 이것이 노인복지 실천에 주는 함의를 서술하시오.</p>
+</div>
+
+<details class="key">
+<summary>해설 보기 — 먼저 다 풀고 여세요</summary>
+<div class="keybody">
+
+<div class="ans">
+<span class="label">객관식 정답</span>
+<div class="tablewrap">
+<table class="grid">
+<thead><tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th></tr></thead>
+<tbody><tr><td>④</td><td>②</td><td>②</td><td>③</td><td>③</td><td>③</td><td>②</td><td>③</td><td>②</td><td>②</td><td>③</td><td>②</td><td>③</td><td>②</td></tr></tbody>
+</table>
+</div>
+</div>
+
+<div class="sol">
+<h4>1번<span class="badge">정답 ④</span></h4>
+<p><strong>"예방과 치료의 대상"은 질병의 속성</strong>입니다. 노화의 4특징은 <strong>점진적 · 보편적 · 비가역적 · 예비 능력의 감소</strong>.</p>
+<p>④를 노화의 특징으로 고르면, 이번 주 전체의 출발점인 <strong>노화 ≠ 질병</strong> 구분이 무너집니다.</p>
+</div>
+
+<div class="sol">
+<h4>2번<span class="badge">정답 ②</span></h4>
+<p>노화의 네 번째 특징인 <strong>예비 능력의 감소</strong>가 정답입니다. 평소에는 아무 문제가 드러나지 않다가 <strong>수술·감염 같은 부하가 가해지는 순간 기능이 급격히 무너지는 것</strong> — 이것이 노년기의 전형적 모습이고, 젊은 사람과 노인이 같은 감염병에 걸렸을 때 결과가 다른 이유이기도 합니다.</p>
+<p>①③④도 최 씨 사례에 실제로 등장하는 요소들이지만, "6주 만에 무너진 것"을 <strong>설명하는</strong> 개념은 예비 능력입니다. <strong>사례에 등장한다는 것과 그 현상을 설명한다는 것은 다릅니다.</strong></p>
+</div>
+
+<div class="sol">
+<h4>3번<span class="badge">정답 ②</span></h4>
+<p>방향과 결과를 <strong>짝지어</strong> 외워야 합니다.</p>
+<ul>
+<li><strong>질병 → 노화로 오인</strong>: "나이 들면 다 그렇다" → 백내장 · 난청 · 우울증 · 갑상선 기능 저하처럼 개입하면 상당히 회복되는 문제들이 <strong>방치</strong></li>
+<li><strong>노화 → 질병으로 취급</strong>: 노화의 모든 측면을 의학적 관리 대상으로 → 불필요한 검사·처방, <strong>과잉 의료화</strong></li>
+</ul>
+<p>①은 두 결과를 <strong>뒤집어 놓은 함정</strong>입니다. 가장 많이 걸립니다.</p>
+</div>
+
+<div class="sol">
+<h4>4번<span class="badge">정답 ③</span></h4>
+<p>강의가 한 번 더 힘을 준 대목입니다. 이 태도는 <strong>전문직 종사자에게서도 나타나며</strong>, 노년학에서는 <strong>에이지즘이 현장에서 작동하는 한 방식</strong>으로 봅니다. → <strong>11주차에서 재론.</strong></p>
+<p>②를 고르면 5번의 판별법과 정면으로 충돌합니다.</p>
+</div>
+
+<div class="sol">
+<h4>5번<span class="badge">정답 ③</span></h4>
+<p><strong>"노화는 느리게 진행된다"</strong> 하나만 기억하면 따라 나오는 판별법입니다.</p>
+<blockquote><p>"예전부터 그랬다"와 "몇 달 사이에 그랬다"는 <strong>완전히 다른 답</strong>이고, 후자라면 반드시 다른 원인이 있습니다.</p></blockquote>
+<p>이 질문 하나가 방치될 뻔한 문제를 찾아내는 경우가 실제로 많다고 강의는 말합니다. <strong>비용이 0인데 효과가 큰 실무 기술</strong>이라 시험·현장 모두에서 쓰입니다.</p>
+</div>
+
+<div class="sol">
+<h4>6번<span class="badge">정답 ③</span></h4>
+<p>비판의 핵심은 <strong>"소수만 충족 → 나머지는 실패로 규정 → 구조적 불평등의 개인화"</strong> 3단 논법입니다.</p>
+<p>②는 <strong>공헌을 비판으로 뒤집어 놓은 오답</strong>입니다. 이질성에 주목하게 만든 것은 이 개념의 <strong>공헌</strong>이에요.</p>
+<p>강의의 대안적 목표 설정을 함께 외울 것: 실천의 목표는 '성공'이 아니라 <em>"그 사람이 가진 조건에서 가능한 최선의 기능과 삶의 질"</em>.</p>
+</div>
+
+<div class="sol">
+<h4>7번<span class="badge">정답 ②</span></h4>
+<p><strong>고주파 영역부터 손실</strong>된다는 사실과 <strong>목소리를 높이면 음이 높아진다</strong>는 사실을 연결해야 답이 나옵니다.</p>
+<ul>
+<li><strong>정답 행동</strong>: 낮은 음으로 · 천천히 · 문장을 짧게 끊어서. 소음이 적은 공간에서 얼굴을 마주보고.</li>
+<li>자음이 잘 들리지 않아 <strong>"소리는 들리는데 말은 못 알아듣는" 상태</strong>가 된다는 점, 그리고 그것이 <strong>되묻기 → 대화 회피 → 사회적 고립과 우울</strong>로 이어지는 경로까지 함께 기억하세요.</li>
+</ul>
+</div>
+
+<div class="sol">
+<h4>8번<span class="badge">정답 ③</span></h4>
+<p>강의가 <strong>의지의 문제가 아니다</strong>라고 명시적으로 못 박은 대목입니다. 남편이 운전을 그만둔 뒤로 병원에 갈 방법이 없어 두 달째 못 가고 있는 상황이죠.</p>
+<p>이 문항의 진짜 목적은 <strong>이동 능력 = 다른 모든 활동의 전제 조건</strong>이라는 명제를 확인하는 것입니다: 걷지 못하면 <strong>장을 볼 수 없고, 병원에 갈 수 없고, 사람을 만날 수 없다.</strong></p>
+<p>①을 고르는 것은 <strong>구조의 문제를 개인의 동기 문제로 읽는 것</strong> — 6번 비판과 같은 실수입니다.</p>
+</div>
+
+<div class="sol">
+<h4>9번<span class="badge">정답 ②</span></h4>
+<p><strong>평균 2.2개 / 3개 이상 35.9% / 없음 13.9%</strong> → 노인의 약 <strong>3분의 1</strong>이 세 가지 이상의 만성질환을 안고 있습니다.</p>
+<p>④는 <strong>35.9%와 13.9%를 맞바꿔 놓은 함정</strong>입니다. 둘 중 큰 값이 '3개 이상'이라는 점을 기준으로 잡으면 헷갈리지 않습니다.</p>
+<p>복합이환이 만드는 진짜 문제는 개수가 아니라 <strong>여러 병원을 오감 / 한 질환의 치료가 다른 질환을 악화 / 진료과 지시의 충돌</strong>입니다.</p>
+</div>
+
+<div class="sol">
+<h4>10번<span class="badge">정답 ②</span></h4>
+<p><strong>권한의 경계를 정확히 아는 것</strong>이 이 문항의 핵심입니다. 처방 조정 권한은 <strong>없습니다</strong>. 그러나 <strong>흩어진 처방을 통합해서 보는 사람이 아무도 없는 상황</strong>이 흔하고, 사회복지사가 그 역할을 맡는 것이 결정적 차이를 만듭니다.</p>
+<p>①③은 <strong>권한 밖</strong>이라 오답. 시험에서 "사회복지사가 할 수 있는 일"을 물을 때는 <strong>할 수 있는 일과 없는 일을 함께 쓰는 답안</strong>이 가장 안전합니다.</p>
+<p>최 씨 사례에서 수술 전 상담 때 의사가 "이 조합이면 밤에 어지러울 수 있었겠다"고 한 말을 <strong>그때 처음 들었다</strong>는 대목이 이 개입 지점의 근거입니다.</p>
+</div>
+
+<div class="sol">
+<h4>11번<span class="badge">정답 ③</span></h4>
+<p><strong>노쇠의 핵심 표지는 "질병 이전"과 "전신"</strong> 두 가지입니다.</p>
+<ul>
+<li>①은 <strong>근감소증</strong>의 정의 → 12번과 짝지어 구분하세요.</li>
+<li>②는 <strong>복합이환</strong>의 정의.</li>
+</ul>
+<p><strong>Fried(2001)</strong>가 미국 CHS 자료로 노쇠를 <strong>하나의 표현형(phenotype)</strong>으로 정의하고, 낙상·장애·입원·사망 위험을 높인다는 결과를 얻었습니다.</p>
+<p>실천적 함의: 노쇠한 노인은 <strong>진단명으로는 문제없어 보이지만</strong> 감염·수술·사별 <strong>한 번에 급격히 무너집니다.</strong> = <em>"아직 아프지 않지만 무너지기 쉬운 상태"</em></p>
+</div>
+
+<div class="sol">
+<h4>12번<span class="badge">정답 ②</span></h4>
+<p>목적은 <strong>완화된 기준을 만들어 개입 시점을 앞당기는 것</strong>입니다. 정밀 장비가 없는 <strong>1차 의료·지역사회 현장</strong>에서 쓰라고 만든 범주예요.</p>
+<p>①③④는 모두 <strong>방향이 반대</strong>입니다. 특히 ④ — 이 합의가 제시한 치료의 중심 수단은 <strong>약물이 아니라 운동과 영양</strong>입니다.</p>
+<p>함께 외울 숫자: 악력 기준 <strong>남 28kg / 여 18kg 미만</strong>.</p>
+</div>
+
+<div class="sol">
+<h4>13번<span class="badge">정답 ③</span></h4>
+<p><strong>"같은 비율이라도 모수가 커지면 절대수는 늘어난다."</strong></p>
+<p>이 사고는 <strong>2주차 노년부양비 지표의 한계</strong>와 정확히 같은 결입니다 — 지표 하나를 그대로 읽지 말고 <strong>분모를 보라</strong>는 것. 두 주차를 잇는 문제로 나오기 좋습니다.</p>
+<p>함께 외울 숫자: 80세 이상 낙상 사망률 <strong>45.0명</strong>으로, <strong>자살(53.3명) 다음으로 높은 외인사 원인</strong>.</p>
+</div>
+
+<div class="sol">
+<h4>14번<span class="badge">정답 ②</span></h4>
+<p><strong>IADL이 먼저 손상됩니다.</strong></p>
+<blockquote><p>혼자 <strong>버스를 타지 못하게</strong> 되는 것이 혼자 <strong>옷을 입지 못하게</strong> 되는 것보다 <strong>먼저</strong>다.</p></blockquote>
+<p>→ IADL의 초기 변화를 포착하면 <strong>훨씬 이른 지점에 개입</strong>할 수 있고, 반대로 <strong>ADL 손상이 확인된 시점은 이미 상당히 진행된 상태</strong>입니다.</p>
+<p>①은 <strong>순서를 뒤집은 함정</strong> — 가장 많이 틀립니다.</p>
+<p>항목을 헷갈리지 않는 법: <strong>ADL = 내 몸에 하는 일</strong>(옷 입기·세수·목욕·식사·이동·화장실) / <strong>IADL = 세상과 하는 일</strong>(전화·장보기·식사 준비·청소·약 복용).</p>
+</div>
+
+<h3 style="margin-top:34px">서술형 채점 기준</h3>
+
+<div class="sol">
+<h4>서술형 1 — "치료되었으나 회복되지 않았다" <span class="term">(10점)</span></h4>
+<div class="tablewrap">
+<table>
+<thead><tr><th>요소</th><th>배점</th></tr></thead>
+<tbody>
+<tr><td>의료적 회복의 내용 — 뼈가 붙고 수술 부위가 아묾 (<strong>달성됨</strong>)</td><td>1점</td></tr>
+<tr><td>사회적 회복의 미달성 — 걷지 못함 · 외출 안 함 · 이웃과 단절 · 재활 중단</td><td>2점</td></tr>
+<tr><td><strong>"신체 손상은 치료되었으나 사람의 생활은 복구되지 않았다"</strong> 취지 명시</td><td>2점</td></tr>
+<tr><td>개입 지점 5가지 중 <strong>3개 이상</strong> 제시 (이동 / 주거 / 약물 / 관계·활동 / 돌봄자)</td><td>3점</td></tr>
+<tr><td>남편을 <strong>또 다른 클라이언트</strong>로 규정</td><td>1점</td></tr>
+<tr><td>기대수명–건강수명 <strong>18년 격차</strong>와 연결</td><td>1점</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="model">
+<span class="label">모범 답안 뼈대</span>
+<p>의료적 관점에서 최 씨의 골절은 해결되었다. 뼈는 붙었고 수술 부위는 아물었다. 그러나 최 씨는 걷지 못하고, 집 밖에 나가지 않으며, 이웃과 연락이 끊겼고, 재활을 받지 못하고 있다. 즉 <strong>신체 손상은 치료되었으나 사람의 생활은 복구되지 않았다.</strong> 의료적 회복이 손상된 신체를 대상으로 하고 의사·물리치료사가 담당한다면, 사회적 회복은 이동·관계·역할을 포함한 생활 전체를 대상으로 하며 그 요인들은 <strong>대부분 의료 바깥에 있다.</strong></p>
+<p>이 사례에서 사회복지사가 개입할 지점은 다섯이다. ① <strong>이동</strong> — 재활을 받지 못하는 이유가 병원까지 갈 방법이 없기 때문이므로 지역의 이동지원 서비스를 연계한다. ② <strong>주거</strong> — 문턱 제거, 욕실 손잡이 설치, 야간 조명 확보는 낙상을 막는 직접적 조치이며 장기요양보험 복지용구 급여나 지자체 주거환경 개선 사업으로 검토할 수 있다. ③ <strong>약물</strong> — 세 병원에 흩어진 처방을 통합해 확인하고 의료진에게 전달한다. ④ <strong>관계와 활동</strong> — 사회적 접속의 단절은 신체 문제의 결과이면서 동시에 악화를 촉진하는 원인이다. ⑤ <strong>남편</strong> — 82세에 관절염이 있고 최근 말수가 줄어든 이 사람은 <strong>이 사례의 또 다른 클라이언트</strong>이며, 돌봄자의 소진과 우울은 돌봄받는 사람의 상태에 직접 영향을 미친다.</p>
+<p>기대수명 83.7년과 유병기간 제외 기대수명 65.5년 사이의 <strong>18년 격차</strong>가 통계로 표현된 간극이라면, 최 씨의 다섯 달은 그 격차 안에서 한 사람이 실제로 겪는 일이다. <strong>이 간극이 노인복지가 일하는 자리다.</strong></p>
+</div>
+
+<div class="box warn">
+<span class="label">감점 포인트</span>
+<p>"의료진이 소홀했다"는 식으로 쓰면 감점. 강의는 수술이 <strong>성공했다</strong>고 분명히 말합니다. 요지는 과실이 아니라 <strong>역할의 경계</strong>입니다.</p>
+</div>
+</div>
+
+<div class="sol">
+<h4>서술형 2 — 노화와 질병의 구분 <span class="term">(10점)</span></h4>
+<div class="tablewrap">
+<table>
+<thead><tr><th>요소</th><th>배점</th></tr></thead>
+<tbody>
+<tr><td>노화·질병의 정의 구분 (생리적 변화 / 병리적 과정, 예방·치료 대상 여부)</td><td>2점</td></tr>
+<tr><td>오류 ① 질병 → 노화 오인 + 구체적 예시 (백내장·난청·우울증·갑상선 기능 저하)</td><td>2점</td></tr>
+<tr><td>오류 ② 노화 → 질병 취급 + 결과 (불필요한 검사·처방, <strong>과잉 의료화</strong>)</td><td>2점</td></tr>
+<tr><td>실무 판별법 — <strong>"노화는 느리게 진행된다"</strong> + <strong>"언제부터 그러셨어요?"</strong></td><td>2점</td></tr>
+<tr><td>①의 태도가 <strong>전문직에게서도 나타나며 에이지즘의 한 방식</strong>임을 명시</td><td>1점</td></tr>
+<tr><td>예비 능력 개념 또는 최 씨 사례로 구체화</td><td>1점</td></tr>
+</tbody>
+</table>
+</div>
+<blockquote><p>핵심 문장 — <strong>"늙어서 그렇다는 말을 그대로 받지 마십시오. 최근에 생긴 변화는 노화가 아닐 가능성이 높습니다."</strong></p></blockquote>
+<div class="box warn">
+<span class="label">감점 포인트</span>
+<p>오류를 <strong>한 방향만</strong> 쓰면 최대 절반입니다. 방치와 과잉 의료화는 <strong>양쪽 다</strong> 오류라는 점이 이 문항의 뼈대예요.</p>
+</div>
+</div>
+
+<div class="sol">
+<h4>서술형 3 — 왜 사회복지의 문제인가 <span class="term">(10점)</span></h4>
+<div class="tablewrap">
+<table>
+<thead><tr><th>요소</th><th>배점</th></tr></thead>
+<tbody>
+<tr><td><strong>근감소증</strong> — 대응의 중심 수단이 <strong>약물이 아니라 운동과 영양</strong></td><td>2점</td></tr>
+<tr><td>운동·식사는 <strong>의료기관이 아니라 생활의 공간</strong>에서 이루어짐</td><td>1점</td></tr>
+<tr><td>그 가능 여부가 <strong>소득 · 주거 · 관계 · 지역자원</strong>의 문제임</td><td>2점</td></tr>
+<tr><td><strong>폐렴</strong> — 독립적 사건이 아니라 <strong>삼킴 기능 저하 + 영양 악화 + 활동 감소</strong>의 누적 결과</td><td>2점</td></tr>
+<tr><td>물어야 할 세 질문 (음식의 형태 / 식사를 도울 사람 / 구강 관리) → <strong>돌봄의 영역</strong></td><td>2점</td></tr>
+<tr><td>80세 이상 사망원인 <strong>2위(11.8%)</strong>가 <strong>돌봄으로 상당 부분 예방 가능</strong>하다는 결론</td><td>1점</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="model">
+<span class="label">모범 답안 뼈대</span>
+<p>근감소증에 대한 주된 대응은 약물이 아니라 <strong>운동과 영양</strong>이다. 그런데 운동과 식사는 의료기관이 아니라 <strong>생활의 공간</strong>에서 이루어지며, 혼자 사는 노인이 규칙적으로 움직이고 제대로 먹을 수 있는가는 결국 <strong>소득과 주거와 관계와 지역자원의 문제</strong>다. 따라서 근감소증 예방은 상당 부분 사회복지의 영역이다.</p>
+<p>폐렴도 마찬가지다. 폐렴은 그 자체로 독립적인 사건이라기보다 <strong>삼킴 기능 저하, 영양 상태 악화, 활동 감소가 누적된 결과</strong>로 발생하는 경우가 많다. 그렇다면 물어야 할 것은 <strong>삼킴 기능이 떨어진 노인에게 어떤 형태의 음식이 제공되는가, 식사를 도와줄 사람이 있는가, 구강 관리가 되고 있는가</strong>이며, 이 항목들은 전부 의료가 아니라 <strong>돌봄의 영역</strong>이다. 폐렴이 80세 이상 사망원인 2위(11.8%)라는 사실은, <strong>사망원인 통계의 두 번째 자리에 있는 것이 돌봄으로 상당 부분 예방 가능한 문제</strong>임을 뜻한다.</p>
+<p>함의는 두 가지다. 첫째, 노인의 건강 문제를 의료의 영역과 돌봄의 영역으로 나누어 볼 수 있어야 <strong>사회복지사의 개입 지점이 보인다.</strong> 둘째, 생활 조건을 다루는 일이 곧 <strong>사망 위험을 낮추는 일</strong>이 되므로, 돌봄은 의료의 보조가 아니라 독립적인 예방 수단이다.</p>
+</div>
+
+<div class="box key">
+<span class="label">가점 요소</span>
+<ul>
+<li>2부의 소화기 변화(씹고 삼키는 기능 약화 → 식사량 감소 → 영양 부족 → 근육량 감소)가 4부의 폐렴으로 <strong>이어지는 구조</strong>를 명시</li>
+<li>70대 → 80세 이상에서 <strong>암 35.3% → 16.3%, 폐렴 2위 등장</strong>이라는 사망원인 구조 변화를 근거로 제시</li>
+<li>전기 고령기는 <strong>특정 질환의 치료</strong>, 후기 고령기는 <strong>감염 취약성·인지 기능·전반적 기능 소실</strong>이 중심이라는 대비</li>
+</ul>
+</div>
+</div>
+
+<h3 style="margin-top:34px">자가 진단</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th>맞은 개수</th><th>다음 할 일</th></tr></thead>
+<tbody>
+<tr><td><strong>13~14</strong></td><td><code>노인복지론03_한장요약.html</code>만 수업 직전에 훑고 가면 충분</td></tr>
+<tr><td><strong>9~12</strong></td><td>틀린 문항의 해당 절만 <code>노인복지론03-준비.html</code>에서 다시 읽기</td></tr>
+<tr><td><strong>8 이하</strong></td><td><code>노인복지론03-개요.md</code>를 처음부터 한 번 읽고 재도전</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="box task">
+<span class="label">가장 많이 틀리는 4문항</span>
+<ul>
+<li><strong>3번</strong> — 두 오류의 결과를 뒤집음</li>
+<li><strong>9번</strong> — 35.9% ↔ 13.9% 맞바꿈</li>
+<li><strong>11번</strong> — 노쇠 ↔ 근감소증 ↔ 복합이환 혼동</li>
+<li><strong>14번</strong> — ADL / IADL 손상 순서 뒤집음</li>
+</ul>
+</div>
+
+</div>
+</details>
+
+<footer class="doc">
+<p>이 퀴즈는 3주차 강의 전사본과 교재 <code>노인복지론_제3장_노년기신체적건강.pdf</code>를 바탕으로 작성했습니다.</p>
+<p><strong>모든 수치는 교재와 대조해 확인했습니다.</strong></p>
+<p>작성일 2026-09-14 · 대상 수업 9월 16일(수) 16:30–17:45, 새천년관 7309</p>
+</footer>
+
+</div>
+</body>
+</html>

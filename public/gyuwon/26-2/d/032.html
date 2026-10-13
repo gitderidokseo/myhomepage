@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>정신건강과 자기돌봄 0908-2 정리</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --warn-bg:#fdf7e7;--warn-line:#e6cf94;--warn-ink:#7a5b12;
+  --task-bg:#fdeeec;--task-line:#f0c0b8;--task-ink:#9b3a2a;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --warn-bg:#2b2517;--warn-line:#5f5228;--warn-ink:#e4c97f;
+    --task-bg:#2e1d1a;--task-line:#5e332b;--task-ink:#f0a292;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+header.doc{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:32px}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700;margin:0 0 6px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 10px;letter-spacing:-.02em;font-weight:750}
+.meta{font-size:.87rem;color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+.meta b{font-weight:600;color:var(--ink)}
+h2{font-size:1.22rem;margin:42px 0 14px;padding-left:13px;border-left:4px solid var(--accent);line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.02rem;margin:26px 0 8px;color:var(--accent-ink);font-weight:700}
+p{margin:0 0 13px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:normal;background:var(--accent-soft);padding:1px 5px;border-radius:4px;font-weight:600}
+.tldr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:8px}
+.tldr h2{margin-top:0;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:0;padding:0;color:var(--faint)}
+.tldr ol{margin-bottom:0;padding-left:20px}
+.tldr li{margin-bottom:9px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+.box{border-radius:10px;padding:16px 18px;margin:18px 0;border:1px solid}
+.box .label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 8px;display:block}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box.task{background:var(--task-bg);border-color:var(--task-line)}
+.box.task .label{color:var(--task-ink)}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+.box.warn .label{color:var(--warn-ink)}
+.tablewrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem;white-space:nowrap}
+td:first-child{font-weight:600;white-space:nowrap}
+.jp{font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif}
+.term{color:var(--faint);font-size:.9em;font-weight:400}
+footer.doc{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--faint)}
+footer.doc p{margin:0 0 5px}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.45rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{padding:0;max-width:none}
+  h2{page-break-after:avoid}
+  .box,.card,.tldr{page-break-inside:avoid}
+}
+:root{--accent:#1f5fbf;--accent-ink:#1f5fbf;--accent-soft:#e9f1fc}
+@media (prefers-color-scheme:dark){:root{--accent:#7cb2f5;--accent-ink:#7cb2f5;--accent-soft:#182433}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="doc">
+<p class="eyebrow">26년 2학기 · 2주차 (2/3교시)</p>
+<h1>정신건강과 자기돌봄 — 9월 8일 ②</h1>
+<p class="meta"><span><b>주제</b> 적응과 부적응 / 부적응 판단의 4가지 기준 / 오감 글쓰기</span><span><b>녹음</b> 55분</span></p>
+</header>
+
+<div class="tldr">
+<h2>한눈에 보기</h2>
+<ol>
+<li><strong>적응 = 환경에 맞춰 변화하는 것 + 살아남는 것.</strong> 진화·생물학에서 온 개념이다.</li>
+<li><strong>부적응을 판단하는 기준은 4가지</strong> — 통계적 / 규범적 / 주관적 고통 / 역기능적. <strong>어느 하나만으로 판단하면 안 된다.</strong></li>
+<li><strong>정신건강이 실현된 첫 번째 수준은 신체 감각적 수준</strong> — 활기차고 상쾌한 삶.</li>
+<li><strong>오감 글쓰기 활동</strong> — 감각 경험의 즐거움을 충분히 누리는 것도 정신건강의 중요한 측면.</li>
+</ol>
+</div>
+
+<h2>1. 적응(Adaptation)이란</h2>
+<div class="card">
+<p><strong>사람이 살아가며 만나는 다양한 환경에 조금씩 맞춰 변화해 가고, 동시에 살아남는 것.</strong></p>
+<p>핵심 두 가지: <strong>① 환경에 맞추어 변화한다 ② 살아남는다</strong></p>
+<p>매우 생물학적·진화적인 관점의 용어다. 진화심리학이나 생물학에서는 "결국 살아남는 것과 번식하는 것이 중요하다"고 말하기도 한다.</p>
+<p><strong>예:</strong> 선인장이 사막에서 살아남기 위해 수분 손실을 최소화하는 방향으로 잎을 가시 모양으로 바꾼 것.</p>
+</div>
+<p>인간의 경우 — 주어진 환경에 맞춰 자신의 성향을 변화시키거나, 선호하지 않더라도 집단이 선호하는 태도·가치관을 한번 고려해 보는 식의 노력을 한다.</p>
+
+<h3>적응과 정신건강의 관계</h3>
+<p>정신건강은 <strong>이 사람이 적응을 잘하고 있는지</strong>를 기준으로 판단하는 경우가 많다.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th></th><th>적응</th><th>부적응</th></tr></thead>
+<tbody>
+<tr><td>정의</td><td>원하는 것을 추구하면서도 지금 환경에서 나름대로 잘 변화하고 있음</td><td>환경이나 조건에 맞추어 변화하지 못함</td></tr>
+<tr><td>예시</td><td>내향적이지만 회식에 나가고 아침에 스몰토크를 하는 데 큰 문제가 없다</td><td>내 성향이 너무 강하거나 환경이 너무 안 맞아 생존이 어려움</td></tr>
+<tr><td>평가</td><td>정신건강 측면에서 바람직한 방향</td><td><strong>비정상적인 상태</strong>라고 부름</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>부적응 행동으로 나타나는 것들</h3>
+<ol>
+<li><strong>근심 걱정이 많아진다</strong></li>
+<li><strong>신체적 질병이 나타난다</strong> — 소화가 안 되거나 잠을 잘 못 자는 등</li>
+<li><strong>사회적 준거에서 유리된 행동</strong> — 수업 시간에 잠을 잔다, 9시 출근인데 계속 지각한다</li>
+<li><strong>기능상의 비효율성</strong> — 여기서 '기능'은 <strong>역량</strong>으로 이해하면 된다. 일 처리 속도가 느려지거나 기억을 잘 못하게 되는 것</li>
+</ol>
+<p class="term">※ 이런 행동이 나타났다고 해서 곧바로 "부적응 상태"라고 하지는 않는다. 아래 여러 기준을 함께 본다.</p>
+
+<h2>2. 부적응 판단의 4가지 기준 <span class="term">— 핵심 출제 포인트</span></h2>
+
+<h3>① 통계적 기준</h3>
+<p><strong>평균에서 벗어났는가.</strong> 가장 쉽게 쓰이는 기준.</p>
+<ul>
+<li>사람들은 평균을 가장 괜찮은 가치라고 생각하는 경향이 있다 (사실 정답은 아닐 수 있다)</li>
+<li>측정 예: 수면 시간, 지각·결석 횟수, 음주량, IQ 검사 등</li>
+<li>보통 <strong>평균에서 표준편차만큼 벗어나면</strong> 통계적으로 아웃라이어(outlier)로 본다</li>
+<li><strong>한계</strong>: 평균을 벗어났다고 항상 문제인 것은 아니다. 기발한 생각을 하는 사람은 평균적이지 않은 반응을 보일 때가 많다</li>
+</ul>
+
+<h3>② 규범적 기준</h3>
+<p><strong>사회가 정한 기준(규범)을 얼마나 따르는가.</strong></p>
+<ul>
+<li>여러 사람이 볼 때 사회적 기준에서 너무 벗어나는 행동을 했다면 부적응으로 본다</li>
+<li><strong>한계</strong>: 사회적 규준은 <strong>시대와 문화에 따라 달라진다.</strong> 과거에는 남자가 귀걸이를 하거나 여자가 머리를 아주 짧게 자르면 부적응으로 여겼지만, 지금은 그런 생각이 옅어졌다</li>
+<li>그럼에도 쓰이는 이유: 대다수가 정해 놓은 약속을 따르면 큰 문제 없이 산다고 보기 때문</li>
+</ul>
+
+<h3>③ 주관적 고통 기준</h3>
+<p><strong>본인이 "나는 지금 힘들다"고 느끼는가.</strong></p>
+<div class="box">
+<span class="label">앞의 두 기준과 결정적으로 다른 점</span>
+<p>①②는 <strong>다른 관찰자가 판단</strong>한다. ③은 <strong>개인의 관점을 중요시</strong>한다.</p>
+<p>통계적으로 문제가 없고 사회적 규준을 벗어나는 행동을 하지 않아도, 본인이 <strong>"저는 지금 너무 힘든 상황입니다"</strong>라고 말하면 부적응으로 볼 수 있다.</p>
+</div>
+<p><strong>사례 — 경희 씨(30대 중반)</strong>: 결혼생활 8년째 순조롭고 남편도 안정적, 친구 관계도 유지. 그러던 중 딸이 엘리베이터에서 성추행을 당했다. 즉시 경찰에 알렸고 가해자는 구속, 딸은 정신과 치료 중이며 예후도 좋다. <strong>그러나</strong> 경희 씨 본인은 "딸이 두려움에 떨 때 도움이 되지 못했다"고 끊임없이 자책했고 최근 우울감이 높아졌다.<br>→ 통계적·규범적으로 두드러지는 것이 없지만, <strong>주관적으로 일상생활을 예전처럼 유지하기 힘들다면 부적응</strong>으로 본다.</p>
+<p><strong>한계</strong>: 이것만으로도 판단할 수 없다. 예를 들어 "나는 재림 예수다"라고 진심으로 믿는 사람은 <strong>주관적 고통이 전혀 없을 수 있다.</strong></p>
+
+<h3>④ 역기능적 기준</h3>
+<p><strong>얼마나 잘 기능하고 있는가</strong> — 여기서 '역기능'은 <strong>문제</strong>로 이해하면 된다.</p>
+<ul>
+<li><strong>대인관계 역기능</strong>: 친밀한 관계를 형성하지 못하거나, 조금만 친해지면 문제가 생기거나, 타인에게 심각한 거부감을 초래하는 경우</li>
+<li><strong>직업적 역기능</strong>: 자신의 사회적 지위에 적합한 일을 안정적으로 해내지 못하는 경우<br><span class="term">(교수님의 자기 예시: 강의 시간에 늦거나 준비를 안 해 오는 경우 — 주관적으로 어렵지 않고 통계적으로 문제없어도 기능에서 문제가 드러난다)</span></li>
+</ul>
+
+<div class="box warn">
+<span class="label">종합 원칙</span>
+<p><strong>네 기준 중 어느 하나만으로 "적응했다 / 부적응했다"를 말할 수 없다.</strong></p>
+<p>정신적으로 건강한지 아닌지를 한 번에 판단할 수 있는 방법은 사실상 <strong>없으며</strong>, 매우 많은 것을 고려해서 건강 상태를 논하게 된다.</p>
+</div>
+
+<h2>3. 정신건강이 실현된 모습 — 수준 1: 신체 감각적 수준</h2>
+<p><strong>활기차고 상쾌한 삶.</strong> 인류 역사에서 가장 오래 논의되어 온 수준이다.</p>
+<ul>
+<li>신체 기관들의 기능이 원활하다 — 잘 자고 잘 먹고 소화가 잘되고 화장실을 잘 간다</li>
+<li>에너지가 넘친다</li>
+<li><strong>감각 경험의 즐거움을 충분히 누린다</strong></li>
+</ul>
+<div class="box">
+<span class="label">주의 — 쾌락과의 경계</span>
+<p>이 수준만 강조하면 <strong>쾌락</strong>과 닮아지게 되어 문제가 있다는 입장이 많다.</p>
+<p>다만 그리스의 쾌락주의나 동양의 <strong>풍류</strong> 사상은 기본적으로 신체 감각적 수준의 기쁨을 추구하는 것을 정신적으로 건강한 것으로 본다.</p>
+</div>
+
+<h2>4. 활동 — 오감(五感) 글쓰기</h2>
+<p><strong>오감 = 시각 · 청각 · 촉각 · 후각 · 미각.</strong> 이것을 하나하나 잘 느낄 수 있는 것이 정신적으로 건강하다는 것을 의미한다.</p>
+
+<div class="card">
+<p><strong>이 활동의 유래 — 성프란시스대학 사례</strong></p>
+<p>성공회 재단이 운영하는 <strong>다시서기센터</strong>는 노숙인의 자활·재활을 돕는다(서울역 인근 아웃리치, 배식, 인문학 교육 등). 그중 <strong>성프란시스대학</strong>은 노숙 경험이 있는 분들을 대상으로 1년짜리 인문학 강의를 운영한다.</p>
+<p>이곳의 글쓰기 담당 선생님이 오감 글쓰기를 하는 이유: 수강생들을 관찰해 보니 <strong>감각이 무뎌져 있다</strong>는 것을 발견했기 때문. 여름에 바닷가에 가도 뛰어들기보다 에어컨 밑에서 쉬는 걸 더 좋아하고, 맛있는 걸 먹어도 맛있다고 느끼지 못하고, 아름다운 걸 보고도 아름답다고 느끼지 못한다는 것. 그래서 <strong>오감을 깨워 주는 글쓰기</strong>를 한다고 했다.</p>
+<p>교수님도 그 무렵 스스로 해 보며 "평소에 오감을 느끼며 살기보다 바쁘게 지나갈 때가 많다"는 것을 깨달았다고 한다.</p>
+</div>
+
+<h3>과제 내용</h3>
+<p><strong>지난 한두 주간 보았거나 먹었거나 향을 맡았거나 만졌거나 들었던 것 중 가장 좋았던 것 한 가지</strong>에 대해 쓴다.</p>
+<ul>
+<li>그 대상을 <strong>제목</strong>으로 쓰고, <strong>감각에 집중</strong>해서 서술한다</li>
+<li>예: 맛있게 먹은 케이크 → 어떤 맛이었고 어떤 촉감이었고 왜 맛있었는지</li>
+<li><strong>기명</strong>(이름을 쓰는) 페이지에 작성 → 조별로 나누고 제출</li>
+<li><strong>이 오감 글쓰기는 평가에 들어간다</strong> — 수업 중 활동에 참여했는지 여부로</li>
+</ul>
+
+<h3>조별 공유에서 나온 사례</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th>감각</th><th>사례</th></tr></thead>
+<tbody>
+<tr><td>미각</td><td>바쁜 주말 알바 중 사장님이 입에 넣어 준 마라탕 / 다리를 다쳐 누워 있다 시킨 아이스박스와 오레오 — "아는 맛이라 기대한 맛이었다"</td></tr>
+<tr><td>후각</td><td>날씨가 선선해지며 바뀐 <strong>밤공기 냄새</strong> / "여름 냄새와 가을 냄새가 다르다"</td></tr>
+<tr><td>청각</td><td>개강 하루 전 혼자 보러 간 오케스트라 — 웅장하고 경쾌했다</td></tr>
+<tr><td>촉각</td><td>오랜만에 경기장에서 <strong>야구공을 만졌을 때</strong>의 느낌 / 갓 나온 치킨을 집었을 때의 <strong>열기와 손에 묻는 육즙</strong> / 인형 털의 감촉</td></tr>
+</tbody>
+</table>
+</div>
+<p class="term">교수님 사례: 고양이를 좋아하지 않아 만져 본 적이 없는데, <strong>고양이가 자신을 만지고 지나간</strong> 경험. 카펫 같기도 하고 묵직하면서 따뜻하기도 한 감각이 싫지 않았다고.</p>
+<p>→ 정리: "감각 하나에 집중해 볼 기회가 많지 않다. 오감 글쓰기는 정신건강이라는 개념보다 좁을 수도 있지만, <strong>인생을 잘 살 수 있는 하나의 방법</strong>이 되는 것 같다."</p>
+
+<div class="box task">
+<span class="label">이번 주 쪽글 과제</span>
+<p><strong>주제: "나에게 정신적으로 건강하다는 것은 무엇을 의미하는가"</strong></p>
+<ul>
+<li>완전할 필요 없다. <strong>몇 가지 지표만 떠올리고</strong>, 왜 그 행동이나 상태가 정신적으로 건강하다는 것을 의미할 수 있는지 설명할 것</li>
+<li><strong>반드시 문장의 형태로 쓸 것.</strong> "나의 정신건강 지표 — ○○, ○○" 같은 나열이 아니라 "나에게는 유머를 구사할 수 있다는 것이 ~을 의미하는 하나의 지표인데, 왜냐하면…" 식으로 정성스럽게</li>
+<li>분량: <strong>반 페이지 이상 세 페이지 이내</strong></li>
+</ul>
+<p><strong>교수님 본인의 지표 예시</strong></p>
+<ol>
+<li><strong>유머를 구사할 수 있는 것</strong> — 건강하지 않을 때는 유머가 전혀 나오지 않는다 (반대로 그것이 강점인 사람은 힘들 때 더 나오기도 한다)</li>
+<li><strong>친구에게 안부를 묻는 것</strong> — 사회적 관심을 가질 수 있는가</li>
+<li><strong>친구에게 좋은 일이 있을 때 진심으로 축하해 줄 수 있는 것</strong> — 축하를 못 해 주는 자신을 발견하면 마음이 어려운 상태임을 안다</li>
+<li><strong>싫은 것을 싫다고 말하거나, 타인의 판단에 기대지 않고 스스로 판단할 수 있는 것</strong> — 자율성의 측면</li>
+</ol>
+<p class="term">그 밖에 신체 운동, 아침에 일정한 시간에 잘 깨는 것 등 개인마다 다양할 수 있다.</p>
+</div>
+
+<footer class="doc">
+<p>이 문서는 <code>정신건강과 자기돌봄 0908 -2.txt</code> 음성 전사본을 바탕으로 정리했습니다.</p>
+<p>자동 전사 특성상 인명·용어에 오인식이 있을 수 있으니 LMS 강의자료와 대조해 확인하세요.</p>
+</footer>
+</div>
+</body>
+</html>
