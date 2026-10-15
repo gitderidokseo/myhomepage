@@ -1,8 +1,9 @@
 // /gyuwon/* 접근 시 비밀번호(Basic 인증)를 요구한다. 사용자 이름은 아무 값이나 가능.
+// 퀴즈 저장 API(/api/quiz)도 같은 비밀번호로 막는다. 브라우저는 /gyuwon/api/quiz로 부른다.
 const PASSWORD = '1703'
 
 export const config = {
-  matcher: ['/gyuwon', '/gyuwon/:path*'],
+  matcher: ['/gyuwon', '/gyuwon/:path*', '/api/quiz'],
 }
 
 export default function middleware(request: Request): Response | undefined {

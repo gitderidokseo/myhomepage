@@ -236,7 +236,7 @@ const remote = {
       ans = merged; store.set(ans); render();
       this.ref = ref;
       if (extra || !snap.exists) this.push();
-      $("#sync").textContent = "채점 기록이 아티팩트에 저장돼요";
+      $("#sync").textContent = "채점 기록이 서버에 저장돼요 (다른 기기에서도 이어서 풀 수 있어요)";
     } catch(e){ $("#sync").textContent = "저장소에 연결하지 못해 이 기기에만 저장돼요"; }
   },
   push(){
