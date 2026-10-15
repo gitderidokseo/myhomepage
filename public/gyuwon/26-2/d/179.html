@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스피치의 이해 10월 15일 — 쉽게 이해하기</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --code-bg:#f4f1ec;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --code-bg:#22252a;
+  }
+}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","\B9D1\C740 \ACE0\B515",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+h1{font-size:1.85rem;line-height:1.3;margin:0 0 26px;padding-bottom:16px;border-bottom:3px solid var(--accent);
+  letter-spacing:-.02em;font-weight:750}
+h2{font-size:1.25rem;margin:44px 0 14px;padding-left:13px;border-left:4px solid var(--accent);
+  line-height:1.4;letter-spacing:-.01em;font-weight:700}
+h3{font-size:1.05rem;margin:28px 0 9px;color:var(--accent-ink);font-weight:700}
+h4{font-size:.97rem;margin:20px 0 7px;font-weight:700}
+h5,h6{font-size:.92rem;margin:16px 0 6px;font-weight:700;color:var(--muted)}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 15px;padding-left:24px}
+li{margin-bottom:7px}
+li>ul,li>ol{margin-top:7px;margin-bottom:4px}
+strong{font-weight:700}
+em{font-style:italic}
+del{color:var(--faint)}
+a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,"D2Coding",monospace;font-size:.89em;
+  background:var(--code-bg);padding:2px 6px;border-radius:4px}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:15px 17px;overflow-x:auto;margin:18px 0;line-height:1.6}
+pre code{background:none;padding:0;font-size:.86rem;white-space:pre}
+blockquote{margin:18px 0;padding:13px 18px;border-left:4px solid var(--accent);
+  background:var(--accent-soft);border-radius:0 8px 8px 0}
+blockquote p:last-child{margin-bottom:0}
+blockquote h1,blockquote h2,blockquote h3{margin-top:4px;border:0;padding:0}
+blockquote h1{font-size:1.25rem;margin-bottom:6px;padding-bottom:0}
+blockquote h2{font-size:1.1rem;margin-bottom:6px}
+.tablewrap{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.93rem;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--line-soft);font-weight:700;font-size:.85rem}
+td:first-child{font-weight:600}
+footer.gen{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:.8rem;color:var(--faint)}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding-block:28px}
+  h1{font-size:1.42rem}
+  h2{font-size:1.1rem}
+}
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.55}
+  .wrap{padding:0;max-width:none}
+  h2,h3{page-break-after:avoid}
+  pre,blockquote,table,.tablewrap{page-break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>스피치의 이해 10월 15일 — 쉽게 이해하기</h1>
+<p>오늘 수업은 <strong>"말을 잘하는 3가지 비법"</strong>과 <strong>"스티브 잡스의 발표 비법 10가지"</strong>를 배운 날이에요. 지난주에 이어서 <strong>말을 미리 계획하는 방법(기획)</strong>의 두 번째 시간이었어요.</p>
+<hr>
+<h2>📢 꼭 알아 둘 소식</h2>
+<ul>
+<li><strong>중간고사 대신 내는 90초 예고편 영상</strong>을 곧 내게 될 것 같아요. (다음 주인지 그다음 주인지는 정확히 안 나왔어요.)
+<ul>
+<li>선생님이 볼 것: <strong>이야기의 뼈대(구조)를 잘 세웠는지!</strong> 처음–중간–끝이 잘 짜였는지 봐요.</li>
+</ul></li>
+<li><strong>보너스 점수 기회가 있었어요!</strong>
+<ul>
+<li>영화 맞히기 퀴즈를 다 맞히면 → 중간고사 <strong>5점 더</strong></li>
+<li>긴 글을 <strong>25글자 이내로 줄여 말하기</strong> → 중간고사에 반영</li>
+<li>시 제목 맞히기 → 가산점</li>
+</ul></li>
+<li><strong>1분 스피치</strong>는 다음 주에도 계속해요. 오늘 주제는 <strong>"10년 후의 나"</strong>였어요.</li>
+<li><strong>다음 주 수업 주제는 "유머(웃기는 말하기)"</strong>예요.</li>
+</ul>
+<hr>
+<h2>1. 말을 잘하는 3가지 비법</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>비법</th>
+<th>쉬운 뜻</th>
+<th>비유</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>① 핵심</strong></td>
+<td>하고 싶은 말 <strong>딱 하나</strong>를 정해서 끝까지 밀고 가기</td>
+<td>꼬치에 꽂힌 떡볶이처럼, 한 줄로 쭉 꿰기</td>
+</tr>
+<tr>
+<td><strong>② 간결성</strong></td>
+<td>필요 없는 말은 <strong>싹 버리기</strong></td>
+<td>가방에 꼭 필요한 것만 넣기</td>
+</tr>
+<tr>
+<td><strong>③ 공감 유도</strong></td>
+<td>내 이야기를 듣는 사람이 <strong>"어, 내 얘기 같아!"</strong> 하게 만들기</td>
+<td>친구가 "나도 그랬어!" 하고 맞장구치는 것</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2>2. 첫 번째 비법 — 핵심</h2>
+<h3>정보는 적게, 내가 잘 아는 걸로!</h3>
+<ul>
+<li>요즘은 인공지능(AI)한테 물어보면 정보가 <strong>엄청 많이</strong> 나와요. 다 쓰면 오히려 헷갈려요.</li>
+<li>선생님 말씀: <strong>"꼭 필요한 정보만 조금 골라 쓰세요."</strong></li>
+<li>그리고 제일 좋은 건 <strong>내가 가장 잘 아는 이야기</strong>예요. 잘 아는 길은 헤매도 결국 찾아가잖아요!</li>
+</ul>
+<h3>말에도 뼈대가 필요해요</h3>
+<ul>
+<li><strong>처음</strong>: 편하게, 누구나 아는 이야기로 시작</li>
+<li><strong>중간</strong>: 문제를 하나 꺼내서 키우기</li>
+<li><strong>끝</strong>: 문제를 해결하는 <strong>다리</strong>를 놓아 주기</li>
+<li>선생님: <strong>"뼈대가 없는 말은 허무해요."</strong> 예고편도 이 뼈대를 볼 거예요!</li>
+</ul>
+<h3>한 줄로 영화 맞히기 🎬</h3>
+<p>두 시간짜리 영화도 <strong>한 문장</strong>으로 줄일 수 있어요. 이걸 <strong>로그라인</strong>이라고 불러요.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>한 문장</th>
+<th>영화</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>흑인 남자친구가 백인 여자친구 집에 초대받았다면?</td>
+<td>겟 아웃</td>
+</tr>
+<tr>
+<td>첫사랑이 15년 만에 나타나 집을 지어 달라고 한다면?</td>
+<td>건축학개론</td>
+</tr>
+<tr>
+<td>꿈속의 꿈속의 꿈</td>
+<td>인셉션</td>
+</tr>
+<tr>
+<td>내 몸이 다른 사람과 바뀐다면?</td>
+<td>너의 이름은.</td>
+</tr>
+<tr>
+<td>죽은 줄 알았던 딸의 흔적을 인터넷에서 찾는다</td>
+<td>서치</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote><p>💡 <strong>〈인터스텔라〉</strong>는 어려운 과학 얘기가 많지만, <strong>"우리는 답을 찾을 것이다"</strong> 이 한 줄만 기억하면 큰 줄기는 다 아는 거래요.</p></blockquote>
+<blockquote><p>💬 선생님 한마디: <strong>"늘 준비돼 있으면 기회가 왔을 때 잡을 수 있어요. 준비가 안 돼 있으면 기회가 와도 놓쳐요."</strong></p></blockquote>
+<hr>
+<h2>3. 두 번째 비법 — 간결성 (짧게!)</h2>
+<h3>오컴의 면도날 🪒</h3>
+<p>"어젯밤 마당의 나무가 쓰러졌다." 왜 쓰러졌을까?</p>
+<ul>
+<li>생각 1: <strong>바람이 세게 불어서</strong> → 쉽게 이해돼요</li>
+<li>생각 2: <strong>외계인이 레이저를 쏴서</strong> → 외계인이 있는지, 우주선이 왔는지… 증명할 게 너무 많아요!</li>
+</ul>
+<p>👉 <strong>가장 간단한 설명을 고르자!</strong> 말할 때도 쓸데없는 말은 처음부터 만들지 말자는 거예요.</p>
+<h3>시는 '줄이기'의 달인</h3>
+<p>시인은 긴 글을 <strong>쪼개고 또 쪼개서</strong> 꼭 필요한 단어만 남겨요.</p>
+<p>어떤 초등학생이 쓴 시:</p>
+<blockquote><p>달콤하고 맛있는 사과도 있지만 어색한 사과도 있다 그건 친구랑 싸우고 하는 사과다</p></blockquote>
+<ul>
+<li>'사과'(먹는 사과)와 '사과'(미안해)를 재밌게 엮었죠!</li>
+<li><strong>줄을 바꾸는 곳</strong>에서 잠깐 숨을 쉬게 돼요. 이게 바로 <strong>말할 때의 쉼(호흡)</strong>이에요.</li>
+<li>선생님: <strong>"숨(호흡)이 없는 말은 메마르고 재미없어요."</strong></li>
+</ul>
+<p>다른 멋진 시들:</p>
+<ul>
+<li><strong>"연탄재 함부로 차지 마라 / 너는 누구에게 한 번이라도 뜨거운 사람이었느냐"</strong> (안도현) — 딱 두 줄로 큰 뜻을 전해요</li>
+<li><strong>"그 사막에서 그는 너무도 외로워 때로는 뒷걸음질로 걸었다 / 자기 앞에 찍힌 발자국을 보려고"</strong> — 외로움을 이렇게 표현하다니!</li>
+</ul>
+<h3>25글자로 줄여 보기 ✂️</h3>
+<p>긴 글을 짧게 줄이는 연습을 했어요.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>긴 글 내용</th>
+<th>학생들이 줄인 말</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>바쁜 사람들이 인스턴트·배달 음식만 먹으면 10년 뒤 병원비가 엄청 나온다는 긴 글</td>
+<td><strong>"오늘의 음식은 내일의 건강을 담보로 한다"</strong>, <strong>"나를 죽일 햄버거"</strong></td>
+</tr>
+<tr>
+<td>남의 눈치만 보고 살면 내 뜻대로 못 산다는 책</td>
+<td><strong>"남을 따라가지 말고 나답게 살자"</strong></td>
+</tr>
+<tr>
+<td>비바람 치는 날 밖으로 나간 이야기</td>
+<td><strong>"진짜 살아 있음을 증명하기 위해 밖으로 나갔다"</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>선생님: <strong>"정답은 없어요. 다 맞아요!"</strong></p>
+<hr>
+<h2>4. 세 번째 비법 — 공감 유도</h2>
+<ul>
+<li>우리 뇌에는 남의 마음을 <strong>따라 느끼는</strong> 세포(거울 신경세포)가 있어요.</li>
+<li>그래서 사람들은 어려운 이론보다 <strong>실패했던 이야기</strong>를 더 좋아해요. 실패해서 속상한 마음은 누구나 알거든요.</li>
+<li>👉 <strong>완벽한 척하지 말고, 내 약점이나 실수를 솔직하게 말하기!</strong> 그러면 듣는 사람이 마음을 열어요.</li>
+</ul>
+<h3>영화 예시</h3>
+<ul>
+<li><strong>〈빌리 엘리어트〉</strong>: 남자아이가 발레를 하는 게 이상하게 여겨지던 시절, 가난한 아빠가 아들의 꿈을 위해 큰 결심을 해요.</li>
+<li><strong>〈굿 윌 헌팅〉</strong>: 어릴 때 많이 맞고 자란 천재 청년에게 선생님이 계속 말해 줘요. <strong>"네 잘못이 아니야(It's not your fault)."</strong> 청년은 결국 울음을 터뜨려요. 말 한마디가 큰 위로가 된 거예요.</li>
+</ul>
+<hr>
+<h2>5. 1분 스피치 — "10년 후의 나"</h2>
+<p>7명이 발표했어요.</p>
+<ul>
+<li>연기를 배우다 그만둔 경험 → "좋아할 땐 충분히 좋아해야 후회가 없어요"</li>
+<li>한자를 좋아해서 일본어 선생님이 되고 싶은 꿈</li>
+<li>"익숙함에 속아 소중함을 잃지 말자"</li>
+<li>부끄럽지 않게 사는 게 행복한 삶</li>
+<li>친구랑 카페·빵집 창업하기 등</li>
+</ul>
+<h3>선생님의 조언 ⭐</h3>
+<p><strong>"처음 10초에 제목을 콱 던지세요!"</strong></p>
+<p>| 이렇게 시작했다면? | |---| | "<strong>10년 차 연기자</strong> 한수현입니다." | | (일본어로) "<strong>강의를 시작하겠습니다.</strong>" | | "저, <strong>익숙함</strong>에 대해 말씀드리겠습니다." |</p>
+<ul>
+<li>처음 10초가 나머지 50초를 끌고 가요.</li>
+<li>머뭇거리면 좋은 내용도 묻혀 버려요. <strong>자신 있게!</strong></li>
+<li>당황해도 <strong>첫마디는 또렷하게</strong>, 짧게 말하고 <strong>5초 쉬면서</strong> 다음 말을 생각해도 괜찮아요.</li>
+</ul>
+<hr>
+<h2>6. 스티브 잡스의 발표 비법 10가지 🍎</h2>
+<p>스티브 잡스는 아이폰을 만든 회사(애플)의 사장님이었고, <strong>발표의 천재</strong>였어요.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>#</th>
+<th>비법</th>
+<th>쉬운 뜻</th>
+<th>예시</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>주제 정하기</strong></td>
+<td>무슨 얘기를 할지 처음에 딱!</td>
+<td>말이 거의 없는데도 다 이해되는 〈월-E〉</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>헤드라인 만들기</strong></td>
+<td>머리에 콕 박히는 한 문장</td>
+<td>〈킹스맨〉 "매너가 사람을 만든다"</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>길 안내하기 (로드맵)</strong></td>
+<td>"이렇게 갈 거예요" 하고 미리 알려 주기</td>
+<td>〈미션 임파서블〉은 작전을 미리 다 설명해 줘요</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>나쁜 편 등장시키기</strong></td>
+<td>맞서 싸울 상대를 보여 주기</td>
+<td>영웅 영화엔 꼭 악당이 있죠</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>해결책 보여 주기</strong></td>
+<td>"이렇게 하면 돼요!"</td>
+<td>날개 없는 선풍기, 택시 부르는 앱</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>그림으로 보여 주기</strong></td>
+<td>글보다 사진·그림</td>
+<td>코에 빨대가 꽂힌 바다거북 사진 → 플라스틱 줄이기</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>무대 연습하기</strong></td>
+<td>잡스는 <strong>100번</strong>이나 연습했대요</td>
+<td>마이클 잭슨은 무대에서 <strong>가만히 서 있기만</strong> 해도 모두 집중했어요</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>기억에 남게 하기</strong></td>
+<td>깜짝 놀랄 한 순간</td>
+<td>서류 봉투에서 얇은 노트북을 꺼냄</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>다시 길 안내로 돌아오기</strong></td>
+<td>끝에 한 번 더 정리</td>
+<td>"대본은 나만 갖고 있어요!" 듣는 사람은 처음 듣는 거예요</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>마음을 울리며 끝내기</strong></td>
+<td>감동으로 마무리</td>
+<td>부부 싸움 광고 "서로 다른 문명이 만나 가족이 됩니다"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>1분 스피치에 바로 써먹기 💡</h3>
+<ul>
+<li>일어나서 <strong>휴대폰 사진 한 장</strong>을 보여 주며 시작해 보세요. 아직 아무도 안 했대요!</li>
+<li>다른 사람들과 <strong>다른 자리</strong>에서 시작해 보는 것도 좋아요.</li>
+<li>선생님: <strong>"생각만 하면 아무것도 안 바뀌어요. 한번 해 보고, 너무하면 그때 줄이면 돼요!"</strong></li>
+</ul>
+<hr>
+<h2>🌟 오늘의 핵심 정리</h2>
+<ol>
+<li>말 잘하는 3가지 비법: <strong>핵심 하나 · 짧게 · 공감되게</strong></li>
+<li>정보는 <strong>조금만</strong>, 그리고 <strong>내가 잘 아는 이야기</strong>로!</li>
+<li>말에는 <strong>뼈대(처음–중간–끝)</strong>가 있어야 해요. 예고편도 뼈대를 봐요.</li>
+<li>쓸데없는 말은 버리고, <strong>시처럼 짧게</strong>. 줄 바꾸는 곳 = <strong>숨 쉬는 곳</strong></li>
+<li>완벽한 척 말고 <strong>실수도 솔직하게</strong> → 듣는 사람이 마음을 열어요</li>
+<li><strong>처음 10초에 제목을 콱!</strong> 첫마디는 또렷하게, 자신 있게</li>
+<li>스티브 잡스처럼 <strong>길을 안내하고, 그림으로 보여 주고, 감동으로 끝내기</strong></li>
+<li>다음 주는 <strong>유머</strong> 수업! 1분 스피치도 또 해요 🎤</li>
+</ol>
+<footer class="gen">이 문서는 마크다운 원본에서 자동 변환되었습니다.</footer>
+</div>
+</body>
+</html>
