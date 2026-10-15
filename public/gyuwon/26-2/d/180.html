@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>정신건강과 자기돌봄 예상문제 3</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#faf9f7;--surface:#ffffff;--ink:#1b1a19;--muted:#6c6762;--faint:#8f8a84;
+  --line:#e7e3dc;--line-soft:#f0ece6;--hover:#f3f0eb;
+  --accent:#0d7a6f;--accent-ink:#0d7a6f;--accent-soft:#e8f4f2;
+  --ok:#1f7a3a;--ok-soft:#e6f4ea;--bad:#b3261e;--bad-soft:#fbe9e7;--star:#b7791f;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+    --line:#32353b;--line-soft:#282b30;--hover:#25282d;
+    --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+    --ok:#6fcf8a;--ok-soft:#1a2e21;--bad:#f28b82;--bad-soft:#3a1f1d;--star:#e0b25a;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16171a;--surface:#1e2024;--ink:#e9e6e1;--muted:#a7a29b;--faint:#8b857e;
+  --line:#32353b;--line-soft:#282b30;--hover:#25282d;
+  --accent:#58c2b4;--accent-ink:#7ad2c5;--accent-soft:#1c2f2d;
+  --ok:#6fcf8a;--ok-soft:#1a2e21;--bad:#f28b82;--bad-soft:#3a1f1d;--star:#e0b25a;
+}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding:40px 20px}
+h1{font-size:1.75rem;line-height:1.3;margin:0 0 10px;letter-spacing:-.02em;font-weight:750}
+.lead{color:var(--muted);margin:0 0 22px;font-size:.95rem}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.score{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:16px}
+.score-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.score b{font-size:1.6rem;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.score small{color:var(--muted);font-size:.88rem}
+.meter{height:8px;border-radius:99px;background:var(--line-soft);margin-top:10px;overflow:hidden;display:flex}
+.meter i{display:block;height:100%}
+.meter .m-ok{background:var(--ok)}.meter .m-bad{background:var(--bad)}
+.legend{font-size:.82rem;color:var(--muted);margin-top:8px}
+.star{color:var(--star);font-weight:700;letter-spacing:-.05em}
+
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:7px 14px;font-size:.9rem;min-height:38px}
+.chip:hover{background:var(--hover)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:650}
+.chip.reset{margin-left:auto;color:var(--bad)}
+
+h2{font-size:1.15rem;margin:34px 0 12px;padding-left:12px;border-left:4px solid var(--accent)}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+.q.ok{border-color:var(--ok)}.q.bad{border-color:var(--bad)}
+.q-head{display:flex;gap:10px;align-items:baseline;margin-bottom:10px}
+.q-num{font-weight:750;color:var(--accent-ink);font-variant-numeric:tabular-nums;flex:none}
+.q-text{flex:1;min-width:0}
+.q-tag{font-size:.75rem;color:var(--faint);white-space:nowrap;flex:none}
+.q-quote{margin:4px 0 10px;padding:9px 13px;border-left:3px solid var(--line);background:var(--line-soft);border-radius:0 8px 8px 0;font-size:.94rem}
+
+.opts{display:grid;gap:6px}
+.opts.ox{grid-template-columns:1fr 1fr;max-width:320px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;padding:10px 13px;
+  border:1px solid var(--line);border-radius:10px;background:var(--bg);min-height:44px}
+.opt:hover:not(:disabled){background:var(--hover)}
+.opts.ox .opt{justify-content:center;font-size:1.2rem;font-weight:750}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-soft);color:var(--ok);font-weight:650}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad);text-decoration:line-through}
+.opt .mk{flex:none;font-variant-numeric:tabular-nums}
+
+.short{display:flex;gap:8px;flex-wrap:wrap}
+.short input{flex:1;min-width:180px;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);
+  border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.short button{border:1px solid var(--accent);background:var(--accent);color:var(--surface);border-radius:10px;padding:9px 16px;font-weight:650;min-height:44px}
+.short button.ghost{background:none;color:var(--accent-ink)}
+.short input:disabled{opacity:.8}
+
+.fb{margin-top:12px;padding:11px 14px;border-radius:10px;font-size:.94rem}
+.fb.ok{background:var(--ok-soft)}.fb.bad{background:var(--bad-soft)}
+.fb .verdict{font-weight:750;margin-right:6px}
+.fb.ok .verdict{color:var(--ok)}.fb.bad .verdict{color:var(--bad)}
+.fb .src{display:block;margin-top:4px;font-size:.8rem;color:var(--muted)}
+.fb .self{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+.fb .self button{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:5px 12px;font-size:.85rem;min-height:36px}
+
+.done{display:none;text-align:center;padding:28px 16px;color:var(--muted)}
+.empty{padding:20px;text-align:center;color:var(--faint)}
+@media (max-width:520px){
+  body{font-size:15px}
+  .wrap{padding:28px 16px}
+  h1{font-size:1.4rem}
+  .chip.reset{margin-left:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>정신건강과 자기돌봄 — 예상문제 3 (7주차 특강 반영)</h1>
+  <p class="lead">7주차(10/13) 본 수업과 이찬미 선생님 특강 「스트레스 대처, 나답게 하는 법」을 중심으로, 1·2차에 없던 6주차 내용을 더한 30문항입니다. 실제 시험처럼 절반이 OX예요. 특강의 <b>대처 4가지</b>와 6주차의 <b>적응적 대처 3가지</b>를 헷갈리지 않는지 확인하는 문제도 넣었어요. 시험: 10/20(화) 10시, 7107, 1~7주차.</p>
+
+  <div class="score" id="score">
+    <div class="score-top"><b id="sc">0 / 30</b><small id="scd">아직 푼 문제가 없어요</small></div>
+    <div class="meter"><i class="m-ok" id="mok"></i><i class="m-bad" id="mbad"></i></div>
+    <div class="legend" id="sync">채점 기록은 이 기기에 저장돼요</div>
+    <div class="legend"><span class="star">★★★</span> 교수님이 시험에 낸다고 한 내용 · <span class="star">★★</span> 꼭 알아야 한다고 강조 · <span class="star">★</span> 수업에서 강조</div>
+  </div>
+
+  <div class="tools" role="group" aria-label="문제 거르기">
+    <button class="chip" data-f="all" aria-pressed="true">전체</button>
+    <button class="chip" data-f="ox" aria-pressed="false">OX</button>
+    <button class="chip" data-f="mc" aria-pressed="false">객관식</button>
+    <button class="chip" data-f="sa" aria-pressed="false">단답형</button>
+    <button class="chip" data-f="star" aria-pressed="false">★★ 이상</button>
+    <button class="chip" data-f="todo" aria-pressed="false">안 푼 문제</button>
+    <button class="chip" data-f="wrong" aria-pressed="false">틀린 문제</button>
+    <button class="chip reset" id="reset">처음부터</button>
+  </div>
+
+  <div id="list"></div>
+</div>
+
+<script>
+const Q = [
+  // ── OX ──
+  {t:"ox", s:2, w:"7주차 특강", q:"같은 스트레스원이라도 사람마다 스트레스 반응이 다른 것은, 스트레스 반응이 스트레스원과 개인 특성의 상호작용으로 정해지기 때문이다.", a:"O",
+   e:"특강의 출발점이에요. 6주차 라자루스(개인과 환경의 상호작용, 해석이 사건보다 중요)와 같은 이야기입니다."},
+  {t:"ox", s:2, w:"7주차 특강", q:"기질은 환경과 상호작용하며 만들어지므로 성격보다 변화 가능성이 높다.", a:"X",
+   e:"거꾸로예요. <b>기질</b> = 자동적 반응 성향, <b>생물학적·비교적 안정적</b>. <b>성격</b> = 기질을 바탕으로 환경과 상호작용하며 형성, <b>변화 가능성이 높음</b>(클로닝거)."},
+  {t:"ox", s:1, w:"7주차 특강", q:"\"어릴 때부터 낯선 환경에 적응하는 데 시간이 걸렸는데 지금도 그래요.\"는 강사가 <b>성격</b>의 예로 든 말이다.", a:"X",
+   e:"어릴 때부터 지금까지 그대로 = 안정적 = <b>기질</b>의 예. 성격의 예는 \"남의 실수를 비판적으로 봤는데 여러 사람을 만나며 더 수용하게 됐다\"(변화)."},
+  {t:"ox", s:1, w:"7주차 특강", q:"형식이 '자유'인 과제는 누구에게나 형식이 정해진 과제보다 더 큰 스트레스가 된다.", a:"X",
+   e:"불확실성 때문에 괴로운 사람도 있지만, <b>통제할 수 있는 영역이 많아서</b> 오히려 덜 힘든 사람도 있어요. '누구에게나'는 함정 신호."},
+  {t:"ox", s:2, w:"7주차 특강", q:"문제 중심 대처가 가장 효율적이고 이성적인 방식이므로, 스트레스 상황에서는 항상 문제 중심 대처를 먼저 써야 한다.", a:"X",
+   e:"강사: \"<b>문제 중심 대처만 가장 효율적이거나 이성적인 방식은 아니다</b>.\" 하나만 고집하지 말고 <b>상황·자원에 맞게 유연하게</b>. (손들기 결과는 정서 중심이 가장 많았어요.)"},
+  {t:"ox", s:2, w:"7주차 특강", q:"스트레스에 잘 대처한다는 것은 스트레스를 전혀 겪지 않는 상태를 뜻한다.", a:"X",
+   e:"잘 대처한다 ≠ 스트레스가 없는 것. 스트레스는 피할 수 없고, 신호를 <b>빨리 알아차려</b> 상황과 나에게 맞게 대처하는 것이 목표예요."},
+  {t:"ox", s:1, w:"7주차 특강", q:"마감 30분 전에 리포트를 몰아서 써내는 것처럼, 어떤 스트레스는 생산성 향상에 기여하기도 한다.", a:"O",
+   e:"강사의 마무리 예시. 스트레스가 늘 나쁘기만 한 것은 아니에요."},
+  {t:"ox", s:2, w:"7주차 특강", q:"스트레스 반응을 알아차리는 것이 대처의 출발점이며, 두통이 먼저 오는 사람도 있고 짜증이 먼저 오는 사람도 있듯 먼저 나타나는 신호는 사람마다 다르다.", a:"O",
+   e:"<b>나에게 자주 나타나는 반응 패턴</b>을 알아 두면 스트레스 상태를 빨리 알아차릴 수 있어요(예: 갑자기 소화가 안 됨 → \"나 스트레스 받는구나\")."},
+  {t:"ox", s:1, w:"7주차 특강", q:"결혼·이혼·실직 같은 삶의 사건 연구에 따르면, 부정적 사건의 영향은 시간이 지나며 줄어들기도 하지만 적응의 정도와 속도는 사건의 종류와 사람에 따라 다르다.", a:"O",
+   e:"특강 도입부. 부정적 사건 → 주관적 안녕감↓, 시간이 지나며 <b>점차 적응</b>. 단 적응의 정도·속도는 <b>사건 종류·개인</b>마다 차이."},
+  {t:"ox", s:1, w:"7주차 특강", q:"내가 통제할 수 있는 범위가 적은 상황에서는 직접 해결하려 애쓰기보다 다른 사람에게 도움을 요청하는 것이 더 적절할 수 있다.", a:"O",
+   e:"활동지 5번 질문에서 강사가 든 예. 통제 범위가 적으면 <b>사회적 지지 추구</b>가 더 맞을 수 있어요."},
+  {t:"ox", s:2, w:"7주차 본 수업", q:"\"나에게 상처를 준 사람을 한번 용서해 보기로 했다\"는 교수님이 문제 중심 대처의 기법으로 분류한 사례다.", a:"X",
+   e:"용서는 감정을 다루는 <b>정서 중심 대처의 구체적 기법</b>이에요. 교수님 분류: 산책·공원 = 정서 중심 / 과제를 해치움 = 문제 중심 / 용서 = 정서 중심 기법."},
+  {t:"ox", s:2, w:"7주차 · 6주차 비교", q:"특강에서 말한 스트레스 대처 4가지에는 '평가 중심 대처'가 들어 있다.", a:"X",
+   e:"<b>특강 4가지</b> = 문제 중심 · 사회적 지지 추구 · 정서 중심 · 소망적 사고. '평가 중심'은 <b>6주차 적응적 대처 3가지</b>(평가 중심 · 문제 중심 · 정서 중심)에 있어요. 분류 기준이 다르니 섞지 마세요."},
+  {t:"ox", s:1, w:"6주차", q:"레빈의 갈등 유형 중 '선물 두 개 중 하나만 고르기' 같은 접근–접근 갈등은 스트레스가 가장 약하다.", a:"O",
+   e:"접근–접근(둘 다 좋음) = 가장 약함 / 접근–회피(한 선택에 장단점) = 중간 / 회피–회피(둘 다 싫음) = 가장 큼."},
+  {t:"ox", s:1, w:"6주차", q:"감정을 억누르기만 하면 각성·경계 수준이 높아지고 신체 질환이나 사회적 적응 문제로 이어질 수 있다.", a:"O",
+   e:"정서 억제의 문제. 그래서 정서 중심 대처로 <b>말·글로 감정 표현</b>(감정적 글쓰기)을 권했어요."},
+  {t:"ox", s:0, w:"6주차", q:"스트레스 상황을 '성장의 기회'로 바라보는 것은 수업에서 소개한 적응적 마음가짐에 해당한다.", a:"O",
+   e:"적응적 마음가짐(원호택, 1991): <b>불가피한 것 · 해결 가능한 문제 · 성장의 기회 · 직면해서 파악</b>."},
+
+  // ── 객관식 ──
+  {t:"mc", s:2, w:"7주차 특강", q:"친한 친구의 연락이 크게 줄어 스트레스를 받는다. \"시간이 지나면 다시 좋아지겠지\" 하고 기대하는 것은 어떤 대처인가?",
+   o:["문제 중심 대처","사회적 지지 추구","정서 중심 대처","소망적 사고 대처"], a:3,
+   e:"상황이 <b>달라지기를 바라거나 원하는 상황을 상상</b> = 소망적 사고. 같은 예에서 직접 연락해 묻기 = 문제 중심 / 다른 친구에게 털어놓기 = 사회적 지지 / 취미에 몰입 = 정서 중심."},
+  {t:"mc", s:2, w:"7주차 특강", q:"같은 '친구 연락이 줄어든' 상황에서 <b>사회적 지지 추구</b>에 해당하는 행동은?",
+   o:["친구에게 직접 연락해 달라진 점이 있는지 묻는다","믿을 수 있는 다른 친구에게 털어놓고 조언과 위로를 구한다","취미 활동에 몰입하며 서운한 마음을 달랜다","예전처럼 친하게 지내는 장면을 떠올린다"], a:1,
+   e:"사회적 지지 추구 = 다른 사람에게 <b>정보·조언·도움 또는 정서적 지지</b>를 요청. ①은 당사자에게 직접 묻는 것이라 문제 중심이에요."},
+  {t:"mc", s:2, w:"7주차 특강", q:"특강에서 말한 스트레스 반응 4영역과 예가 <b>잘못</b> 연결된 것은?",
+   o:["신체적 — 두통, 소화장애","정서적 — 쉽게 짜증이 나고 화가 남","인지적 — 일을 시작하지 못하고 계속 미룸","인지적 — 집중이 어렵고 기억력이 떨어짐"], a:2,
+   e:"미루기·일의 시작과 지속이 어려움은 <b>행동적</b> 반응. 인지적 = 집중 어려움·기억력 저하·걱정 증가·부정적 생각 반복."},
+  {t:"mc", s:2, w:"7주차 특강", q:"대처를 고르는 3가지 질문 중 \"지금 나의 감정 상태는 어떤가?\"를 물었더니 극도로 불안하고 화가 많이 난 상태였다. 강사가 권한 것은?",
+   o:["바로 원인이 된 문제를 해결하러 나선다","감정을 가라앉히는 활동을 먼저 한다","상황이 저절로 나아지기를 기다린다","지금 바꿀 수 있는 것부터 목록으로 정리한다"], a:1,
+   e:"3가지 질문: ① 바꿀 수 있는 것은? → 문제 중심 ② 필요한 도움은? → 사회적 지지 ③ 지금 감정은? → 극도로 불안·분노면 <b>감정 조절(정서 중심)을 먼저</b>."},
+  {t:"mc", s:1, w:"7주차 특강", q:"기질과 성격(클로닝거)에 대한 설명으로 <b>틀린</b> 것은?",
+   o:["기질은 자극에 대한 자동적인 반응 성향이다","기질은 생물학적 특성으로 전 생애에 걸쳐 비교적 안정적이다","성격은 기질을 바탕으로 환경과 상호작용하며 형성된다","성격은 기질보다 변화 가능성이 낮다"], a:3,
+   e:"성격은 기질보다 변화 가능성이 <b>높아요</b>. 성격은 자극에 대한 반응을 <b>조절</b>하는 역할."},
+  {t:"mc", s:1, w:"7주차 특강", q:"발표 중 무표정한 청중을 보고 \"내 발표가 재미없나?\" 걱정하는 사람에게 강사가 권한 방법은?",
+   o:["청중을 아예 보지 않고 원고만 본다","고개를 끄덕이거나 미소 짓는 청중의 긍정적 반응에도 주의를 기울인다","발표 기회를 되도록 피한다","무표정한 청중에게 더 집중해 이유를 찾는다"], a:1,
+   e:"\"내가 <b>사회적 민감성</b>이 높아 부정적 평가 단서에 더 민감하구나\"를 알아차린 뒤, 긍정적 반응에도 주의를 돌리기. 내 성향을 이해하면 미리 대비할 수 있어요."},
+  {t:"mc", s:2, w:"7주차 본 수업 · 6주차", q:"\"완벽하게 못 할 거면 시작도 하지 말자\"며 시험공부를 계속 미룬 학생 사례를 수업 개념으로 바르게 짝지은 것은?",
+   o:["미루기 = 회피 / 그 생각 = 엘리스의 비합리적 신념","미루기 = 포기 / 그 생각 = 낙관성","미루기 = 정서 중심 대처 / 그 생각 = 소망적 사고","미루기 = 문제 중심 대처 / 그 생각 = 합리적 신념"], a:0,
+   e:"미루기 = 부적응적 대처 <b>회피</b>(단기 효과, 길어지면 악화). \"완벽해야 한다\" = 엘리스의 비합리적 신념 \"나는 <b>모든 일에 유능·성공</b>해야 한다\"."},
+  {t:"mc", s:1, w:"6주차", q:"스트레스를 보는 세 관점 중 <b>심리적 관점</b>에 대한 설명은?",
+   o:["혈압이 오르고 땀이 나는 신체·심리 반응 자체를 스트레스로 본다","과제·소음·기말고사 같은 원인 자체를 스트레스로 본다","사건을 내가 스트레스로 해석(지각·평가)했을 때 스트레스가 생긴다고 본다","스트레스는 타고난 기질로 정해진다고 본다"], a:2,
+   e:"반응으로서(①) · 자극으로서(②) · <b>심리적 관점</b>(③, 라자루스와 연결)."},
+  {t:"mc", s:1, w:"6주차", q:"대학생 스트레스 척도(CUSS)에서 점수가 <b>가장 높은</b> 사건은?",
+   o:["친한 친구의 사망","기말시험","하루에 두 번의 시험","수업 중 발표"], a:0,
+   e:"친한 친구 사망 97 · 기말시험 90 · 하루 두 번 시험 80 · 수업 중 발표 72 (운동경기 관람도 20점)."},
+
+  // ── 단답형 ──
+  {t:"sa", s:2, w:"7주차 특강", q:"상황이 달라지기를 바라거나 원하는 상황을 상상하는 스트레스 대처 방식의 이름을 쓰시오.",
+   a:["소망적사고","소망적사고대처"], show:"소망적 사고 (대처)",
+   e:"특강 대처 4가지: 문제 중심 · 사회적 지지 추구 · 정서 중심 · <b>소망적 사고</b>."},
+  {t:"sa", s:2, w:"7주차 특강", q:"스트레스 해결을 위해 다른 사람에게 정보·조언·도움 또는 정서적 지지를 요청하는 대처 방식의 이름을 쓰시오.",
+   a:["사회적지지추구","사회적지지추구대처","사회적지지"], show:"사회적 지지 추구",
+   e:"\"지금 나에게 필요한 도움이나 지원은?\" 질문과 연결돼요. 6주차 스트레스 강도 요인의 '사회적 지지'(받을수록 강도↓)와도 이어집니다."},
+  {t:"sa", s:2, w:"7주차 특강", q:"자극에 대한 자동적인 반응 성향으로, 생물학적이며 전 생애에 걸쳐 비교적 안정적인 특성을 무엇이라 하는가?",
+   a:["기질"], show:"기질",
+   e:"기질 = 자동적·생물학적·안정적 / 성격 = 환경과 상호작용, 변화 가능성↑."},
+  {t:"sa", s:1, w:"7주차 특강", q:"특강 시작 전에 QR코드로 응답한, 최근 한 달 동안의 스트레스 수준을 재는 자기 보고식 척도의 영어 약자를 쓰시오.",
+   a:["pss","perceivedstressscale","지각된스트레스척도"], show:"PSS (지각된 스트레스 척도)",
+   e:"PSS = Perceived Stress Scale, <b>최근 한 달</b>, <b>자기 보고식</b>."},
+  {t:"sa", s:0, w:"7주차 특강", q:"특강 강사가 일하는 회사의 서비스로, 기업과 계약해 임직원에게 상담·심리 특강 등을 제공하는 EAP(Employee Assistance Program)의 우리말 이름을 쓰시오.",
+   a:["근로자지원프로그램","근로자지원"], show:"근로자 지원 프로그램",
+   e:"EAP = <b>근로자 지원 프로그램</b>. 기업과 B2B 계약 → 임직원에게 개인 상담·심리 특강·웰니스 프로그램."},
+  {t:"sa", s:1, w:"6주차", q:"억눌러 둔 상처나 감정을 글로 써서 직면하고 인지적으로 다시 해석하게 돕는 정서 중심 대처 기법을 쓰시오.",
+   a:["감정적글쓰기","감정글쓰기","표현적글쓰기"], show:"감정적 글쓰기",
+   e:"정서 중심 대처: <b>감정 표현(말·글)</b> · 지금 여기 집중(명상) · 용서 · 감사."}
+];
+
+const KEY = "mh-midterm-quiz-3";
+const store = {
+  get(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } },
+  set(v){ try{ localStorage.setItem(KEY, JSON.stringify(v)); }catch(e){} }
+};
+let ans = store.get();          // { idx: {v: 선택값/입력, ok: bool} }
+
+// 수업노트 아티팩트 안에서 열면 채점 기록을 아티팩트 저장소(db)에도 남긴다.
+// 문서는 뷰어(index.html)의 iframe 안에서 열리므로 부모 창의 claude를 쓴다. 없으면 localStorage만 쓴다.
+const QUIZ_ID = "mh-yesang-3";
+const remote = {
+  ref: null,
+  async connect(){
+    let C = window.claude;
+    try { if (!C && parent !== window) C = parent.claude; } catch(e){}
+    if (!C || !C.use) return;
+    const [db, user] = await Promise.all([C.use("db"), C.use("user")]);
+    const uid = db && user && await user.id();
+    if (!uid) return;
+    let ref;
+    try { ref = db.collection("quiz").doc(QUIZ_ID).collection("results").doc(uid); } catch(e){ return; }
+    try {
+      const snap = await ref.get();
+      const saved = snap.exists ? (snap.data().answers || {}) : {};
+      // 저장소 기록을 기본으로, 이 기기에서만 푼 문제를 더한다
+      const merged = {...ans, ...saved};
+      const extra = Object.keys(merged).length !== Object.keys(saved).length;
+      ans = merged; store.set(ans); render();
+      this.ref = ref;
+      if (extra || !snap.exists) this.push();
+      $("#sync").textContent = "채점 기록이 아티팩트에 저장돼요";
+    } catch(e){ $("#sync").textContent = "저장소에 연결하지 못해 이 기기에만 저장돼요"; }
+  },
+  push(){
+    if (!this.ref) return;
+    const ok = Object.values(ans).filter(r => r.ok).length;
+    this.ref.set({answers: ans, ok, done: Object.keys(ans).length, total: Q.length, updatedAt: new Date().toISOString()})
+      .catch(() => { $("#sync").textContent = "저장소에 쓰지 못해 이 기기에만 저장돼요"; });
+  }
+};
+let filter = "all";
+const $ = s => document.querySelector(s);
+const stars = n => n ? `<span class="star" title="중요도">${"★".repeat(n)}</span>` : "";
+const norm = s => s.toLowerCase().replace(/[\s·.,()\-–—'"]/g, "");
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const SECT = {ox:"Ⅰ. OX 문제", mc:"Ⅱ. 객관식", sa:"Ⅲ. 단답형"};
+
+function correctText(q){
+  if (q.t === "ox") return q.a;
+  if (q.t === "mc") return `${"①②③④"[q.a]} ${q.o[q.a]}`;
+  return q.show;
+}
+
+function feedback(q, r){
+  const self = q.t === "sa" && !r.ok
+    ? `<div class="self"><button data-self="1">내 답도 맞아요 (정답 처리)</button></div>` : "";
+  return `<div class="fb ${r.ok ? "ok" : "bad"}" role="status">
+    <span class="verdict">${r.ok ? "정답" : "오답"}</span>${r.ok ? "" : `정답: <b>${esc(correctText(q))}</b>`}
+    <div>${q.e}</div><span class="src">근거: ${q.w}</span>${self}</div>`;
+}
+
+function card(q, i){
+  const r = ans[i];
+  let body = "";
+  if (q.t === "ox" || q.t === "mc") {
+    const opts = q.t === "ox" ? ["O","X"] : q.o;
+    body = `<div class="opts ${q.t === "ox" ? "ox" : ""}">${opts.map((o, k) => {
+      const val = q.t === "ox" ? o : k;
+      let cls = "";
+      if (r) { if (val === q.a) cls = "right"; else if (val === r.v) cls = "wrong"; }
+      const mk = q.t === "mc" ? `<span class="mk">${"①②③④"[k]}</span>` : "";
+      return `<button class="opt ${cls}" data-v="${val}" ${r ? "disabled" : ""}>${mk}<span>${o}</span></button>`;
+    }).join("")}</div>`;
+  } else {
+    body = `<form class="short" data-sa="${i}">
+      <input type="text" placeholder="답을 입력하세요" value="${r ? esc(r.v) : ""}" ${r ? "disabled" : ""} autocomplete="off" aria-label="${i + 1}번 답">
+      ${r ? "" : `<button type="submit">확인</button><button type="button" class="ghost" data-giveup="1">모르겠어요</button>`}
+    </form>`;
+  }
+  const state = r ? (r.ok ? "ok" : "bad") : "";
+  return `<article class="q ${state}" data-i="${i}">
+    <div class="q-head"><span class="q-num">${i + 1}</span><div class="q-text">${q.q}</div>
+      <span class="q-tag">${stars(q.s)} ${q.w}</span></div>
+    ${body}${r ? feedback(q, r) : ""}</article>`;
+}
+
+function visible(q, i){
+  const r = ans[i];
+  switch (filter) {
+    case "ox": case "mc": case "sa": return q.t === filter;
+    case "star": return q.s >= 2;
+    case "todo": return !r;
+    case "wrong": return r && !r.ok;
+    default: return true;
+  }
+}
+
+function render(){
+  let html = "", last = null, n = 0;
+  Q.forEach((q, i) => {
+    if (!visible(q, i)) return;
+    if (q.t !== last) { html += `<h2>${SECT[q.t]}</h2>`; last = q.t; }
+    html += card(q, i); n++;
+  });
+  $("#list").innerHTML = n ? html : `<p class="empty">해당하는 문제가 없어요.</p>`;
+  score();
+}
+
+function score(){
+  const done = Object.keys(ans).length;
+  const ok = Object.values(ans).filter(r => r.ok).length;
+  $("#sc").textContent = `${ok} / ${Q.length}`;
+  $("#scd").textContent = done
+    ? `${done}문항 풀이 · 정답률 ${Math.round(ok / done * 100)}%${done === Q.length ? " · 다 풀었어요! 틀린 문제만 다시 보세요" : ""}`
+    : "아직 푼 문제가 없어요";
+  $("#mok").style.width = (ok / Q.length * 100) + "%";
+  $("#mbad").style.width = ((done - ok) / Q.length * 100) + "%";
+}
+
+function save(i, v, ok){
+  ans[i] = {v, ok}; store.set(ans); remote.push();
+  const el = document.querySelector(`.q[data-i="${i}"]`);
+  // 필터가 '안 푼 문제'여도 방금 푼 카드는 그 자리에서 결과를 보여 준다
+  if (el) el.outerHTML = card(Q[i], i);
+  score();
+}
+
+$("#list").addEventListener("click", e => {
+  const art = e.target.closest(".q"); if (!art) return;
+  const i = +art.dataset.i, q = Q[i];
+  const opt = e.target.closest(".opt");
+  if (opt && !opt.disabled) {
+    const v = q.t === "ox" ? opt.dataset.v : +opt.dataset.v;
+    return save(i, v, v === q.a);
+  }
+  if (e.target.closest("[data-giveup]")) {
+    const v = art.querySelector("input").value.trim();
+    return save(i, v || "(모름)", false);
+  }
+  if (e.target.closest("[data-self]")) return save(i, ans[i].v, true);
+});
+
+$("#list").addEventListener("submit", e => {
+  e.preventDefault();
+  const i = +e.target.dataset.sa, q = Q[i];
+  const v = e.target.querySelector("input").value.trim();
+  if (!v) return e.target.querySelector("input").focus();
+  save(i, v, q.a.includes(norm(v)));
+});
+
+document.querySelectorAll(".chip[data-f]").forEach(b => b.addEventListener("click", () => {
+  filter = b.dataset.f;
+  document.querySelectorAll(".chip[data-f]").forEach(x => x.setAttribute("aria-pressed", x === b));
+  render();
+}));
+
+$("#reset").addEventListener("click", () => {
+  if (!confirm("푼 기록을 모두 지우고 처음부터 풀까요?")) return;
+  ans = {}; store.set(ans); remote.push(); render();
+});
+
+render();
+remote.connect();
+</script>
+</body>
+</html>
