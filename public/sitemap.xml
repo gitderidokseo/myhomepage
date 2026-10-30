@@ -248,7 +248,14 @@
 
   <url>
     <loc>https://lalacatsoft.com/odena/uk-mileage-calculator</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lalacatsoft.com/odena/hmrc-mileage-log</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
