@@ -254,6 +254,13 @@
   </url>
 
   <url>
+    <loc>https://lalacatsoft.com/odena/advisory-fuel-rates-calculator</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://lalacatsoft.com/odena/hmrc-mileage-log</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>

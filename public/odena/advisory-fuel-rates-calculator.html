@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advisory Fuel Rates Calculator for Company Cars (Sept 2026) · Odena</title>
+  <meta name="description" content="Free HMRC advisory fuel rates (AFR) calculator for company car drivers: pick fuel and engine size, enter your miles, and see the fuel allowance for business trips or what you repay for private fuel. Rates from 1 September 2026." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lalacatsoft.com/odena/advisory-fuel-rates-calculator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Advisory Fuel Rates Calculator for Company Cars" />
+  <meta property="og:description" content="Pick fuel and engine size, enter your miles, and see your HMRC advisory fuel allowance. Free, no sign-up." />
+  <meta property="og:url" content="https://lalacatsoft.com/odena/advisory-fuel-rates-calculator" />
+  <link rel="stylesheet" href="/odena/odena.css" />
+  <style>
+    .calc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      margin: 20px 0;
+    }
+
+    .calc .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 16px;
+    }
+
+    .calc label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .calc input,
+    .calc select {
+      width: 100%;
+      font: inherit;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 10px;
+    }
+
+    .calc input:focus,
+    .calc select:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .calc .hint {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin: 4px 0 0;
+    }
+
+    .calc [hidden] {
+      display: none;
+    }
+
+    .result {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .result .big {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .result .tile {
+      background: var(--callout);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+
+    .result .tile span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .result .tile strong {
+      font-size: 1.6rem;
+      color: var(--accent);
+      line-height: 1.3;
+    }
+
+    .result table {
+      margin-top: 14px;
+    }
+
+    .result td:first-child {
+      width: auto;
+      font-weight: 400;
+    }
+
+    .result td:last-child,
+    .result th:last-child {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .result .note {
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+    }
+
+    .cta {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 560px) {
+
+      .calc .grid,
+      .result .big {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Advisory Fuel Rates Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "url": "https://lalacatsoft.com/odena/advisory-fuel-rates-calculator",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" }
+  }
+  </script>
+</head>
+
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/odena">Odena</a>
+      <nav>
+        <a href="/odena">About</a>
+        <a href="/odena/help">User guide</a>
+        <a href="/odena/privacy">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p class="eyebrow">Free tool · UK · Company cars</p>
+    <h1>Advisory fuel rates calculator</h1>
+    <p class="lead">
+      Driving a company car? Pick the fuel and engine size, enter your miles, and see the fuel allowance HMRC's
+      advisory fuel rates allow for business trips — or how much you would repay your employer for private fuel.
+    </p>
+
+    <form class="calc" id="calc" onsubmit="return false" aria-label="Advisory fuel rates calculator">
+      <div class="grid">
+        <div>
+          <label for="use">What are you working out?</label>
+          <select id="use">
+            <option value="business">Fuel allowance for business miles</option>
+            <option value="private">Repayment for private miles</option>
+          </select>
+        </div>
+        <div>
+          <label for="miles" id="milesLabel">Business miles</label>
+          <input id="miles" type="number" inputmode="decimal" min="0" step="1" value="1000" />
+          <p class="hint" id="milesHint">Business journeys only — not your commute.</p>
+        </div>
+        <div>
+          <label for="fuel">Fuel</label>
+          <select id="fuel">
+            <option value="petrol">Petrol (incl. petrol hybrid)</option>
+            <option value="diesel">Diesel (incl. diesel hybrid)</option>
+            <option value="lpg">LPG</option>
+            <option value="electric">Fully electric</option>
+          </select>
+        </div>
+        <div id="engineBox">
+          <label for="engine">Engine size</label>
+          <select id="engine"></select>
+        </div>
+        <div id="homeBox" hidden>
+          <label for="home">Share of charging done at home (%)</label>
+          <input id="home" type="number" inputmode="decimal" min="0" max="100" step="5" value="100" />
+          <p class="hint">The split between home and public charging must be fair and reasonable.</p>
+        </div>
+        <div>
+          <label for="period">Rates</label>
+          <select id="period"></select>
+          <p class="hint">Previous rates may be used for up to 1 month after new ones start.</p>
+        </div>
+        <div id="paidBox">
+          <label for="paid">Your employer pays (pence per mile, optional)</label>
+          <input id="paid" type="number" inputmode="decimal" min="0" step="0.5" placeholder="e.g. 20" />
+          <p class="hint">Leave empty to skip the comparison.</p>
+        </div>
+      </div>
+
+      <div class="result" aria-live="polite">
+        <div class="big">
+          <div class="tile"><span>Advisory rate</span><strong id="rateOut">0p</strong></div>
+          <div class="tile"><span id="amountLabel">Fuel allowance</span><strong id="amount">£0</strong></div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Miles × rate</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <p class="note" id="note"></p>
+      </div>
+    </form>
+
+    <p class="callout">
+      <strong>Estimate only.</strong> This is a guide, not tax advice. Check the current rates on GOV.UK and your
+      employer's policy — or ask an accountant.
+    </p>
+
+    <h2>Advisory fuel rates from 1 September 2026</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fuel</th>
+          <th>Engine size</th>
+          <th>Rate per mile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Petrol</td><td>1400cc or less</td><td>14p</td></tr>
+        <tr><td>Petrol</td><td>1401cc to 2000cc</td><td>17p</td></tr>
+        <tr><td>Petrol</td><td>Over 2000cc</td><td>27p</td></tr>
+        <tr><td>LPG</td><td>1400cc or less</td><td>11p</td></tr>
+        <tr><td>LPG</td><td>1401cc to 2000cc</td><td>13p</td></tr>
+        <tr><td>LPG</td><td>Over 2000cc</td><td>20p</td></tr>
+        <tr><td>Diesel</td><td>1600cc or less</td><td>15p</td></tr>
+        <tr><td>Diesel</td><td>1601cc to 2000cc</td><td>16p</td></tr>
+        <tr><td>Diesel</td><td>Over 2000cc</td><td>22p</td></tr>
+        <tr><td>Fully electric</td><td>Home charging</td><td>7p</td></tr>
+        <tr><td>Fully electric</td><td>Public charging</td><td>15p</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Source: <a href="https://www.gov.uk/guidance/advisory-fuel-rates" rel="noopener">GOV.UK — advisory fuel
+        rates</a>. HMRC reviews the rates every quarter (1 March, 1 June, 1 September and 1 December), so check
+      GOV.UK for the latest figures.
+    </p>
+
+    <h2>Who these rates are for</h2>
+    <ul>
+      <li>Advisory fuel rates apply only to <strong>employees driving a company car</strong>. HMRC says they must
+        not be used in any other circumstances.</li>
+      <li>They cover two things: your employer <strong>reimbursing fuel for business travel</strong>, and you
+        <strong>repaying the cost of fuel used privately</strong>.</li>
+      <li>Driving <strong>your own car</strong> for work is different — that uses
+        <a href="https://www.gov.uk/expenses-and-benefits-business-travel-mileage/rules-for-tax" rel="noopener">mileage
+          allowance payments</a>. Self-employed? Use the
+        <a href="/odena/uk-mileage-calculator">HMRC mileage allowance calculator</a> instead.</li>
+      <li>Hybrid cars are treated as petrol or diesel cars.</li>
+    </ul>
+
+    <h2>Business fuel: paying at or below the rate</h2>
+    <p>
+      If your employer pays no more than the advisory rate for your car's engine size and fuel, there is no taxable
+      profit and no Class 1A National Insurance. If they pay more, they need to show the fuel cost per mile really is
+      higher; otherwise the excess is taxable and counts as earnings for Class 1 National Insurance.
+    </p>
+
+    <h2>Private fuel: avoiding the fuel benefit charge</h2>
+    <p>
+      If your employer pays for fuel you use privately, you can face a car fuel benefit charge. HMRC says there is
+      no fuel benefit charge if all private mileage is correctly recorded and you repay at the advisory rate or
+      higher. That makes an accurate split of business and private miles the whole point.
+    </p>
+
+    <h2>Both cases depend on a mileage log</h2>
+    <p>
+      Whether you claim business fuel or repay private fuel, the numbers come from your record of each journey:
+      the <strong>date</strong>, <strong>start and end points</strong>, the <strong>reason</strong> and the
+      <strong>miles</strong>. See <a href="/odena/hmrc-mileage-log">what an HMRC mileage log should record</a>.
+    </p>
+
+    <div class="callout">
+      <p><strong>Let your phone keep the log.</strong> Odena records your trips automatically, lets you mark each one
+        business or personal, and exports an Excel or PDF logbook to hand to your employer. Free, no account, and
+        your data stays on your phone.</p>
+      <p><a class="cta" href="https://play.google.com/store/apps/details?id=app.odena.logbook&amp;referrer=utm_source%3Dlalacatsoft%26utm_medium%3Dcalculator%26utm_campaign%3Dafr"
+          rel="noopener">Get Odena on Google Play</a></p>
+    </div>
+
+    <p>No data you type here leaves your browser. <a href="/odena/uk-mileage-calculator">Mileage calculator</a> ·
+      <a href="/odena/privacy">Privacy policy</a> · <a href="/odena/help">User guide</a></p>
+  </main>
+
+  <footer class="site">© 2026 LalaCatSoft</footer>
+
+  <script>
+    // Advisory fuel rates per mile in pounds, newest first. Copy from GOV.UK each quarter
+    // (1 Mar, 1 Jun, 1 Sep, 1 Dec) and update the table and title above too.
+    var PERIODS = [
+      {
+        label: "From 1 September 2026",
+        petrol: [0.14, 0.17, 0.27], lpg: [0.11, 0.13, 0.20], diesel: [0.15, 0.16, 0.22],
+        electric: { home: 0.07, public: 0.15 }
+      },
+      {
+        label: "1 June to 31 August 2026",
+        petrol: [0.14, 0.17, 0.26], lpg: [0.11, 0.13, 0.21], diesel: [0.15, 0.17, 0.23],
+        electric: { home: 0.07, public: 0.15 }
+      }
+    ];
+    var ENGINES = {
+      petrol: ["1400cc or less", "1401cc to 2000cc", "Over 2000cc"],
+      lpg: ["1400cc or less", "1401cc to 2000cc", "Over 2000cc"],
+      diesel: ["1600cc or less", "1601cc to 2000cc", "Over 2000cc"]
+    };
+
+    function $(id) {
+      return document.getElementById(id);
+    }
+
+    function gbp(n) {
+      return "£" + n.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function pence(p) {
+      return (Math.round(p * 1000) / 10).toLocaleString("en-GB") + "p";
+    }
+
+    function miles(n) {
+      return n.toLocaleString("en-GB", { maximumFractionDigits: 1 });
+    }
+
+    function row(label, calc, amount) {
+      return "<tr><td>" + label + "</td><td>" + calc + "</td><td>" + amount + "</td></tr>";
+    }
+
+    PERIODS.forEach(function (p, i) {
+      $("period").add(new Option(p.label, i));
+    });
+
+    function fillEngines() {
+      var fuel = $("fuel").value;
+      var electric = fuel === "electric";
+      $("engineBox").hidden = electric;
+      $("homeBox").hidden = !electric;
+      if (electric) return;
+      var keep = $("engine").selectedIndex;
+      $("engine").innerHTML = "";
+      ENGINES[fuel].forEach(function (name, i) {
+        $("engine").add(new Option(name, i));
+      });
+      $("engine").selectedIndex = keep < 0 ? 0 : keep;
+    }
+
+    function update() {
+      var use = $("use").value;
+      var m = Math.max(0, parseFloat($("miles").value) || 0);
+      var fuel = $("fuel").value;
+      var p = PERIODS[$("period").value];
+      var business = use === "business";
+
+      $("milesLabel").textContent = business ? "Business miles" : "Private miles";
+      $("milesHint").textContent = business
+        ? "Business journeys only — not your commute."
+        : "Private journeys, including your commute.";
+      $("amountLabel").textContent = business ? "Fuel allowance" : "You repay";
+      $("paidBox").hidden = !business;
+
+      var rate;
+      var rows = "";
+      if (fuel === "electric") {
+        var share = Math.min(100, Math.max(0, parseFloat($("home").value) || 0)) / 100;
+        var homeMiles = m * share;
+        var publicMiles = m - homeMiles;
+        rate = p.electric.home * share + p.electric.public * (1 - share);
+        rows += row("Home charging", miles(homeMiles) + " × " + pence(p.electric.home), gbp(homeMiles * p.electric.home));
+        rows += row("Public charging", miles(publicMiles) + " × " + pence(p.electric.public), gbp(publicMiles * p.electric.public));
+      } else {
+        rate = p[fuel][$("engine").value];
+        rows += row(ENGINES[fuel][$("engine").value], miles(m) + " × " + pence(rate), gbp(m * rate));
+      }
+      var total = m * rate;
+      rows += row("<strong>Total</strong>", "", "<strong>" + gbp(total) + "</strong>");
+
+      var note = "";
+      var paid = parseFloat($("paid").value);
+      if (business && paid >= 0) {
+        var paidTotal = m * paid / 100;
+        rows += row("Your employer pays", miles(m) + " × " + pence(paid / 100), gbp(paidTotal));
+        if (paidTotal > total + 0.005) {
+          note = "Your employer pays " + gbp(paidTotal - total) + " more than the advisory rate. Unless they can " +
+            "show your fuel really costs more per mile, that excess is taxable and counts as earnings for Class 1 " +
+            "National Insurance.";
+        } else {
+          note = "Your employer pays at or below the advisory rate, so there is no taxable profit on these miles.";
+        }
+      } else if (!business) {
+        note = "Repaying at least this amount, with all private mileage recorded, avoids the car fuel benefit charge.";
+      }
+
+      $("rows").innerHTML = rows;
+      $("rateOut").textContent = pence(rate);
+      $("amount").textContent = gbp(total);
+      $("note").textContent = note;
+    }
+
+    $("fuel").addEventListener("change", fillEngines);
+    ["use", "miles", "fuel", "engine", "home", "period", "paid"].forEach(function (id) {
+      $(id).addEventListener("input", update);
+      $(id).addEventListener("change", update);
+    });
+    fillEngines();
+    update();
+  </script>
+</body>
+
+</html>
