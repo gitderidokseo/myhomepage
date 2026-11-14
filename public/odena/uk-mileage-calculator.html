@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HMRC Mileage Allowance Calculator for Sole Traders · Odena</title>
-  <meta name="description" content="Free HMRC simplified-expenses mileage calculator for self-employed sole traders: enter your business miles and see your flat-rate claim and the income tax it may save. No sign-up, nothing is stored." />
+  <title>UK Mileage Claim Calculator 2026/27 — HMRC 55p Rate &amp; Past Years · Odena</title>
+  <meta name="description" content="Free HMRC mileage claim calculator for employees and the self-employed. 55p a mile from 6 April 2026, 45p for 2011/12 to 2025/26. See your claim, the tax relief, and what you can still claim for past years. No sign-up." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lalacatsoft.com/odena/uk-mileage-calculator" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="HMRC Mileage Allowance Calculator for Sole Traders" />
-  <meta property="og:description" content="Enter your business miles and see your simplified-expenses claim and estimated tax saving. Free, no sign-up." />
+  <meta property="og:title" content="UK Mileage Claim Calculator — HMRC 55p rate and past years" />
+  <meta property="og:description" content="Employee or self-employed: enter your business miles and see your HMRC mileage claim and estimated tax saving for 2026/27 or earlier years. Free, no sign-up." />
   <meta property="og:url" content="https://lalacatsoft.com/odena/uk-mileage-calculator" />
   <link rel="stylesheet" href="/odena/odena.css" />
   <style>
@@ -114,6 +114,19 @@
       border-radius: 8px;
     }
 
+    .warn {
+      margin: 12px 0 0;
+      padding: 10px 12px;
+      border: 1px solid #c98a1b;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    .warn[hidden],
+    .calc [hidden] {
+      display: none;
+    }
+
     @media (max-width: 560px) {
 
       .calc .grid,
@@ -126,7 +139,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "HMRC Mileage Allowance Calculator",
+    "name": "UK Mileage Claim Calculator (HMRC approved mileage rates)",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "url": "https://lalacatsoft.com/odena/uk-mileage-calculator",
@@ -149,32 +162,50 @@
 
   <main>
     <p class="eyebrow">Free tool · UK</p>
-    <h1>HMRC mileage allowance calculator</h1>
+    <h1>UK mileage claim calculator (HMRC 55p rate)</h1>
     <p class="lead">
-      Self-employed and driving for business? Enter your business miles to see what you can claim with HMRC's
-      simplified-expenses flat rates, and roughly how much income tax that could save.
+      Driving your own car for work? Enter your business miles to see what HMRC's approved mileage rates are worth —
+      as an <strong>employee</strong> claiming tax relief, or as a <strong>self-employed</strong> sole trader using
+      simplified expenses. Works for 2026/27 and for past tax years.
     </p>
 
-    <form class="calc" id="calc" onsubmit="return false" aria-label="Mileage calculator">
+    <form class="calc" id="calc" onsubmit="return false" aria-label="Mileage claim calculator">
       <div class="grid">
         <div>
-          <label for="miles">Business miles in the tax year</label>
+          <label for="who">I am</label>
+          <select id="who">
+            <option value="employee">An employee using my own vehicle</option>
+            <option value="self">Self-employed (simplified expenses)</option>
+          </select>
+        </div>
+        <div>
+          <label for="year">Tax year</label>
+          <select id="year">
+            <option value="2026">2026–27 (55p)</option>
+            <option value="2025">2025–26 (45p)</option>
+            <option value="2024">2024–25 (45p)</option>
+            <option value="2023">2023–24 (45p)</option>
+            <option value="2022">2022–23 (45p)</option>
+            <option value="2011">2011–12 to 2021–22 (45p)</option>
+          </select>
+        </div>
+        <div>
+          <label for="miles">Business miles in that tax year</label>
           <input id="miles" type="number" inputmode="decimal" min="0" step="1" value="8000" />
-          <p class="hint">Business journeys only — not your commute.</p>
+          <p class="hint">Business journeys only — not your normal commute.</p>
         </div>
         <div>
           <label for="vehicle">Vehicle</label>
           <select id="vehicle">
             <option value="car">Car or van</option>
             <option value="moto">Motorcycle</option>
+            <option value="bike">Bicycle</option>
           </select>
         </div>
-        <div>
-          <label for="year">Tax year</label>
-          <select id="year">
-            <option value="2026">2026–27 (from 6 April 2026)</option>
-            <option value="2025">2025–26 and earlier</option>
-          </select>
+        <div id="paidBox">
+          <label for="paid">Your employer pays you (pence per mile)</label>
+          <input id="paid" type="number" inputmode="decimal" min="0" step="1" value="0" />
+          <p class="hint">Enter 0 if you get no mileage allowance.</p>
         </div>
         <div>
           <label for="rate">Your income tax rate</label>
@@ -183,82 +214,107 @@
             <option value="0.40">Higher rate — 40%</option>
             <option value="0.45">Additional rate — 45%</option>
           </select>
-          <p class="hint">Scottish bands differ; pick the rate on your top slice of profit.</p>
+          <p class="hint">Scottish bands differ; pick the rate on your top slice of income.</p>
         </div>
       </div>
 
       <div class="result" aria-live="polite">
         <div class="big">
-          <div class="tile"><span>Mileage claim</span><strong id="claim">£0</strong></div>
+          <div class="tile"><span id="claimLabel">Mileage claim</span><strong id="claim">£0</strong></div>
           <div class="tile"><span>Estimated income tax saved</span><strong id="saving">£0</strong></div>
         </div>
         <table>
           <thead>
             <tr>
-              <th>Band</th>
+              <th>Item</th>
               <th>Miles × rate</th>
               <th>Amount</th>
             </tr>
           </thead>
           <tbody id="rows"></tbody>
         </table>
+        <p class="warn" id="warn" hidden></p>
       </div>
     </form>
 
     <p class="callout">
       <strong>Estimate only.</strong> This is a guide, not tax advice. Your actual relief depends on your
-      profits, other income and circumstances — check with HMRC or an accountant.
+      income and circumstances — check with HMRC or an accountant.
     </p>
 
-    <h2>The rates used</h2>
+    <h2>HMRC mileage rates by tax year</h2>
+    <p>
+      The rate for cars and vans stayed at 45p a mile for fifteen years, then rose to <strong>55p from 6 April
+      2026</strong>. The same approved mileage rates apply to employees and, as flat rates, to the self-employed.
+    </p>
     <table>
       <thead>
         <tr>
-          <th>Vehicle</th>
-          <th>2026–27</th>
-          <th>Before 6 April 2026</th>
+          <th>Tax year</th>
+          <th>Car or van, first 10,000 miles</th>
+          <th>Car or van, after 10,000</th>
+          <th>Motorcycle</th>
+          <th>Bicycle (employees)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Car or van, first 10,000 miles</td>
-          <td>55p</td>
+          <td>2026–27</td>
+          <td><strong>55p</strong></td>
+          <td>25p</td>
+          <td>24p</td>
+          <td>20p</td>
+        </tr>
+        <tr>
+          <td>2011–12 to 2025–26</td>
           <td>45p</td>
-        </tr>
-        <tr>
-          <td>Car or van, after 10,000 miles</td>
           <td>25p</td>
-          <td>25p</td>
-        </tr>
-        <tr>
-          <td>Motorcycle</td>
           <td>24p</td>
-          <td>24p</td>
+          <td>20p</td>
         </tr>
       </tbody>
     </table>
     <p>
-      Source: <a href="https://www.gov.uk/simpler-income-tax-simplified-expenses/vehicles" rel="noopener">GOV.UK —
-        simplified expenses for vehicles</a>. The 10,000-mile threshold applies per tax year, across all your
-      business use of cars and vans. Rates change — always check GOV.UK for the current figures.
+      Sources: <a href="https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances"
+        rel="noopener">GOV.UK — travel, mileage and fuel rates</a> and
+      <a href="https://www.gov.uk/simpler-income-tax-simplified-expenses/vehicles" rel="noopener">simplified expenses
+        for vehicles</a>. The 10,000-mile threshold applies per tax year. Rates change — always check GOV.UK.
     </p>
 
-    <h2>Things to know</h2>
+    <h2>Employees: claiming mileage allowance relief</h2>
     <ul>
-      <li>This calculator is for <strong>sole traders and partnerships</strong> using simplified expenses. Employees
-        claiming for their own car follow different rules (approved mileage allowance payments). Company car drivers can use the
-        <a href="/odena/advisory-fuel-rates-calculator">advisory fuel rates calculator</a>.</li>
+      <li>If your employer pays <strong>less</strong> than the approved rate (or nothing), you can claim tax relief
+        on the difference. The calculator's claim figure is that difference.</li>
+      <li>If your employer pays <strong>more</strong>, the extra is taxable.</li>
+      <li>You cannot claim separately for fuel, electricity, road tax, MOTs or repairs — the rate covers them.</li>
+      <li>Ordinary commuting does not count, unless you are travelling to a temporary workplace.</li>
+      <li>If you fill in a Self Assessment return, claim through the return. Otherwise use HMRC's online claim.</li>
+    </ul>
+
+    <h2>Claiming for past years</h2>
+    <p>
+      Employees can claim for the current tax year and the <strong>4 previous tax years</strong>. Right now that
+      means <strong id="earliest">2022–23</strong> onwards — earlier years are out of time. Every year before
+      2026–27 uses the 45p rate. Self-employed? Past years are handled through your Self Assessment return, so
+      speak to an accountant before amending one.
+    </p>
+
+    <h2>Self-employed: simplified expenses</h2>
+    <ul>
       <li>You cannot use flat rates for a vehicle you have already claimed capital allowances on, and once you use
         them for a vehicle you must keep using them for it.</li>
       <li>Parking and tolls can be claimed <em>on top of</em> the flat rate. Fuel, insurance and repairs are
         already covered by it.</li>
       <li>The saving shown is income tax only. Class 4 National Insurance on your profits may reduce too.</li>
+      <li>Driving a company car? Use the <a href="/odena/advisory-fuel-rates-calculator">advisory fuel rates
+          calculator</a> instead.</li>
     </ul>
 
     <h2>To claim, you need a mileage log</h2>
     <p>
-      HMRC can ask you to show how you arrived at your business mileage. Keep a record of each journey: the
-      <strong>date</strong>, <strong>start and end points</strong>, the <strong>reason</strong> for the trip and the
+      For employee claims, HMRC asks for copies of your mileage logs showing the <strong>reason</strong> for every
+      journey and the <strong>postcodes</strong> of its start and end points. Self-employed people should keep the
+      same: <strong>date</strong>, <strong>start and end points</strong>, <strong>reason</strong> and
       <strong>miles</strong>. Writing this up at the end of the year from memory is where claims go wrong. See
       <a href="/odena/hmrc-mileage-log">what an HMRC mileage log should record</a>.
     </p>
@@ -278,12 +334,28 @@
   <footer class="site">© 2026 LalaCatSoft</footer>
 
   <script>
-    // Flat rates per mile in pounds. Check GOV.UK before changing; the threshold is per tax year.
-    var RATES = {
-      2026: { car: [0.55, 0.25], moto: [0.24, 0.24] },
-      2025: { car: [0.45, 0.25], moto: [0.24, 0.24] }
-    };
+    // Approved mileage rates per mile in pounds: [first 10,000, after 10,000]. Check GOV.UK before changing.
+    // Bicycles are an employee-only rate; simplified expenses for the self-employed don't list them.
+    function ratesFor(year, vehicle) {
+      var first = year >= 2026 ? 0.55 : 0.45;
+      if (vehicle === "car") return [first, 0.25];
+      if (vehicle === "moto") return [0.24, 0.24];
+      return [0.20, 0.20];
+    }
     var THRESHOLD = 10000;
+
+    // Employees: current tax year + 4 previous. Tax year N runs 6 April N to 5 April N+1.
+    function currentTaxYear() {
+      var d = new Date();
+      var y = d.getFullYear();
+      var beforeApril6 = d.getMonth() < 3 || (d.getMonth() === 3 && d.getDate() < 6);
+      return beforeApril6 ? y - 1 : y;
+    }
+    var EARLIEST = currentTaxYear() - 4;
+
+    function yearLabel(y) {
+      return y + "–" + String(y + 1).slice(-2);
+    }
 
     function gbp(n) {
       return "£" + n.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -301,34 +373,71 @@
       return "<tr><td>" + label + "</td><td>" + calc + "</td><td>" + amount + "</td></tr>";
     }
 
+    function $(id) {
+      return document.getElementById(id);
+    }
+
     function update() {
-      var m = Math.max(0, parseFloat(document.getElementById("miles").value) || 0);
-      var vehicle = document.getElementById("vehicle").value;
-      var year = document.getElementById("year").value;
-      var taxRate = parseFloat(document.getElementById("rate").value);
-      var r = RATES[year][vehicle];
+      var who = $("who").value;
+      var employee = who === "employee";
+      var bikeOpt = $("vehicle").querySelector('option[value="bike"]');
+      bikeOpt.disabled = !employee;
+      if (!employee && $("vehicle").value === "bike") $("vehicle").value = "car";
+      $("paidBox").hidden = !employee;
+
+      var m = Math.max(0, parseFloat($("miles").value) || 0);
+      var vehicle = $("vehicle").value;
+      var year = parseInt($("year").value, 10);
+      var taxRate = parseFloat($("rate").value);
+      var r = ratesFor(year, vehicle);
 
       var rows = "";
-      var total;
+      var approved;
       if (vehicle === "car") {
         var first = Math.min(m, THRESHOLD);
         var rest = Math.max(0, m - THRESHOLD);
-        total = first * r[0] + rest * r[1];
+        approved = first * r[0] + rest * r[1];
         rows += row("First 10,000 miles", miles(first) + " × " + pence(r[0]), gbp(first * r[0]));
         rows += row("Over 10,000 miles", miles(rest) + " × " + pence(r[1]), gbp(rest * r[1]));
       } else {
-        total = m * r[0];
-        rows += row("All miles", miles(m) + " × " + pence(r[0]), gbp(total));
+        approved = m * r[0];
+        rows += row("All miles", miles(m) + " × " + pence(r[0]), gbp(approved));
       }
-      rows += row("<strong>Total claim</strong>", "", "<strong>" + gbp(total) + "</strong>");
 
-      document.getElementById("rows").innerHTML = rows;
-      document.getElementById("claim").textContent = gbp(total);
-      document.getElementById("saving").textContent = gbp(total * taxRate);
+      var claim = approved;
+      var warn = "";
+      if (employee) {
+        var paidP = Math.max(0, parseFloat($("paid").value) || 0);
+        var paid = m * paidP / 100;
+        rows += row("<strong>Approved amount</strong>", "", "<strong>" + gbp(approved) + "</strong>");
+        rows += row("Paid by your employer", miles(m) + " × " + paidP + "p", "− " + gbp(paid));
+        claim = Math.max(0, approved - paid);
+        rows += row("<strong>Tax relief you can claim on</strong>", "", "<strong>" + gbp(claim) + "</strong>");
+        if (paid > approved) {
+          warn = "Your employer pays " + gbp(paid - approved) + " more than the approved amount. There is no relief to " +
+            "claim, and that extra is taxable.";
+        }
+        if (year < EARLIEST) {
+          warn = (warn ? warn + " " : "") + "This year is out of time: employees can only claim for the current tax " +
+            "year and the 4 previous ones (" + yearLabel(EARLIEST) + " onwards).";
+        }
+        $("claimLabel").textContent = "Mileage allowance relief";
+      } else {
+        rows += row("<strong>Total claim</strong>", "", "<strong>" + gbp(claim) + "</strong>");
+        $("claimLabel").textContent = "Mileage claim";
+      }
+
+      var outOfTime = employee && year < EARLIEST;
+      $("rows").innerHTML = rows;
+      $("claim").textContent = gbp(claim);
+      $("saving").textContent = outOfTime ? "£0.00" : gbp(claim * taxRate);
+      $("warn").textContent = warn;
+      $("warn").hidden = !warn;
     }
 
-    ["miles", "vehicle", "year", "rate"].forEach(function (id) {
-      var el = document.getElementById(id);
+    $("earliest").textContent = yearLabel(EARLIEST);
+    ["who", "miles", "vehicle", "year", "rate", "paid"].forEach(function (id) {
+      var el = $(id);
       el.addEventListener("input", update);
       el.addEventListener("change", update);
     });
