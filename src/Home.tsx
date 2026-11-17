@@ -565,7 +565,7 @@ type Plan = {
   cta: { label: string; href: string };
 };
 
-// 금액은 모두 VAT 별도. 연납은 10개월분으로 12개월 이용.
+// 금액은 모두 VAT 포함. 연납은 10개월분으로 12개월 이용.
 const PERSONAL_PLANS: Plan[] = [
   {
     badge: "무료",
@@ -828,7 +828,7 @@ function Pricing() {
         </div>
 
         <p className="mt-12 text-center text-sm text-muted-foreground reveal max-w-4xl mx-auto">
-          * 표시 금액은 VAT 별도이며, 법인 플랜과 제조사 연동은 차량 1대 기준 요금입니다.
+          * 표시 금액은 VAT 포함이며, 법인 플랜과 제조사 연동은 차량 1대 기준 요금입니다.
           연납은 10개월분 요금으로 12개월을 이용하는 방식입니다. 대규모 도입이나 요금 관련 문의는{" "}
           <a href="#contact" className="text-cyan hover:underline">
             도입 문의
